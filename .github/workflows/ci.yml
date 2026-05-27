@@ -1,0 +1,38 @@
+name: CI
+on:
+  push:
+    branches: [master]
+    tags: ['v*']
+  pull_request:
+    branches: [master]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: mlugg/setup-zig@v2
+        with:
+          version: 0.16.0
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y libgmp-dev libmpfr-dev libmpc-dev
+      - name: Build
+        run: zig build -Doptimize=ReleaseFast
+        timeout-minutes: 30
+      - name: Smoke test
+        run: |
+          printf '.text\n.global _start\n_start: nop\n' > test.s
+          zig-out/bin/rx-elf-as test.s -o test.o
+          zig-out/bin/rx-elf-ld test.o -o test.elf
+          zig-out/bin/rx-elf-objdump -d test.elf
+      - name: Package
+        if: startsWith(github.ref, 'refs/tags/')
+        run: tar czf rx-elf-toolchain-linux-x86_64.tar.gz -C zig-out/bin .
+      - name: Upload release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: rx-elf-toolchain-linux-x86_64.tar.gz
