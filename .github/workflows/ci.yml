@@ -22,12 +22,28 @@ jobs:
       - name: Build
         run: zig build -Doptimize=ReleaseFast
         timeout-minutes: 30
-      - name: Smoke test
+      - name: Test - gcc driver
         run: |
-          printf '.text\n.global _start\n_start: nop\n' > test.s
-          zig-out/bin/rx-elf-as test.s -o test.o
-          zig-out/bin/rx-elf-ld test.o -o test.elf
-          zig-out/bin/rx-elf-objdump -d test.elf
+          zig-out/bin/rx-elf-gcc --version
+          echo 'int x = 42; int get(void) { return x; }' > test.c
+          zig-out/bin/rx-elf-gcc -c test.c -o test.o -Os
+      - name: Test - relocations
+        run: |
+          echo 'extern int compute(int,int); int r; int main(void){r=compute(1,2);return r;}' > main.c
+          echo 'int compute(int a,int b){return a+b;}' > compute.c
+          zig-out/bin/rx-elf-gcc -c main.c -o main.o -Os
+          zig-out/bin/rx-elf-gcc -c compute.c -o compute.o -Os
+          zig-out/bin/rx-elf-ld main.o compute.o -o linked.elf
+      - name: Test - ELF verification
+        run: |
+          zig-out/bin/rx-elf-readelf -h test.o | grep "Renesas RX"
+          zig-out/bin/rx-elf-objdump -d test.o
+          zig-out/bin/rx-elf-nm test.o | grep get
+      - name: Test - tools
+        run: |
+          zig-out/bin/rx-elf-strip -o stripped.o test.o
+          zig-out/bin/rx-elf-objcopy -O ihex test.o test.hex
+          zig-out/bin/rx-elf-size test.o
       - name: Package
         if: startsWith(github.ref, 'refs/tags/')
         run: tar czf rx-elf-toolchain-linux-x86_64.tar.gz -C zig-out/bin .
