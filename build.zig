@@ -25,15 +25,12 @@ pub fn build(b: *std.Build) void {
     const patch_dir = b.cache_root.join(b.allocator, &.{"patched-gcc-rx"}) catch @panic("OOM");
     const bu_patch_dir = b.cache_root.join(b.allocator, &.{"patched-binutils-rx"}) catch @panic("OOM");
 
-    patchSourceTree(b.allocator, patch_dir, gcc_src_path, patches_path, &.{
-        "gcc",
-    }, null);
-    patchSourceTree(b.allocator, bu_patch_dir, bu_src_path, patches_path, &.{
-        "bfd",
-        "gas/config",
-        "opcodes",
-        "include",
-    }, "bison -o \"{0s}/gas/config/rx-parse.c\" -d \"{0s}/gas/config/rx-parse.y\"");
+    patchSourceTree(b, patch_dir, gcc_src_path, patches_path, null);
+    patchSourceTree(b, bu_patch_dir, bu_src_path, patches_path,
+        std.fmt.allocPrint(b.allocator,
+            "bison -o '{s}/gas/config/rx-parse.c' -d '{s}/gas/config/rx-parse.y'",
+            .{ bu_patch_dir, bu_patch_dir },
+        ) catch @panic("OOM"));
 
     const patched_gcc_root: std.Build.LazyPath = .{ .cwd_relative = patch_dir };
     const patched_bu_root: std.Build.LazyPath = .{ .cwd_relative = bu_patch_dir };
@@ -113,32 +110,25 @@ pub fn build(b: *std.Build) void {
 
 /// Copy upstream source tree and overlay patches. Skips if .patched sentinel exists.
 fn patchSourceTree(
-    allocator: std.mem.Allocator,
+    b: *std.Build,
     dest: []const u8,
     upstream: []const u8,
     patches: []const u8,
-    subdirs: []const []const u8,
-    post_cmd: ?[]const u8,
+    extra_cmd: ?[]const u8,
 ) void {
-    const sentinel = std.fmt.allocPrint(allocator, "{s}/.patched", .{dest}) catch @panic("OOM");
-    if (std.fs.cwd().access(sentinel, .{})) |_| return else |_| {}
+    const script = std.fmt.allocPrint(b.allocator,
+        \\set -e
+        \\test -f '{0s}/.patched' && exit 0
+        \\rm -rf '{0s}'
+        \\cp -a '{1s}' '{0s}'
+        \\for d in bfd gas/config opcodes include gcc; do
+        \\  if [ -d '{2s}/'$d ]; then
+        \\    cp -a '{2s}/'$d/* '{0s}/'$d/ 2>/dev/null || true
+        \\  fi
+        \\done
+        \\{3s}
+        \\touch '{0s}/.patched'
+    , .{ dest, upstream, patches, extra_cmd orelse "" }) catch @panic("OOM");
 
-    var script = std.ArrayList(u8).init(allocator);
-    const w = script.writer();
-    w.print("set -e; rm -rf '{s}'; cp -a '{s}' '{s}'", .{ dest, upstream, dest }) catch @panic("OOM");
-    for (subdirs) |sub| {
-        w.print("; cp -a '{s}/{s}/'* '{s}/{s}/' 2>/dev/null || true", .{ patches, sub, dest, sub }) catch @panic("OOM");
-    }
-    if (post_cmd) |cmd| {
-        w.print("; ", .{}) catch @panic("OOM");
-        w.print(cmd, .{dest}) catch @panic("OOM");
-    }
-    w.print("; touch '{s}/.patched'", .{dest}) catch @panic("OOM");
-
-    var child = std.process.Child.init(.{
-        .allocator = allocator,
-        .argv = &.{ "sh", "-c", script.items },
-    });
-    const term = child.spawnAndWait() catch @panic("failed to patch source tree");
-    if (term != .{ .exited = 0 }) @panic("patch script failed");
+    _ = b.run(&.{ "sh", "-c", script });
 }
