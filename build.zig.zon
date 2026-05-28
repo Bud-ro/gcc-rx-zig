@@ -9,11 +9,11 @@
             .hash = "gcc_cross-0.1.0-4eFHFYLPAgB0ixxviEjDD4YOe-najldQrIQNaKu2WZf9",
         },
         .binutils_src = .{
-            .url = "https://ftpmirror.gnu.org/binutils/binutils-2.44.tar.xz",
+            .url = "https://ftp.gnu.org/gnu/binutils/binutils-2.44.tar.xz",
             .hash = "N-V-__8AAIzgjBGD6yHVmz0Y717C5k_ZVMIbsWwesV2XNB09",
         },
         .gcc_src = .{
-            .url = "https://ftpmirror.gnu.org/gcc/gcc-14.2.0/gcc-14.2.0.tar.xz",
+            .url = "https://ftp.gnu.org/gnu/gcc/gcc-14.2.0/gcc-14.2.0.tar.xz",
             .hash = "N-V-__8AAElxHyz1EHGycrGoNLhauLdpuFNHocycqubjTAMy",
         },
         .zlib_src = .{
@@ -21,15 +21,15 @@
             .hash = "N-V-__8AAJj_QgDBhU17TCtcvdjOZZPDfkvxrEAyZkc14VN8",
         },
         .gmp_src = .{
-            .url = "https://ftpmirror.gnu.org/gmp/gmp-6.3.0.tar.xz",
+            .url = "https://ftp.gnu.org/gnu/gmp/gmp-6.3.0.tar.xz",
             .hash = "N-V-__8AAE5fAwHUYgLBeqNatYSKf3qBK3l8nwdpjyY8igK0",
         },
         .mpfr_src = .{
-            .url = "https://ftpmirror.gnu.org/mpfr/mpfr-4.2.1.tar.xz",
+            .url = "https://ftp.gnu.org/gnu/mpfr/mpfr-4.2.1.tar.xz",
             .hash = "N-V-__8AAJKckQAnuVX8WcMeJq8-Kc7KazXAMiBK_nDFpPqH",
         },
         .mpc_src = .{
-            .url = "https://ftpmirror.gnu.org/mpc/mpc-1.3.1.tar.gz",
+            .url = "https://ftp.gnu.org/gnu/mpc/mpc-1.3.1.tar.gz",
             .hash = "N-V-__8AAMwPNQDB3ySNmo3UzbHudGQCEmkr9rFQNINVXTmw",
         },
     },
