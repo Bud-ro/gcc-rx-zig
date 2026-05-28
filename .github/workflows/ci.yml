@@ -26,22 +26,26 @@ jobs:
         run: zig build test -Doptimize=ReleaseFast
       - name: Build - libgcc
         run: zig build libgcc -Doptimize=ReleaseFast
-      - name: Test - libgcc runtime (soft-float, 64-bit, builtins)
+      - name: Test - libgcc runtime (64-bit integer + builtins)
         run: |
+          # RX (RXv1) has a hardware single-precision FPU, so float ops use FPU
+          # instructions, not soft-float. The routines that come from libgcc on
+          # this target are 64-bit integer math and builtins; assert those link.
           LIBGCC=zig-out/lib/gcc/rx-unknown-elf/14.2.0/libgcc.a
           test -f "$LIBGCC"
           GINC=$(zig-out/bin/rx-elf-gcc -print-file-name=include)
           cat > rt.c <<'EOF'
-          volatile float fa=3.5f, fb=1.25f, fr;
           volatile long long ia=1000003LL, ib=997LL, ir;
           volatile unsigned uc=0xF0F0F0F0u; volatile int pc;
-          void _start(void){ fr=fa/fb; fr=fr*fa+fb; ir=ia/ib; ir+=ia%ib;
+          void _start(void){ ir=(ia/ib)+(ia%ib)+(ia*ib);
             pc=__builtin_popcount(uc)+__builtin_clz(uc); for(;;){} }
           EOF
           zig-out/bin/rx-elf-gcc -Os -ffreestanding -nostdinc -isystem "$GINC" -c rt.c -o rt.o
-          zig-out/bin/rx-elf-gcc -nostdlib -Wl,--gc-sections -e _start -o rt.elf rt.o "$LIBGCC"
-          # confirm libgcc routines were pulled in
-          zig-out/bin/rx-elf-nm rt.elf | grep -E '___(divsf3|divdi3|moddi3|popcountsi2)'
+          # No --gc-sections here: rt.o's references pull the routines from the
+          # libgcc.a archive, which is exactly what we want to assert.
+          zig-out/bin/rx-elf-gcc -nostdlib -o rt.elf rt.o "$LIBGCC"
+          # confirm the 64-bit/builtin libgcc routines were pulled in
+          zig-out/bin/rx-elf-nm rt.elf | grep -E '___(divdi3|moddi3|popcountsi2)'
       - name: Test - gcc driver
         run: |
           zig-out/bin/rx-elf-gcc --version
