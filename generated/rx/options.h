@@ -2,10 +2,9 @@
 
 #ifndef OPTIONS_H
 #define OPTIONS_H
+#include "config/rx/rx-opts.h"
 
 #include "flag-types.h"
-
-#include "config/rx/rx-opts.h"
 
 #if !defined(IN_LIBGCC2) && !defined(IN_TARGET_LIBS) && !defined(IN_RTS)
 #ifndef GENERATOR_FILE
