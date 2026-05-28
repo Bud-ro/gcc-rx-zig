@@ -1,5 +1,5 @@
 /* Generated automatically by the program 'build/genpreds'
-   from the machine description file 'config/rx/rx.md'.  */
+   from the machine description file '/tmp/claude/gcc-14.2.0-rx-patched/gcc/config/rx/rx.md'.  */
 
 #ifndef GCC_TM_PREDS_H
 #define GCC_TM_PREDS_H
@@ -26,10 +26,15 @@ extern bool rx_call_operand (rtx, machine_mode);
 extern bool rx_symbolic_call_operand (rtx, machine_mode);
 extern bool rx_shift_operand (rtx, machine_mode);
 extern bool rx_constshift_operand (rtx, machine_mode);
+extern bool rx_bitclr_operand (rtx, machine_mode);
+extern bool rx_bitset_operand (rtx, machine_mode);
 extern bool rx_restricted_mem_operand (rtx, machine_mode);
 extern bool rx_source_operand (rtx, machine_mode);
+extern bool rx_speed_source_operand (rtx, machine_mode);
 extern bool rx_compare_operand (rtx, machine_mode);
 extern bool rx_minmaxex_operand (rtx, machine_mode);
+extern bool rx_speed_minmaxex_operand (rtx, machine_mode);
+extern bool rx_speed_compare_operand (rtx, machine_mode);
 extern bool rx_store_multiple_vector (rtx, machine_mode);
 extern bool rx_load_multiple_vector (rtx, machine_mode);
 extern bool rx_rtsd_vector (rtx, machine_mode);
@@ -67,18 +72,28 @@ enum constraint_num
 {
   CONSTRAINT__UNKNOWN = 0,
   CONSTRAINT_r,
+  CONSTRAINT_DFPUreg,
   CONSTRAINT_Int08,
+  CONSTRAINT_Ibset,
   CONSTRAINT_NEGint4,
   CONSTRAINT_m,
   CONSTRAINT_o,
   CONSTRAINT_Q,
+  CONSTRAINT_Rreg,
+  CONSTRAINT_Rd05,
+  CONSTRAINT_Rd08,
   CONSTRAINT_p,
   CONSTRAINT_Sint08,
   CONSTRAINT_Sint16,
   CONSTRAINT_Sint24,
   CONSTRAINT_Uint04,
+  CONSTRAINT_Uint05,
+  CONSTRAINT_Uintz5,
+  CONSTRAINT_DoubleC,
   CONSTRAINT_Rpda,
   CONSTRAINT_CALL__OP__SYMBOL__REF,
+  CONSTRAINT_RXV2,
+  CONSTRAINT_RXV3,
   CONSTRAINT_V,
   CONSTRAINT__l,
   CONSTRAINT__g,
@@ -122,13 +137,13 @@ constraint_satisfied_p (rtx x, enum constraint_num c)
 static inline bool
 insn_extra_register_constraint (enum constraint_num c)
 {
-  return c >= CONSTRAINT_r && c <= CONSTRAINT_r;
+  return c >= CONSTRAINT_r && c <= CONSTRAINT_DFPUreg;
 }
 
 static inline bool
 insn_extra_memory_constraint (enum constraint_num c)
 {
-  return c >= CONSTRAINT_m && c <= CONSTRAINT_Q;
+  return c >= CONSTRAINT_m && c <= CONSTRAINT_Rd08;
 }
 
 static inline bool
@@ -155,6 +170,11 @@ insn_extra_constraint_allows_reg_mem (enum constraint_num c,
 {
   if (c >= CONSTRAINT_Sint08 && c <= CONSTRAINT_CALL__OP__SYMBOL__REF)
     return;
+  if (c >= CONSTRAINT_RXV2 && c <= CONSTRAINT_RXV3)
+    {
+      *allows_reg = true;
+      return;
+    }
   if (c >= CONSTRAINT_V && c <= CONSTRAINT_Rpid)
     {
       *allows_mem = true;
@@ -171,6 +191,7 @@ insn_constraint_len (char fc, const char *str ATTRIBUTE_UNUSED)
   switch (fc)
     {
     case 'C': return 18;
+    case 'D': return 7;
     case 'I': return 5;
     case 'N': return 7;
     case 'R': return 4;

@@ -18,6 +18,9 @@ extern int insn_current_length (rtx_insn *);
 
 #define HAVE_ATTR_timings 1
 extern int get_attr_timings (rtx_insn *);
+#define HAVE_ATTR_insn_group 1
+extern enum attr_insn_group get_attr_insn_group (rtx_insn *);
+
 extern int num_delay_slots (rtx_insn *);
 extern int eligible_for_delay (rtx_insn *, int, rtx_insn *, int);
 

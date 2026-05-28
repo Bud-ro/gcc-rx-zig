@@ -35,180 +35,106 @@ internal_dfa_insn_code (rtx_insn *insn ATTRIBUTE_UNUSED)
 
   switch (recog_memoized (insn))
     {
-    case 181:  /* movdf */
-    case 180:  /* movdi */
-    case 152:  /* xchg_memhi */
-    case 151:  /* xchg_memqi */
-    case 150:  /* sync_lock_test_and_setsi */
+    case 296:  /* lrintsf2 */
+    case 194:  /* floatunssisf2 */
+    case 192:  /* fixuns_truncsfsi2 */
+      extract_constrain_insn_cached (insn);
+      if (which_alternative == 0)
+        {
+	  return 2;
+        }
+      else
+        {
+	  return 5;
+        }
+
+    case 179:  /* divsf3_mem */
+      return 13 /* 0xd */;
+
+    case 202:  /* sqrtdf2 */
+    case 201:  /* sqrtsf2 */
+    case 180:  /* divsf3 */
+    case 178:  /* divdf3 */
+      return 12 /* 0xc */;
+
+    case 129:  /* *xorsi3_flags */
+    case 128:  /* xorsi3 */
+      extract_constrain_insn_cached (insn);
+      if (((1ULL << which_alternative) & 0x1fULL))
+        {
+	  return 0;
+        }
+      else
+        {
+	  return 3;
+        }
+
+    case 312:  /* exchangeqi */
+    case 311:  /* exchangehi */
+    case 310:  /* exchangesi */
+    case 309:  /* exchangesf */
+    case 308:  /* movdi */
+    case 297:  /* lrintdf2 */
+    case 230:  /* xchg_memhi */
+    case 229:  /* xchg_memqi */
+    case 228:  /* sync_lock_test_and_setsi */
+    case 200:  /* floatsidf2 */
+    case 199:  /* floatsisf2 */
+    case 197:  /* extendsfdf2 */
+    case 196:  /* truncdfsf2 */
+    case 195:  /* floatunssidf2 */
+    case 193:  /* fixuns_truncdfsi2 */
+    case 191:  /* fix_truncdfsi2 */
+    case 190:  /* fix_truncsfsi2 */
+    case 82:  /* umulsidi3 */
+    case 80:  /* mulsidi3 */
       return 2;
 
-    case 135:  /* mulsf3 */
-      extract_constrain_insn_cached (insn);
-      if (((1ULL << which_alternative) & 0x3ULL))
-        {
-	  return 3;
-        }
-      else
-        {
-	  return 7;
-        }
-
-    case 134:  /* divsf3 */
-      extract_constrain_insn_cached (insn);
-      if (((1ULL << which_alternative) & 0x3ULL))
-        {
-	  return 12 /* 0xc */;
-        }
-      else
-        {
-	  return 13 /* 0xd */;
-        }
-
-    case 136:  /* subsf3 */
-    case 133:  /* addsf3 */
-      extract_constrain_insn_cached (insn);
-      if (((1ULL << which_alternative) & 0x3ULL))
-        {
-	  return 5;
-        }
-      else
-        {
-	  return 9;
-        }
-
-    case 85:  /* *sbb_flags */
-    case 84:  /* sbb_internal */
-      extract_constrain_insn_cached (insn);
-      if (which_alternative == 0)
-        {
-	  return 0;
-        }
-      else
-        {
-	  return 3;
-        }
-
-    case 83:  /* *subsi3_flags */
-    case 82:  /* subsi3 */
-      extract_constrain_insn_cached (insn);
-      if (((1ULL << which_alternative) & 0xfULL))
-        {
-	  return 0;
-        }
-      else
-        {
-	  return 3;
-        }
-
-    case 63:  /* mulsi3 */
-      extract_constrain_insn_cached (insn);
-      if (which_alternative != 6)
-        {
-	  return 0;
-        }
-      else
-        {
-	  return 3;
-        }
-
-    case 169:  /* lrintsf2 */
-    case 138:  /* floatsisf2 */
-    case 137:  /* fix_truncsfsi2 */
-    case 54:  /* umulsidi3 */
-      extract_constrain_insn_cached (insn);
-      if (which_alternative == 0)
-        {
-	  return 2;
-        }
-      else
-        {
-	  return 5;
-        }
-
-    case 53:  /* mulsidi3 */
-      extract_constrain_insn_cached (insn);
-      if (((1ULL << which_alternative) & 0x1fULL))
-        {
-	  return 2;
-        }
-      else
-        {
-	  return 5;
-        }
-
-    case 167:  /* rmpa */
-    case 52:  /* udivsi3 */
+    case 294:  /* rmpa32 */
+    case 293:  /* rmpa16 */
+    case 292:  /* rmpa8 */
+    case 291:  /* rmpa */
+    case 78:  /* udivsi3 */
+    case 77:  /* udivsi3_mem */
       return 10 /* 0xa */;
 
-    case 157:  /* rx_cmpstrn */
-    case 156:  /* rx_setmem */
-    case 155:  /* rx_cpymem */
-    case 154:  /* rx_strend */
-    case 153:  /* rx_movstr */
-    case 51:  /* divsi3 */
+    case 235:  /* rx_cmpstrn */
+    case 234:  /* rx_setmem */
+    case 233:  /* rx_cpymem */
+    case 232:  /* rx_strend */
+    case 231:  /* rx_movstr */
+    case 76:  /* divsi3 */
+    case 75:  /* divsi3_mem */
       return 11 /* 0xb */;
 
-    case 69:  /* *iorsi3_flags */
-    case 68:  /* iorsi3 */
-    case 48:  /* *andsi3_flags */
-    case 47:  /* andsi3 */
-      extract_constrain_insn_cached (insn);
-      if (((1ULL << which_alternative) & 0xffULL))
-        {
-	  return 0;
-        }
-      else
-        {
-	  return 3;
-        }
-
-    case 88:  /* *xorsi3_flags */
-    case 87:  /* xorsi3 */
-    case 62:  /* umaxqi3_ur */
-    case 61:  /* umaxhi3_ur */
-    case 60:  /* uminqi3_ur */
-    case 59:  /* uminhi3_ur */
-    case 58:  /* umaxqi3_u */
-    case 57:  /* umaxhi3_u */
-    case 56:  /* sminsi3 */
-    case 55:  /* smaxsi3 */
-    case 45:  /* *adc_flags */
-    case 44:  /* adc_internal */
-      extract_constrain_insn_cached (insn);
-      if (((1ULL << which_alternative) & 0x1fULL))
-        {
-	  return 0;
-        }
-      else
-        {
-	  return 3;
-        }
-
-    case 43:  /* *addsi3_flags */
-    case 42:  /* addsi3_internal */
-      extract_constrain_insn_cached (insn);
-      if (((1ULL << which_alternative) & 0x1fffULL))
-        {
-	  return 0;
-        }
-      else
-        {
-	  return 3;
-        }
-
-    case 33:  /* stack_popm */
+    case 42:  /* stack_popm */
       return 6;
 
-    case 32:  /* stack_pop */
+    case 41:  /* stack_pop */
       return 1;
 
-    case 31:  /* stack_pushm */
+    case 198:  /* floatsisf2_mem */
+    case 189:  /* fix_truncsfsi2_mem */
+    case 188:  /* subsf3v2 */
+    case 187:  /* subsf3v1 */
+    case 185:  /* subdf3 */
+    case 177:  /* adddf3 */
+    case 176:  /* addsf3v2 */
+    case 175:  /* addsf3v1 */
+    case 90:  /* unsign_minqi3_mem */
+    case 89:  /* unsign_minhi3_mem */
+    case 88:  /* unsign_maxhi3_mem */
+    case 87:  /* unsign_maxqi3_mem */
+    case 81:  /* umulsidi3_mem */
+    case 79:  /* mulsidi3_mem */
+    case 39:  /* stack_pushm */
       return 5;
 
-    case 29:  /* zero_extendqisi2 */
-    case 28:  /* zero_extendhisi2 */
-    case 27:  /* extendqisi2 */
-    case 26:  /* extendhisi2 */
+    case 37:  /* zero_extendqisi2 */
+    case 36:  /* zero_extendhisi2 */
+    case 35:  /* extendqisi2 */
+    case 34:  /* extendhisi2 */
+    case 33:  /* movdf */
       extract_constrain_insn_cached (insn);
       if (which_alternative == 0)
         {
@@ -219,12 +145,12 @@ internal_dfa_insn_code (rtx_insn *insn ATTRIBUTE_UNUSED)
 	  return 1;
         }
 
-    case 25:  /* *movqi_internal */
-    case 24:  /* *movhi_internal */
-    case 23:  /* *movsi_internal */
-    case 22:  /* *movsf_internal */
+    case 32:  /* *movqi_internal */
+    case 31:  /* *movhi_internal */
+    case 30:  /* *movsi_internal */
+    case 29:  /* *movsf_internal */
       extract_constrain_insn_cached (insn);
-      if (which_alternative != 5)
+      if (((1ULL << which_alternative) & 0x1fc3fULL))
         {
 	  return 0;
         }
@@ -233,97 +159,107 @@ internal_dfa_insn_code (rtx_insn *insn ATTRIBUTE_UNUSED)
 	  return 1;
         }
 
-    case 175:  /* brk */
-    case 16:  /* exception_return */
+    case 303:  /* brk */
+    case 242:  /* mvfdr */
+    case 186:  /* subsf3_mem */
+    case 174:  /* addsf3_mem */
+    case 23:  /* exception_return */
       return 9;
 
-    case 14:  /* pop_and_return */
+    case 21:  /* pop_and_return */
       return 8;
 
-    case 13:  /* deallocate_and_return */
-    case 12:  /* simple_return */
+    case 181:  /* mulsf3_mem */
+    case 20:  /* deallocate_and_return */
+    case 19:  /* simple_return */
       return 7;
 
-    case 144:  /* bitclr_in_memory */
-    case 142:  /* bitinvert_in_memory */
-    case 140:  /* bitset_in_memory */
-    case 132:  /* comparesi3_sign_extendqi */
-    case 131:  /* comparesi3_zero_extendqi */
-    case 130:  /* comparesi3_sign_extendhi */
-    case 129:  /* comparesi3_zero_extendhi */
-    case 128:  /* multsi3_sign_extendqi */
-    case 127:  /* sminsi3_sign_extendqi */
-    case 126:  /* smaxsi3_sign_extendqi */
-    case 125:  /* multsi3_zero_extendqi */
-    case 124:  /* sminsi3_zero_extendqi */
-    case 123:  /* smaxsi3_zero_extendqi */
-    case 122:  /* multsi3_sign_extendhi */
-    case 121:  /* sminsi3_sign_extendhi */
-    case 120:  /* smaxsi3_sign_extendhi */
-    case 119:  /* multsi3_zero_extendhi */
-    case 118:  /* sminsi3_zero_extendhi */
-    case 117:  /* smaxsi3_zero_extendhi */
-    case 116:  /* minussi3_sign_extendqi */
-    case 115:  /* udivsi3_sign_extendqi */
-    case 114:  /* divsi3_sign_extendqi */
-    case 113:  /* minussi3_zero_extendqi */
-    case 112:  /* udivsi3_zero_extendqi */
-    case 111:  /* divsi3_zero_extendqi */
-    case 110:  /* minussi3_sign_extendhi */
-    case 109:  /* udivsi3_sign_extendhi */
-    case 108:  /* divsi3_sign_extendhi */
-    case 107:  /* minussi3_zero_extendhi */
-    case 106:  /* udivsi3_zero_extendhi */
-    case 105:  /* divsi3_zero_extendhi */
-    case 104:  /* xorsi3_sign_extendqi */
-    case 103:  /* iorsi3_sign_extendqi */
-    case 102:  /* andsi3_sign_extendqi */
-    case 101:  /* plussi3_sign_extendqi */
-    case 100:  /* xorsi3_zero_extendqi */
-    case 99:  /* iorsi3_zero_extendqi */
-    case 98:  /* andsi3_zero_extendqi */
-    case 97:  /* plussi3_zero_extendqi */
-    case 96:  /* xorsi3_sign_extendhi */
-    case 95:  /* iorsi3_sign_extendhi */
-    case 94:  /* andsi3_sign_extendhi */
-    case 93:  /* plussi3_sign_extendhi */
-    case 92:  /* xorsi3_zero_extendhi */
-    case 91:  /* iorsi3_zero_extendhi */
-    case 90:  /* andsi3_zero_extendhi */
-    case 89:  /* plussi3_zero_extendhi */
-    case 21:  /* sibcall_value_internal */
-    case 20:  /* sibcall_internal */
-    case 19:  /* call_value_internal */
-    case 18:  /* call_internal */
-    case 15:  /* fast_interrupt_return */
-    case 11:  /* tablejump */
-    case 10:  /* indirect_jump */
-    case 9:  /* jump */
-    case 8:  /* *conditional_branch */
+    case 221:  /* *bitclr_in_memory_2 */
+    case 218:  /* *bitclr_in_memory2 */
+    case 217:  /* bitclr_in_memory */
+    case 216:  /* bclr_memory */
+    case 213:  /* bitinvert_in_memory */
+    case 212:  /* bnot_memory */
+    case 209:  /* *bitset_in_memory_2 */
+    case 208:  /* *bitset_in_memory2 */
+    case 207:  /* *bitset_in_memory */
+    case 206:  /* bitset_in_memory */
+    case 184:  /* muldf3 */
+    case 183:  /* mulsf3v2 */
+    case 182:  /* mulsf3v1 */
+    case 173:  /* comparesi3_sign_extendqi */
+    case 172:  /* comparesi3_zero_extendqi */
+    case 171:  /* comparesi3_sign_extendhi */
+    case 170:  /* comparesi3_zero_extendhi */
+    case 169:  /* multsi3_sign_extendqi */
+    case 168:  /* sminsi3_sign_extendqi */
+    case 167:  /* smaxsi3_sign_extendqi */
+    case 166:  /* multsi3_zero_extendqi */
+    case 165:  /* sminsi3_zero_extendqi */
+    case 164:  /* smaxsi3_zero_extendqi */
+    case 163:  /* multsi3_sign_extendhi */
+    case 162:  /* sminsi3_sign_extendhi */
+    case 161:  /* smaxsi3_sign_extendhi */
+    case 160:  /* multsi3_zero_extendhi */
+    case 159:  /* sminsi3_zero_extendhi */
+    case 158:  /* smaxsi3_zero_extendhi */
+    case 157:  /* minussi3_sign_extendqi */
+    case 156:  /* udivsi3_sign_extendqi */
+    case 155:  /* divsi3_sign_extendqi */
+    case 154:  /* minussi3_zero_extendqi */
+    case 153:  /* udivsi3_zero_extendqi */
+    case 152:  /* divsi3_zero_extendqi */
+    case 151:  /* minussi3_sign_extendhi */
+    case 150:  /* udivsi3_sign_extendhi */
+    case 149:  /* divsi3_sign_extendhi */
+    case 148:  /* minussi3_zero_extendhi */
+    case 147:  /* udivsi3_zero_extendhi */
+    case 146:  /* divsi3_zero_extendhi */
+    case 145:  /* xorsi3_sign_extendqi */
+    case 144:  /* iorsi3_sign_extendqi */
+    case 143:  /* andsi3_sign_extendqi */
+    case 142:  /* plussi3_sign_extendqi */
+    case 141:  /* xorsi3_zero_extendqi */
+    case 140:  /* iorsi3_zero_extendqi */
+    case 139:  /* andsi3_zero_extendqi */
+    case 138:  /* plussi3_zero_extendqi */
+    case 137:  /* xorsi3_sign_extendhi */
+    case 136:  /* iorsi3_sign_extendhi */
+    case 135:  /* andsi3_sign_extendhi */
+    case 134:  /* plussi3_sign_extendhi */
+    case 133:  /* xorsi3_zero_extendhi */
+    case 132:  /* iorsi3_zero_extendhi */
+    case 131:  /* andsi3_zero_extendhi */
+    case 130:  /* plussi3_zero_extendhi */
+    case 127:  /* xorsi3_mem */
+    case 122:  /* *sbb_flags_mem */
+    case 120:  /* sbb_internal_mem */
+    case 118:  /* *subsi3_flags_mem */
+    case 116:  /* subsi3_mem */
+    case 101:  /* *iorsi3_flags_mem */
+    case 99:  /* iorsi3_mem */
+    case 91:  /* mulsi3_mem */
+    case 85:  /* sminsi3_mem */
+    case 83:  /* smaxsi3_mem */
+    case 71:  /* *andsi3_flags_mem */
+    case 69:  /* andsi3_mem */
+    case 66:  /* *adc_flags_mem */
+    case 64:  /* adc_internal_mem */
+    case 62:  /* *addsi3_flags_mem */
+    case 60:  /* addsi3_mem */
+    case 28:  /* sibcall_value_internal */
+    case 27:  /* sibcall_internal */
+    case 26:  /* call_value_internal */
+    case 25:  /* call_internal */
+    case 22:  /* fast_interrupt_return */
+    case 18:  /* tablejump */
+    case 17:  /* indirect_jump */
+    case 16:  /* jump */
+    case 15:  /* *conditional_branch */
+    case 12:  /* *cmpsf_mem */
+    case 8:  /* *tstsi_mem */
+    case 3:  /* *cmpsi_mem */
       return 3;
-
-    case 7:  /* *cmpsf */
-    case 5:  /* *tstsi */
-      extract_constrain_insn_cached (insn);
-      if (((1ULL << which_alternative) & 0x3ULL))
-        {
-	  return 0;
-        }
-      else
-        {
-	  return 3;
-        }
-
-    case 2:  /* *cmpsi */
-      extract_constrain_insn_cached (insn);
-      if (((1ULL << which_alternative) & 0x3fULL))
-        {
-	  return 0;
-        }
-      else
-        {
-	  return 3;
-        }
 
     case -1:
       if (GET_CODE (PATTERN (insn)) != ASM_INPUT

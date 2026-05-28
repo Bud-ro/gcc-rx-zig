@@ -8550,7 +8550,7 @@ generic_simplify_ORDERED_EXPR (location_t ARG_UNUSED (loc), enum tree_code ARG_U
  TREE_TYPE (captures[1]), ERROR_MARK))
 )
 		      {
-			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1560;
+			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1552;
 			{
 			  tree res_op0;
 			  res_op0 = captures[1];
@@ -8561,7 +8561,7 @@ generic_simplify_ORDERED_EXPR (location_t ARG_UNUSED (loc), enum tree_code ARG_U
 			    _o1[1] = captures[5];
 			    _r1 = fold_build2_loc (loc, ORDERED_EXPR, type, _o1[0], _o1[1]);
 			    if (EXPR_P (_r1))
-			      goto next_after_fail1560;
+			      goto next_after_fail1552;
 			    res_op1 = _r1;
 			  }
 			  tree res_op2;
@@ -8571,7 +8571,7 @@ generic_simplify_ORDERED_EXPR (location_t ARG_UNUSED (loc), enum tree_code ARG_U
 			    _o1[1] = captures[6];
 			    _r1 = fold_build2_loc (loc, ORDERED_EXPR, type, _o1[0], _o1[1]);
 			    if (EXPR_P (_r1))
-			      goto next_after_fail1560;
+			      goto next_after_fail1552;
 			    res_op2 = _r1;
 			  }
 			  tree _r;
@@ -8579,7 +8579,7 @@ generic_simplify_ORDERED_EXPR (location_t ARG_UNUSED (loc), enum tree_code ARG_U
 			  if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 793, __FILE__, __LINE__, true);
 			  return _r;
 			}
-next_after_fail1560:;
+next_after_fail1552:;
 		      }
 		  }
 	        }
@@ -8597,9 +8597,9 @@ next_after_fail1560:;
  TREE_TYPE (captures[1]), ERROR_MARK))
 )
 	    {
-	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1561;
+	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1553;
 	      {
-		if (! tree_invariant_p (captures[4])) goto next_after_fail1561;
+		if (! tree_invariant_p (captures[4])) goto next_after_fail1553;
 		tree res_op0;
 		res_op0 = captures[1];
 		tree res_op1;
@@ -8609,7 +8609,7 @@ next_after_fail1560:;
 		  _o1[1] = unshare_expr (captures[4]);
 		  _r1 = fold_build2_loc (loc, ORDERED_EXPR, type, _o1[0], _o1[1]);
 		  if (EXPR_P (_r1))
-		    goto next_after_fail1561;
+		    goto next_after_fail1553;
 		  res_op1 = _r1;
 		}
 		tree res_op2;
@@ -8619,7 +8619,7 @@ next_after_fail1560:;
 		  _o1[1] = captures[4];
 		  _r1 = fold_build2_loc (loc, ORDERED_EXPR, type, _o1[0], _o1[1]);
 		  if (EXPR_P (_r1))
-		    goto next_after_fail1561;
+		    goto next_after_fail1553;
 		  res_op2 = _r1;
 		}
 		tree _r;
@@ -8627,7 +8627,7 @@ next_after_fail1560:;
 		if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 794, __FILE__, __LINE__, true);
 		return _r;
 	      }
-next_after_fail1561:;
+next_after_fail1553:;
 	    }
 	}
         break;
@@ -8651,9 +8651,9 @@ next_after_fail1561:;
  TREE_TYPE (captures[2]), ERROR_MARK))
 )
 	    {
-	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1562;
+	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1554;
 	      {
-		if (! tree_invariant_p (captures[0])) goto next_after_fail1562;
+		if (! tree_invariant_p (captures[0])) goto next_after_fail1554;
 		tree res_op0;
 		res_op0 = captures[2];
 		tree res_op1;
@@ -8663,7 +8663,7 @@ next_after_fail1561:;
 		  _o1[1] = captures[3];
 		  _r1 = fold_build2_loc (loc, ORDERED_EXPR, type, _o1[0], _o1[1]);
 		  if (EXPR_P (_r1))
-		    goto next_after_fail1562;
+		    goto next_after_fail1554;
 		  res_op1 = _r1;
 		}
 		tree res_op2;
@@ -8673,7 +8673,7 @@ next_after_fail1561:;
 		  _o1[1] = captures[4];
 		  _r1 = fold_build2_loc (loc, ORDERED_EXPR, type, _o1[0], _o1[1]);
 		  if (EXPR_P (_r1))
-		    goto next_after_fail1562;
+		    goto next_after_fail1554;
 		  res_op2 = _r1;
 		}
 		tree _r;
@@ -8681,7 +8681,7 @@ next_after_fail1561:;
 		if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 795, __FILE__, __LINE__, true);
 		return _r;
 	      }
-next_after_fail1562:;
+next_after_fail1554:;
 	    }
 	}
         break;
@@ -8756,7 +8756,7 @@ next_after_fail1562:;
     if (tree_expr_nan_p (captures[0]) || tree_expr_nan_p (captures[1])
 )
       {
-	if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1563;
+	if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1555;
 	{
 	  tree _r;
 	  _r =  constant_boolean_node (false, type);
@@ -8767,14 +8767,14 @@ next_after_fail1562:;
 	  if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 929, __FILE__, __LINE__, true);
 	  return _r;
 	}
-next_after_fail1563:;
+next_after_fail1555:;
       }
     else
       {
 	if (!tree_expr_maybe_nan_p (captures[0]) && !tree_expr_maybe_nan_p (captures[1])
 )
 	  {
-	    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1564;
+	    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1556;
 	    {
 	      tree _r;
 	      _r =  constant_boolean_node (true, type);
@@ -8785,7 +8785,7 @@ next_after_fail1563:;
 	      if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 930, __FILE__, __LINE__, true);
 	      return _r;
 	    }
-next_after_fail1564:;
+next_after_fail1556:;
 	  }
       }
   }
@@ -8822,7 +8822,7 @@ generic_simplify_UNGT_EXPR (location_t ARG_UNUSED (loc), enum tree_code ARG_UNUS
  TREE_TYPE (captures[1]), ERROR_MARK))
 )
 		      {
-			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1571;
+			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1563;
 			{
 			  tree res_op0;
 			  res_op0 = captures[1];
@@ -8833,7 +8833,7 @@ generic_simplify_UNGT_EXPR (location_t ARG_UNUSED (loc), enum tree_code ARG_UNUS
 			    _o1[1] = captures[5];
 			    _r1 = fold_build2_loc (loc, UNGT_EXPR, type, _o1[0], _o1[1]);
 			    if (EXPR_P (_r1))
-			      goto next_after_fail1571;
+			      goto next_after_fail1563;
 			    res_op1 = _r1;
 			  }
 			  tree res_op2;
@@ -8843,7 +8843,7 @@ generic_simplify_UNGT_EXPR (location_t ARG_UNUSED (loc), enum tree_code ARG_UNUS
 			    _o1[1] = captures[6];
 			    _r1 = fold_build2_loc (loc, UNGT_EXPR, type, _o1[0], _o1[1]);
 			    if (EXPR_P (_r1))
-			      goto next_after_fail1571;
+			      goto next_after_fail1563;
 			    res_op2 = _r1;
 			  }
 			  tree _r;
@@ -8851,7 +8851,7 @@ generic_simplify_UNGT_EXPR (location_t ARG_UNUSED (loc), enum tree_code ARG_UNUS
 			  if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 793, __FILE__, __LINE__, true);
 			  return _r;
 			}
-next_after_fail1571:;
+next_after_fail1563:;
 		      }
 		  }
 	        }
@@ -8869,9 +8869,9 @@ next_after_fail1571:;
  TREE_TYPE (captures[1]), ERROR_MARK))
 )
 	    {
-	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1572;
+	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1564;
 	      {
-		if (! tree_invariant_p (captures[4])) goto next_after_fail1572;
+		if (! tree_invariant_p (captures[4])) goto next_after_fail1564;
 		tree res_op0;
 		res_op0 = captures[1];
 		tree res_op1;
@@ -8881,7 +8881,7 @@ next_after_fail1571:;
 		  _o1[1] = unshare_expr (captures[4]);
 		  _r1 = fold_build2_loc (loc, UNGT_EXPR, type, _o1[0], _o1[1]);
 		  if (EXPR_P (_r1))
-		    goto next_after_fail1572;
+		    goto next_after_fail1564;
 		  res_op1 = _r1;
 		}
 		tree res_op2;
@@ -8891,7 +8891,7 @@ next_after_fail1571:;
 		  _o1[1] = captures[4];
 		  _r1 = fold_build2_loc (loc, UNGT_EXPR, type, _o1[0], _o1[1]);
 		  if (EXPR_P (_r1))
-		    goto next_after_fail1572;
+		    goto next_after_fail1564;
 		  res_op2 = _r1;
 		}
 		tree _r;
@@ -8899,7 +8899,7 @@ next_after_fail1571:;
 		if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 794, __FILE__, __LINE__, true);
 		return _r;
 	      }
-next_after_fail1572:;
+next_after_fail1564:;
 	    }
 	}
         break;
@@ -8923,9 +8923,9 @@ next_after_fail1572:;
  TREE_TYPE (captures[2]), ERROR_MARK))
 )
 	    {
-	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1573;
+	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1565;
 	      {
-		if (! tree_invariant_p (captures[0])) goto next_after_fail1573;
+		if (! tree_invariant_p (captures[0])) goto next_after_fail1565;
 		tree res_op0;
 		res_op0 = captures[2];
 		tree res_op1;
@@ -8935,7 +8935,7 @@ next_after_fail1572:;
 		  _o1[1] = captures[3];
 		  _r1 = fold_build2_loc (loc, UNGT_EXPR, type, _o1[0], _o1[1]);
 		  if (EXPR_P (_r1))
-		    goto next_after_fail1573;
+		    goto next_after_fail1565;
 		  res_op1 = _r1;
 		}
 		tree res_op2;
@@ -8945,7 +8945,7 @@ next_after_fail1572:;
 		  _o1[1] = captures[4];
 		  _r1 = fold_build2_loc (loc, UNGT_EXPR, type, _o1[0], _o1[1]);
 		  if (EXPR_P (_r1))
-		    goto next_after_fail1573;
+		    goto next_after_fail1565;
 		  res_op2 = _r1;
 		}
 		tree _r;
@@ -8953,7 +8953,7 @@ next_after_fail1572:;
 		if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 795, __FILE__, __LINE__, true);
 		return _r;
 	      }
-next_after_fail1573:;
+next_after_fail1565:;
 	    }
 	}
         break;
@@ -9092,6 +9092,558 @@ generic_simplify_TRUTH_OR_EXPR (location_t ARG_UNUSED (loc), enum tree_code ARG_
 							      if (cmp == LT_EXPR
 )
 								{
+								  if (TREE_SIDE_EFFECTS (captures[1])) goto next_after_fail1592;
+								  if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1592;
+								  if (TREE_SIDE_EFFECTS (captures[3])) goto next_after_fail1592;
+								  if (TREE_SIDE_EFFECTS (captures[4])) goto next_after_fail1592;
+								  if (TREE_SIDE_EFFECTS (captures[6])) goto next_after_fail1592;
+								  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1592;
+								  {
+								    tree res_op0;
+								    {
+								      tree _o1[1], _r1;
+								      {
+									tree _o2[2], _r2;
+									_o2[0] =  swap_p ? captures[6] : captures[1];
+									_o2[1] =  swap_p ? captures[2] : captures[4];
+									_r2 = fold_build2_loc (loc, POINTER_DIFF_EXPR, ssizetype, _o2[0], _o2[1]);
+									_o1[0] = _r2;
+								      }
+								      if (TREE_TYPE (_o1[0]) != sizetype)
+									{
+									  _r1 = fold_build1_loc (loc, NOP_EXPR, sizetype, _o1[0]);
+									}
+								      else
+								        _r1 = _o1[0];
+								      res_op0 = _r1;
+								    }
+								    tree res_op1;
+								    res_op1 =  rhs_tree;
+								    tree _r;
+								    _r = fold_build2_loc (loc, GT_EXPR, type, res_op0, res_op1);
+								    if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 835, __FILE__, __LINE__, true);
+								    return _r;
+								  }
+next_after_fail1592:;
+								}
+							      else
+								{
+								  if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1593;
+								  if (TREE_SIDE_EFFECTS (captures[3])) goto next_after_fail1593;
+								  if (TREE_SIDE_EFFECTS (captures[4])) goto next_after_fail1593;
+								  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1593;
+								  {
+								    tree res_op0;
+								    {
+								      tree _o1[1], _r1;
+								      {
+									tree _o2[2], _r2;
+									{
+									  tree _o3[2], _r3;
+									  _o3[0] =  swap_p ? captures[4] : captures[2];
+									  _o3[1] =  wide_int_to_tree (sizetype, off);
+									  _r3 = fold_build2_loc (loc, POINTER_PLUS_EXPR, TREE_TYPE (_o3[0]), _o3[0], _o3[1]);
+									  _o2[0] = _r3;
+									}
+									_o2[1] =  swap_p ? captures[2] : captures[4];
+									_r2 = fold_build2_loc (loc, POINTER_DIFF_EXPR, ssizetype, _o2[0], _o2[1]);
+									_o1[0] = _r2;
+								      }
+								      if (TREE_TYPE (_o1[0]) != sizetype)
+									{
+									  _r1 = fold_build1_loc (loc, NOP_EXPR, sizetype, _o1[0]);
+									}
+								      else
+								        _r1 = _o1[0];
+								      res_op0 = _r1;
+								    }
+								    tree res_op1;
+								    res_op1 =  rhs_tree;
+								    tree _r;
+								    _r = fold_build2_loc (loc, GT_EXPR, type, res_op0, res_op1);
+								    if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 836, __FILE__, __LINE__, true);
+								    return _r;
+								  }
+next_after_fail1593:;
+								}
+							  }
+							}
+						  }
+						}
+					    }
+					  }
+				      }
+				  }
+			        break;
+			      }
+			    default:;
+			    }
+		          break;
+		        }
+		      case GE_EXPR:
+		        {
+			  tree _q70 = TREE_OPERAND (_p1, 0);
+			  tree _q71 = TREE_OPERAND (_p1, 1);
+			  if ((_q70 == _q30 && ! TREE_SIDE_EFFECTS (_q70)) || (operand_equal_p (_q70, _q30, 0) && types_match (_q70, _q30)))
+			    {
+			      switch (TREE_CODE (_q71))
+			        {
+				case POINTER_PLUS_EXPR:
+				  {
+				    tree _q90 = TREE_OPERAND (_q71, 0);
+				    tree _q91 = TREE_OPERAND (_q71, 1);
+				    if ((_q90 == _q21 && ! TREE_SIDE_EFFECTS (_q90)) || (operand_equal_p (_q90, _q21, 0) && types_match (_q90, _q21)))
+				      {
+					if ((_q91 == _q31 && ! TREE_SIDE_EFFECTS (_q91)) || (operand_equal_p (_q91, _q31, 0) && types_match (_q91, _q31)))
+					  {
+					    {
+					      tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q20, _q30, _q31, _q21, _p1, _q71 };
+					      const enum tree_code cmp = LE_EXPR;
+					      if (TYPE_OVERFLOW_UNDEFINED (TREE_TYPE (captures[2]))
+ && TYPE_OVERFLOW_WRAPS (sizetype)
+ && TYPE_PRECISION (TREE_TYPE (captures[2])) == TYPE_PRECISION (sizetype)
+)
+						{
+						  {
+ offset_int off = wi::to_offset (captures[3]) - (cmp == LE_EXPR ? 1 : 0);
+ offset_int rhs = off * 2;
+						      if (wi::min_precision (rhs, UNSIGNED) <= TYPE_PRECISION (sizetype)
+)
+							{
+							  {
+ bool swap_p = tree_swap_operands_p (captures[2], captures[4]);
+ tree rhs_tree = wide_int_to_tree (sizetype, rhs);
+							      if (cmp == LT_EXPR
+)
+								{
+								  if (TREE_SIDE_EFFECTS (captures[1])) goto next_after_fail1594;
+								  if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1594;
+								  if (TREE_SIDE_EFFECTS (captures[3])) goto next_after_fail1594;
+								  if (TREE_SIDE_EFFECTS (captures[4])) goto next_after_fail1594;
+								  if (TREE_SIDE_EFFECTS (captures[6])) goto next_after_fail1594;
+								  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1594;
+								  {
+								    tree res_op0;
+								    {
+								      tree _o1[1], _r1;
+								      {
+									tree _o2[2], _r2;
+									_o2[0] =  swap_p ? captures[6] : captures[1];
+									_o2[1] =  swap_p ? captures[2] : captures[4];
+									_r2 = fold_build2_loc (loc, POINTER_DIFF_EXPR, ssizetype, _o2[0], _o2[1]);
+									_o1[0] = _r2;
+								      }
+								      if (TREE_TYPE (_o1[0]) != sizetype)
+									{
+									  _r1 = fold_build1_loc (loc, NOP_EXPR, sizetype, _o1[0]);
+									}
+								      else
+								        _r1 = _o1[0];
+								      res_op0 = _r1;
+								    }
+								    tree res_op1;
+								    res_op1 =  rhs_tree;
+								    tree _r;
+								    _r = fold_build2_loc (loc, GT_EXPR, type, res_op0, res_op1);
+								    if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 835, __FILE__, __LINE__, true);
+								    return _r;
+								  }
+next_after_fail1594:;
+								}
+							      else
+								{
+								  if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1595;
+								  if (TREE_SIDE_EFFECTS (captures[3])) goto next_after_fail1595;
+								  if (TREE_SIDE_EFFECTS (captures[4])) goto next_after_fail1595;
+								  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1595;
+								  {
+								    tree res_op0;
+								    {
+								      tree _o1[1], _r1;
+								      {
+									tree _o2[2], _r2;
+									{
+									  tree _o3[2], _r3;
+									  _o3[0] =  swap_p ? captures[4] : captures[2];
+									  _o3[1] =  wide_int_to_tree (sizetype, off);
+									  _r3 = fold_build2_loc (loc, POINTER_PLUS_EXPR, TREE_TYPE (_o3[0]), _o3[0], _o3[1]);
+									  _o2[0] = _r3;
+									}
+									_o2[1] =  swap_p ? captures[2] : captures[4];
+									_r2 = fold_build2_loc (loc, POINTER_DIFF_EXPR, ssizetype, _o2[0], _o2[1]);
+									_o1[0] = _r2;
+								      }
+								      if (TREE_TYPE (_o1[0]) != sizetype)
+									{
+									  _r1 = fold_build1_loc (loc, NOP_EXPR, sizetype, _o1[0]);
+									}
+								      else
+								        _r1 = _o1[0];
+								      res_op0 = _r1;
+								    }
+								    tree res_op1;
+								    res_op1 =  rhs_tree;
+								    tree _r;
+								    _r = fold_build2_loc (loc, GT_EXPR, type, res_op0, res_op1);
+								    if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 836, __FILE__, __LINE__, true);
+								    return _r;
+								  }
+next_after_fail1595:;
+								}
+							  }
+							}
+						  }
+						}
+					    }
+					  }
+				      }
+				    break;
+				  }
+			        default:;
+			        }
+			    }
+		          break;
+		        }
+		      default:;
+		      }
+		    break;
+		  }
+	        default:;
+	        }
+	      break;
+	    }
+          default:;
+          }
+        break;
+      }
+    case LT_EXPR:
+      {
+	tree _q20 = TREE_OPERAND (_p0, 0);
+	tree _q21 = TREE_OPERAND (_p0, 1);
+	switch (TREE_CODE (_q20))
+	  {
+	  case POINTER_PLUS_EXPR:
+	    {
+	      tree _q30 = TREE_OPERAND (_q20, 0);
+	      tree _q31 = TREE_OPERAND (_q20, 1);
+	      switch (TREE_CODE (_q31))
+	        {
+		case INTEGER_CST:
+		  {
+		    switch (TREE_CODE (_p1))
+		      {
+		      case LT_EXPR:
+		        {
+			  tree _q70 = TREE_OPERAND (_p1, 0);
+			  tree _q71 = TREE_OPERAND (_p1, 1);
+			  switch (TREE_CODE (_q70))
+			    {
+			    case POINTER_PLUS_EXPR:
+			      {
+				tree _q80 = TREE_OPERAND (_q70, 0);
+				tree _q81 = TREE_OPERAND (_q70, 1);
+				if ((_q80 == _q21 && ! TREE_SIDE_EFFECTS (_q80)) || (operand_equal_p (_q80, _q21, 0) && types_match (_q80, _q21)))
+				  {
+				    if ((_q81 == _q31 && ! TREE_SIDE_EFFECTS (_q81)) || (operand_equal_p (_q81, _q31, 0) && types_match (_q81, _q31)))
+				      {
+					if ((_q71 == _q30 && ! TREE_SIDE_EFFECTS (_q71)) || (operand_equal_p (_q71, _q30, 0) && types_match (_q71, _q30)))
+					  {
+					    {
+					      tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q20, _q30, _q31, _q21, _p1, _q70 };
+					      const enum tree_code cmp = LT_EXPR;
+					      if (TYPE_OVERFLOW_UNDEFINED (TREE_TYPE (captures[2]))
+ && TYPE_OVERFLOW_WRAPS (sizetype)
+ && TYPE_PRECISION (TREE_TYPE (captures[2])) == TYPE_PRECISION (sizetype)
+)
+						{
+						  {
+ offset_int off = wi::to_offset (captures[3]) - (cmp == LE_EXPR ? 1 : 0);
+ offset_int rhs = off * 2;
+						      if (wi::min_precision (rhs, UNSIGNED) <= TYPE_PRECISION (sizetype)
+)
+							{
+							  {
+ bool swap_p = tree_swap_operands_p (captures[2], captures[4]);
+ tree rhs_tree = wide_int_to_tree (sizetype, rhs);
+							      if (cmp == LT_EXPR
+)
+								{
+								  if (TREE_SIDE_EFFECTS (captures[1])) goto next_after_fail1596;
+								  if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1596;
+								  if (TREE_SIDE_EFFECTS (captures[3])) goto next_after_fail1596;
+								  if (TREE_SIDE_EFFECTS (captures[4])) goto next_after_fail1596;
+								  if (TREE_SIDE_EFFECTS (captures[6])) goto next_after_fail1596;
+								  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1596;
+								  {
+								    tree res_op0;
+								    {
+								      tree _o1[1], _r1;
+								      {
+									tree _o2[2], _r2;
+									_o2[0] =  swap_p ? captures[6] : captures[1];
+									_o2[1] =  swap_p ? captures[2] : captures[4];
+									_r2 = fold_build2_loc (loc, POINTER_DIFF_EXPR, ssizetype, _o2[0], _o2[1]);
+									_o1[0] = _r2;
+								      }
+								      if (TREE_TYPE (_o1[0]) != sizetype)
+									{
+									  _r1 = fold_build1_loc (loc, NOP_EXPR, sizetype, _o1[0]);
+									}
+								      else
+								        _r1 = _o1[0];
+								      res_op0 = _r1;
+								    }
+								    tree res_op1;
+								    res_op1 =  rhs_tree;
+								    tree _r;
+								    _r = fold_build2_loc (loc, GT_EXPR, type, res_op0, res_op1);
+								    if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 835, __FILE__, __LINE__, true);
+								    return _r;
+								  }
+next_after_fail1596:;
+								}
+							      else
+								{
+								  if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1597;
+								  if (TREE_SIDE_EFFECTS (captures[3])) goto next_after_fail1597;
+								  if (TREE_SIDE_EFFECTS (captures[4])) goto next_after_fail1597;
+								  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1597;
+								  {
+								    tree res_op0;
+								    {
+								      tree _o1[1], _r1;
+								      {
+									tree _o2[2], _r2;
+									{
+									  tree _o3[2], _r3;
+									  _o3[0] =  swap_p ? captures[4] : captures[2];
+									  _o3[1] =  wide_int_to_tree (sizetype, off);
+									  _r3 = fold_build2_loc (loc, POINTER_PLUS_EXPR, TREE_TYPE (_o3[0]), _o3[0], _o3[1]);
+									  _o2[0] = _r3;
+									}
+									_o2[1] =  swap_p ? captures[2] : captures[4];
+									_r2 = fold_build2_loc (loc, POINTER_DIFF_EXPR, ssizetype, _o2[0], _o2[1]);
+									_o1[0] = _r2;
+								      }
+								      if (TREE_TYPE (_o1[0]) != sizetype)
+									{
+									  _r1 = fold_build1_loc (loc, NOP_EXPR, sizetype, _o1[0]);
+									}
+								      else
+								        _r1 = _o1[0];
+								      res_op0 = _r1;
+								    }
+								    tree res_op1;
+								    res_op1 =  rhs_tree;
+								    tree _r;
+								    _r = fold_build2_loc (loc, GT_EXPR, type, res_op0, res_op1);
+								    if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 836, __FILE__, __LINE__, true);
+								    return _r;
+								  }
+next_after_fail1597:;
+								}
+							  }
+							}
+						  }
+						}
+					    }
+					  }
+				      }
+				  }
+			        break;
+			      }
+			    default:;
+			    }
+		          break;
+		        }
+		      case GT_EXPR:
+		        {
+			  tree _q70 = TREE_OPERAND (_p1, 0);
+			  tree _q71 = TREE_OPERAND (_p1, 1);
+			  if ((_q70 == _q30 && ! TREE_SIDE_EFFECTS (_q70)) || (operand_equal_p (_q70, _q30, 0) && types_match (_q70, _q30)))
+			    {
+			      switch (TREE_CODE (_q71))
+			        {
+				case POINTER_PLUS_EXPR:
+				  {
+				    tree _q90 = TREE_OPERAND (_q71, 0);
+				    tree _q91 = TREE_OPERAND (_q71, 1);
+				    if ((_q90 == _q21 && ! TREE_SIDE_EFFECTS (_q90)) || (operand_equal_p (_q90, _q21, 0) && types_match (_q90, _q21)))
+				      {
+					if ((_q91 == _q31 && ! TREE_SIDE_EFFECTS (_q91)) || (operand_equal_p (_q91, _q31, 0) && types_match (_q91, _q31)))
+					  {
+					    {
+					      tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q20, _q30, _q31, _q21, _p1, _q71 };
+					      const enum tree_code cmp = LT_EXPR;
+					      if (TYPE_OVERFLOW_UNDEFINED (TREE_TYPE (captures[2]))
+ && TYPE_OVERFLOW_WRAPS (sizetype)
+ && TYPE_PRECISION (TREE_TYPE (captures[2])) == TYPE_PRECISION (sizetype)
+)
+						{
+						  {
+ offset_int off = wi::to_offset (captures[3]) - (cmp == LE_EXPR ? 1 : 0);
+ offset_int rhs = off * 2;
+						      if (wi::min_precision (rhs, UNSIGNED) <= TYPE_PRECISION (sizetype)
+)
+							{
+							  {
+ bool swap_p = tree_swap_operands_p (captures[2], captures[4]);
+ tree rhs_tree = wide_int_to_tree (sizetype, rhs);
+							      if (cmp == LT_EXPR
+)
+								{
+								  if (TREE_SIDE_EFFECTS (captures[1])) goto next_after_fail1598;
+								  if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1598;
+								  if (TREE_SIDE_EFFECTS (captures[3])) goto next_after_fail1598;
+								  if (TREE_SIDE_EFFECTS (captures[4])) goto next_after_fail1598;
+								  if (TREE_SIDE_EFFECTS (captures[6])) goto next_after_fail1598;
+								  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1598;
+								  {
+								    tree res_op0;
+								    {
+								      tree _o1[1], _r1;
+								      {
+									tree _o2[2], _r2;
+									_o2[0] =  swap_p ? captures[6] : captures[1];
+									_o2[1] =  swap_p ? captures[2] : captures[4];
+									_r2 = fold_build2_loc (loc, POINTER_DIFF_EXPR, ssizetype, _o2[0], _o2[1]);
+									_o1[0] = _r2;
+								      }
+								      if (TREE_TYPE (_o1[0]) != sizetype)
+									{
+									  _r1 = fold_build1_loc (loc, NOP_EXPR, sizetype, _o1[0]);
+									}
+								      else
+								        _r1 = _o1[0];
+								      res_op0 = _r1;
+								    }
+								    tree res_op1;
+								    res_op1 =  rhs_tree;
+								    tree _r;
+								    _r = fold_build2_loc (loc, GT_EXPR, type, res_op0, res_op1);
+								    if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 835, __FILE__, __LINE__, true);
+								    return _r;
+								  }
+next_after_fail1598:;
+								}
+							      else
+								{
+								  if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1599;
+								  if (TREE_SIDE_EFFECTS (captures[3])) goto next_after_fail1599;
+								  if (TREE_SIDE_EFFECTS (captures[4])) goto next_after_fail1599;
+								  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1599;
+								  {
+								    tree res_op0;
+								    {
+								      tree _o1[1], _r1;
+								      {
+									tree _o2[2], _r2;
+									{
+									  tree _o3[2], _r3;
+									  _o3[0] =  swap_p ? captures[4] : captures[2];
+									  _o3[1] =  wide_int_to_tree (sizetype, off);
+									  _r3 = fold_build2_loc (loc, POINTER_PLUS_EXPR, TREE_TYPE (_o3[0]), _o3[0], _o3[1]);
+									  _o2[0] = _r3;
+									}
+									_o2[1] =  swap_p ? captures[2] : captures[4];
+									_r2 = fold_build2_loc (loc, POINTER_DIFF_EXPR, ssizetype, _o2[0], _o2[1]);
+									_o1[0] = _r2;
+								      }
+								      if (TREE_TYPE (_o1[0]) != sizetype)
+									{
+									  _r1 = fold_build1_loc (loc, NOP_EXPR, sizetype, _o1[0]);
+									}
+								      else
+								        _r1 = _o1[0];
+								      res_op0 = _r1;
+								    }
+								    tree res_op1;
+								    res_op1 =  rhs_tree;
+								    tree _r;
+								    _r = fold_build2_loc (loc, GT_EXPR, type, res_op0, res_op1);
+								    if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 836, __FILE__, __LINE__, true);
+								    return _r;
+								  }
+next_after_fail1599:;
+								}
+							  }
+							}
+						  }
+						}
+					    }
+					  }
+				      }
+				    break;
+				  }
+			        default:;
+			        }
+			    }
+		          break;
+		        }
+		      default:;
+		      }
+		    break;
+		  }
+	        default:;
+	        }
+	      break;
+	    }
+          default:;
+          }
+        break;
+      }
+    case GE_EXPR:
+      {
+	tree _q20 = TREE_OPERAND (_p0, 0);
+	tree _q21 = TREE_OPERAND (_p0, 1);
+	switch (TREE_CODE (_q21))
+	  {
+	  case POINTER_PLUS_EXPR:
+	    {
+	      tree _q40 = TREE_OPERAND (_q21, 0);
+	      tree _q41 = TREE_OPERAND (_q21, 1);
+	      switch (TREE_CODE (_q41))
+	        {
+		case INTEGER_CST:
+		  {
+		    switch (TREE_CODE (_p1))
+		      {
+		      case LE_EXPR:
+		        {
+			  tree _q70 = TREE_OPERAND (_p1, 0);
+			  tree _q71 = TREE_OPERAND (_p1, 1);
+			  switch (TREE_CODE (_q70))
+			    {
+			    case POINTER_PLUS_EXPR:
+			      {
+				tree _q80 = TREE_OPERAND (_q70, 0);
+				tree _q81 = TREE_OPERAND (_q70, 1);
+				if ((_q80 == _q20 && ! TREE_SIDE_EFFECTS (_q80)) || (operand_equal_p (_q80, _q20, 0) && types_match (_q80, _q20)))
+				  {
+				    if ((_q81 == _q41 && ! TREE_SIDE_EFFECTS (_q81)) || (operand_equal_p (_q81, _q41, 0) && types_match (_q81, _q41)))
+				      {
+					if ((_q71 == _q40 && ! TREE_SIDE_EFFECTS (_q71)) || (operand_equal_p (_q71, _q40, 0) && types_match (_q71, _q40)))
+					  {
+					    {
+					      tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q21, _q40, _q41, _q20, _p1, _q70 };
+					      const enum tree_code cmp = LE_EXPR;
+					      if (TYPE_OVERFLOW_UNDEFINED (TREE_TYPE (captures[2]))
+ && TYPE_OVERFLOW_WRAPS (sizetype)
+ && TYPE_PRECISION (TREE_TYPE (captures[2])) == TYPE_PRECISION (sizetype)
+)
+						{
+						  {
+ offset_int off = wi::to_offset (captures[3]) - (cmp == LE_EXPR ? 1 : 0);
+ offset_int rhs = off * 2;
+						      if (wi::min_precision (rhs, UNSIGNED) <= TYPE_PRECISION (sizetype)
+)
+							{
+							  {
+ bool swap_p = tree_swap_operands_p (captures[2], captures[4]);
+ tree rhs_tree = wide_int_to_tree (sizetype, rhs);
+							      if (cmp == LT_EXPR
+)
+								{
 								  if (TREE_SIDE_EFFECTS (captures[1])) goto next_after_fail1600;
 								  if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1600;
 								  if (TREE_SIDE_EFFECTS (captures[3])) goto next_after_fail1600;
@@ -9184,7 +9736,7 @@ next_after_fail1601:;
 		        {
 			  tree _q70 = TREE_OPERAND (_p1, 0);
 			  tree _q71 = TREE_OPERAND (_p1, 1);
-			  if ((_q70 == _q30 && ! TREE_SIDE_EFFECTS (_q70)) || (operand_equal_p (_q70, _q30, 0) && types_match (_q70, _q30)))
+			  if ((_q70 == _q40 && ! TREE_SIDE_EFFECTS (_q70)) || (operand_equal_p (_q70, _q40, 0) && types_match (_q70, _q40)))
 			    {
 			      switch (TREE_CODE (_q71))
 			        {
@@ -9192,12 +9744,12 @@ next_after_fail1601:;
 				  {
 				    tree _q90 = TREE_OPERAND (_q71, 0);
 				    tree _q91 = TREE_OPERAND (_q71, 1);
-				    if ((_q90 == _q21 && ! TREE_SIDE_EFFECTS (_q90)) || (operand_equal_p (_q90, _q21, 0) && types_match (_q90, _q21)))
+				    if ((_q90 == _q20 && ! TREE_SIDE_EFFECTS (_q90)) || (operand_equal_p (_q90, _q20, 0) && types_match (_q90, _q20)))
 				      {
-					if ((_q91 == _q31 && ! TREE_SIDE_EFFECTS (_q91)) || (operand_equal_p (_q91, _q31, 0) && types_match (_q91, _q31)))
+					if ((_q91 == _q41 && ! TREE_SIDE_EFFECTS (_q91)) || (operand_equal_p (_q91, _q41, 0) && types_match (_q91, _q41)))
 					  {
 					    {
-					      tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q20, _q30, _q31, _q21, _p1, _q71 };
+					      tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q21, _q40, _q41, _q20, _p1, _q71 };
 					      const enum tree_code cmp = LE_EXPR;
 					      if (TYPE_OVERFLOW_UNDEFINED (TREE_TYPE (captures[2]))
  && TYPE_OVERFLOW_WRAPS (sizetype)
@@ -9316,17 +9868,17 @@ next_after_fail1603:;
           }
         break;
       }
-    case LT_EXPR:
+    case GT_EXPR:
       {
 	tree _q20 = TREE_OPERAND (_p0, 0);
 	tree _q21 = TREE_OPERAND (_p0, 1);
-	switch (TREE_CODE (_q20))
+	switch (TREE_CODE (_q21))
 	  {
 	  case POINTER_PLUS_EXPR:
 	    {
-	      tree _q30 = TREE_OPERAND (_q20, 0);
-	      tree _q31 = TREE_OPERAND (_q20, 1);
-	      switch (TREE_CODE (_q31))
+	      tree _q40 = TREE_OPERAND (_q21, 0);
+	      tree _q41 = TREE_OPERAND (_q21, 1);
+	      switch (TREE_CODE (_q41))
 	        {
 		case INTEGER_CST:
 		  {
@@ -9342,14 +9894,14 @@ next_after_fail1603:;
 			      {
 				tree _q80 = TREE_OPERAND (_q70, 0);
 				tree _q81 = TREE_OPERAND (_q70, 1);
-				if ((_q80 == _q21 && ! TREE_SIDE_EFFECTS (_q80)) || (operand_equal_p (_q80, _q21, 0) && types_match (_q80, _q21)))
+				if ((_q80 == _q20 && ! TREE_SIDE_EFFECTS (_q80)) || (operand_equal_p (_q80, _q20, 0) && types_match (_q80, _q20)))
 				  {
-				    if ((_q81 == _q31 && ! TREE_SIDE_EFFECTS (_q81)) || (operand_equal_p (_q81, _q31, 0) && types_match (_q81, _q31)))
+				    if ((_q81 == _q41 && ! TREE_SIDE_EFFECTS (_q81)) || (operand_equal_p (_q81, _q41, 0) && types_match (_q81, _q41)))
 				      {
-					if ((_q71 == _q30 && ! TREE_SIDE_EFFECTS (_q71)) || (operand_equal_p (_q71, _q30, 0) && types_match (_q71, _q30)))
+					if ((_q71 == _q40 && ! TREE_SIDE_EFFECTS (_q71)) || (operand_equal_p (_q71, _q40, 0) && types_match (_q71, _q40)))
 					  {
 					    {
-					      tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q20, _q30, _q31, _q21, _p1, _q70 };
+					      tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q21, _q40, _q41, _q20, _p1, _q70 };
 					      const enum tree_code cmp = LT_EXPR;
 					      if (TYPE_OVERFLOW_UNDEFINED (TREE_TYPE (captures[2]))
  && TYPE_OVERFLOW_WRAPS (sizetype)
@@ -9460,7 +10012,7 @@ next_after_fail1605:;
 		        {
 			  tree _q70 = TREE_OPERAND (_p1, 0);
 			  tree _q71 = TREE_OPERAND (_p1, 1);
-			  if ((_q70 == _q30 && ! TREE_SIDE_EFFECTS (_q70)) || (operand_equal_p (_q70, _q30, 0) && types_match (_q70, _q30)))
+			  if ((_q70 == _q40 && ! TREE_SIDE_EFFECTS (_q70)) || (operand_equal_p (_q70, _q40, 0) && types_match (_q70, _q40)))
 			    {
 			      switch (TREE_CODE (_q71))
 			        {
@@ -9468,12 +10020,12 @@ next_after_fail1605:;
 				  {
 				    tree _q90 = TREE_OPERAND (_q71, 0);
 				    tree _q91 = TREE_OPERAND (_q71, 1);
-				    if ((_q90 == _q21 && ! TREE_SIDE_EFFECTS (_q90)) || (operand_equal_p (_q90, _q21, 0) && types_match (_q90, _q21)))
+				    if ((_q90 == _q20 && ! TREE_SIDE_EFFECTS (_q90)) || (operand_equal_p (_q90, _q20, 0) && types_match (_q90, _q20)))
 				      {
-					if ((_q91 == _q31 && ! TREE_SIDE_EFFECTS (_q91)) || (operand_equal_p (_q91, _q31, 0) && types_match (_q91, _q31)))
+					if ((_q91 == _q41 && ! TREE_SIDE_EFFECTS (_q91)) || (operand_equal_p (_q91, _q41, 0) && types_match (_q91, _q41)))
 					  {
 					    {
-					      tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q20, _q30, _q31, _q21, _p1, _q71 };
+					      tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q21, _q40, _q41, _q20, _p1, _q71 };
 					      const enum tree_code cmp = LT_EXPR;
 					      if (TYPE_OVERFLOW_UNDEFINED (TREE_TYPE (captures[2]))
  && TYPE_OVERFLOW_WRAPS (sizetype)
@@ -9565,558 +10117,6 @@ next_after_fail1606:;
 								    return _r;
 								  }
 next_after_fail1607:;
-								}
-							  }
-							}
-						  }
-						}
-					    }
-					  }
-				      }
-				    break;
-				  }
-			        default:;
-			        }
-			    }
-		          break;
-		        }
-		      default:;
-		      }
-		    break;
-		  }
-	        default:;
-	        }
-	      break;
-	    }
-          default:;
-          }
-        break;
-      }
-    case GE_EXPR:
-      {
-	tree _q20 = TREE_OPERAND (_p0, 0);
-	tree _q21 = TREE_OPERAND (_p0, 1);
-	switch (TREE_CODE (_q21))
-	  {
-	  case POINTER_PLUS_EXPR:
-	    {
-	      tree _q40 = TREE_OPERAND (_q21, 0);
-	      tree _q41 = TREE_OPERAND (_q21, 1);
-	      switch (TREE_CODE (_q41))
-	        {
-		case INTEGER_CST:
-		  {
-		    switch (TREE_CODE (_p1))
-		      {
-		      case LE_EXPR:
-		        {
-			  tree _q70 = TREE_OPERAND (_p1, 0);
-			  tree _q71 = TREE_OPERAND (_p1, 1);
-			  switch (TREE_CODE (_q70))
-			    {
-			    case POINTER_PLUS_EXPR:
-			      {
-				tree _q80 = TREE_OPERAND (_q70, 0);
-				tree _q81 = TREE_OPERAND (_q70, 1);
-				if ((_q80 == _q20 && ! TREE_SIDE_EFFECTS (_q80)) || (operand_equal_p (_q80, _q20, 0) && types_match (_q80, _q20)))
-				  {
-				    if ((_q81 == _q41 && ! TREE_SIDE_EFFECTS (_q81)) || (operand_equal_p (_q81, _q41, 0) && types_match (_q81, _q41)))
-				      {
-					if ((_q71 == _q40 && ! TREE_SIDE_EFFECTS (_q71)) || (operand_equal_p (_q71, _q40, 0) && types_match (_q71, _q40)))
-					  {
-					    {
-					      tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q21, _q40, _q41, _q20, _p1, _q70 };
-					      const enum tree_code cmp = LE_EXPR;
-					      if (TYPE_OVERFLOW_UNDEFINED (TREE_TYPE (captures[2]))
- && TYPE_OVERFLOW_WRAPS (sizetype)
- && TYPE_PRECISION (TREE_TYPE (captures[2])) == TYPE_PRECISION (sizetype)
-)
-						{
-						  {
- offset_int off = wi::to_offset (captures[3]) - (cmp == LE_EXPR ? 1 : 0);
- offset_int rhs = off * 2;
-						      if (wi::min_precision (rhs, UNSIGNED) <= TYPE_PRECISION (sizetype)
-)
-							{
-							  {
- bool swap_p = tree_swap_operands_p (captures[2], captures[4]);
- tree rhs_tree = wide_int_to_tree (sizetype, rhs);
-							      if (cmp == LT_EXPR
-)
-								{
-								  if (TREE_SIDE_EFFECTS (captures[1])) goto next_after_fail1608;
-								  if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1608;
-								  if (TREE_SIDE_EFFECTS (captures[3])) goto next_after_fail1608;
-								  if (TREE_SIDE_EFFECTS (captures[4])) goto next_after_fail1608;
-								  if (TREE_SIDE_EFFECTS (captures[6])) goto next_after_fail1608;
-								  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1608;
-								  {
-								    tree res_op0;
-								    {
-								      tree _o1[1], _r1;
-								      {
-									tree _o2[2], _r2;
-									_o2[0] =  swap_p ? captures[6] : captures[1];
-									_o2[1] =  swap_p ? captures[2] : captures[4];
-									_r2 = fold_build2_loc (loc, POINTER_DIFF_EXPR, ssizetype, _o2[0], _o2[1]);
-									_o1[0] = _r2;
-								      }
-								      if (TREE_TYPE (_o1[0]) != sizetype)
-									{
-									  _r1 = fold_build1_loc (loc, NOP_EXPR, sizetype, _o1[0]);
-									}
-								      else
-								        _r1 = _o1[0];
-								      res_op0 = _r1;
-								    }
-								    tree res_op1;
-								    res_op1 =  rhs_tree;
-								    tree _r;
-								    _r = fold_build2_loc (loc, GT_EXPR, type, res_op0, res_op1);
-								    if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 835, __FILE__, __LINE__, true);
-								    return _r;
-								  }
-next_after_fail1608:;
-								}
-							      else
-								{
-								  if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1609;
-								  if (TREE_SIDE_EFFECTS (captures[3])) goto next_after_fail1609;
-								  if (TREE_SIDE_EFFECTS (captures[4])) goto next_after_fail1609;
-								  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1609;
-								  {
-								    tree res_op0;
-								    {
-								      tree _o1[1], _r1;
-								      {
-									tree _o2[2], _r2;
-									{
-									  tree _o3[2], _r3;
-									  _o3[0] =  swap_p ? captures[4] : captures[2];
-									  _o3[1] =  wide_int_to_tree (sizetype, off);
-									  _r3 = fold_build2_loc (loc, POINTER_PLUS_EXPR, TREE_TYPE (_o3[0]), _o3[0], _o3[1]);
-									  _o2[0] = _r3;
-									}
-									_o2[1] =  swap_p ? captures[2] : captures[4];
-									_r2 = fold_build2_loc (loc, POINTER_DIFF_EXPR, ssizetype, _o2[0], _o2[1]);
-									_o1[0] = _r2;
-								      }
-								      if (TREE_TYPE (_o1[0]) != sizetype)
-									{
-									  _r1 = fold_build1_loc (loc, NOP_EXPR, sizetype, _o1[0]);
-									}
-								      else
-								        _r1 = _o1[0];
-								      res_op0 = _r1;
-								    }
-								    tree res_op1;
-								    res_op1 =  rhs_tree;
-								    tree _r;
-								    _r = fold_build2_loc (loc, GT_EXPR, type, res_op0, res_op1);
-								    if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 836, __FILE__, __LINE__, true);
-								    return _r;
-								  }
-next_after_fail1609:;
-								}
-							  }
-							}
-						  }
-						}
-					    }
-					  }
-				      }
-				  }
-			        break;
-			      }
-			    default:;
-			    }
-		          break;
-		        }
-		      case GE_EXPR:
-		        {
-			  tree _q70 = TREE_OPERAND (_p1, 0);
-			  tree _q71 = TREE_OPERAND (_p1, 1);
-			  if ((_q70 == _q40 && ! TREE_SIDE_EFFECTS (_q70)) || (operand_equal_p (_q70, _q40, 0) && types_match (_q70, _q40)))
-			    {
-			      switch (TREE_CODE (_q71))
-			        {
-				case POINTER_PLUS_EXPR:
-				  {
-				    tree _q90 = TREE_OPERAND (_q71, 0);
-				    tree _q91 = TREE_OPERAND (_q71, 1);
-				    if ((_q90 == _q20 && ! TREE_SIDE_EFFECTS (_q90)) || (operand_equal_p (_q90, _q20, 0) && types_match (_q90, _q20)))
-				      {
-					if ((_q91 == _q41 && ! TREE_SIDE_EFFECTS (_q91)) || (operand_equal_p (_q91, _q41, 0) && types_match (_q91, _q41)))
-					  {
-					    {
-					      tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q21, _q40, _q41, _q20, _p1, _q71 };
-					      const enum tree_code cmp = LE_EXPR;
-					      if (TYPE_OVERFLOW_UNDEFINED (TREE_TYPE (captures[2]))
- && TYPE_OVERFLOW_WRAPS (sizetype)
- && TYPE_PRECISION (TREE_TYPE (captures[2])) == TYPE_PRECISION (sizetype)
-)
-						{
-						  {
- offset_int off = wi::to_offset (captures[3]) - (cmp == LE_EXPR ? 1 : 0);
- offset_int rhs = off * 2;
-						      if (wi::min_precision (rhs, UNSIGNED) <= TYPE_PRECISION (sizetype)
-)
-							{
-							  {
- bool swap_p = tree_swap_operands_p (captures[2], captures[4]);
- tree rhs_tree = wide_int_to_tree (sizetype, rhs);
-							      if (cmp == LT_EXPR
-)
-								{
-								  if (TREE_SIDE_EFFECTS (captures[1])) goto next_after_fail1610;
-								  if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1610;
-								  if (TREE_SIDE_EFFECTS (captures[3])) goto next_after_fail1610;
-								  if (TREE_SIDE_EFFECTS (captures[4])) goto next_after_fail1610;
-								  if (TREE_SIDE_EFFECTS (captures[6])) goto next_after_fail1610;
-								  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1610;
-								  {
-								    tree res_op0;
-								    {
-								      tree _o1[1], _r1;
-								      {
-									tree _o2[2], _r2;
-									_o2[0] =  swap_p ? captures[6] : captures[1];
-									_o2[1] =  swap_p ? captures[2] : captures[4];
-									_r2 = fold_build2_loc (loc, POINTER_DIFF_EXPR, ssizetype, _o2[0], _o2[1]);
-									_o1[0] = _r2;
-								      }
-								      if (TREE_TYPE (_o1[0]) != sizetype)
-									{
-									  _r1 = fold_build1_loc (loc, NOP_EXPR, sizetype, _o1[0]);
-									}
-								      else
-								        _r1 = _o1[0];
-								      res_op0 = _r1;
-								    }
-								    tree res_op1;
-								    res_op1 =  rhs_tree;
-								    tree _r;
-								    _r = fold_build2_loc (loc, GT_EXPR, type, res_op0, res_op1);
-								    if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 835, __FILE__, __LINE__, true);
-								    return _r;
-								  }
-next_after_fail1610:;
-								}
-							      else
-								{
-								  if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1611;
-								  if (TREE_SIDE_EFFECTS (captures[3])) goto next_after_fail1611;
-								  if (TREE_SIDE_EFFECTS (captures[4])) goto next_after_fail1611;
-								  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1611;
-								  {
-								    tree res_op0;
-								    {
-								      tree _o1[1], _r1;
-								      {
-									tree _o2[2], _r2;
-									{
-									  tree _o3[2], _r3;
-									  _o3[0] =  swap_p ? captures[4] : captures[2];
-									  _o3[1] =  wide_int_to_tree (sizetype, off);
-									  _r3 = fold_build2_loc (loc, POINTER_PLUS_EXPR, TREE_TYPE (_o3[0]), _o3[0], _o3[1]);
-									  _o2[0] = _r3;
-									}
-									_o2[1] =  swap_p ? captures[2] : captures[4];
-									_r2 = fold_build2_loc (loc, POINTER_DIFF_EXPR, ssizetype, _o2[0], _o2[1]);
-									_o1[0] = _r2;
-								      }
-								      if (TREE_TYPE (_o1[0]) != sizetype)
-									{
-									  _r1 = fold_build1_loc (loc, NOP_EXPR, sizetype, _o1[0]);
-									}
-								      else
-								        _r1 = _o1[0];
-								      res_op0 = _r1;
-								    }
-								    tree res_op1;
-								    res_op1 =  rhs_tree;
-								    tree _r;
-								    _r = fold_build2_loc (loc, GT_EXPR, type, res_op0, res_op1);
-								    if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 836, __FILE__, __LINE__, true);
-								    return _r;
-								  }
-next_after_fail1611:;
-								}
-							  }
-							}
-						  }
-						}
-					    }
-					  }
-				      }
-				    break;
-				  }
-			        default:;
-			        }
-			    }
-		          break;
-		        }
-		      default:;
-		      }
-		    break;
-		  }
-	        default:;
-	        }
-	      break;
-	    }
-          default:;
-          }
-        break;
-      }
-    case GT_EXPR:
-      {
-	tree _q20 = TREE_OPERAND (_p0, 0);
-	tree _q21 = TREE_OPERAND (_p0, 1);
-	switch (TREE_CODE (_q21))
-	  {
-	  case POINTER_PLUS_EXPR:
-	    {
-	      tree _q40 = TREE_OPERAND (_q21, 0);
-	      tree _q41 = TREE_OPERAND (_q21, 1);
-	      switch (TREE_CODE (_q41))
-	        {
-		case INTEGER_CST:
-		  {
-		    switch (TREE_CODE (_p1))
-		      {
-		      case LT_EXPR:
-		        {
-			  tree _q70 = TREE_OPERAND (_p1, 0);
-			  tree _q71 = TREE_OPERAND (_p1, 1);
-			  switch (TREE_CODE (_q70))
-			    {
-			    case POINTER_PLUS_EXPR:
-			      {
-				tree _q80 = TREE_OPERAND (_q70, 0);
-				tree _q81 = TREE_OPERAND (_q70, 1);
-				if ((_q80 == _q20 && ! TREE_SIDE_EFFECTS (_q80)) || (operand_equal_p (_q80, _q20, 0) && types_match (_q80, _q20)))
-				  {
-				    if ((_q81 == _q41 && ! TREE_SIDE_EFFECTS (_q81)) || (operand_equal_p (_q81, _q41, 0) && types_match (_q81, _q41)))
-				      {
-					if ((_q71 == _q40 && ! TREE_SIDE_EFFECTS (_q71)) || (operand_equal_p (_q71, _q40, 0) && types_match (_q71, _q40)))
-					  {
-					    {
-					      tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q21, _q40, _q41, _q20, _p1, _q70 };
-					      const enum tree_code cmp = LT_EXPR;
-					      if (TYPE_OVERFLOW_UNDEFINED (TREE_TYPE (captures[2]))
- && TYPE_OVERFLOW_WRAPS (sizetype)
- && TYPE_PRECISION (TREE_TYPE (captures[2])) == TYPE_PRECISION (sizetype)
-)
-						{
-						  {
- offset_int off = wi::to_offset (captures[3]) - (cmp == LE_EXPR ? 1 : 0);
- offset_int rhs = off * 2;
-						      if (wi::min_precision (rhs, UNSIGNED) <= TYPE_PRECISION (sizetype)
-)
-							{
-							  {
- bool swap_p = tree_swap_operands_p (captures[2], captures[4]);
- tree rhs_tree = wide_int_to_tree (sizetype, rhs);
-							      if (cmp == LT_EXPR
-)
-								{
-								  if (TREE_SIDE_EFFECTS (captures[1])) goto next_after_fail1612;
-								  if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1612;
-								  if (TREE_SIDE_EFFECTS (captures[3])) goto next_after_fail1612;
-								  if (TREE_SIDE_EFFECTS (captures[4])) goto next_after_fail1612;
-								  if (TREE_SIDE_EFFECTS (captures[6])) goto next_after_fail1612;
-								  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1612;
-								  {
-								    tree res_op0;
-								    {
-								      tree _o1[1], _r1;
-								      {
-									tree _o2[2], _r2;
-									_o2[0] =  swap_p ? captures[6] : captures[1];
-									_o2[1] =  swap_p ? captures[2] : captures[4];
-									_r2 = fold_build2_loc (loc, POINTER_DIFF_EXPR, ssizetype, _o2[0], _o2[1]);
-									_o1[0] = _r2;
-								      }
-								      if (TREE_TYPE (_o1[0]) != sizetype)
-									{
-									  _r1 = fold_build1_loc (loc, NOP_EXPR, sizetype, _o1[0]);
-									}
-								      else
-								        _r1 = _o1[0];
-								      res_op0 = _r1;
-								    }
-								    tree res_op1;
-								    res_op1 =  rhs_tree;
-								    tree _r;
-								    _r = fold_build2_loc (loc, GT_EXPR, type, res_op0, res_op1);
-								    if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 835, __FILE__, __LINE__, true);
-								    return _r;
-								  }
-next_after_fail1612:;
-								}
-							      else
-								{
-								  if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1613;
-								  if (TREE_SIDE_EFFECTS (captures[3])) goto next_after_fail1613;
-								  if (TREE_SIDE_EFFECTS (captures[4])) goto next_after_fail1613;
-								  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1613;
-								  {
-								    tree res_op0;
-								    {
-								      tree _o1[1], _r1;
-								      {
-									tree _o2[2], _r2;
-									{
-									  tree _o3[2], _r3;
-									  _o3[0] =  swap_p ? captures[4] : captures[2];
-									  _o3[1] =  wide_int_to_tree (sizetype, off);
-									  _r3 = fold_build2_loc (loc, POINTER_PLUS_EXPR, TREE_TYPE (_o3[0]), _o3[0], _o3[1]);
-									  _o2[0] = _r3;
-									}
-									_o2[1] =  swap_p ? captures[2] : captures[4];
-									_r2 = fold_build2_loc (loc, POINTER_DIFF_EXPR, ssizetype, _o2[0], _o2[1]);
-									_o1[0] = _r2;
-								      }
-								      if (TREE_TYPE (_o1[0]) != sizetype)
-									{
-									  _r1 = fold_build1_loc (loc, NOP_EXPR, sizetype, _o1[0]);
-									}
-								      else
-								        _r1 = _o1[0];
-								      res_op0 = _r1;
-								    }
-								    tree res_op1;
-								    res_op1 =  rhs_tree;
-								    tree _r;
-								    _r = fold_build2_loc (loc, GT_EXPR, type, res_op0, res_op1);
-								    if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 836, __FILE__, __LINE__, true);
-								    return _r;
-								  }
-next_after_fail1613:;
-								}
-							  }
-							}
-						  }
-						}
-					    }
-					  }
-				      }
-				  }
-			        break;
-			      }
-			    default:;
-			    }
-		          break;
-		        }
-		      case GT_EXPR:
-		        {
-			  tree _q70 = TREE_OPERAND (_p1, 0);
-			  tree _q71 = TREE_OPERAND (_p1, 1);
-			  if ((_q70 == _q40 && ! TREE_SIDE_EFFECTS (_q70)) || (operand_equal_p (_q70, _q40, 0) && types_match (_q70, _q40)))
-			    {
-			      switch (TREE_CODE (_q71))
-			        {
-				case POINTER_PLUS_EXPR:
-				  {
-				    tree _q90 = TREE_OPERAND (_q71, 0);
-				    tree _q91 = TREE_OPERAND (_q71, 1);
-				    if ((_q90 == _q20 && ! TREE_SIDE_EFFECTS (_q90)) || (operand_equal_p (_q90, _q20, 0) && types_match (_q90, _q20)))
-				      {
-					if ((_q91 == _q41 && ! TREE_SIDE_EFFECTS (_q91)) || (operand_equal_p (_q91, _q41, 0) && types_match (_q91, _q41)))
-					  {
-					    {
-					      tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q21, _q40, _q41, _q20, _p1, _q71 };
-					      const enum tree_code cmp = LT_EXPR;
-					      if (TYPE_OVERFLOW_UNDEFINED (TREE_TYPE (captures[2]))
- && TYPE_OVERFLOW_WRAPS (sizetype)
- && TYPE_PRECISION (TREE_TYPE (captures[2])) == TYPE_PRECISION (sizetype)
-)
-						{
-						  {
- offset_int off = wi::to_offset (captures[3]) - (cmp == LE_EXPR ? 1 : 0);
- offset_int rhs = off * 2;
-						      if (wi::min_precision (rhs, UNSIGNED) <= TYPE_PRECISION (sizetype)
-)
-							{
-							  {
- bool swap_p = tree_swap_operands_p (captures[2], captures[4]);
- tree rhs_tree = wide_int_to_tree (sizetype, rhs);
-							      if (cmp == LT_EXPR
-)
-								{
-								  if (TREE_SIDE_EFFECTS (captures[1])) goto next_after_fail1614;
-								  if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1614;
-								  if (TREE_SIDE_EFFECTS (captures[3])) goto next_after_fail1614;
-								  if (TREE_SIDE_EFFECTS (captures[4])) goto next_after_fail1614;
-								  if (TREE_SIDE_EFFECTS (captures[6])) goto next_after_fail1614;
-								  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1614;
-								  {
-								    tree res_op0;
-								    {
-								      tree _o1[1], _r1;
-								      {
-									tree _o2[2], _r2;
-									_o2[0] =  swap_p ? captures[6] : captures[1];
-									_o2[1] =  swap_p ? captures[2] : captures[4];
-									_r2 = fold_build2_loc (loc, POINTER_DIFF_EXPR, ssizetype, _o2[0], _o2[1]);
-									_o1[0] = _r2;
-								      }
-								      if (TREE_TYPE (_o1[0]) != sizetype)
-									{
-									  _r1 = fold_build1_loc (loc, NOP_EXPR, sizetype, _o1[0]);
-									}
-								      else
-								        _r1 = _o1[0];
-								      res_op0 = _r1;
-								    }
-								    tree res_op1;
-								    res_op1 =  rhs_tree;
-								    tree _r;
-								    _r = fold_build2_loc (loc, GT_EXPR, type, res_op0, res_op1);
-								    if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 835, __FILE__, __LINE__, true);
-								    return _r;
-								  }
-next_after_fail1614:;
-								}
-							      else
-								{
-								  if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1615;
-								  if (TREE_SIDE_EFFECTS (captures[3])) goto next_after_fail1615;
-								  if (TREE_SIDE_EFFECTS (captures[4])) goto next_after_fail1615;
-								  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1615;
-								  {
-								    tree res_op0;
-								    {
-								      tree _o1[1], _r1;
-								      {
-									tree _o2[2], _r2;
-									{
-									  tree _o3[2], _r3;
-									  _o3[0] =  swap_p ? captures[4] : captures[2];
-									  _o3[1] =  wide_int_to_tree (sizetype, off);
-									  _r3 = fold_build2_loc (loc, POINTER_PLUS_EXPR, TREE_TYPE (_o3[0]), _o3[0], _o3[1]);
-									  _o2[0] = _r3;
-									}
-									_o2[1] =  swap_p ? captures[2] : captures[4];
-									_r2 = fold_build2_loc (loc, POINTER_DIFF_EXPR, ssizetype, _o2[0], _o2[1]);
-									_o1[0] = _r2;
-								      }
-								      if (TREE_TYPE (_o1[0]) != sizetype)
-									{
-									  _r1 = fold_build1_loc (loc, NOP_EXPR, sizetype, _o1[0]);
-									}
-								      else
-								        _r1 = _o1[0];
-								      res_op0 = _r1;
-								    }
-								    tree res_op1;
-								    res_op1 =  rhs_tree;
-								    tree _r;
-								    _r = fold_build2_loc (loc, GT_EXPR, type, res_op0, res_op1);
-								    if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 836, __FILE__, __LINE__, true);
-								    return _r;
-								  }
-next_after_fail1615:;
 								}
 							  }
 							}

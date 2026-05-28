@@ -322,7 +322,7 @@
 /* Define to the name of a file containing a list of extra machine modes for
    this architecture. */
 #ifndef USED_FOR_TARGET
-/* #undef EXTRA_MODES_FILE */
+#define EXTRA_MODES_FILE "config/rx/rx-modes.def"
 #endif
 
 
@@ -1750,7 +1750,7 @@
 
 
 /* Define if your linker supports .eh_frame_hdr. */
-/* #undef HAVE_LD_EH_FRAME_HDR */
+#define HAVE_LD_EH_FRAME_HDR 1
 
 /* Define if your linker supports garbage collection of sections in presence
    of EH frames. */
@@ -1774,7 +1774,7 @@
 
 /* Define 0/1 if your linker supports -z now */
 #ifndef USED_FOR_TARGET
-#define HAVE_LD_NOW_SUPPORT 0
+#define HAVE_LD_NOW_SUPPORT 1
 #endif
 
 
@@ -1823,7 +1823,7 @@
 
 /* Define 0/1 if your linker supports -z relro */
 #ifndef USED_FOR_TARGET
-#define HAVE_LD_RELRO_SUPPORT 0
+#define HAVE_LD_RELRO_SUPPORT 1
 #endif
 
 

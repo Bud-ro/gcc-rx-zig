@@ -34,22 +34,34 @@ struct optab_pat {
 static const struct optab_pat pats[NUM_OPTAB_PATTERNS] = {
   { 0x10200a, CODE_FOR_extendqisi2 },
   { 0x10240a, CODE_FOR_extendhisi2 },
+  { 0x107c20, CODE_FOR_extendsfdf2 },
+  { 0x20801f, CODE_FOR_truncdfsf2 },
   { 0x30200a, CODE_FOR_zero_extendqisi2 },
   { 0x30240a, CODE_FOR_zero_extendhisi2 },
   { 0x60281f, CODE_FOR_floatsisf2 },
+  { 0x602820, CODE_FOR_floatsidf2 },
+  { 0x70281f, CODE_FOR_floatunssisf2 },
+  { 0x702820, CODE_FOR_floatunssidf2 },
   { 0x1007c0a, CODE_FOR_fix_truncsfsi2 },
+  { 0x100800a, CODE_FOR_fix_truncdfsi2 },
+  { 0x1107c0a, CODE_FOR_fixuns_truncsfsi2 },
+  { 0x110800a, CODE_FOR_fixuns_truncdfsi2 },
   { 0x120280b, CODE_FOR_mulsidi3 },
   { 0x130280b, CODE_FOR_umulsidi3 },
   { 0x370000a, CODE_FOR_addsi3 },
   { 0x370000b, CODE_FOR_adddi3 },
   { 0x370001f, CODE_FOR_addsf3 },
+  { 0x3700020, CODE_FOR_adddf3 },
   { 0x3b0000a, CODE_FOR_subsi3 },
   { 0x3b0000b, CODE_FOR_subdi3 },
   { 0x3b0001f, CODE_FOR_subsf3 },
+  { 0x3b00020, CODE_FOR_subdf3 },
   { 0x3f0000a, CODE_FOR_mulsi3 },
   { 0x3f0001f, CODE_FOR_mulsf3 },
+  { 0x3f00020, CODE_FOR_muldf3 },
   { 0x430000a, CODE_FOR_divsi3 },
   { 0x430001f, CODE_FOR_divsf3 },
+  { 0x4300020, CODE_FOR_divdf3 },
   { 0x460000a, CODE_FOR_udivsi3 },
   { 0x4d0000a, CODE_FOR_andsi3 },
   { 0x4e0000a, CODE_FOR_iorsi3 },
@@ -61,15 +73,16 @@ static const struct optab_pat pats[NUM_OPTAB_PATTERNS] = {
   { 0x560000a, CODE_FOR_rotrsi3 },
   { 0x5c0000a, CODE_FOR_sminsi3 },
   { 0x5d0000a, CODE_FOR_smaxsi3 },
-  { 0x5e00008, CODE_FOR_uminqi3 },
-  { 0x5e00009, CODE_FOR_uminhi3 },
-  { 0x5f00008, CODE_FOR_umaxqi3 },
-  { 0x5f00009, CODE_FOR_umaxhi3 },
   { 0x600000a, CODE_FOR_negsi2 },
+  { 0x600001f, CODE_FOR_negsf2 },
+  { 0x6000020, CODE_FOR_negdf2 },
   { 0x640000a, CODE_FOR_abssi2 },
+  { 0x6400020, CODE_FOR_absdf2 },
   { 0x660000a, CODE_FOR_one_cmplsi2 },
   { 0x6700009, CODE_FOR_bswaphi2 },
   { 0x670000a, CODE_FOR_bswapsi2 },
+  { 0x780001f, CODE_FOR_sqrtsf2 },
+  { 0x7800020, CODE_FOR_sqrtdf2 },
   { 0x860000a, CODE_FOR_sync_lock_test_and_setsi },
   { 0x8700008, CODE_FOR_movqi },
   { 0x8700009, CODE_FOR_movhi },
@@ -79,6 +92,7 @@ static const struct optab_pat pats[NUM_OPTAB_PATTERNS] = {
   { 0x8700020, CODE_FOR_movdf },
   { 0x940000a, CODE_FOR_cbranchsi4 },
   { 0x940001f, CODE_FOR_cbranchsf4 },
+  { 0x9400020, CODE_FOR_cbranchdf4 },
   { 0x9a0000a, CODE_FOR_movsicc },
   { 0xd10000a, CODE_FOR_cstoresi4 },
   { 0xd10001f, CODE_FOR_cstoresf4 },
@@ -109,73 +123,87 @@ init_all_optabs (struct target_optabs *optabs)
   bool *ena = optabs->pat_enable;
   ena[0] = HAVE_extendqisi2;
   ena[1] = HAVE_extendhisi2;
-  ena[2] = HAVE_zero_extendqisi2;
-  ena[3] = HAVE_zero_extendhisi2;
-  ena[4] = HAVE_floatsisf2;
-  ena[5] = HAVE_fix_truncsfsi2;
-  ena[6] = HAVE_mulsidi3;
-  ena[7] = HAVE_umulsidi3;
-  ena[8] = HAVE_addsi3;
-  ena[9] = HAVE_adddi3;
-  ena[10] = HAVE_addsf3;
-  ena[11] = HAVE_subsi3;
-  ena[12] = HAVE_subdi3;
-  ena[13] = HAVE_subsf3;
-  ena[14] = HAVE_mulsi3;
-  ena[15] = HAVE_mulsf3;
-  ena[16] = HAVE_divsi3;
-  ena[17] = HAVE_divsf3;
-  ena[18] = HAVE_udivsi3;
-  ena[19] = HAVE_andsi3;
-  ena[20] = HAVE_iorsi3;
-  ena[21] = HAVE_xorsi3;
-  ena[22] = HAVE_ashlsi3;
-  ena[23] = HAVE_ashrsi3;
-  ena[24] = HAVE_lshrsi3;
-  ena[25] = HAVE_rotlsi3;
-  ena[26] = HAVE_rotrsi3;
-  ena[27] = HAVE_sminsi3;
-  ena[28] = HAVE_smaxsi3;
-  ena[29] = HAVE_uminqi3;
-  ena[30] = HAVE_uminhi3;
-  ena[31] = HAVE_umaxqi3;
-  ena[32] = HAVE_umaxhi3;
-  ena[33] = HAVE_negsi2;
-  ena[34] = HAVE_abssi2;
-  ena[35] = HAVE_one_cmplsi2;
-  ena[36] = HAVE_bswaphi2;
-  ena[37] = HAVE_bswapsi2;
-  ena[38] = HAVE_sync_lock_test_and_setsi;
-  ena[39] = HAVE_movqi;
-  ena[40] = HAVE_movhi;
-  ena[41] = HAVE_movsi;
-  ena[42] = HAVE_movdi;
-  ena[43] = HAVE_movsf;
-  ena[44] = HAVE_movdf;
-  ena[45] = HAVE_cbranchsi4;
-  ena[46] = HAVE_cbranchsf4;
-  ena[47] = HAVE_movsicc;
-  ena[48] = HAVE_cstoresi4;
-  ena[49] = HAVE_cstoresf4;
-  ena[50] = HAVE_cmpstrsi;
-  ena[51] = HAVE_cmpstrnsi;
-  ena[52] = HAVE_cpymemsi;
-  ena[53] = HAVE_setmemsi;
-  ena[54] = HAVE_atomic_add_fetchsi;
-  ena[55] = HAVE_atomic_and_fetchsi;
-  ena[56] = HAVE_atomic_exchangeqi;
-  ena[57] = HAVE_atomic_exchangehi;
-  ena[58] = HAVE_atomic_exchangesi;
-  ena[59] = HAVE_atomic_fetch_addsi;
-  ena[60] = HAVE_atomic_fetch_andsi;
-  ena[61] = HAVE_atomic_fetch_nandsi;
-  ena[62] = HAVE_atomic_fetch_orsi;
-  ena[63] = HAVE_atomic_fetch_subsi;
-  ena[64] = HAVE_atomic_fetch_xorsi;
-  ena[65] = HAVE_atomic_nand_fetchsi;
-  ena[66] = HAVE_atomic_or_fetchsi;
-  ena[67] = HAVE_atomic_sub_fetchsi;
-  ena[68] = HAVE_atomic_xor_fetchsi;
+  ena[2] = HAVE_extendsfdf2;
+  ena[3] = HAVE_truncdfsf2;
+  ena[4] = HAVE_zero_extendqisi2;
+  ena[5] = HAVE_zero_extendhisi2;
+  ena[6] = HAVE_floatsisf2;
+  ena[7] = HAVE_floatsidf2;
+  ena[8] = HAVE_floatunssisf2;
+  ena[9] = HAVE_floatunssidf2;
+  ena[10] = HAVE_fix_truncsfsi2;
+  ena[11] = HAVE_fix_truncdfsi2;
+  ena[12] = HAVE_fixuns_truncsfsi2;
+  ena[13] = HAVE_fixuns_truncdfsi2;
+  ena[14] = HAVE_mulsidi3;
+  ena[15] = HAVE_umulsidi3;
+  ena[16] = HAVE_addsi3;
+  ena[17] = HAVE_adddi3;
+  ena[18] = HAVE_addsf3;
+  ena[19] = HAVE_adddf3;
+  ena[20] = HAVE_subsi3;
+  ena[21] = HAVE_subdi3;
+  ena[22] = HAVE_subsf3;
+  ena[23] = HAVE_subdf3;
+  ena[24] = HAVE_mulsi3;
+  ena[25] = HAVE_mulsf3;
+  ena[26] = HAVE_muldf3;
+  ena[27] = HAVE_divsi3;
+  ena[28] = HAVE_divsf3;
+  ena[29] = HAVE_divdf3;
+  ena[30] = HAVE_udivsi3;
+  ena[31] = HAVE_andsi3;
+  ena[32] = HAVE_iorsi3;
+  ena[33] = HAVE_xorsi3;
+  ena[34] = HAVE_ashlsi3;
+  ena[35] = HAVE_ashrsi3;
+  ena[36] = HAVE_lshrsi3;
+  ena[37] = HAVE_rotlsi3;
+  ena[38] = HAVE_rotrsi3;
+  ena[39] = HAVE_sminsi3;
+  ena[40] = HAVE_smaxsi3;
+  ena[41] = HAVE_negsi2;
+  ena[42] = HAVE_negsf2;
+  ena[43] = HAVE_negdf2;
+  ena[44] = HAVE_abssi2;
+  ena[45] = HAVE_absdf2;
+  ena[46] = HAVE_one_cmplsi2;
+  ena[47] = HAVE_bswaphi2;
+  ena[48] = HAVE_bswapsi2;
+  ena[49] = HAVE_sqrtsf2;
+  ena[50] = HAVE_sqrtdf2;
+  ena[51] = HAVE_sync_lock_test_and_setsi;
+  ena[52] = HAVE_movqi;
+  ena[53] = HAVE_movhi;
+  ena[54] = HAVE_movsi;
+  ena[55] = HAVE_movdi;
+  ena[56] = HAVE_movsf;
+  ena[57] = HAVE_movdf;
+  ena[58] = HAVE_cbranchsi4;
+  ena[59] = HAVE_cbranchsf4;
+  ena[60] = HAVE_cbranchdf4;
+  ena[61] = HAVE_movsicc;
+  ena[62] = HAVE_cstoresi4;
+  ena[63] = HAVE_cstoresf4;
+  ena[64] = HAVE_cmpstrsi;
+  ena[65] = HAVE_cmpstrnsi;
+  ena[66] = HAVE_cpymemsi;
+  ena[67] = HAVE_setmemsi;
+  ena[68] = HAVE_atomic_add_fetchsi;
+  ena[69] = HAVE_atomic_and_fetchsi;
+  ena[70] = HAVE_atomic_exchangeqi;
+  ena[71] = HAVE_atomic_exchangehi;
+  ena[72] = HAVE_atomic_exchangesi;
+  ena[73] = HAVE_atomic_fetch_addsi;
+  ena[74] = HAVE_atomic_fetch_andsi;
+  ena[75] = HAVE_atomic_fetch_nandsi;
+  ena[76] = HAVE_atomic_fetch_orsi;
+  ena[77] = HAVE_atomic_fetch_subsi;
+  ena[78] = HAVE_atomic_fetch_xorsi;
+  ena[79] = HAVE_atomic_nand_fetchsi;
+  ena[80] = HAVE_atomic_or_fetchsi;
+  ena[81] = HAVE_atomic_sub_fetchsi;
+  ena[82] = HAVE_atomic_xor_fetchsi;
 }
 
 /* Returns TRUE if the target supports any of the partial vector

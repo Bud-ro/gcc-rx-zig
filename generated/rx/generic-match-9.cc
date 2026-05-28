@@ -4510,7 +4510,7 @@ if (integer_minus_onep (_p1))
  TREE_TYPE (captures[1]), ERROR_MARK))
 )
 		      {
-			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1430;
+			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1422;
 			{
 			  tree res_op0;
 			  res_op0 = captures[1];
@@ -4521,7 +4521,7 @@ if (integer_minus_onep (_p1))
 			    _o1[1] = captures[5];
 			    _r1 = fold_build2_loc (loc, FLOOR_DIV_EXPR, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
 			    if (EXPR_P (_r1))
-			      goto next_after_fail1430;
+			      goto next_after_fail1422;
 			    res_op1 = _r1;
 			  }
 			  tree res_op2;
@@ -4531,7 +4531,7 @@ if (integer_minus_onep (_p1))
 			    _o1[1] = captures[6];
 			    _r1 = fold_build2_loc (loc, FLOOR_DIV_EXPR, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
 			    if (EXPR_P (_r1))
-			      goto next_after_fail1430;
+			      goto next_after_fail1422;
 			    res_op2 = _r1;
 			  }
 			  tree _r;
@@ -4539,7 +4539,7 @@ if (integer_minus_onep (_p1))
 			  if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 793, __FILE__, __LINE__, true);
 			  return _r;
 			}
-next_after_fail1430:;
+next_after_fail1422:;
 		      }
 		  }
 	        }
@@ -4557,9 +4557,9 @@ next_after_fail1430:;
  TREE_TYPE (captures[1]), ERROR_MARK))
 )
 	    {
-	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1431;
+	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1423;
 	      {
-		if (! tree_invariant_p (captures[4])) goto next_after_fail1431;
+		if (! tree_invariant_p (captures[4])) goto next_after_fail1423;
 		tree res_op0;
 		res_op0 = captures[1];
 		tree res_op1;
@@ -4569,7 +4569,7 @@ next_after_fail1430:;
 		  _o1[1] = unshare_expr (captures[4]);
 		  _r1 = fold_build2_loc (loc, FLOOR_DIV_EXPR, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
 		  if (EXPR_P (_r1))
-		    goto next_after_fail1431;
+		    goto next_after_fail1423;
 		  res_op1 = _r1;
 		}
 		tree res_op2;
@@ -4579,7 +4579,7 @@ next_after_fail1430:;
 		  _o1[1] = captures[4];
 		  _r1 = fold_build2_loc (loc, FLOOR_DIV_EXPR, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
 		  if (EXPR_P (_r1))
-		    goto next_after_fail1431;
+		    goto next_after_fail1423;
 		  res_op2 = _r1;
 		}
 		tree _r;
@@ -4587,7 +4587,7 @@ next_after_fail1430:;
 		if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 794, __FILE__, __LINE__, true);
 		return _r;
 	      }
-next_after_fail1431:;
+next_after_fail1423:;
 	    }
 	}
         break;
@@ -4611,9 +4611,9 @@ next_after_fail1431:;
  TREE_TYPE (captures[2]), ERROR_MARK))
 )
 	    {
-	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1432;
+	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1424;
 	      {
-		if (! tree_invariant_p (captures[0])) goto next_after_fail1432;
+		if (! tree_invariant_p (captures[0])) goto next_after_fail1424;
 		tree res_op0;
 		res_op0 = captures[2];
 		tree res_op1;
@@ -4623,7 +4623,7 @@ next_after_fail1431:;
 		  _o1[1] = captures[3];
 		  _r1 = fold_build2_loc (loc, FLOOR_DIV_EXPR, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
 		  if (EXPR_P (_r1))
-		    goto next_after_fail1432;
+		    goto next_after_fail1424;
 		  res_op1 = _r1;
 		}
 		tree res_op2;
@@ -4633,7 +4633,7 @@ next_after_fail1431:;
 		  _o1[1] = captures[4];
 		  _r1 = fold_build2_loc (loc, FLOOR_DIV_EXPR, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
 		  if (EXPR_P (_r1))
-		    goto next_after_fail1432;
+		    goto next_after_fail1424;
 		  res_op2 = _r1;
 		}
 		tree _r;
@@ -4641,7 +4641,7 @@ next_after_fail1431:;
 		if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 795, __FILE__, __LINE__, true);
 		return _r;
 	      }
-next_after_fail1432:;
+next_after_fail1424:;
 	    }
 	}
         break;
@@ -4796,7 +4796,7 @@ generic_simplify_FLOOR_MOD_EXPR (location_t ARG_UNUSED (loc), enum tree_code ARG
  TREE_TYPE (captures[1]), ERROR_MARK))
 )
 		      {
-			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1436;
+			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1428;
 			{
 			  tree res_op0;
 			  res_op0 = captures[1];
@@ -4807,7 +4807,7 @@ generic_simplify_FLOOR_MOD_EXPR (location_t ARG_UNUSED (loc), enum tree_code ARG
 			    _o1[1] = captures[5];
 			    _r1 = fold_build2_loc (loc, FLOOR_MOD_EXPR, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
 			    if (EXPR_P (_r1))
-			      goto next_after_fail1436;
+			      goto next_after_fail1428;
 			    res_op1 = _r1;
 			  }
 			  tree res_op2;
@@ -4817,7 +4817,7 @@ generic_simplify_FLOOR_MOD_EXPR (location_t ARG_UNUSED (loc), enum tree_code ARG
 			    _o1[1] = captures[6];
 			    _r1 = fold_build2_loc (loc, FLOOR_MOD_EXPR, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
 			    if (EXPR_P (_r1))
-			      goto next_after_fail1436;
+			      goto next_after_fail1428;
 			    res_op2 = _r1;
 			  }
 			  tree _r;
@@ -4825,7 +4825,7 @@ generic_simplify_FLOOR_MOD_EXPR (location_t ARG_UNUSED (loc), enum tree_code ARG
 			  if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 793, __FILE__, __LINE__, true);
 			  return _r;
 			}
-next_after_fail1436:;
+next_after_fail1428:;
 		      }
 		  }
 	        }
@@ -4843,9 +4843,9 @@ next_after_fail1436:;
  TREE_TYPE (captures[1]), ERROR_MARK))
 )
 	    {
-	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1437;
+	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1429;
 	      {
-		if (! tree_invariant_p (captures[4])) goto next_after_fail1437;
+		if (! tree_invariant_p (captures[4])) goto next_after_fail1429;
 		tree res_op0;
 		res_op0 = captures[1];
 		tree res_op1;
@@ -4855,7 +4855,7 @@ next_after_fail1436:;
 		  _o1[1] = unshare_expr (captures[4]);
 		  _r1 = fold_build2_loc (loc, FLOOR_MOD_EXPR, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
 		  if (EXPR_P (_r1))
-		    goto next_after_fail1437;
+		    goto next_after_fail1429;
 		  res_op1 = _r1;
 		}
 		tree res_op2;
@@ -4865,7 +4865,7 @@ next_after_fail1436:;
 		  _o1[1] = captures[4];
 		  _r1 = fold_build2_loc (loc, FLOOR_MOD_EXPR, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
 		  if (EXPR_P (_r1))
-		    goto next_after_fail1437;
+		    goto next_after_fail1429;
 		  res_op2 = _r1;
 		}
 		tree _r;
@@ -4873,7 +4873,7 @@ next_after_fail1436:;
 		if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 794, __FILE__, __LINE__, true);
 		return _r;
 	      }
-next_after_fail1437:;
+next_after_fail1429:;
 	    }
 	}
         break;
@@ -4897,9 +4897,9 @@ next_after_fail1437:;
  TREE_TYPE (captures[2]), ERROR_MARK))
 )
 	    {
-	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1438;
+	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1430;
 	      {
-		if (! tree_invariant_p (captures[0])) goto next_after_fail1438;
+		if (! tree_invariant_p (captures[0])) goto next_after_fail1430;
 		tree res_op0;
 		res_op0 = captures[2];
 		tree res_op1;
@@ -4909,7 +4909,7 @@ next_after_fail1437:;
 		  _o1[1] = captures[3];
 		  _r1 = fold_build2_loc (loc, FLOOR_MOD_EXPR, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
 		  if (EXPR_P (_r1))
-		    goto next_after_fail1438;
+		    goto next_after_fail1430;
 		  res_op1 = _r1;
 		}
 		tree res_op2;
@@ -4919,7 +4919,7 @@ next_after_fail1437:;
 		  _o1[1] = captures[4];
 		  _r1 = fold_build2_loc (loc, FLOOR_MOD_EXPR, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
 		  if (EXPR_P (_r1))
-		    goto next_after_fail1438;
+		    goto next_after_fail1430;
 		  res_op2 = _r1;
 		}
 		tree _r;
@@ -4927,7 +4927,7 @@ next_after_fail1437:;
 		if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 795, __FILE__, __LINE__, true);
 		return _r;
 	      }
-next_after_fail1438:;
+next_after_fail1430:;
 	    }
 	}
         break;
@@ -5598,7 +5598,7 @@ generic_simplify_LE_EXPR (location_t ARG_UNUSED (loc), enum tree_code ARG_UNUSED
  TREE_TYPE (captures[1]), ERROR_MARK))
 )
 		      {
-			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1481;
+			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1473;
 			{
 			  tree res_op0;
 			  res_op0 = captures[1];
@@ -5609,7 +5609,7 @@ generic_simplify_LE_EXPR (location_t ARG_UNUSED (loc), enum tree_code ARG_UNUSED
 			    _o1[1] = captures[5];
 			    _r1 = fold_build2_loc (loc, LE_EXPR, type, _o1[0], _o1[1]);
 			    if (EXPR_P (_r1))
-			      goto next_after_fail1481;
+			      goto next_after_fail1473;
 			    res_op1 = _r1;
 			  }
 			  tree res_op2;
@@ -5619,7 +5619,7 @@ generic_simplify_LE_EXPR (location_t ARG_UNUSED (loc), enum tree_code ARG_UNUSED
 			    _o1[1] = captures[6];
 			    _r1 = fold_build2_loc (loc, LE_EXPR, type, _o1[0], _o1[1]);
 			    if (EXPR_P (_r1))
-			      goto next_after_fail1481;
+			      goto next_after_fail1473;
 			    res_op2 = _r1;
 			  }
 			  tree _r;
@@ -5627,7 +5627,7 @@ generic_simplify_LE_EXPR (location_t ARG_UNUSED (loc), enum tree_code ARG_UNUSED
 			  if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 793, __FILE__, __LINE__, true);
 			  return _r;
 			}
-next_after_fail1481:;
+next_after_fail1473:;
 		      }
 		  }
 	        }
@@ -5645,9 +5645,9 @@ next_after_fail1481:;
  TREE_TYPE (captures[1]), ERROR_MARK))
 )
 	    {
-	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1482;
+	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1474;
 	      {
-		if (! tree_invariant_p (captures[4])) goto next_after_fail1482;
+		if (! tree_invariant_p (captures[4])) goto next_after_fail1474;
 		tree res_op0;
 		res_op0 = captures[1];
 		tree res_op1;
@@ -5657,7 +5657,7 @@ next_after_fail1481:;
 		  _o1[1] = unshare_expr (captures[4]);
 		  _r1 = fold_build2_loc (loc, LE_EXPR, type, _o1[0], _o1[1]);
 		  if (EXPR_P (_r1))
-		    goto next_after_fail1482;
+		    goto next_after_fail1474;
 		  res_op1 = _r1;
 		}
 		tree res_op2;
@@ -5667,7 +5667,7 @@ next_after_fail1481:;
 		  _o1[1] = captures[4];
 		  _r1 = fold_build2_loc (loc, LE_EXPR, type, _o1[0], _o1[1]);
 		  if (EXPR_P (_r1))
-		    goto next_after_fail1482;
+		    goto next_after_fail1474;
 		  res_op2 = _r1;
 		}
 		tree _r;
@@ -5675,7 +5675,7 @@ next_after_fail1481:;
 		if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 794, __FILE__, __LINE__, true);
 		return _r;
 	      }
-next_after_fail1482:;
+next_after_fail1474:;
 	    }
 	}
         break;
@@ -5699,9 +5699,9 @@ next_after_fail1482:;
  TREE_TYPE (captures[2]), ERROR_MARK))
 )
 	    {
-	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1483;
+	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1475;
 	      {
-		if (! tree_invariant_p (captures[0])) goto next_after_fail1483;
+		if (! tree_invariant_p (captures[0])) goto next_after_fail1475;
 		tree res_op0;
 		res_op0 = captures[2];
 		tree res_op1;
@@ -5711,7 +5711,7 @@ next_after_fail1482:;
 		  _o1[1] = captures[3];
 		  _r1 = fold_build2_loc (loc, LE_EXPR, type, _o1[0], _o1[1]);
 		  if (EXPR_P (_r1))
-		    goto next_after_fail1483;
+		    goto next_after_fail1475;
 		  res_op1 = _r1;
 		}
 		tree res_op2;
@@ -5721,7 +5721,7 @@ next_after_fail1482:;
 		  _o1[1] = captures[4];
 		  _r1 = fold_build2_loc (loc, LE_EXPR, type, _o1[0], _o1[1]);
 		  if (EXPR_P (_r1))
-		    goto next_after_fail1483;
+		    goto next_after_fail1475;
 		  res_op2 = _r1;
 		}
 		tree _r;
@@ -5729,7 +5729,7 @@ next_after_fail1482:;
 		if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 795, __FILE__, __LINE__, true);
 		return _r;
 	      }
-next_after_fail1483:;
+next_after_fail1475:;
 	    }
 	}
         break;
@@ -7655,7 +7655,7 @@ generic_simplify_GE_EXPR (location_t ARG_UNUSED (loc), enum tree_code ARG_UNUSED
  TREE_TYPE (captures[1]), ERROR_MARK))
 )
 		      {
-			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1488;
+			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1480;
 			{
 			  tree res_op0;
 			  res_op0 = captures[1];
@@ -7666,7 +7666,7 @@ generic_simplify_GE_EXPR (location_t ARG_UNUSED (loc), enum tree_code ARG_UNUSED
 			    _o1[1] = captures[5];
 			    _r1 = fold_build2_loc (loc, GE_EXPR, type, _o1[0], _o1[1]);
 			    if (EXPR_P (_r1))
-			      goto next_after_fail1488;
+			      goto next_after_fail1480;
 			    res_op1 = _r1;
 			  }
 			  tree res_op2;
@@ -7676,7 +7676,7 @@ generic_simplify_GE_EXPR (location_t ARG_UNUSED (loc), enum tree_code ARG_UNUSED
 			    _o1[1] = captures[6];
 			    _r1 = fold_build2_loc (loc, GE_EXPR, type, _o1[0], _o1[1]);
 			    if (EXPR_P (_r1))
-			      goto next_after_fail1488;
+			      goto next_after_fail1480;
 			    res_op2 = _r1;
 			  }
 			  tree _r;
@@ -7684,7 +7684,7 @@ generic_simplify_GE_EXPR (location_t ARG_UNUSED (loc), enum tree_code ARG_UNUSED
 			  if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 793, __FILE__, __LINE__, true);
 			  return _r;
 			}
-next_after_fail1488:;
+next_after_fail1480:;
 		      }
 		  }
 	        }
@@ -7702,9 +7702,9 @@ next_after_fail1488:;
  TREE_TYPE (captures[1]), ERROR_MARK))
 )
 	    {
-	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1489;
+	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1481;
 	      {
-		if (! tree_invariant_p (captures[4])) goto next_after_fail1489;
+		if (! tree_invariant_p (captures[4])) goto next_after_fail1481;
 		tree res_op0;
 		res_op0 = captures[1];
 		tree res_op1;
@@ -7714,7 +7714,7 @@ next_after_fail1488:;
 		  _o1[1] = unshare_expr (captures[4]);
 		  _r1 = fold_build2_loc (loc, GE_EXPR, type, _o1[0], _o1[1]);
 		  if (EXPR_P (_r1))
-		    goto next_after_fail1489;
+		    goto next_after_fail1481;
 		  res_op1 = _r1;
 		}
 		tree res_op2;
@@ -7724,7 +7724,7 @@ next_after_fail1488:;
 		  _o1[1] = captures[4];
 		  _r1 = fold_build2_loc (loc, GE_EXPR, type, _o1[0], _o1[1]);
 		  if (EXPR_P (_r1))
-		    goto next_after_fail1489;
+		    goto next_after_fail1481;
 		  res_op2 = _r1;
 		}
 		tree _r;
@@ -7732,7 +7732,7 @@ next_after_fail1488:;
 		if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 794, __FILE__, __LINE__, true);
 		return _r;
 	      }
-next_after_fail1489:;
+next_after_fail1481:;
 	    }
 	}
         break;
@@ -7756,9 +7756,9 @@ next_after_fail1489:;
  TREE_TYPE (captures[2]), ERROR_MARK))
 )
 	    {
-	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1490;
+	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1482;
 	      {
-		if (! tree_invariant_p (captures[0])) goto next_after_fail1490;
+		if (! tree_invariant_p (captures[0])) goto next_after_fail1482;
 		tree res_op0;
 		res_op0 = captures[2];
 		tree res_op1;
@@ -7768,7 +7768,7 @@ next_after_fail1489:;
 		  _o1[1] = captures[3];
 		  _r1 = fold_build2_loc (loc, GE_EXPR, type, _o1[0], _o1[1]);
 		  if (EXPR_P (_r1))
-		    goto next_after_fail1490;
+		    goto next_after_fail1482;
 		  res_op1 = _r1;
 		}
 		tree res_op2;
@@ -7778,7 +7778,7 @@ next_after_fail1489:;
 		  _o1[1] = captures[4];
 		  _r1 = fold_build2_loc (loc, GE_EXPR, type, _o1[0], _o1[1]);
 		  if (EXPR_P (_r1))
-		    goto next_after_fail1490;
+		    goto next_after_fail1482;
 		  res_op2 = _r1;
 		}
 		tree _r;
@@ -7786,7 +7786,7 @@ next_after_fail1489:;
 		if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 795, __FILE__, __LINE__, true);
 		return _r;
 	      }
-next_after_fail1490:;
+next_after_fail1482:;
 	    }
 	}
         break;
@@ -9028,7 +9028,7 @@ generic_simplify_MIN_EXPR (location_t ARG_UNUSED (loc), enum tree_code ARG_UNUSE
  && operand_equal_p (captures[1], TYPE_MIN_VALUE (type), OEP_ONLY_CONST)
 )
       {
-	if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1533;
+	if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1525;
 	{
 	  tree _r;
 	  _r = captures[1];
@@ -9037,7 +9037,7 @@ generic_simplify_MIN_EXPR (location_t ARG_UNUSED (loc), enum tree_code ARG_UNUSE
 	  if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 916, __FILE__, __LINE__, true);
 	  return _r;
 	}
-next_after_fail1533:;
+next_after_fail1525:;
       }
     else
       {
@@ -9046,7 +9046,7 @@ next_after_fail1533:;
  && operand_equal_p (captures[1], TYPE_MAX_VALUE (type), OEP_ONLY_CONST)
 )
 	  {
-	    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1534;
+	    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1526;
 	    {
 	      tree _r;
 	      _r = captures[0];
@@ -9055,7 +9055,7 @@ next_after_fail1533:;
 	      if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 917, __FILE__, __LINE__, true);
 	      return _r;
 	    }
-next_after_fail1534:;
+next_after_fail1526:;
 	  }
       }
   }
@@ -9079,7 +9079,7 @@ next_after_fail1534:;
 			if (tree_int_cst_sgn (captures[2]) > 0
 )
 			  {
-			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1535;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1527;
 			    {
 			      tree _r;
 			      _r = captures[0];
@@ -9088,19 +9088,19 @@ next_after_fail1534:;
 			      if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 918, __FILE__, __LINE__, true);
 			      return _r;
 			    }
-next_after_fail1535:;
+next_after_fail1527:;
 			  }
 			else
 			  {
-			    if (TREE_SIDE_EFFECTS (_p1)) goto next_after_fail1536;
-			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1536;
+			    if (TREE_SIDE_EFFECTS (_p1)) goto next_after_fail1528;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1528;
 			    {
 			      tree _r;
 			      _r = captures[1];
 			      if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 919, __FILE__, __LINE__, true);
 			      return _r;
 			    }
-next_after_fail1536:;
+next_after_fail1528:;
 			  }
 		      }
 		  }
@@ -9133,7 +9133,7 @@ next_after_fail1536:;
 			if (tree_int_cst_sgn (captures[2]) > 0
 )
 			  {
-			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1537;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1529;
 			    {
 			      tree _r;
 			      _r = captures[0];
@@ -9142,19 +9142,19 @@ next_after_fail1536:;
 			      if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 918, __FILE__, __LINE__, true);
 			      return _r;
 			    }
-next_after_fail1537:;
+next_after_fail1529:;
 			  }
 			else
 			  {
-			    if (TREE_SIDE_EFFECTS (_p0)) goto next_after_fail1538;
-			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1538;
+			    if (TREE_SIDE_EFFECTS (_p0)) goto next_after_fail1530;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1530;
 			    {
 			      tree _r;
 			      _r = captures[1];
 			      if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 919, __FILE__, __LINE__, true);
 			      return _r;
 			    }
-next_after_fail1538:;
+next_after_fail1530:;
 			  }
 		      }
 		  }
@@ -9259,7 +9259,7 @@ next_after_fail1538:;
  && TYPE_OVERFLOW_UNDEFINED (TREE_TYPE (captures[1])))
 )
 		  {
-		    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1539;
+		    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1531;
 		    {
 		      tree res_op0;
 		      {
@@ -9274,7 +9274,7 @@ next_after_fail1538:;
 		      if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 920, __FILE__, __LINE__, true);
 		      return _r;
 		    }
-next_after_fail1539:;
+next_after_fail1531:;
 		  }
 	      }
 	      break;
@@ -9326,7 +9326,7 @@ next_after_fail1539:;
  TREE_TYPE (captures[1]), ERROR_MARK))
 )
 		      {
-			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1540;
+			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1532;
 			{
 			  tree res_op0;
 			  res_op0 = captures[1];
@@ -9337,7 +9337,7 @@ next_after_fail1539:;
 			    _o1[1] = captures[5];
 			    _r1 = fold_build2_loc (loc, MIN_EXPR, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
 			    if (EXPR_P (_r1))
-			      goto next_after_fail1540;
+			      goto next_after_fail1532;
 			    res_op1 = _r1;
 			  }
 			  tree res_op2;
@@ -9347,7 +9347,7 @@ next_after_fail1539:;
 			    _o1[1] = captures[6];
 			    _r1 = fold_build2_loc (loc, MIN_EXPR, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
 			    if (EXPR_P (_r1))
-			      goto next_after_fail1540;
+			      goto next_after_fail1532;
 			    res_op2 = _r1;
 			  }
 			  tree _r;
@@ -9355,7 +9355,7 @@ next_after_fail1539:;
 			  if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 793, __FILE__, __LINE__, true);
 			  return _r;
 			}
-next_after_fail1540:;
+next_after_fail1532:;
 		      }
 		  }
 	        }
@@ -9373,9 +9373,9 @@ next_after_fail1540:;
  TREE_TYPE (captures[1]), ERROR_MARK))
 )
 	    {
-	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1541;
+	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1533;
 	      {
-		if (! tree_invariant_p (captures[4])) goto next_after_fail1541;
+		if (! tree_invariant_p (captures[4])) goto next_after_fail1533;
 		tree res_op0;
 		res_op0 = captures[1];
 		tree res_op1;
@@ -9385,7 +9385,7 @@ next_after_fail1540:;
 		  _o1[1] = unshare_expr (captures[4]);
 		  _r1 = fold_build2_loc (loc, MIN_EXPR, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
 		  if (EXPR_P (_r1))
-		    goto next_after_fail1541;
+		    goto next_after_fail1533;
 		  res_op1 = _r1;
 		}
 		tree res_op2;
@@ -9395,7 +9395,7 @@ next_after_fail1540:;
 		  _o1[1] = captures[4];
 		  _r1 = fold_build2_loc (loc, MIN_EXPR, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
 		  if (EXPR_P (_r1))
-		    goto next_after_fail1541;
+		    goto next_after_fail1533;
 		  res_op2 = _r1;
 		}
 		tree _r;
@@ -9403,7 +9403,7 @@ next_after_fail1540:;
 		if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 794, __FILE__, __LINE__, true);
 		return _r;
 	      }
-next_after_fail1541:;
+next_after_fail1533:;
 	    }
 	}
         break;
@@ -9427,9 +9427,9 @@ next_after_fail1541:;
  TREE_TYPE (captures[2]), ERROR_MARK))
 )
 	    {
-	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1542;
+	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1534;
 	      {
-		if (! tree_invariant_p (captures[0])) goto next_after_fail1542;
+		if (! tree_invariant_p (captures[0])) goto next_after_fail1534;
 		tree res_op0;
 		res_op0 = captures[2];
 		tree res_op1;
@@ -9439,7 +9439,7 @@ next_after_fail1541:;
 		  _o1[1] = captures[3];
 		  _r1 = fold_build2_loc (loc, MIN_EXPR, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
 		  if (EXPR_P (_r1))
-		    goto next_after_fail1542;
+		    goto next_after_fail1534;
 		  res_op1 = _r1;
 		}
 		tree res_op2;
@@ -9449,7 +9449,7 @@ next_after_fail1541:;
 		  _o1[1] = captures[4];
 		  _r1 = fold_build2_loc (loc, MIN_EXPR, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
 		  if (EXPR_P (_r1))
-		    goto next_after_fail1542;
+		    goto next_after_fail1534;
 		  res_op2 = _r1;
 		}
 		tree _r;
@@ -9457,7 +9457,7 @@ next_after_fail1541:;
 		if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 795, __FILE__, __LINE__, true);
 		return _r;
 	      }
-next_after_fail1542:;
+next_after_fail1534:;
 	    }
 	}
         break;
@@ -9508,7 +9508,7 @@ generic_simplify_UNGE_EXPR (location_t ARG_UNUSED (loc), enum tree_code ARG_UNUS
  TREE_TYPE (captures[1]), ERROR_MARK))
 )
 		      {
-			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1574;
+			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1566;
 			{
 			  tree res_op0;
 			  res_op0 = captures[1];
@@ -9519,7 +9519,7 @@ generic_simplify_UNGE_EXPR (location_t ARG_UNUSED (loc), enum tree_code ARG_UNUS
 			    _o1[1] = captures[5];
 			    _r1 = fold_build2_loc (loc, UNGE_EXPR, type, _o1[0], _o1[1]);
 			    if (EXPR_P (_r1))
-			      goto next_after_fail1574;
+			      goto next_after_fail1566;
 			    res_op1 = _r1;
 			  }
 			  tree res_op2;
@@ -9529,7 +9529,7 @@ generic_simplify_UNGE_EXPR (location_t ARG_UNUSED (loc), enum tree_code ARG_UNUS
 			    _o1[1] = captures[6];
 			    _r1 = fold_build2_loc (loc, UNGE_EXPR, type, _o1[0], _o1[1]);
 			    if (EXPR_P (_r1))
-			      goto next_after_fail1574;
+			      goto next_after_fail1566;
 			    res_op2 = _r1;
 			  }
 			  tree _r;
@@ -9537,7 +9537,7 @@ generic_simplify_UNGE_EXPR (location_t ARG_UNUSED (loc), enum tree_code ARG_UNUS
 			  if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 793, __FILE__, __LINE__, true);
 			  return _r;
 			}
-next_after_fail1574:;
+next_after_fail1566:;
 		      }
 		  }
 	        }
@@ -9555,9 +9555,9 @@ next_after_fail1574:;
  TREE_TYPE (captures[1]), ERROR_MARK))
 )
 	    {
-	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1575;
+	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1567;
 	      {
-		if (! tree_invariant_p (captures[4])) goto next_after_fail1575;
+		if (! tree_invariant_p (captures[4])) goto next_after_fail1567;
 		tree res_op0;
 		res_op0 = captures[1];
 		tree res_op1;
@@ -9567,7 +9567,7 @@ next_after_fail1574:;
 		  _o1[1] = unshare_expr (captures[4]);
 		  _r1 = fold_build2_loc (loc, UNGE_EXPR, type, _o1[0], _o1[1]);
 		  if (EXPR_P (_r1))
-		    goto next_after_fail1575;
+		    goto next_after_fail1567;
 		  res_op1 = _r1;
 		}
 		tree res_op2;
@@ -9577,7 +9577,7 @@ next_after_fail1574:;
 		  _o1[1] = captures[4];
 		  _r1 = fold_build2_loc (loc, UNGE_EXPR, type, _o1[0], _o1[1]);
 		  if (EXPR_P (_r1))
-		    goto next_after_fail1575;
+		    goto next_after_fail1567;
 		  res_op2 = _r1;
 		}
 		tree _r;
@@ -9585,7 +9585,7 @@ next_after_fail1574:;
 		if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 794, __FILE__, __LINE__, true);
 		return _r;
 	      }
-next_after_fail1575:;
+next_after_fail1567:;
 	    }
 	}
         break;
@@ -9609,9 +9609,9 @@ next_after_fail1575:;
  TREE_TYPE (captures[2]), ERROR_MARK))
 )
 	    {
-	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1576;
+	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1568;
 	      {
-		if (! tree_invariant_p (captures[0])) goto next_after_fail1576;
+		if (! tree_invariant_p (captures[0])) goto next_after_fail1568;
 		tree res_op0;
 		res_op0 = captures[2];
 		tree res_op1;
@@ -9621,7 +9621,7 @@ next_after_fail1575:;
 		  _o1[1] = captures[3];
 		  _r1 = fold_build2_loc (loc, UNGE_EXPR, type, _o1[0], _o1[1]);
 		  if (EXPR_P (_r1))
-		    goto next_after_fail1576;
+		    goto next_after_fail1568;
 		  res_op1 = _r1;
 		}
 		tree res_op2;
@@ -9631,7 +9631,7 @@ next_after_fail1575:;
 		  _o1[1] = captures[4];
 		  _r1 = fold_build2_loc (loc, UNGE_EXPR, type, _o1[0], _o1[1]);
 		  if (EXPR_P (_r1))
-		    goto next_after_fail1576;
+		    goto next_after_fail1568;
 		  res_op2 = _r1;
 		}
 		tree _r;
@@ -9639,7 +9639,7 @@ next_after_fail1575:;
 		if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 795, __FILE__, __LINE__, true);
 		return _r;
 	      }
-next_after_fail1576:;
+next_after_fail1568:;
 	    }
 	}
         break;
@@ -9825,9 +9825,9 @@ generic_simplify_BIT_FIELD_REF (location_t ARG_UNUSED (loc), enum tree_code ARG_
 	tree _q22 = TREE_OPERAND (_p0, 2);
 	{
 	  tree captures[5] ATTRIBUTE_UNUSED = { _q20, _q21, _q22, _p1, _p2 };
-	  if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1714;
-	  if (TREE_SIDE_EFFECTS (captures[4])) goto next_after_fail1714;
-	  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1714;
+	  if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1706;
+	  if (TREE_SIDE_EFFECTS (captures[4])) goto next_after_fail1706;
+	  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1706;
 	  {
 	    tree res_op0;
 	    res_op0 = captures[0];
@@ -9842,7 +9842,7 @@ generic_simplify_BIT_FIELD_REF (location_t ARG_UNUSED (loc), enum tree_code ARG_
 	    if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 969, __FILE__, __LINE__, true);
 	    return _r;
 	  }
-next_after_fail1714:;
+next_after_fail1706:;
 	}
         break;
       }
@@ -9855,7 +9855,7 @@ next_after_fail1714:;
  || type_has_mode_precision_p (TREE_TYPE (captures[0]))
 )
 	    {
-	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1715;
+	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1707;
 	      {
 		tree res_op0;
 		res_op0 = captures[0];
@@ -9868,7 +9868,7 @@ next_after_fail1714:;
 		if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 970, __FILE__, __LINE__, true);
 		return _r;
 	      }
-next_after_fail1715:;
+next_after_fail1707:;
 	    }
 	}
         break;
@@ -9882,8 +9882,8 @@ next_after_fail1715:;
 	if (tree_int_cst_equal (captures[1], TYPE_SIZE (TREE_TYPE (captures[0])))
 )
 	  {
-	    if (TREE_SIDE_EFFECTS (_p2)) goto next_after_fail1716;
-	    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1716;
+	    if (TREE_SIDE_EFFECTS (_p2)) goto next_after_fail1708;
+	    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1708;
 	    {
 	      tree res_op0;
 	      res_op0 = captures[0];
@@ -9894,7 +9894,7 @@ next_after_fail1715:;
 	      if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 971, __FILE__, __LINE__, true);
 	      return _r;
 	    }
-next_after_fail1716:;
+next_after_fail1708:;
 	  }
       }
     }
@@ -9907,7 +9907,7 @@ next_after_fail1716:;
 	if (integer_zerop (captures[2])
 )
 	  {
-	    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1717;
+	    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1709;
 	    {
 	      tree res_op0;
 	      {
@@ -9925,14 +9925,14 @@ next_after_fail1716:;
 	      if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 972, __FILE__, __LINE__, true);
 	      return _r;
 	    }
-next_after_fail1717:;
+next_after_fail1709:;
 	  }
 	else
 	  {
 	    if (tree_int_cst_equal (captures[2], TYPE_SIZE (TREE_TYPE (TREE_TYPE (captures[0]))))
 )
 	      {
-		if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1718;
+		if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1710;
 		{
 		  tree res_op0;
 		  {
@@ -9950,7 +9950,7 @@ next_after_fail1717:;
 		  if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 973, __FILE__, __LINE__, true);
 		  return _r;
 		}
-next_after_fail1718:;
+next_after_fail1710:;
 	      }
 	  }
       }
@@ -9973,7 +9973,7 @@ next_after_fail1718:;
  : 0)) == 0))
 )
 	  {
-	    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1719;
+	    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1711;
 	    {
 	      tree res_op0;
 	      res_op0 = captures[0];
@@ -9986,7 +9986,7 @@ next_after_fail1718:;
 	      if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 974, __FILE__, __LINE__, true);
 	      return _r;
 	    }
-next_after_fail1719:;
+next_after_fail1711:;
 	  }
       }
   }
@@ -10036,17 +10036,17 @@ next_after_fail1719:;
 			      if (CONSTRUCTOR_NELTS (ctor) == 0
 )
 				{
-				  if (TREE_SIDE_EFFECTS (captures[0])) goto next_after_fail1720;
-				  if (TREE_SIDE_EFFECTS (captures[1])) goto next_after_fail1720;
-				  if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1720;
-				  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1720;
+				  if (TREE_SIDE_EFFECTS (captures[0])) goto next_after_fail1712;
+				  if (TREE_SIDE_EFFECTS (captures[1])) goto next_after_fail1712;
+				  if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1712;
+				  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1712;
 				  {
 				    tree _r;
 				    _r =  build_zero_cst (type);
 				    if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 975, __FILE__, __LINE__, true);
 				    return _r;
 				  }
-next_after_fail1720:;
+next_after_fail1712:;
 				}
 			      else
 				{
@@ -10056,10 +10056,10 @@ next_after_fail1720:;
 				      if (elt < CONSTRUCTOR_NELTS (ctor)
 )
 					{
-					  if (TREE_SIDE_EFFECTS (captures[0])) goto next_after_fail1721;
-					  if (TREE_SIDE_EFFECTS (captures[1])) goto next_after_fail1721;
-					  if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1721;
-					  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1721;
+					  if (TREE_SIDE_EFFECTS (captures[0])) goto next_after_fail1713;
+					  if (TREE_SIDE_EFFECTS (captures[1])) goto next_after_fail1713;
+					  if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1713;
+					  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1713;
 					  {
 					    tree res_op0;
 					    res_op0 =  CONSTRUCTOR_ELT (ctor, elt)->value;
@@ -10068,21 +10068,21 @@ next_after_fail1720:;
 					    if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 976, __FILE__, __LINE__, true);
 					    return _r;
 					  }
-next_after_fail1721:;
+next_after_fail1713:;
 					}
 				      else
 					{
-					  if (TREE_SIDE_EFFECTS (captures[0])) goto next_after_fail1722;
-					  if (TREE_SIDE_EFFECTS (captures[1])) goto next_after_fail1722;
-					  if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1722;
-					  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1722;
+					  if (TREE_SIDE_EFFECTS (captures[0])) goto next_after_fail1714;
+					  if (TREE_SIDE_EFFECTS (captures[1])) goto next_after_fail1714;
+					  if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1714;
+					  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1714;
 					  {
 					    tree _r;
 					    _r =  build_zero_cst (type);
 					    if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 977, __FILE__, __LINE__, true);
 					    return _r;
 					  }
-next_after_fail1722:;
+next_after_fail1714:;
 					}
 				    }
 				  else
@@ -10115,10 +10115,10 @@ next_after_fail1722:;
 					      if (res
 )
 						{
-						  if (TREE_SIDE_EFFECTS (captures[0])) goto next_after_fail1723;
-						  if (TREE_SIDE_EFFECTS (captures[1])) goto next_after_fail1723;
-						  if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1723;
-						  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1723;
+						  if (TREE_SIDE_EFFECTS (captures[0])) goto next_after_fail1715;
+						  if (TREE_SIDE_EFFECTS (captures[1])) goto next_after_fail1715;
+						  if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1715;
+						  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1715;
 						  {
 						    tree res_op0;
 						    res_op0 =  res;
@@ -10127,7 +10127,7 @@ next_after_fail1722:;
 						    if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 978, __FILE__, __LINE__, true);
 						    return _r;
 						  }
-next_after_fail1723:;
+next_after_fail1715:;
 						}
 					  }
 					}
@@ -10143,27 +10143,27 @@ next_after_fail1723:;
 				  if (CONSTRUCTOR_NELTS (ctor) <= idx / const_k
 )
 				    {
-				      if (TREE_SIDE_EFFECTS (captures[0])) goto next_after_fail1724;
-				      if (TREE_SIDE_EFFECTS (captures[1])) goto next_after_fail1724;
-				      if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1724;
-				      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1724;
+				      if (TREE_SIDE_EFFECTS (captures[0])) goto next_after_fail1716;
+				      if (TREE_SIDE_EFFECTS (captures[1])) goto next_after_fail1716;
+				      if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1716;
+				      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1716;
 				      {
 					tree _r;
 					_r =  build_zero_cst (type);
 					if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 979, __FILE__, __LINE__, true);
 					return _r;
 				      }
-next_after_fail1724:;
+next_after_fail1716:;
 				    }
 				  else
 				    {
 				      if (n == const_k
 )
 					{
-					  if (TREE_SIDE_EFFECTS (captures[0])) goto next_after_fail1725;
-					  if (TREE_SIDE_EFFECTS (captures[1])) goto next_after_fail1725;
-					  if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1725;
-					  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1725;
+					  if (TREE_SIDE_EFFECTS (captures[0])) goto next_after_fail1717;
+					  if (TREE_SIDE_EFFECTS (captures[1])) goto next_after_fail1717;
+					  if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1717;
+					  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1717;
 					  {
 					    tree res_op0;
 					    res_op0 =  CONSTRUCTOR_ELT (ctor, idx / const_k)->value;
@@ -10172,14 +10172,14 @@ next_after_fail1724:;
 					    if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 980, __FILE__, __LINE__, true);
 					    return _r;
 					  }
-next_after_fail1725:;
+next_after_fail1717:;
 					}
 				      else
 					{
-					  if (TREE_SIDE_EFFECTS (captures[0])) goto next_after_fail1726;
-					  if (TREE_SIDE_EFFECTS (captures[1])) goto next_after_fail1726;
-					  if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1726;
-					  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1726;
+					  if (TREE_SIDE_EFFECTS (captures[0])) goto next_after_fail1718;
+					  if (TREE_SIDE_EFFECTS (captures[1])) goto next_after_fail1718;
+					  if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1718;
+					  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1718;
 					  {
 					    tree res_op0;
 					    res_op0 =  CONSTRUCTOR_ELT (ctor, idx / const_k)->value;
@@ -10192,7 +10192,7 @@ next_after_fail1725:;
 					    if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 981, __FILE__, __LINE__, true);
 					    return _r;
 					  }
-next_after_fail1726:;
+next_after_fail1718:;
 					}
 				    }
 				}
@@ -10224,9 +10224,9 @@ next_after_fail1726:;
  wi::to_wide (captures[2]) + isize)
 )
 		{
-		  if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1727;
-		  if (TREE_SIDE_EFFECTS (captures[4])) goto next_after_fail1727;
-		  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1727;
+		  if (TREE_SIDE_EFFECTS (captures[2])) goto next_after_fail1719;
+		  if (TREE_SIDE_EFFECTS (captures[4])) goto next_after_fail1719;
+		  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1719;
 		  {
 		    tree res_op0;
 		    res_op0 = captures[1];
@@ -10243,7 +10243,7 @@ next_after_fail1726:;
 		    if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 982, __FILE__, __LINE__, true);
 		    return _r;
 		  }
-next_after_fail1727:;
+next_after_fail1719:;
 		}
 	      else
 		{
@@ -10251,7 +10251,7 @@ next_after_fail1727:;
  && compare_tree_int (captures[3], isize) == 0
 )
 		    {
-		      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1728;
+		      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1720;
 		      {
 			tree res_op0;
 			res_op0 = captures[1];
@@ -10268,7 +10268,7 @@ next_after_fail1727:;
 			if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 983, __FILE__, __LINE__, true);
 			return _r;
 		      }
-next_after_fail1728:;
+next_after_fail1720:;
 		    }
 		  else
 		    {
@@ -10278,7 +10278,7 @@ next_after_fail1728:;
  wi::to_wide (captures[2]) + isize)
 )
 			{
-			  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1729;
+			  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1721;
 			  {
 			    tree res_op0;
 			    res_op0 = captures[0];
@@ -10295,7 +10295,7 @@ next_after_fail1728:;
 			    if (UNLIKELY (debug_dump)) generic_dump_logs ("match.pd", 984, __FILE__, __LINE__, true);
 			    return _r;
 			  }
-next_after_fail1729:;
+next_after_fail1721:;
 			}
 		    }
 		}

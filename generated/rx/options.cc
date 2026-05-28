@@ -932,9 +932,16 @@ cl_enum_reorder_blocks_algorithm_get (const void *var)
 static const struct cl_enum_arg cl_enum_rx_cpu_types_data[] = 
 {
   { "rx100", RX100, 0 },
+  { "rx13t", RX13T, 0 },
+  { "rx140", RX140, 0 },
   { "rx200", RX200, 0 },
+  { "rx230", RX230, 0 },
   { "rx600", RX600, 0 },
   { "rx610", RX610, 0 },
+  { "rx64m", RX64M, 0 },
+  { "rx66t", RX66T, 0 },
+  { "rx71m", RX71M, 0 },
+  { "rx72t", RX72T, 0 },
   { NULL, 0, 0 }
 };
 
@@ -948,6 +955,64 @@ static int
 cl_enum_rx_cpu_types_get (const void *var)
 {
   return (int) *((const enum rx_cpu_types *) var);
+}
+
+static const struct cl_enum_arg cl_enum_rx_isa_versions_data[] = 
+{
+  { "v1", RX_ISAV1, 0 },
+  { "v2", RX_ISAV2, 0 },
+  { "v3", RX_ISAV3, 0 },
+  { NULL, 0, 0 }
+};
+
+static void
+cl_enum_rx_isa_versions_set (void *var, int value)
+{
+  *((enum rx_isa_versions *) var) = (enum rx_isa_versions) value;
+}
+
+static int
+cl_enum_rx_isa_versions_get (const void *var)
+{
+  return (int) *((const enum rx_isa_versions *) var);
+}
+
+static const struct cl_enum_arg cl_enum_rx_tfu_types_data[] = 
+{
+  { "intrinsic", RX_INTRINSIC, 0 },
+  { "intrinsic,mathlib", RX_MATHLIB, 0 },
+  { NULL, 0, 0 }
+};
+
+static void
+cl_enum_rx_tfu_types_set (void *var, int value)
+{
+  *((enum rx_tfu_types *) var) = (enum rx_tfu_types) value;
+}
+
+static int
+cl_enum_rx_tfu_types_get (const void *var)
+{
+  return (int) *((const enum rx_tfu_types *) var);
+}
+
+static const struct cl_enum_arg cl_enum_rx_tfu_versions_data[] = 
+{
+  { "v1", RX_TFUV1, 0 },
+  { "v2", RX_TFUV2, 0 },
+  { NULL, 0, 0 }
+};
+
+static void
+cl_enum_rx_tfu_versions_set (void *var, int value)
+{
+  *((enum rx_tfu_versions *) var) = (enum rx_tfu_versions) value;
+}
+
+static int
+cl_enum_rx_tfu_versions_get (const void *var)
+{
+  return (int) *((const enum rx_tfu_versions *) var);
 }
 
 static const struct cl_enum_arg cl_enum_sanitize_coverage_data[] = 
@@ -1575,6 +1640,30 @@ const struct cl_enum cl_enums[] =
   {
     NULL,
     NULL,
+    cl_enum_rx_isa_versions_data,
+    sizeof (enum rx_isa_versions),
+    cl_enum_rx_isa_versions_set,
+    cl_enum_rx_isa_versions_get
+  },
+  {
+    NULL,
+    NULL,
+    cl_enum_rx_tfu_types_data,
+    sizeof (enum rx_tfu_types),
+    cl_enum_rx_tfu_types_set,
+    cl_enum_rx_tfu_types_get
+  },
+  {
+    NULL,
+    NULL,
+    cl_enum_rx_tfu_versions_data,
+    sizeof (enum rx_tfu_versions),
+    cl_enum_rx_tfu_versions_set,
+    cl_enum_rx_tfu_versions_get
+  },
+  {
+    NULL,
+    NULL,
     cl_enum_sanitize_coverage_data,
     sizeof (int),
     cl_enum_sanitize_coverage_set,
@@ -1677,7 +1766,7 @@ const struct cl_enum cl_enums[] =
     cl_enum_warn_aligned_new_level_get
   },
 };
-const unsigned int cl_enums_count = 58;
+const unsigned int cl_enums_count = 61;
 
 const struct gcc_options global_options_init =
 {
@@ -1958,7 +2047,7 @@ const struct gcc_options global_options_init =
   7, /* param_rpo_vn_max_loop_depth */
   1000, /* param_sccvn_max_alias_queries_per_access */
   10, /* param_scev_max_expr_complexity */
-  100, /* param_scev_max_expr_size */
+  20, /* param_scev_max_expr_size */
   -1, /* param_sched_autopref_queue_depth */
   1, /* param_sched_mem_true_dep_cost */
   1, /* param_sched_pressure_algorithm */
@@ -2791,7 +2880,7 @@ const struct gcc_options global_options_init =
   OMP_TARGET_SIMD_CLONE_NONE, /* flag_openmp_target_simd_clone */
   0, /* flag_opt_info */
   0, /* flag_optimize_sibling_calls */
-  0, /* flag_optimize_strlen */
+  2, /* flag_optimize_strlen */
   0, /* flag_pack_derived */
   0, /* flag_pack_struct */
   1, /* flag_pad_source */
@@ -2907,6 +2996,7 @@ const struct gcc_options global_options_init =
   VECT_COST_MODEL_UNLIMITED, /* flag_simd_cost_model */
   0, /* flag_single_precision_constant */
   -1, /* flag_sized_deallocation */
+  0, /* flag_sort_data */
   1, /* flag_split_ivs_in_unroller */
   0, /* flag_split_loops */
   0, /* flag_split_paths */
@@ -3044,11 +3134,16 @@ const struct gcc_options global_options_init =
   0, /* plugindir_string */
   0, /* flag_lto_dump_list */
   1, /* rx_allow_string_insns */
-  RX600, /* rx_cpu_type */
+  RX_CPUUNINIT, /* rx_cpu_type */
+  0, /* flag_dfpu */
   0, /* rx_deferred_options */
-  0, /* rx_interrupt_registers */
+  RX_ISAUNINIT, /* rx_isa_version */
   0, /* rx_max_constant_size */
+  0, /* flag_morder */
+  0, /* flag_rxpeephole */
   0, /* rx_small_data_limit */
+  RX_TFUVUNINIT, /* rx_tfu_version */
+  RX_TFUUNINIT, /* rx_tfu_type */
   1, /* rx_warn_multiple_fast_interrupts */
   0, /* flag_lto_name_sort */
   0, /* asm_file_name */
@@ -3079,8 +3174,6 @@ const struct gcc_options global_options_init =
   0, /* version_flag */
   0, /* inhibit_warnings */
   0, /* wrapper_string */
-  0, /* VAR_mrelax (private state) */
-#undef x_VAR_mrelax
   0, /* VAR_msim (private state) */
 #undef x_VAR_msim
   false, /* frontend_set_flag_associative_math */
@@ -5997,7 +6090,7 @@ const struct cl_option cl_options[] =
     NULL, NULL, N_OPTS, N_OPTS, 22, /* .neg_idx = */ -1,
     CL_COMMON | CL_JOINED | CL_OPTIMIZATION | CL_PARAMS,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    offsetof (struct gcc_options, x_param_threader_debug), 52, CLVC_ENUM, CLEV_NORMAL, -1, -1 },
+    offsetof (struct gcc_options, x_param_threader_debug), 55, CLVC_ENUM, CLEV_NORMAL, -1, -1 },
  /* [319] = */ {
     "--param=tm-max-aggregate-size=",
     "Size in bytes after which thread-local aggregates should be instrumented with the logging functions instead of save/restore pairs.",
@@ -7221,7 +7314,7 @@ const struct cl_option cl_options[] =
     NULL, NULL, N_OPTS, N_OPTS, 13, /* .neg_idx = */ -1,
     CL_CXX | CL_ObjCXX | CL_JOINED | CL_WARNING,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
-    offsetof (struct gcc_options, x_warn_aligned_new), 57, CLVC_ENUM, CLEV_NORMAL, -1, -1 },
+    offsetof (struct gcc_options, x_warn_aligned_new), 60, CLVC_ENUM, CLEV_NORMAL, -1, -1 },
  /* [455] = */ {
     "-Wall",
     "Enable most warning messages.",
@@ -11421,7 +11514,7 @@ const struct cl_option cl_options[] =
     "Enable preprocessing.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 3, /* .neg_idx = */ 1981,
+    NULL, NULL, N_OPTS, N_OPTS, 3, /* .neg_idx = */ 1990,
     CL_Fortran,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
@@ -11430,7 +11523,7 @@ const struct cl_option cl_options[] =
     NULL,
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 4, /* .neg_idx = */ 1981,
+    NULL, NULL, N_OPTS, N_OPTS, 4, /* .neg_idx = */ 1990,
     CL_Fortran | CL_JOINED | CL_UNDOCUMENTED | CL_NO_DWARF_RECORD,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
@@ -16739,7 +16832,7 @@ const struct cl_option cl_options[] =
     NULL, NULL, N_OPTS, N_OPTS, 26, /* .neg_idx = */ -1,
     CL_COMMON | CL_JOINED | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
-    offsetof (struct gcc_options, x_flag_openmp_target_simd_clone), 51, CLVC_ENUM, CLEV_NORMAL, -1, -1 },
+    offsetof (struct gcc_options, x_flag_openmp_target_simd_clone), 54, CLVC_ENUM, CLEV_NORMAL, -1, -1 },
  /* [1512] = */ {
     "-foperator-names",
     "Recognize C++ keywords like \"compl\" and \"xor\".",
@@ -18008,7 +18101,7 @@ const struct cl_option cl_options[] =
     NULL, NULL, N_OPTS, N_OPTS, 19, /* .neg_idx = */ 1652,
     CL_COMMON | CL_JOINED,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    offsetof (struct gcc_options, x_flag_sanitize_coverage), 45, CLVC_ENUM, CLEV_BITSET, -1, -1 },
+    offsetof (struct gcc_options, x_flag_sanitize_coverage), 48, CLVC_ENUM, CLEV_BITSET, -1, -1 },
  /* [1653] = */ {
     "-fsanitize-recover",
     "This switch is deprecated; use -fsanitize-recover= instead.",
@@ -18521,7 +18614,7 @@ const struct cl_option cl_options[] =
     NULL, NULL, N_OPTS, N_OPTS, 17, /* .neg_idx = */ -1,
     CL_COMMON | CL_JOINED | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
-    offsetof (struct gcc_options, x_flag_simd_cost_model), 55, CLVC_ENUM, CLEV_NORMAL, -1, -1 },
+    offsetof (struct gcc_options, x_flag_simd_cost_model), 58, CLVC_ENUM, CLEV_NORMAL, -1, -1 },
  /* [1710] = */ {
     "-fsingle-precision-constant",
     "Convert floating point constants to single precision constants.",
@@ -18550,96 +18643,105 @@ const struct cl_option cl_options[] =
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
  /* [1713] = */ {
+    "-fsort-data",
+    "Sort variables based on their alignment and place in separate sections. This option will be ignored if used along with option -fdata-sections.",
+    NULL,
+    NULL,
+    NULL, NULL, N_OPTS, N_OPTS, 10, /* .neg_idx = */ 1713,
+    CL_COMMON,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    offsetof (struct gcc_options, x_flag_sort_data), 0, CLVC_INTEGER, 0, -1, -1 },
+ /* [1714] = */ {
     "-fsources",
     "display the location of module source files as they are compiled",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 8, /* .neg_idx = */ 1713,
+    NULL, NULL, N_OPTS, N_OPTS, 8, /* .neg_idx = */ 1714,
     CL_ModulaX2,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1714] = */ {
+ /* [1715] = */ {
     "-fsplit-ivs-in-unroller",
     "Split lifetimes of induction variables when loops are unrolled.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 22, /* .neg_idx = */ 1714,
+    NULL, NULL, N_OPTS, N_OPTS, 22, /* .neg_idx = */ 1715,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_split_ivs_in_unroller), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1715] = */ {
+ /* [1716] = */ {
     "-fsplit-loops",
     "Perform loop splitting.",
-    NULL,
-    NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 12, /* .neg_idx = */ 1715,
-    CL_COMMON | CL_OPTIMIZATION,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    offsetof (struct gcc_options, x_flag_split_loops), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1716] = */ {
-    "-fsplit-paths",
-    "Split paths leading to loop backedges.",
     NULL,
     NULL,
     NULL, NULL, N_OPTS, N_OPTS, 12, /* .neg_idx = */ 1716,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    offsetof (struct gcc_options, x_flag_split_paths), 0, CLVC_INTEGER, 0, -1, -1 },
+    offsetof (struct gcc_options, x_flag_split_loops), 0, CLVC_INTEGER, 0, -1, -1 },
  /* [1717] = */ {
+    "-fsplit-paths",
+    "Split paths leading to loop backedges.",
+    NULL,
+    NULL,
+    NULL, NULL, N_OPTS, N_OPTS, 12, /* .neg_idx = */ 1717,
+    CL_COMMON | CL_OPTIMIZATION,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    offsetof (struct gcc_options, x_flag_split_paths), 0, CLVC_INTEGER, 0, -1, -1 },
+ /* [1718] = */ {
     "-fsplit-stack",
     "Generate discontiguous stack frames.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 12, /* .neg_idx = */ 1717,
+    NULL, NULL, N_OPTS, N_OPTS, 12, /* .neg_idx = */ 1718,
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_split_stack), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1718] = */ {
+ /* [1719] = */ {
     "-fsplit-wide-types",
     "Split wide types into independent registers.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 17, /* .neg_idx = */ 1718,
+    NULL, NULL, N_OPTS, N_OPTS, 17, /* .neg_idx = */ 1719,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_split_wide_types), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1719] = */ {
+ /* [1720] = */ {
     "-fsplit-wide-types-early",
     "Split wide types into independent registers earlier.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 23, /* .neg_idx = */ 1719,
+    NULL, NULL, N_OPTS, N_OPTS, 23, /* .neg_idx = */ 1720,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_split_wide_types_early), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1720] = */ {
+ /* [1721] = */ {
     "-fsquangle",
     NULL,
     NULL,
     NULL,
-    NULL, NULL, OPT_SPECIAL_warn_removed, N_OPTS, 9, /* .neg_idx = */ 1720,
+    NULL, NULL, OPT_SPECIAL_warn_removed, N_OPTS, 9, /* .neg_idx = */ 1721,
     CL_CXX | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1721] = */ {
+ /* [1722] = */ {
     "-fssa-backprop",
     "Enable backward propagation of use properties at the SSA level.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 13, /* .neg_idx = */ 1721,
+    NULL, NULL, N_OPTS, N_OPTS, 13, /* .neg_idx = */ 1722,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_ssa_backprop), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1722] = */ {
+ /* [1723] = */ {
     "-fssa-phiopt",
     "Optimize conditional patterns using SSA PHI nodes.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 11, /* .neg_idx = */ 1722,
+    NULL, NULL, N_OPTS, N_OPTS, 11, /* .neg_idx = */ 1723,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_ssa_phiopt), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1723] = */ {
+ /* [1724] = */ {
     "-fsso-struct=",
     "-fsso-struct=[big-endian|little-endian|native]	Set the default scalar storage order.",
     NULL,
@@ -18647,26 +18749,26 @@ const struct cl_option cl_options[] =
     NULL, NULL, N_OPTS, N_OPTS, 12, /* .neg_idx = */ -1,
     CL_C | CL_ObjC | CL_JOINED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
-    offsetof (struct gcc_options, x_default_sso), 46, CLVC_ENUM, CLEV_NORMAL, -1, -1 },
- /* [1724] = */ {
+    offsetof (struct gcc_options, x_default_sso), 49, CLVC_ENUM, CLEV_NORMAL, -1, -1 },
+ /* [1725] = */ {
     "-fstack-arrays",
     "Put all local arrays on stack.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 13, /* .neg_idx = */ 1724,
+    NULL, NULL, N_OPTS, N_OPTS, 13, /* .neg_idx = */ 1725,
     CL_Fortran,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_stack_arrays), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1725] = */ {
+ /* [1726] = */ {
     "-fstack-check",
     "Insert stack checking code into the program.  Same as -fstack-check=specific.",
     NULL,
     NULL,
-    "specific", "no", OPT_fstack_check_, N_OPTS, 12, /* .neg_idx = */ 1725,
+    "specific", "no", OPT_fstack_check_, N_OPTS, 12, /* .neg_idx = */ 1726,
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1726] = */ {
+ /* [1727] = */ {
     "-fstack-check=",
     "-fstack-check=[no|generic|specific]	Insert stack checking code into the program.",
     NULL,
@@ -18675,25 +18777,25 @@ const struct cl_option cl_options[] =
     CL_COMMON | CL_JOINED | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [1727] = */ {
+ /* [1728] = */ {
     "-fstack-clash-protection",
     "Insert code to probe each page of stack space as it is allocated to protect from stack-clash style attacks.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 23, /* .neg_idx = */ 1727,
+    NULL, NULL, N_OPTS, N_OPTS, 23, /* .neg_idx = */ 1728,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_stack_clash_protection), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1728] = */ {
+ /* [1729] = */ {
     "-fstack-limit",
     NULL,
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 12, /* .neg_idx = */ 1728,
+    NULL, NULL, N_OPTS, N_OPTS, 12, /* .neg_idx = */ 1729,
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_common_deferred_options), 0, CLVC_DEFER, 0, -1, -1 },
- /* [1729] = */ {
+ /* [1730] = */ {
     "-fstack-limit-register=",
     "-fstack-limit-register=<register>	Trap if the stack goes past <register>.",
     NULL,
@@ -18702,7 +18804,7 @@ const struct cl_option cl_options[] =
     CL_COMMON | CL_JOINED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_common_deferred_options), 0, CLVC_DEFER, 0, -1, -1 },
- /* [1730] = */ {
+ /* [1731] = */ {
     "-fstack-limit-symbol=",
     "-fstack-limit-symbol=<name>	Trap if the stack goes past symbol <name>.",
     NULL,
@@ -18711,16 +18813,16 @@ const struct cl_option cl_options[] =
     CL_COMMON | CL_JOINED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_common_deferred_options), 0, CLVC_DEFER, 0, -1, -1 },
- /* [1731] = */ {
+ /* [1732] = */ {
     "-fstack-protector",
     "Use propolice as a stack protection method.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 16, /* .neg_idx = */ 1731,
+    NULL, NULL, N_OPTS, N_OPTS, 16, /* .neg_idx = */ 1732,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_stack_protect), 0, CLVC_EQUAL, 1, -1, -1 },
- /* [1732] = */ {
+ /* [1733] = */ {
     "-fstack-protector-all",
     "Use a stack protection method for every function.",
     NULL,
@@ -18729,7 +18831,7 @@ const struct cl_option cl_options[] =
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_stack_protect), 0, CLVC_EQUAL, 2, -1, -1 },
- /* [1733] = */ {
+ /* [1734] = */ {
     "-fstack-protector-explicit",
     "Use stack protection method only for functions with the stack_protect attribute.",
     NULL,
@@ -18738,7 +18840,7 @@ const struct cl_option cl_options[] =
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_stack_protect), 0, CLVC_EQUAL, 4, -1, -1 },
- /* [1734] = */ {
+ /* [1735] = */ {
     "-fstack-protector-strong",
     "Use a smart stack protection method for certain functions.",
     NULL,
@@ -18747,7 +18849,7 @@ const struct cl_option cl_options[] =
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_stack_protect), 0, CLVC_EQUAL, 3, -1, -1 },
- /* [1735] = */ {
+ /* [1736] = */ {
     "-fstack-reuse=",
     "-fstack-reuse=[all|named_vars|none]	Set stack reuse level for local variables.",
     NULL,
@@ -18755,8 +18857,8 @@ const struct cl_option cl_options[] =
     NULL, NULL, N_OPTS, N_OPTS, 13, /* .neg_idx = */ -1,
     CL_COMMON | CL_JOINED | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
-    offsetof (struct gcc_options, x_flag_stack_reuse), 47, CLVC_ENUM, CLEV_NORMAL, -1, -1 },
- /* [1736] = */ {
+    offsetof (struct gcc_options, x_flag_stack_reuse), 50, CLVC_ENUM, CLEV_NORMAL, -1, -1 },
+ /* [1737] = */ {
     "-fstack-usage",
     "Output stack usage information on a per-function basis.",
     NULL,
@@ -18765,70 +18867,70 @@ const struct cl_option cl_options[] =
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_stack_usage), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1737] = */ {
+ /* [1738] = */ {
     "-fstats",
     "Display statistics accumulated during compilation.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 6, /* .neg_idx = */ 1737,
+    NULL, NULL, N_OPTS, N_OPTS, 6, /* .neg_idx = */ 1738,
     CL_CXX | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_detailed_statistics), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1738] = */ {
+ /* [1739] = */ {
     "-fstdarg-opt",
     "Optimize amount of stdarg registers saved to stack at start of function.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 11, /* .neg_idx = */ 1738,
+    NULL, NULL, N_OPTS, N_OPTS, 11, /* .neg_idx = */ 1739,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_stdarg_opt), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1739] = */ {
+ /* [1740] = */ {
     "-fstore-merging",
     "Merge adjacent stores.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 14, /* .neg_idx = */ 1739,
+    NULL, NULL, N_OPTS, N_OPTS, 14, /* .neg_idx = */ 1740,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_store_merging), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1740] = */ {
+ /* [1741] = */ {
     "-fstrength-reduce",
     "Does nothing.  Preserved for backward compatibility.",
     NULL,
     NULL,
-    NULL, NULL, OPT_SPECIAL_ignore, N_OPTS, 16, /* .neg_idx = */ 1740,
+    NULL, NULL, OPT_SPECIAL_ignore, N_OPTS, 16, /* .neg_idx = */ 1741,
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1741] = */ {
+ /* [1742] = */ {
     "-fstrict-aliasing",
     "Assume strict aliasing rules apply.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 16, /* .neg_idx = */ 1741,
+    NULL, NULL, N_OPTS, N_OPTS, 16, /* .neg_idx = */ 1742,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_strict_aliasing), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1742] = */ {
+ /* [1743] = */ {
     "-fstrict-enums",
     "Assume that values of enumeration type are always within the minimum range of that type.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 13, /* .neg_idx = */ 1742,
+    NULL, NULL, N_OPTS, N_OPTS, 13, /* .neg_idx = */ 1743,
     CL_CXX | CL_ObjCXX | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_strict_enums), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1743] = */ {
+ /* [1744] = */ {
     "-fstrict-flex-arrays",
     NULL,
     NULL,
     NULL,
-    "3", "0", OPT_fstrict_flex_arrays_, N_OPTS, 19, /* .neg_idx = */ 1743,
+    "3", "0", OPT_fstrict_flex_arrays_, N_OPTS, 19, /* .neg_idx = */ 1744,
     CL_C | CL_CXX | CL_COMMON,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1744] = */ {
+ /* [1745] = */ {
     "-fstrict-flex-arrays=",
     "-fstrict-flex-arrays=<level>    Control when to treat the trailing array of a structure as a flexible array member for the purposes of accessing the elements of such an array. The default is treating all trailing arrays of structures as flexible array members.",
     NULL,
@@ -18837,43 +18939,43 @@ const struct cl_option cl_options[] =
     CL_C | CL_CXX | CL_COMMON | CL_JOINED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 1 /* UInteger */, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_strict_flex_arrays), 0, CLVC_INTEGER, 0, 0, 3 },
- /* [1745] = */ {
+ /* [1746] = */ {
     "-fstrict-overflow",
     "Treat signed overflow as undefined.  Negated as -fwrapv -fwrapv-pointer.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 16, /* .neg_idx = */ 1745,
+    NULL, NULL, N_OPTS, N_OPTS, 16, /* .neg_idx = */ 1746,
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1746] = */ {
+ /* [1747] = */ {
     "-fstrict-prototype",
     NULL,
     NULL,
     NULL,
-    NULL, NULL, OPT_SPECIAL_warn_removed, N_OPTS, 17, /* .neg_idx = */ 1746,
+    NULL, NULL, OPT_SPECIAL_warn_removed, N_OPTS, 17, /* .neg_idx = */ 1747,
     CL_CXX | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1747] = */ {
+ /* [1748] = */ {
     "-fstrict-volatile-bitfields",
     "Force bitfield accesses to match their type width.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 26, /* .neg_idx = */ 1747,
+    NULL, NULL, N_OPTS, N_OPTS, 26, /* .neg_idx = */ 1748,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_strict_volatile_bitfields), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1748] = */ {
+ /* [1749] = */ {
     "-fstrong-eval-order",
     "Follow the C++17 evaluation order requirements for assignment expressions, shift, member function calls, etc.",
     NULL,
     NULL,
-    "all", "none", OPT_fstrong_eval_order_, N_OPTS, 18, /* .neg_idx = */ 1748,
+    "all", "none", OPT_fstrong_eval_order_, N_OPTS, 18, /* .neg_idx = */ 1749,
     CL_CXX | CL_ObjCXX | CL_COMMON,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1749] = */ {
+ /* [1750] = */ {
     "-fstrong-eval-order=",
     "Follow the C++17 evaluation order requirements for assignment expressions, shift, member function calls, etc.",
     NULL,
@@ -18881,8 +18983,8 @@ const struct cl_option cl_options[] =
     NULL, NULL, N_OPTS, N_OPTS, 19, /* .neg_idx = */ -1,
     CL_CXX | CL_ObjCXX | CL_COMMON | CL_JOINED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
-    offsetof (struct gcc_options, x_flag_strong_eval_order), 49, CLVC_ENUM, CLEV_NORMAL, -1, -1 },
- /* [1750] = */ {
+    offsetof (struct gcc_options, x_flag_strong_eval_order), 52, CLVC_ENUM, CLEV_NORMAL, -1, -1 },
+ /* [1751] = */ {
     "-fstrub=all",
     "Enable stack scrubbing for all viable functions.",
     NULL,
@@ -18891,7 +18993,7 @@ const struct cl_option cl_options[] =
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_strub), 0, CLVC_EQUAL, 3, -1, -1 },
- /* [1751] = */ {
+ /* [1752] = */ {
     "-fstrub=at-calls",
     "Enable at-calls stack scrubbing for all viable functions.",
     NULL,
@@ -18900,7 +19002,7 @@ const struct cl_option cl_options[] =
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_strub), 0, CLVC_EQUAL, 1, -1, -1 },
- /* [1752] = */ {
+ /* [1753] = */ {
     "-fstrub=disable",
     "Disable stack scrub entirely, disregarding strub attributes.",
     NULL,
@@ -18909,7 +19011,7 @@ const struct cl_option cl_options[] =
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_strub), 0, CLVC_EQUAL, 0, -1, -1 },
- /* [1753] = */ {
+ /* [1754] = */ {
     "-fstrub=internal",
     "Enable internal stack scrubbing for all viable functions.",
     NULL,
@@ -18918,7 +19020,7 @@ const struct cl_option cl_options[] =
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_strub), 0, CLVC_EQUAL, 2, -1, -1 },
- /* [1754] = */ {
+ /* [1755] = */ {
     "-fstrub=relaxed",
     "Restore default strub mode: as per attributes, with relaxed checking.",
     NULL,
@@ -18927,7 +19029,7 @@ const struct cl_option cl_options[] =
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_strub), 0, CLVC_EQUAL, -3, -1, -1 },
- /* [1755] = */ {
+ /* [1756] = */ {
     "-fstrub=strict",
     "Enable stack scrub as per attributes, with strict call checking.",
     NULL,
@@ -18936,43 +19038,43 @@ const struct cl_option cl_options[] =
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_strub), 0, CLVC_EQUAL, -4, -1, -1 },
- /* [1756] = */ {
+ /* [1757] = */ {
     "-fswig",
     "create a swig interface file for the module",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 5, /* .neg_idx = */ 1756,
+    NULL, NULL, N_OPTS, N_OPTS, 5, /* .neg_idx = */ 1757,
     CL_ModulaX2,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1757] = */ {
+ /* [1758] = */ {
     "-fswitch-errors",
     "Generate code for switches without a default case.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 14, /* .neg_idx = */ 1757,
+    NULL, NULL, N_OPTS, N_OPTS, 14, /* .neg_idx = */ 1758,
     CL_D,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_switch_errors), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1758] = */ {
+ /* [1759] = */ {
     "-fsync-libcalls",
     "Implement __atomic operations via libcalls to legacy __sync functions.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 14, /* .neg_idx = */ 1758,
+    NULL, NULL, N_OPTS, N_OPTS, 14, /* .neg_idx = */ 1759,
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_sync_libcalls), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1759] = */ {
+ /* [1760] = */ {
     "-fsyntax-only",
     "Check for syntax errors, then stop.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 12, /* .neg_idx = */ 1759,
+    NULL, NULL, N_OPTS, N_OPTS, 12, /* .neg_idx = */ 1760,
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_syntax_only), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1760] = */ {
+ /* [1761] = */ {
     "-ftabstop=",
     "-ftabstop=<number>      Distance between tab stops for column reporting.",
     NULL,
@@ -18981,16 +19083,16 @@ const struct cl_option cl_options[] =
     CL_COMMON | CL_JOINED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 1 /* UInteger */, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1761] = */ {
+ /* [1762] = */ {
     "-ftail-call-workaround",
     NULL,
     NULL,
     NULL,
-    "1", "0", OPT_ftail_call_workaround_, N_OPTS, 21, /* .neg_idx = */ 1761,
+    "1", "0", OPT_ftail_call_workaround_, N_OPTS, 21, /* .neg_idx = */ 1762,
     CL_Fortran,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1762] = */ {
+ /* [1763] = */ {
     "-ftail-call-workaround=",
     "Disallow tail call optimization when a calling routine may have omitted character lengths.",
     NULL,
@@ -18999,16 +19101,16 @@ const struct cl_option cl_options[] =
     CL_Fortran | CL_JOINED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 1 /* UInteger */, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tail_call_workaround), 0, CLVC_INTEGER, 0, 0, 2 },
- /* [1763] = */ {
+ /* [1764] = */ {
     "-ftarget-help",
     NULL,
     NULL,
     NULL,
-    NULL, NULL, OPT__target_help, N_OPTS, 12, /* .neg_idx = */ 1763,
+    NULL, NULL, OPT__target_help, N_OPTS, 12, /* .neg_idx = */ 1764,
     CL_COMMON | CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1764] = */ {
+ /* [1765] = */ {
     "-ftemplate-backtrace-limit=",
     "Set the maximum number of template instantiation notes for a single warning or error.",
     NULL,
@@ -19017,7 +19119,7 @@ const struct cl_option cl_options[] =
     CL_CXX | CL_ObjCXX | CL_JOINED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 1 /* UInteger */, 0, 0, 0,
     offsetof (struct gcc_options, x_template_backtrace_limit), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1765] = */ {
+ /* [1766] = */ {
     "-ftemplate-depth-",
     NULL,
     NULL,
@@ -19026,7 +19128,7 @@ const struct cl_option cl_options[] =
     CL_CXX | CL_ObjCXX | CL_JOINED | CL_UNDOCUMENTED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [1766] = */ {
+ /* [1767] = */ {
     "-ftemplate-depth=",
     "-ftemplate-depth=<number>	Specify maximum template instantiation depth.",
     NULL,
@@ -19035,70 +19137,70 @@ const struct cl_option cl_options[] =
     CL_CXX | CL_ObjCXX | CL_JOINED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 1 /* UInteger */, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1767] = */ {
+ /* [1768] = */ {
     "-ftest-coverage",
     "Create data files needed by \"gcov\".",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 14, /* .neg_idx = */ 1767,
+    NULL, NULL, N_OPTS, N_OPTS, 14, /* .neg_idx = */ 1768,
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_test_coverage), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1768] = */ {
+ /* [1769] = */ {
     "-ftest-forall-temp",
     "Force creation of temporary to test infrequently-executed forall code.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 17, /* .neg_idx = */ 1768,
+    NULL, NULL, N_OPTS, N_OPTS, 17, /* .neg_idx = */ 1769,
     CL_Fortran,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_test_forall_temp), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1769] = */ {
+ /* [1770] = */ {
     "-fthis-is-variable",
     NULL,
     NULL,
     NULL,
-    NULL, NULL, OPT_SPECIAL_warn_removed, N_OPTS, 17, /* .neg_idx = */ 1769,
+    NULL, NULL, OPT_SPECIAL_warn_removed, N_OPTS, 17, /* .neg_idx = */ 1770,
     CL_CXX | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1770] = */ {
+ /* [1771] = */ {
     "-fthread-jumps",
     "Perform jump threading optimizations.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 13, /* .neg_idx = */ 1770,
+    NULL, NULL, N_OPTS, N_OPTS, 13, /* .neg_idx = */ 1771,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_thread_jumps), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1771] = */ {
+ /* [1772] = */ {
     "-fthreadsafe-statics",
     "-fno-threadsafe-statics	Do not generate thread-safe code for initializing local statics.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 19, /* .neg_idx = */ 1771,
+    NULL, NULL, N_OPTS, N_OPTS, 19, /* .neg_idx = */ 1772,
     CL_CXX | CL_ObjCXX | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_threadsafe_statics), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1772] = */ {
+ /* [1773] = */ {
     "-ftime-report",
     "Report the time taken by each compiler pass.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 12, /* .neg_idx = */ 1772,
+    NULL, NULL, N_OPTS, N_OPTS, 12, /* .neg_idx = */ 1773,
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_time_report), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1773] = */ {
+ /* [1774] = */ {
     "-ftime-report-details",
     "Record times taken by sub-phases separately.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 20, /* .neg_idx = */ 1773,
+    NULL, NULL, N_OPTS, N_OPTS, 20, /* .neg_idx = */ 1774,
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_time_report_details), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1774] = */ {
+ /* [1775] = */ {
     "-ftls-model=",
     "-ftls-model=[global-dynamic|local-dynamic|initial-exec|local-exec]	Set the default thread-local storage code generation model.",
     NULL,
@@ -19106,26 +19208,26 @@ const struct cl_option cl_options[] =
     NULL, NULL, N_OPTS, N_OPTS, 11, /* .neg_idx = */ -1,
     CL_COMMON | CL_JOINED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
-    offsetof (struct gcc_options, x_flag_tls_default), 53, CLVC_ENUM, CLEV_NORMAL, -1, -1 },
- /* [1775] = */ {
+    offsetof (struct gcc_options, x_flag_tls_default), 56, CLVC_ENUM, CLEV_NORMAL, -1, -1 },
+ /* [1776] = */ {
     "-ftoplevel-reorder",
     "Reorder top level functions, variables, and asms.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 17, /* .neg_idx = */ 1775,
+    NULL, NULL, N_OPTS, N_OPTS, 17, /* .neg_idx = */ 1776,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_toplevel_reorder), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1776] = */ {
+ /* [1777] = */ {
     "-ftracer",
     "Perform superblock formation via tail duplication.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 7, /* .neg_idx = */ 1776,
+    NULL, NULL, N_OPTS, N_OPTS, 7, /* .neg_idx = */ 1777,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tracer), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1777] = */ {
+ /* [1778] = */ {
     "-ftrack-macro-expansion",
     NULL,
     NULL,
@@ -19134,7 +19236,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_CXX | CL_ObjC | CL_ObjCXX | CL_JOINED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 1 /* JoinedOrMissing */, 1 /* UInteger */, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1778] = */ {
+ /* [1779] = */ {
     "-ftrack-macro-expansion=",
     "-ftrack-macro-expansion=<0|1|2>	Track locations of tokens coming from macro expansion and display them in error messages.",
     NULL,
@@ -19143,7 +19245,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_CXX | CL_ObjC | CL_ObjCXX | CL_JOINED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 1 /* JoinedOrMissing */, 1 /* UInteger */, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1779] = */ {
+ /* [1780] = */ {
     "-ftrampoline-impl=",
     "Whether trampolines are generated in executable memory rather than executable stack.",
     NULL,
@@ -19151,17 +19253,17 @@ const struct cl_option cl_options[] =
     NULL, NULL, N_OPTS, N_OPTS, 17, /* .neg_idx = */ -1,
     CL_COMMON | CL_JOINED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
-    offsetof (struct gcc_options, x_flag_trampoline_impl), 54, CLVC_ENUM, CLEV_NORMAL, -1, -1 },
- /* [1780] = */ {
+    offsetof (struct gcc_options, x_flag_trampoline_impl), 57, CLVC_ENUM, CLEV_NORMAL, -1, -1 },
+ /* [1781] = */ {
     "-ftrampolines",
     "For targets that normally need trampolines for nested functions, always generate them instead of using descriptors.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 12, /* .neg_idx = */ 1780,
+    NULL, NULL, N_OPTS, N_OPTS, 12, /* .neg_idx = */ 1781,
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_trampolines), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1781] = */ {
+ /* [1782] = */ {
     "-ftransition=all",
     "List information on all D language transitions.",
     NULL,
@@ -19170,7 +19272,7 @@ const struct cl_option cl_options[] =
     CL_D,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1782] = */ {
+ /* [1783] = */ {
     "-ftransition=field",
     "List all non-mutable fields which occupy an object instance.",
     NULL,
@@ -19179,7 +19281,7 @@ const struct cl_option cl_options[] =
     CL_D,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1783] = */ {
+ /* [1784] = */ {
     "-ftransition=in",
     "List all usages of 'in' on parameter.",
     NULL,
@@ -19188,7 +19290,7 @@ const struct cl_option cl_options[] =
     CL_D,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1784] = */ {
+ /* [1785] = */ {
     "-ftransition=nogc",
     "List all hidden GC allocations.",
     NULL,
@@ -19197,7 +19299,7 @@ const struct cl_option cl_options[] =
     CL_D,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1785] = */ {
+ /* [1786] = */ {
     "-ftransition=templates",
     "List statistics on template instantiations.",
     NULL,
@@ -19206,7 +19308,7 @@ const struct cl_option cl_options[] =
     CL_D,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1786] = */ {
+ /* [1787] = */ {
     "-ftransition=tls",
     "List all variables going into thread local storage.",
     NULL,
@@ -19215,61 +19317,61 @@ const struct cl_option cl_options[] =
     CL_D,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1787] = */ {
+ /* [1788] = */ {
     "-ftrapping-math",
     "Assume floating-point operations can trap.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 14, /* .neg_idx = */ 1787,
+    NULL, NULL, N_OPTS, N_OPTS, 14, /* .neg_idx = */ 1788,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_trapping_math), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1788] = */ {
+ /* [1789] = */ {
     "-ftrapv",
     "Trap for signed overflow in addition, subtraction and multiplication.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 6, /* .neg_idx = */ 1788,
+    NULL, NULL, N_OPTS, N_OPTS, 6, /* .neg_idx = */ 1789,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_trapv), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1789] = */ {
+ /* [1790] = */ {
     "-ftree-bit-ccp",
     "Enable SSA-BIT-CCP optimization on trees.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 13, /* .neg_idx = */ 1789,
+    NULL, NULL, N_OPTS, N_OPTS, 13, /* .neg_idx = */ 1790,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tree_bit_ccp), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1790] = */ {
+ /* [1791] = */ {
     "-ftree-builtin-call-dce",
     "Enable conditional dead code elimination for builtin calls.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 22, /* .neg_idx = */ 1790,
+    NULL, NULL, N_OPTS, N_OPTS, 22, /* .neg_idx = */ 1791,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tree_builtin_call_dce), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1791] = */ {
+ /* [1792] = */ {
     "-ftree-ccp",
     "Enable SSA-CCP optimization on trees.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 9, /* .neg_idx = */ 1791,
+    NULL, NULL, N_OPTS, N_OPTS, 9, /* .neg_idx = */ 1792,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tree_ccp), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1792] = */ {
+ /* [1793] = */ {
     "-ftree-ch",
     "Enable loop header copying on trees.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 8, /* .neg_idx = */ 1792,
+    NULL, NULL, N_OPTS, N_OPTS, 8, /* .neg_idx = */ 1793,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tree_ch), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1793] = */ {
+ /* [1794] = */ {
     "-ftree-coalesce-inlined-vars",
     "Does nothing.  Preserved for backward compatibility.",
     NULL,
@@ -19278,178 +19380,178 @@ const struct cl_option cl_options[] =
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1794] = */ {
+ /* [1795] = */ {
     "-ftree-coalesce-vars",
     "Enable SSA coalescing of user variables.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 19, /* .neg_idx = */ 1794,
+    NULL, NULL, N_OPTS, N_OPTS, 19, /* .neg_idx = */ 1795,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tree_coalesce_vars), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1795] = */ {
+ /* [1796] = */ {
     "-ftree-copy-prop",
     "Enable copy propagation on trees.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 15, /* .neg_idx = */ 1795,
+    NULL, NULL, N_OPTS, N_OPTS, 15, /* .neg_idx = */ 1796,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tree_copy_prop), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1796] = */ {
+ /* [1797] = */ {
     "-ftree-copyrename",
     "Does nothing.  Preserved for backward compatibility.",
     NULL,
     NULL,
-    NULL, NULL, OPT_SPECIAL_ignore, N_OPTS, 16, /* .neg_idx = */ 1796,
+    NULL, NULL, OPT_SPECIAL_ignore, N_OPTS, 16, /* .neg_idx = */ 1797,
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1797] = */ {
+ /* [1798] = */ {
     "-ftree-cselim",
     "Transform condition stores into unconditional ones.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 12, /* .neg_idx = */ 1797,
+    NULL, NULL, N_OPTS, N_OPTS, 12, /* .neg_idx = */ 1798,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tree_cselim), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1798] = */ {
+ /* [1799] = */ {
     "-ftree-dce",
     "Enable SSA dead code elimination optimization on trees.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 9, /* .neg_idx = */ 1798,
+    NULL, NULL, N_OPTS, N_OPTS, 9, /* .neg_idx = */ 1799,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tree_dce), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1799] = */ {
+ /* [1800] = */ {
     "-ftree-dominator-opts",
     "Enable dominator optimizations.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 20, /* .neg_idx = */ 1799,
+    NULL, NULL, N_OPTS, N_OPTS, 20, /* .neg_idx = */ 1800,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tree_dom), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1800] = */ {
+ /* [1801] = */ {
     "-ftree-dse",
     "Enable dead store elimination.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 9, /* .neg_idx = */ 1800,
+    NULL, NULL, N_OPTS, N_OPTS, 9, /* .neg_idx = */ 1801,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tree_dse), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1801] = */ {
+ /* [1802] = */ {
     "-ftree-forwprop",
     "Enable forward propagation on trees.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 14, /* .neg_idx = */ 1801,
+    NULL, NULL, N_OPTS, N_OPTS, 14, /* .neg_idx = */ 1802,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tree_forwprop), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1802] = */ {
+ /* [1803] = */ {
     "-ftree-fre",
     "Enable Full Redundancy Elimination (FRE) on trees.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 9, /* .neg_idx = */ 1802,
+    NULL, NULL, N_OPTS, N_OPTS, 9, /* .neg_idx = */ 1803,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tree_fre), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1803] = */ {
+ /* [1804] = */ {
     "-ftree-loop-distribute-patterns",
     "Enable loop distribution for patterns transformed into a library call.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 30, /* .neg_idx = */ 1803,
+    NULL, NULL, N_OPTS, N_OPTS, 30, /* .neg_idx = */ 1804,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tree_loop_distribute_patterns), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1804] = */ {
+ /* [1805] = */ {
     "-ftree-loop-distribution",
     "Enable loop distribution on trees.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 23, /* .neg_idx = */ 1804,
+    NULL, NULL, N_OPTS, N_OPTS, 23, /* .neg_idx = */ 1805,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tree_loop_distribution), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1805] = */ {
+ /* [1806] = */ {
     "-ftree-loop-if-convert",
     "Convert conditional jumps in innermost loops to branchless equivalents.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 21, /* .neg_idx = */ 1805,
+    NULL, NULL, N_OPTS, N_OPTS, 21, /* .neg_idx = */ 1806,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tree_loop_if_convert), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1806] = */ {
+ /* [1807] = */ {
     "-ftree-loop-if-convert-stores",
     "Does nothing. Preserved for backward compatibility.",
     NULL,
     NULL,
-    NULL, NULL, OPT_SPECIAL_ignore, N_OPTS, 28, /* .neg_idx = */ 1806,
+    NULL, NULL, OPT_SPECIAL_ignore, N_OPTS, 28, /* .neg_idx = */ 1807,
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1807] = */ {
+ /* [1808] = */ {
     "-ftree-loop-im",
     "Enable loop invariant motion on trees.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 13, /* .neg_idx = */ 1807,
+    NULL, NULL, N_OPTS, N_OPTS, 13, /* .neg_idx = */ 1808,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tree_loop_im), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1808] = */ {
+ /* [1809] = */ {
     "-ftree-loop-ivcanon",
     "Create canonical induction variables in loops.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 18, /* .neg_idx = */ 1808,
+    NULL, NULL, N_OPTS, N_OPTS, 18, /* .neg_idx = */ 1809,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tree_loop_ivcanon), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1809] = */ {
+ /* [1810] = */ {
     "-ftree-loop-linear",
     "Enable loop nest transforms.  Same as -floop-nest-optimize.",
     NULL,
     NULL,
-    NULL, NULL, OPT_floop_nest_optimize, N_OPTS, 17, /* .neg_idx = */ 1809,
+    NULL, NULL, OPT_floop_nest_optimize, N_OPTS, 17, /* .neg_idx = */ 1810,
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1810] = */ {
+ /* [1811] = */ {
     "-ftree-loop-optimize",
     "Enable loop optimizations on tree level.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 19, /* .neg_idx = */ 1810,
+    NULL, NULL, N_OPTS, N_OPTS, 19, /* .neg_idx = */ 1811,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tree_loop_optimize), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1811] = */ {
+ /* [1812] = */ {
     "-ftree-loop-vectorize",
     "Enable loop vectorization on trees.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 20, /* .neg_idx = */ 1811,
+    NULL, NULL, N_OPTS, N_OPTS, 20, /* .neg_idx = */ 1812,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tree_loop_vectorize), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1812] = */ {
+ /* [1813] = */ {
     "-ftree-lrs",
     "Perform live range splitting during the SSA->normal pass.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 9, /* .neg_idx = */ 1812,
+    NULL, NULL, N_OPTS, N_OPTS, 9, /* .neg_idx = */ 1813,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tree_live_range_split), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1813] = */ {
+ /* [1814] = */ {
     "-ftree-parallelize-loops=",
     "-ftree-parallelize-loops=<number>	Enable automatic parallelization of loops.",
     NULL,
@@ -19458,169 +19560,169 @@ const struct cl_option cl_options[] =
     CL_COMMON | CL_JOINED | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 1 /* UInteger */, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tree_parallelize_loops), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1814] = */ {
+ /* [1815] = */ {
     "-ftree-partial-pre",
     "In SSA-PRE optimization on trees, enable partial-partial redundancy elimination.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 17, /* .neg_idx = */ 1814,
+    NULL, NULL, N_OPTS, N_OPTS, 17, /* .neg_idx = */ 1815,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tree_partial_pre), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1815] = */ {
+ /* [1816] = */ {
     "-ftree-phiprop",
     "Enable hoisting loads from conditional pointers.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 13, /* .neg_idx = */ 1815,
+    NULL, NULL, N_OPTS, N_OPTS, 13, /* .neg_idx = */ 1816,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tree_phiprop), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1816] = */ {
+ /* [1817] = */ {
     "-ftree-pre",
     "Enable SSA-PRE optimization on trees.",
-    NULL,
-    NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 9, /* .neg_idx = */ 1816,
-    CL_COMMON | CL_OPTIMIZATION,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    offsetof (struct gcc_options, x_flag_tree_pre), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1817] = */ {
-    "-ftree-pta",
-    "Perform function-local points-to analysis on trees.",
     NULL,
     NULL,
     NULL, NULL, N_OPTS, N_OPTS, 9, /* .neg_idx = */ 1817,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    offsetof (struct gcc_options, x_flag_tree_pta), 0, CLVC_INTEGER, 0, -1, -1 },
+    offsetof (struct gcc_options, x_flag_tree_pre), 0, CLVC_INTEGER, 0, -1, -1 },
  /* [1818] = */ {
+    "-ftree-pta",
+    "Perform function-local points-to analysis on trees.",
+    NULL,
+    NULL,
+    NULL, NULL, N_OPTS, N_OPTS, 9, /* .neg_idx = */ 1818,
+    CL_COMMON | CL_OPTIMIZATION,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    offsetof (struct gcc_options, x_flag_tree_pta), 0, CLVC_INTEGER, 0, -1, -1 },
+ /* [1819] = */ {
     "-ftree-reassoc",
     "Enable reassociation on tree level.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 13, /* .neg_idx = */ 1818,
+    NULL, NULL, N_OPTS, N_OPTS, 13, /* .neg_idx = */ 1819,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tree_reassoc), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1819] = */ {
+ /* [1820] = */ {
     "-ftree-salias",
     "Does nothing.  Preserved for backward compatibility.",
     NULL,
     NULL,
-    NULL, NULL, OPT_SPECIAL_ignore, N_OPTS, 12, /* .neg_idx = */ 1819,
+    NULL, NULL, OPT_SPECIAL_ignore, N_OPTS, 12, /* .neg_idx = */ 1820,
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1820] = */ {
+ /* [1821] = */ {
     "-ftree-scev-cprop",
     "Enable copy propagation of scalar-evolution information.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 16, /* .neg_idx = */ 1820,
+    NULL, NULL, N_OPTS, N_OPTS, 16, /* .neg_idx = */ 1821,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tree_scev_cprop), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1821] = */ {
+ /* [1822] = */ {
     "-ftree-sink",
     "Enable SSA code sinking on trees.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 10, /* .neg_idx = */ 1821,
+    NULL, NULL, N_OPTS, N_OPTS, 10, /* .neg_idx = */ 1822,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tree_sink), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1822] = */ {
+ /* [1823] = */ {
     "-ftree-slp-vectorize",
     "Enable basic block vectorization (SLP) on trees.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 19, /* .neg_idx = */ 1822,
+    NULL, NULL, N_OPTS, N_OPTS, 19, /* .neg_idx = */ 1823,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tree_slp_vectorize), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1823] = */ {
+ /* [1824] = */ {
     "-ftree-slsr",
     "Perform straight-line strength reduction.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 10, /* .neg_idx = */ 1823,
+    NULL, NULL, N_OPTS, N_OPTS, 10, /* .neg_idx = */ 1824,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tree_slsr), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1824] = */ {
+ /* [1825] = */ {
     "-ftree-sra",
     "Perform scalar replacement of aggregates.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 9, /* .neg_idx = */ 1824,
+    NULL, NULL, N_OPTS, N_OPTS, 9, /* .neg_idx = */ 1825,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tree_sra), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1825] = */ {
+ /* [1826] = */ {
     "-ftree-store-ccp",
     "Does nothing.  Preserved for backward compatibility.",
     NULL,
     NULL,
-    NULL, NULL, OPT_SPECIAL_ignore, N_OPTS, 15, /* .neg_idx = */ 1825,
-    CL_COMMON,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1826] = */ {
-    "-ftree-store-copy-prop",
-    "Does nothing.  Preserved for backward compatibility.",
-    NULL,
-    NULL,
-    NULL, NULL, OPT_SPECIAL_ignore, N_OPTS, 21, /* .neg_idx = */ 1826,
+    NULL, NULL, OPT_SPECIAL_ignore, N_OPTS, 15, /* .neg_idx = */ 1826,
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
  /* [1827] = */ {
+    "-ftree-store-copy-prop",
+    "Does nothing.  Preserved for backward compatibility.",
+    NULL,
+    NULL,
+    NULL, NULL, OPT_SPECIAL_ignore, N_OPTS, 21, /* .neg_idx = */ 1827,
+    CL_COMMON,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
+ /* [1828] = */ {
     "-ftree-switch-conversion",
     "Perform conversions of switch initializations.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 23, /* .neg_idx = */ 1827,
+    NULL, NULL, N_OPTS, N_OPTS, 23, /* .neg_idx = */ 1828,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tree_switch_conversion), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1828] = */ {
+ /* [1829] = */ {
     "-ftree-tail-merge",
     "Enable tail merging on trees.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 16, /* .neg_idx = */ 1828,
+    NULL, NULL, N_OPTS, N_OPTS, 16, /* .neg_idx = */ 1829,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tree_tail_merge), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1829] = */ {
+ /* [1830] = */ {
     "-ftree-ter",
     "Replace temporary expressions in the SSA->normal pass.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 9, /* .neg_idx = */ 1829,
+    NULL, NULL, N_OPTS, N_OPTS, 9, /* .neg_idx = */ 1830,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tree_ter), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1830] = */ {
+ /* [1831] = */ {
     "-ftree-vect-loop-version",
     "Does nothing. Preserved for backward compatibility.",
     NULL,
     NULL,
-    NULL, NULL, OPT_SPECIAL_ignore, N_OPTS, 23, /* .neg_idx = */ 1830,
+    NULL, NULL, OPT_SPECIAL_ignore, N_OPTS, 23, /* .neg_idx = */ 1831,
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1831] = */ {
+ /* [1832] = */ {
     "-ftree-vectorize",
     "Enable vectorization on trees.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 15, /* .neg_idx = */ 1831,
+    NULL, NULL, N_OPTS, N_OPTS, 15, /* .neg_idx = */ 1832,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tree_vectorize), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1832] = */ {
+ /* [1833] = */ {
     "-ftree-vectorizer-verbose=",
     "Does nothing.  Preserved for backward compatibility.",
     NULL,
@@ -19629,16 +19731,16 @@ const struct cl_option cl_options[] =
     CL_COMMON | CL_JOINED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [1833] = */ {
+ /* [1834] = */ {
     "-ftree-vrp",
     "Perform Value Range Propagation on trees.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 9, /* .neg_idx = */ 1833,
+    NULL, NULL, N_OPTS, N_OPTS, 9, /* .neg_idx = */ 1834,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_tree_vrp), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1834] = */ {
+ /* [1835] = */ {
     "-ftrivial-auto-var-init=",
     "-ftrivial-auto-var-init=[uninitialized|pattern|zero]	Add initializations to automatic variables.",
     NULL,
@@ -19647,268 +19749,268 @@ const struct cl_option cl_options[] =
     CL_COMMON | CL_JOINED | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_auto_var_init), 0, CLVC_ENUM, CLEV_NORMAL, -1, -1 },
- /* [1835] = */ {
+ /* [1836] = */ {
     "-funbounded-by-reference",
     "optimize non var unbounded parameters by passing it by reference, providing it is not written to within the callee procedure.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 23, /* .neg_idx = */ 1835,
+    NULL, NULL, N_OPTS, N_OPTS, 23, /* .neg_idx = */ 1836,
     CL_ModulaX2,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1836] = */ {
+ /* [1837] = */ {
     "-funconstrained-commons",
     "Assume common declarations may be overridden with ones with a larger trailing array.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 22, /* .neg_idx = */ 1836,
+    NULL, NULL, N_OPTS, N_OPTS, 22, /* .neg_idx = */ 1837,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_unconstrained_commons), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1837] = */ {
+ /* [1838] = */ {
     "-funderscoring",
     "Append underscores to externally visible names.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 13, /* .neg_idx = */ 1837,
+    NULL, NULL, N_OPTS, N_OPTS, 13, /* .neg_idx = */ 1838,
     CL_Fortran,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_underscoring), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1838] = */ {
+ /* [1839] = */ {
     "-funit-at-a-time",
     "Compile whole compilation unit at a time.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 15, /* .neg_idx = */ 1838,
+    NULL, NULL, N_OPTS, N_OPTS, 15, /* .neg_idx = */ 1839,
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_unit_at_a_time), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1839] = */ {
+ /* [1840] = */ {
     "-funittest",
     "Compile in unittest code.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 9, /* .neg_idx = */ 1839,
+    NULL, NULL, N_OPTS, N_OPTS, 9, /* .neg_idx = */ 1840,
     CL_D,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1840] = */ {
+ /* [1841] = */ {
     "-funreachable-traps",
     "Trap on __builtin_unreachable instead of using it for optimization.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 18, /* .neg_idx = */ 1840,
+    NULL, NULL, N_OPTS, N_OPTS, 18, /* .neg_idx = */ 1841,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_unreachable_traps), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1841] = */ {
+ /* [1842] = */ {
     "-funroll-all-loops",
     "Perform loop unrolling for all loops.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 17, /* .neg_idx = */ 1841,
+    NULL, NULL, N_OPTS, N_OPTS, 17, /* .neg_idx = */ 1842,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_unroll_all_loops), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1842] = */ {
+ /* [1843] = */ {
     "-funroll-completely-grow-size",
     NULL,
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 28, /* .neg_idx = */ 1842,
+    NULL, NULL, N_OPTS, N_OPTS, 28, /* .neg_idx = */ 1843,
     CL_UNDOCUMENTED | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_cunroll_grow_size), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1843] = */ {
+ /* [1844] = */ {
     "-funroll-loops",
     "Perform loop unrolling when iteration count is known.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 13, /* .neg_idx = */ 1843,
+    NULL, NULL, N_OPTS, N_OPTS, 13, /* .neg_idx = */ 1844,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_unroll_loops), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1844] = */ {
+ /* [1845] = */ {
     "-funsafe-loop-optimizations",
     "Does nothing.  Preserved for backward compatibility.",
     NULL,
     NULL,
-    NULL, NULL, OPT_SPECIAL_ignore, N_OPTS, 26, /* .neg_idx = */ 1844,
+    NULL, NULL, OPT_SPECIAL_ignore, N_OPTS, 26, /* .neg_idx = */ 1845,
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1845] = */ {
+ /* [1846] = */ {
     "-funsafe-math-optimizations",
     "Allow math optimizations that may violate IEEE or ISO standards.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 26, /* .neg_idx = */ 1845,
+    NULL, NULL, N_OPTS, N_OPTS, 26, /* .neg_idx = */ 1846,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_unsafe_math_optimizations), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1846] = */ {
+ /* [1847] = */ {
     "-funsigned-bitfields",
     "When \"signed\" or \"unsigned\" is not given make the bitfield unsigned.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 19, /* .neg_idx = */ 1846,
+    NULL, NULL, N_OPTS, N_OPTS, 19, /* .neg_idx = */ 1847,
     CL_C | CL_CXX | CL_ObjC | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_signed_bitfields), 0, CLVC_EQUAL, 0, -1, -1 },
- /* [1847] = */ {
+ /* [1848] = */ {
     "-funsigned-char",
     "Make \"char\" unsigned by default.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 14, /* .neg_idx = */ 1847,
+    NULL, NULL, N_OPTS, N_OPTS, 14, /* .neg_idx = */ 1848,
     CL_Ada | CL_AdaSCIL | CL_AdaWhy | CL_C | CL_CXX | CL_LTO | CL_ObjC | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_signed_char), 0, CLVC_EQUAL, 0, -1, -1 },
- /* [1848] = */ {
+ /* [1849] = */ {
     "-funswitch-loops",
     "Perform loop unswitching.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 15, /* .neg_idx = */ 1848,
+    NULL, NULL, N_OPTS, N_OPTS, 15, /* .neg_idx = */ 1849,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_unswitch_loops), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1849] = */ {
+ /* [1850] = */ {
     "-funwind-tables",
     "Just generate unwind tables for exception handling.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 14, /* .neg_idx = */ 1849,
+    NULL, NULL, N_OPTS, N_OPTS, 14, /* .neg_idx = */ 1850,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_unwind_tables), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1850] = */ {
+ /* [1851] = */ {
     "-fuse-cxa-atexit",
     "Use __cxa_atexit to register destructors.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 15, /* .neg_idx = */ 1850,
+    NULL, NULL, N_OPTS, N_OPTS, 15, /* .neg_idx = */ 1851,
     CL_CXX | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_use_cxa_atexit), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1851] = */ {
+ /* [1852] = */ {
     "-fuse-cxa-get-exception-ptr",
     "Use __cxa_get_exception_ptr in exception handling.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 26, /* .neg_idx = */ 1851,
+    NULL, NULL, N_OPTS, N_OPTS, 26, /* .neg_idx = */ 1852,
     CL_CXX | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_use_cxa_get_exception_ptr), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1852] = */ {
+ /* [1853] = */ {
     "-fuse-ld=bfd",
     "Use the bfd linker instead of the default linker.",
-    NULL,
-    NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 11, /* .neg_idx = */ 1853,
-    CL_COMMON | CL_DRIVER,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1853] = */ {
-    "-fuse-ld=gold",
-    "Use the gold linker instead of the default linker.",
-    NULL,
-    NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 12, /* .neg_idx = */ 1852,
-    CL_COMMON | CL_DRIVER,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1854] = */ {
-    "-fuse-ld=lld",
-    "Use the lld LLVM linker instead of the default linker.",
     NULL,
     NULL,
     NULL, NULL, N_OPTS, N_OPTS, 11, /* .neg_idx = */ 1854,
     CL_COMMON | CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
+ /* [1854] = */ {
+    "-fuse-ld=gold",
+    "Use the gold linker instead of the default linker.",
+    NULL,
+    NULL,
+    NULL, NULL, N_OPTS, N_OPTS, 12, /* .neg_idx = */ 1853,
+    CL_COMMON | CL_DRIVER,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
  /* [1855] = */ {
-    "-fuse-ld=mold",
-    "Use the Modern linker (MOLD) linker instead of the default linker.",
+    "-fuse-ld=lld",
+    "Use the lld LLVM linker instead of the default linker.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 12, /* .neg_idx = */ 1855,
+    NULL, NULL, N_OPTS, N_OPTS, 11, /* .neg_idx = */ 1855,
     CL_COMMON | CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
  /* [1856] = */ {
+    "-fuse-ld=mold",
+    "Use the Modern linker (MOLD) linker instead of the default linker.",
+    NULL,
+    NULL,
+    NULL, NULL, N_OPTS, N_OPTS, 12, /* .neg_idx = */ 1856,
+    CL_COMMON | CL_DRIVER,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
+ /* [1857] = */ {
     "-fuse-linker-plugin",
     NULL,
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 18, /* .neg_idx = */ 1856,
+    NULL, NULL, N_OPTS, N_OPTS, 18, /* .neg_idx = */ 1857,
     CL_COMMON | CL_UNDOCUMENTED,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_use_linker_plugin), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1857] = */ {
+ /* [1858] = */ {
     "-fuse-list=",
     "orders the initialization/finalizations for scaffold-static or force linking of modules if scaffold-dynamic",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 10, /* .neg_idx = */ 1857,
+    NULL, NULL, N_OPTS, N_OPTS, 10, /* .neg_idx = */ 1858,
     CL_ModulaX2 | CL_JOINED,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [1858] = */ {
+ /* [1859] = */ {
     "-fvar-tracking",
     "Perform variable tracking.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 13, /* .neg_idx = */ 1858,
+    NULL, NULL, N_OPTS, N_OPTS, 13, /* .neg_idx = */ 1859,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_var_tracking), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1859] = */ {
+ /* [1860] = */ {
     "-fvar-tracking-assignments",
     "Perform variable tracking by annotating assignments.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 25, /* .neg_idx = */ 1859,
+    NULL, NULL, N_OPTS, N_OPTS, 25, /* .neg_idx = */ 1860,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_var_tracking_assignments), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1860] = */ {
+ /* [1861] = */ {
     "-fvar-tracking-assignments-toggle",
     "Toggle -fvar-tracking-assignments.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 32, /* .neg_idx = */ 1860,
+    NULL, NULL, N_OPTS, N_OPTS, 32, /* .neg_idx = */ 1861,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_var_tracking_assignments_toggle), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1861] = */ {
+ /* [1862] = */ {
     "-fvar-tracking-uninit",
     "Perform variable tracking and also tag variables that are uninitialized.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 20, /* .neg_idx = */ 1861,
+    NULL, NULL, N_OPTS, N_OPTS, 20, /* .neg_idx = */ 1862,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_var_tracking_uninit), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1862] = */ {
+ /* [1863] = */ {
     "-fvariable-expansion-in-unroller",
     "Apply variable expansion when loops are unrolled.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 31, /* .neg_idx = */ 1862,
+    NULL, NULL, N_OPTS, N_OPTS, 31, /* .neg_idx = */ 1863,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_variable_expansion_in_unroller), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1863] = */ {
+ /* [1864] = */ {
     "-fvect-cost-model",
     "Enables the dynamic vectorizer cost model.  Preserved for backward compatibility.",
     NULL,
     NULL,
-    "dynamic", "unlimited", OPT_fvect_cost_model_, N_OPTS, 16, /* .neg_idx = */ 1863,
+    "dynamic", "unlimited", OPT_fvect_cost_model_, N_OPTS, 16, /* .neg_idx = */ 1864,
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1864] = */ {
+ /* [1865] = */ {
     "-fvect-cost-model=",
     "-fvect-cost-model=[unlimited|dynamic|cheap|very-cheap]	Specifies the cost model for vectorization.",
     NULL,
@@ -19916,35 +20018,35 @@ const struct cl_option cl_options[] =
     NULL, NULL, N_OPTS, N_OPTS, 17, /* .neg_idx = */ -1,
     CL_COMMON | CL_JOINED | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
-    offsetof (struct gcc_options, x_flag_vect_cost_model), 55, CLVC_ENUM, CLEV_NORMAL, -1, -1 },
- /* [1865] = */ {
+    offsetof (struct gcc_options, x_flag_vect_cost_model), 58, CLVC_ENUM, CLEV_NORMAL, -1, -1 },
+ /* [1866] = */ {
     "-fverbose-asm",
     "Add extra commentary to assembler output.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 12, /* .neg_idx = */ 1865,
+    NULL, NULL, N_OPTS, N_OPTS, 12, /* .neg_idx = */ 1866,
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_verbose_asm), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1866] = */ {
+ /* [1867] = */ {
     "-fversion",
     NULL,
     NULL,
     NULL,
-    NULL, NULL, OPT__version, N_OPTS, 8, /* .neg_idx = */ 1866,
+    NULL, NULL, OPT__version, N_OPTS, 8, /* .neg_idx = */ 1867,
     CL_ModulaX2 | CL_COMMON | CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1867] = */ {
+ /* [1868] = */ {
     "-fversion-loops-for-strides",
     "Version loops based on whether indices have a stride of one.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 26, /* .neg_idx = */ 1867,
+    NULL, NULL, N_OPTS, N_OPTS, 26, /* .neg_idx = */ 1868,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_version_loops_for_strides), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1868] = */ {
+ /* [1869] = */ {
     "-fversion=",
     "-fversion=<ident>	Compile in version code identified by <ident>.",
     NULL,
@@ -19953,25 +20055,25 @@ const struct cl_option cl_options[] =
     CL_D | CL_JOINED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [1869] = */ {
+ /* [1870] = */ {
     "-fvisibility-inlines-hidden",
     "Marks all inlined functions and methods as having hidden visibility.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 26, /* .neg_idx = */ 1869,
+    NULL, NULL, N_OPTS, N_OPTS, 26, /* .neg_idx = */ 1870,
     CL_CXX | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1870] = */ {
+ /* [1871] = */ {
     "-fvisibility-ms-compat",
     "Changes visibility to match Microsoft Visual Studio by default.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 21, /* .neg_idx = */ 1870,
+    NULL, NULL, N_OPTS, N_OPTS, 21, /* .neg_idx = */ 1871,
     CL_CXX | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_visibility_ms_compat), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1871] = */ {
+ /* [1872] = */ {
     "-fvisibility=",
     "-fvisibility=[default|internal|hidden|protected]	Set the default symbol visibility.",
     NULL,
@@ -19979,35 +20081,35 @@ const struct cl_option cl_options[] =
     NULL, NULL, N_OPTS, N_OPTS, 12, /* .neg_idx = */ -1,
     CL_COMMON | CL_JOINED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
-    offsetof (struct gcc_options, x_default_visibility), 50, CLVC_ENUM, CLEV_NORMAL, -1, -1 },
- /* [1872] = */ {
+    offsetof (struct gcc_options, x_default_visibility), 53, CLVC_ENUM, CLEV_NORMAL, -1, -1 },
+ /* [1873] = */ {
     "-fvpt",
     "Use expression value profiles in optimizations.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 4, /* .neg_idx = */ 1872,
+    NULL, NULL, N_OPTS, N_OPTS, 4, /* .neg_idx = */ 1873,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_value_profile_transformations), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1873] = */ {
+ /* [1874] = */ {
     "-fvtable-gc",
     "No longer supported.",
     NULL,
     NULL,
-    NULL, NULL, OPT_SPECIAL_warn_removed, N_OPTS, 10, /* .neg_idx = */ 1873,
-    CL_CXX | CL_ObjCXX,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1874] = */ {
-    "-fvtable-thunks",
-    "No longer supported.",
-    NULL,
-    NULL,
-    NULL, NULL, OPT_SPECIAL_warn_removed, N_OPTS, 14, /* .neg_idx = */ 1874,
+    NULL, NULL, OPT_SPECIAL_warn_removed, N_OPTS, 10, /* .neg_idx = */ 1874,
     CL_CXX | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
  /* [1875] = */ {
+    "-fvtable-thunks",
+    "No longer supported.",
+    NULL,
+    NULL,
+    NULL, NULL, OPT_SPECIAL_warn_removed, N_OPTS, 14, /* .neg_idx = */ 1875,
+    CL_CXX | CL_ObjCXX,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
+ /* [1876] = */ {
     "-fvtable-verify=",
     "Validate vtable pointers before using them.",
     NULL,
@@ -20015,89 +20117,89 @@ const struct cl_option cl_options[] =
     NULL, NULL, N_OPTS, N_OPTS, 15, /* .neg_idx = */ -1,
     CL_COMMON | CL_JOINED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
-    offsetof (struct gcc_options, x_flag_vtable_verify), 56, CLVC_ENUM, CLEV_NORMAL, -1, -1 },
- /* [1876] = */ {
+    offsetof (struct gcc_options, x_flag_vtable_verify), 59, CLVC_ENUM, CLEV_NORMAL, -1, -1 },
+ /* [1877] = */ {
     "-fvtv-counts",
     "Output vtable verification counters.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 11, /* .neg_idx = */ 1876,
+    NULL, NULL, N_OPTS, N_OPTS, 11, /* .neg_idx = */ 1877,
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_vtv_counts), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1877] = */ {
+ /* [1878] = */ {
     "-fvtv-debug",
     "Output vtable verification pointer sets information.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 10, /* .neg_idx = */ 1877,
+    NULL, NULL, N_OPTS, N_OPTS, 10, /* .neg_idx = */ 1878,
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_vtv_debug), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1878] = */ {
+ /* [1879] = */ {
     "-fweak",
     "Emit common-like symbols as weak symbols.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 5, /* .neg_idx = */ 1878,
+    NULL, NULL, N_OPTS, N_OPTS, 5, /* .neg_idx = */ 1879,
     CL_CXX | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_weak), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1879] = */ {
+ /* [1880] = */ {
     "-fweak-templates",
     "Emit template instantiations as weak symbols.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 15, /* .neg_idx = */ 1879,
+    NULL, NULL, N_OPTS, N_OPTS, 15, /* .neg_idx = */ 1880,
     CL_D,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_weak_templates), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1880] = */ {
+ /* [1881] = */ {
     "-fweb",
     "Construct webs and split unrelated uses of single variable.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 4, /* .neg_idx = */ 1880,
+    NULL, NULL, N_OPTS, N_OPTS, 4, /* .neg_idx = */ 1881,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_web), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1881] = */ {
+ /* [1882] = */ {
     "-fwhole-file",
     "Does nothing.  Preserved for backward compatibility.",
     NULL,
     NULL,
-    NULL, NULL, OPT_SPECIAL_ignore, N_OPTS, 11, /* .neg_idx = */ 1881,
+    NULL, NULL, OPT_SPECIAL_ignore, N_OPTS, 11, /* .neg_idx = */ 1882,
     CL_Fortran,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1882] = */ {
+ /* [1883] = */ {
     "-fwhole-program",
     "Perform whole program optimizations.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 14, /* .neg_idx = */ 1882,
+    NULL, NULL, N_OPTS, N_OPTS, 14, /* .neg_idx = */ 1883,
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_whole_program), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1883] = */ {
+ /* [1884] = */ {
     "-fwholediv",
     "turns on all division and modulus by zero checking for ordinal values",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 9, /* .neg_idx = */ 1883,
-    CL_ModulaX2,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1884] = */ {
-    "-fwholevalue",
-    "turns on runtime checking to check whether a whole number will exceed range",
-    NULL,
-    NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 11, /* .neg_idx = */ 1884,
+    NULL, NULL, N_OPTS, N_OPTS, 9, /* .neg_idx = */ 1884,
     CL_ModulaX2,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
  /* [1885] = */ {
+    "-fwholevalue",
+    "turns on runtime checking to check whether a whole number will exceed range",
+    NULL,
+    NULL,
+    NULL, NULL, N_OPTS, N_OPTS, 11, /* .neg_idx = */ 1885,
+    CL_ModulaX2,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
+ /* [1886] = */ {
     "-fwide-exec-charset=",
     "-fwide-exec-charset=<cset>	Convert all wide strings and character constants to character set <cset>.",
     NULL,
@@ -20106,25 +20208,25 @@ const struct cl_option cl_options[] =
     CL_C | CL_CXX | CL_ObjC | CL_ObjCXX | CL_JOINED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [1886] = */ {
+ /* [1887] = */ {
     "-fworking-directory",
     "Generate a #line directive pointing at the current working directory.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 18, /* .neg_idx = */ 1886,
+    NULL, NULL, N_OPTS, N_OPTS, 18, /* .neg_idx = */ 1887,
     CL_C | CL_CXX | CL_Fortran | CL_ModulaX2 | CL_ObjC | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_working_directory), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1887] = */ {
+ /* [1888] = */ {
     "-fwpa",
     "Run the link-time optimizer in whole program analysis (WPA) mode.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 4, /* .neg_idx = */ 1887,
+    NULL, NULL, N_OPTS, N_OPTS, 4, /* .neg_idx = */ 1888,
     CL_LTO | CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1888] = */ {
+ /* [1889] = */ {
     "-fwpa=",
     "Whole program analysis (WPA) mode with number of parallel jobs specified.",
     NULL,
@@ -20133,43 +20235,43 @@ const struct cl_option cl_options[] =
     CL_LTO | CL_DRIVER | CL_JOINED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_wpa), 0, CLVC_STRING, 0, -1, -1 },
- /* [1889] = */ {
+ /* [1890] = */ {
     "-fwrapv",
     "Assume signed arithmetic overflow wraps around.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 6, /* .neg_idx = */ 1889,
+    NULL, NULL, N_OPTS, N_OPTS, 6, /* .neg_idx = */ 1890,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_wrapv), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1890] = */ {
+ /* [1891] = */ {
     "-fwrapv-pointer",
     "Assume pointer overflow wraps around.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 14, /* .neg_idx = */ 1890,
+    NULL, NULL, N_OPTS, N_OPTS, 14, /* .neg_idx = */ 1891,
     CL_COMMON | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_wrapv_pointer), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1891] = */ {
+ /* [1892] = */ {
     "-fxref",
     "No longer supported.",
     NULL,
     NULL,
-    NULL, NULL, OPT_SPECIAL_warn_removed, N_OPTS, 5, /* .neg_idx = */ 1891,
+    NULL, NULL, OPT_SPECIAL_warn_removed, N_OPTS, 5, /* .neg_idx = */ 1892,
     CL_CXX | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1892] = */ {
+ /* [1893] = */ {
     "-fzee",
     "Does nothing.  Preserved for backward compatibility.",
     NULL,
     NULL,
-    NULL, NULL, OPT_SPECIAL_ignore, N_OPTS, 4, /* .neg_idx = */ 1892,
+    NULL, NULL, OPT_SPECIAL_ignore, N_OPTS, 4, /* .neg_idx = */ 1893,
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1893] = */ {
+ /* [1894] = */ {
     "-fzero-call-used-regs=",
     "Clear call-used registers upon function return.",
     NULL,
@@ -20178,25 +20280,25 @@ const struct cl_option cl_options[] =
     CL_COMMON | CL_JOINED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [1894] = */ {
+ /* [1895] = */ {
     "-fzero-initialized-in-bss",
     "Put zero initialized data in the bss section.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 24, /* .neg_idx = */ 1894,
+    NULL, NULL, N_OPTS, N_OPTS, 24, /* .neg_idx = */ 1895,
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_zero_initialized_in_bss), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1895] = */ {
+ /* [1896] = */ {
     "-fzero-link",
     "Generate lazy class lookup (via objc_getClass()) for use in Zero-Link mode.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 10, /* .neg_idx = */ 1895,
+    NULL, NULL, N_OPTS, N_OPTS, 10, /* .neg_idx = */ 1896,
     CL_ObjC | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_zero_link), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1896] = */ {
+ /* [1897] = */ {
     "-g",
     "Generate debug information in default format.",
     NULL,
@@ -20205,7 +20307,7 @@ const struct cl_option cl_options[] =
     CL_COMMON | CL_DRIVER | CL_JOINED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 1 /* JoinedOrMissing */, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [1897] = */ {
+ /* [1898] = */ {
     "-gant",
     "Catch typos.",
     NULL,
@@ -20214,25 +20316,25 @@ const struct cl_option cl_options[] =
     CL_Ada | CL_AdaSCIL | CL_AdaWhy | CL_DRIVER | CL_JOINED | CL_UNDOCUMENTED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [1898] = */ {
+ /* [1899] = */ {
     "-gas-loc-support",
     "Assume assembler support for (DWARF2+) .loc directives.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, OPT_g, 15, /* .neg_idx = */ 1898,
+    NULL, NULL, N_OPTS, OPT_g, 15, /* .neg_idx = */ 1899,
     CL_COMMON | CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_dwarf2out_as_loc_support), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1899] = */ {
+ /* [1900] = */ {
     "-gas-locview-support",
     "Assume assembler support for view in (DWARF2+) .loc directives.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, OPT_g, 19, /* .neg_idx = */ 1899,
+    NULL, NULL, N_OPTS, OPT_g, 19, /* .neg_idx = */ 1900,
     CL_COMMON | CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_dwarf2out_as_locview_support), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1900] = */ {
+ /* [1901] = */ {
     "-gbtf",
     "Generate BTF debug information at default level.",
     NULL,
@@ -20241,35 +20343,26 @@ const struct cl_option cl_options[] =
     CL_COMMON | CL_DRIVER | CL_JOINED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 1 /* JoinedOrMissing */, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [1901] = */ {
+ /* [1902] = */ {
     "-gcodeview",
     "Generate debug information in CodeView format.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, OPT_g, 9, /* .neg_idx = */ 1901,
+    NULL, NULL, N_OPTS, OPT_g, 9, /* .neg_idx = */ 1902,
     CL_COMMON | CL_DRIVER | CL_JOINED,
     0, 0, 0, 0, 0, 0, 0, 1 /* JoinedOrMissing */, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [1902] = */ {
+ /* [1903] = */ {
     "-gcoff",
     "Does nothing.  Preserved for backward compatibility.",
     NULL,
     NULL,
-    NULL, NULL, OPT_SPECIAL_warn_removed, OPT_g, 5, /* .neg_idx = */ 1902,
-    CL_COMMON | CL_DRIVER,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1903] = */ {
-    "-gcoff1",
-    "Does nothing.  Preserved for backward compatibility.",
-    NULL,
-    NULL,
-    NULL, NULL, OPT_SPECIAL_warn_removed, OPT_g, 6, /* .neg_idx = */ 1903,
+    NULL, NULL, OPT_SPECIAL_warn_removed, OPT_g, 5, /* .neg_idx = */ 1903,
     CL_COMMON | CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
  /* [1904] = */ {
-    "-gcoff2",
+    "-gcoff1",
     "Does nothing.  Preserved for backward compatibility.",
     NULL,
     NULL,
@@ -20278,7 +20371,7 @@ const struct cl_option cl_options[] =
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
  /* [1905] = */ {
-    "-gcoff3",
+    "-gcoff2",
     "Does nothing.  Preserved for backward compatibility.",
     NULL,
     NULL,
@@ -20287,15 +20380,24 @@ const struct cl_option cl_options[] =
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
  /* [1906] = */ {
+    "-gcoff3",
+    "Does nothing.  Preserved for backward compatibility.",
+    NULL,
+    NULL,
+    NULL, NULL, OPT_SPECIAL_warn_removed, OPT_g, 6, /* .neg_idx = */ 1906,
+    CL_COMMON | CL_DRIVER,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
+ /* [1907] = */ {
     "-gcolumn-info",
     "Record DW_AT_decl_column and DW_AT_call_column in DWARF.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, OPT_g, 12, /* .neg_idx = */ 1906,
+    NULL, NULL, N_OPTS, OPT_g, 12, /* .neg_idx = */ 1907,
     CL_COMMON | CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_debug_column_info), 0, CLVC_EQUAL, 1, -1, -1 },
- /* [1907] = */ {
+ /* [1908] = */ {
     "-gctf",
     "Generate CTF debug information at default level.",
     NULL,
@@ -20304,16 +20406,16 @@ const struct cl_option cl_options[] =
     CL_COMMON | CL_DRIVER | CL_JOINED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 1 /* JoinedOrMissing */, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [1908] = */ {
+ /* [1909] = */ {
     "-gdescribe-dies",
     "Add description attributes to some DWARF DIEs that have no name attribute.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, OPT_g, 14, /* .neg_idx = */ 1908,
+    NULL, NULL, N_OPTS, OPT_g, 14, /* .neg_idx = */ 1909,
     CL_COMMON | CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_describe_dies), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1909] = */ {
+ /* [1910] = */ {
     "-gdwarf",
     "Generate debug information in default version of DWARF format.",
     NULL,
@@ -20322,7 +20424,7 @@ const struct cl_option cl_options[] =
     CL_COMMON | CL_DRIVER | CL_JOINED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 1 /* JoinedOrMissing */, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [1910] = */ {
+ /* [1911] = */ {
     "-gdwarf-",
     "Generate debug information in DWARF v2 (or later) format.",
     NULL,
@@ -20331,7 +20433,7 @@ const struct cl_option cl_options[] =
     CL_COMMON | CL_DRIVER | CL_JOINED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 1 /* UInteger */, 0, 0, 0,
     offsetof (struct gcc_options, x_dwarf_version), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1911] = */ {
+ /* [1912] = */ {
     "-gdwarf32",
     "Use 32-bit DWARF format when emitting DWARF debug information.",
     NULL,
@@ -20340,7 +20442,7 @@ const struct cl_option cl_options[] =
     CL_COMMON | CL_DRIVER,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_dwarf_offset_size), 0, CLVC_EQUAL, 4, -1, -1 },
- /* [1912] = */ {
+ /* [1913] = */ {
     "-gdwarf64",
     "Use 64-bit DWARF format when emitting DWARF debug information.",
     NULL,
@@ -20349,7 +20451,7 @@ const struct cl_option cl_options[] =
     CL_COMMON | CL_DRIVER,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_dwarf_offset_size), 0, CLVC_EQUAL, 8, -1, -1 },
- /* [1913] = */ {
+ /* [1914] = */ {
     "-gen-decls",
     "Dump declarations to a .decl file.",
     NULL,
@@ -20358,7 +20460,7 @@ const struct cl_option cl_options[] =
     CL_ObjC | CL_ObjCXX | CL_DRIVER,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_gen_declaration), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1914] = */ {
+ /* [1915] = */ {
     "-ggdb",
     "Generate debug information in default extended format.",
     NULL,
@@ -20367,43 +20469,43 @@ const struct cl_option cl_options[] =
     CL_COMMON | CL_DRIVER | CL_JOINED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 1 /* JoinedOrMissing */, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [1915] = */ {
+ /* [1916] = */ {
     "-ggnu-pubnames",
     "Generate DWARF pubnames and pubtypes sections with GNU extensions.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, OPT_g, 13, /* .neg_idx = */ 1922,
+    NULL, NULL, N_OPTS, OPT_g, 13, /* .neg_idx = */ 1923,
     CL_COMMON | CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_debug_generate_pub_sections), 0, CLVC_EQUAL, 2, -1, -1 },
- /* [1916] = */ {
+ /* [1917] = */ {
     "-gimple-stats",
     "Dump the statistics of gimple statements.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, OPT_g, 12, /* .neg_idx = */ 1916,
+    NULL, NULL, N_OPTS, OPT_g, 12, /* .neg_idx = */ 1917,
     CL_LTODump,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_lto_gimple_stats), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1917] = */ {
+ /* [1918] = */ {
     "-ginline-points",
     "Generate extended entry point information for inlined functions.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, OPT_g, 14, /* .neg_idx = */ 1917,
+    NULL, NULL, N_OPTS, OPT_g, 14, /* .neg_idx = */ 1918,
     CL_COMMON | CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_debug_inline_points), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1918] = */ {
+ /* [1919] = */ {
     "-ginternal-reset-location-views",
     "Compute locview reset points based on insn length estimates.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, OPT_g, 30, /* .neg_idx = */ 1918,
+    NULL, NULL, N_OPTS, OPT_g, 30, /* .neg_idx = */ 1919,
     CL_COMMON | CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_debug_internal_reset_location_views), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1919] = */ {
+ /* [1920] = */ {
     "-gnat",
     "-gnat<options>	Specify options to GNAT.",
     NULL,
@@ -20412,7 +20514,7 @@ const struct cl_option cl_options[] =
     CL_Ada | CL_AdaSCIL | CL_AdaWhy | CL_DRIVER | CL_JOINED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [1920] = */ {
+ /* [1921] = */ {
     "-gnatO",
     "Set name of output ALI file (internal switch).",
     NULL,
@@ -20421,7 +20523,7 @@ const struct cl_option cl_options[] =
     CL_Ada | CL_AdaSCIL | CL_AdaWhy | CL_DRIVER | CL_SEPARATE,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [1921] = */ {
+ /* [1922] = */ {
     "-gno-",
     NULL,
     NULL,
@@ -20430,97 +20532,97 @@ const struct cl_option cl_options[] =
     CL_JOINED | CL_UNDOCUMENTED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [1922] = */ {
+ /* [1923] = */ {
     "-gno-pubnames",
     "Don't generate DWARF pubnames and pubtypes sections.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, OPT_gno_, 12, /* .neg_idx = */ 1923,
+    NULL, NULL, N_OPTS, OPT_gno_, 12, /* .neg_idx = */ 1924,
     CL_COMMON | CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_debug_generate_pub_sections), 0, CLVC_EQUAL, 0, -1, -1 },
- /* [1923] = */ {
+ /* [1924] = */ {
     "-gpubnames",
     "Generate DWARF pubnames and pubtypes sections.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, OPT_g, 9, /* .neg_idx = */ 1915,
+    NULL, NULL, N_OPTS, OPT_g, 9, /* .neg_idx = */ 1916,
     CL_COMMON | CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_debug_generate_pub_sections), 0, CLVC_EQUAL, 1, -1, -1 },
- /* [1924] = */ {
+ /* [1925] = */ {
     "-grecord-gcc-switches",
     "Record gcc command line switches in DWARF DW_AT_producer.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, OPT_g, 20, /* .neg_idx = */ 1924,
+    NULL, NULL, N_OPTS, OPT_g, 20, /* .neg_idx = */ 1925,
     CL_COMMON | CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_dwarf_record_gcc_switches), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1925] = */ {
+ /* [1926] = */ {
     "-gsplit-dwarf",
     "Generate debug information in separate .dwo files.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, OPT_g, 12, /* .neg_idx = */ 1925,
+    NULL, NULL, N_OPTS, OPT_g, 12, /* .neg_idx = */ 1926,
     CL_COMMON | CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_dwarf_split_debug_info), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1926] = */ {
+ /* [1927] = */ {
     "-gstabs",
     "Does nothing.  Preserved for backward compatibility.",
     NULL,
     NULL,
-    NULL, NULL, OPT_SPECIAL_warn_removed, OPT_g, 6, /* .neg_idx = */ 1926,
-    CL_COMMON | CL_DRIVER,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1927] = */ {
-    "-gstabs+",
-    "Does nothing.  Preserved for backward compatibility.",
-    NULL,
-    NULL,
-    NULL, NULL, OPT_SPECIAL_warn_removed, OPT_g, 7, /* .neg_idx = */ 1927,
+    NULL, NULL, OPT_SPECIAL_warn_removed, OPT_g, 6, /* .neg_idx = */ 1927,
     CL_COMMON | CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
  /* [1928] = */ {
+    "-gstabs+",
+    "Does nothing.  Preserved for backward compatibility.",
+    NULL,
+    NULL,
+    NULL, NULL, OPT_SPECIAL_warn_removed, OPT_g, 7, /* .neg_idx = */ 1928,
+    CL_COMMON | CL_DRIVER,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
+ /* [1929] = */ {
     "-gstatement-frontiers",
     "Emit progressive recommended breakpoint locations.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, OPT_g, 20, /* .neg_idx = */ 1928,
+    NULL, NULL, N_OPTS, OPT_g, 20, /* .neg_idx = */ 1929,
     CL_COMMON | CL_DRIVER | CL_OPTIMIZATION,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_debug_nonbind_markers_p), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1929] = */ {
+ /* [1930] = */ {
     "-gstrict-dwarf",
     "Don't emit DWARF additions beyond selected version.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, OPT_g, 13, /* .neg_idx = */ 1929,
+    NULL, NULL, N_OPTS, OPT_g, 13, /* .neg_idx = */ 1930,
     CL_COMMON | CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_dwarf_strict), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1930] = */ {
+ /* [1931] = */ {
     "-gtoggle",
     "Toggle debug information generation.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, OPT_g, 7, /* .neg_idx = */ 1930,
+    NULL, NULL, N_OPTS, OPT_g, 7, /* .neg_idx = */ 1931,
     CL_COMMON | CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_gtoggle), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1931] = */ {
+ /* [1932] = */ {
     "-gvariable-location-views",
     "Augment variable location lists with progressive views.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, OPT_g, 24, /* .neg_idx = */ 1931,
+    NULL, NULL, N_OPTS, OPT_g, 24, /* .neg_idx = */ 1932,
     CL_COMMON | CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_debug_variable_location_views), 0, CLVC_EQUAL, 1, -1, -1 },
- /* [1932] = */ {
+ /* [1933] = */ {
     "-gvariable-location-views=incompat5",
     NULL,
     NULL,
@@ -20529,7 +20631,7 @@ const struct cl_option cl_options[] =
     CL_COMMON | CL_DRIVER,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_debug_variable_location_views), 0, CLVC_EQUAL, -1, -1, -1 },
- /* [1933] = */ {
+ /* [1934] = */ {
     "-gvms",
     "Generate debug information in VMS format.",
     NULL,
@@ -20538,34 +20640,34 @@ const struct cl_option cl_options[] =
     CL_COMMON | CL_DRIVER | CL_JOINED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 1 /* JoinedOrMissing */, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [1934] = */ {
+ /* [1935] = */ {
     "-gxcoff",
     "Does nothing.  Preserved for backward compatibility.",
     NULL,
     NULL,
-    NULL, NULL, OPT_SPECIAL_warn_removed, OPT_g, 6, /* .neg_idx = */ 1934,
+    NULL, NULL, OPT_SPECIAL_warn_removed, OPT_g, 6, /* .neg_idx = */ 1935,
     CL_COMMON | CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1935] = */ {
+ /* [1936] = */ {
     "-gxcoff+",
     "Does nothing.  Preserved for backward compatibility.",
     NULL,
     NULL,
-    NULL, NULL, OPT_SPECIAL_warn_removed, OPT_g, 7, /* .neg_idx = */ 1935,
+    NULL, NULL, OPT_SPECIAL_warn_removed, OPT_g, 7, /* .neg_idx = */ 1936,
     CL_COMMON | CL_DRIVER | CL_JOINED,
     0, 0, 0, 0, 0, 0, 0, 1 /* JoinedOrMissing */, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [1936] = */ {
+ /* [1937] = */ {
     "-gz",
     "Generate compressed debug sections.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, OPT_g, 2, /* .neg_idx = */ 1936,
+    NULL, NULL, N_OPTS, OPT_g, 2, /* .neg_idx = */ 1937,
     CL_COMMON | CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1937] = */ {
+ /* [1938] = */ {
     "-gz=",
     "-gz=<format>	Generate compressed debug sections in format <format>.",
     NULL,
@@ -20574,7 +20676,7 @@ const struct cl_option cl_options[] =
     CL_COMMON | CL_DRIVER | CL_JOINED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     (unsigned short) -1, 4, CLVC_ENUM, CLEV_NORMAL, -1, -1 },
- /* [1938] = */ {
+ /* [1939] = */ {
     "-h",
     NULL,
     NULL,
@@ -20583,7 +20685,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER | CL_JOINED | CL_SEPARATE,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [1939] = */ {
+ /* [1940] = */ {
     "-help",
     "Dump the dump tool command line options.",
     NULL,
@@ -20592,7 +20694,7 @@ const struct cl_option cl_options[] =
     CL_LTODump,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_lto_dump_tool_help), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1940] = */ {
+ /* [1941] = */ {
     "-idirafter",
     "-idirafter <dir>	Add <dir> to the end of the system include path.",
     "missing path after %qs",
@@ -20601,7 +20703,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_CXX | CL_Fortran | CL_ModulaX2 | CL_ObjC | CL_ObjCXX | CL_JOINED | CL_SEPARATE,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [1941] = */ {
+ /* [1942] = */ {
     "-imacros",
     "-imacros <file>	Accept definition of macros in <file>.",
     "missing filename after %qs",
@@ -20610,7 +20712,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_CXX | CL_ObjC | CL_ObjCXX | CL_JOINED | CL_SEPARATE,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [1942] = */ {
+ /* [1943] = */ {
     "-imultiarch",
     "-imultiarch <dir>	Set <dir> to be the multiarch include subdirectory.",
     NULL,
@@ -20619,7 +20721,7 @@ const struct cl_option cl_options[] =
     CL_COMMON | CL_JOINED | CL_SEPARATE,
     0, 0, 0, 0, 0, 1 /* RejectDriver */, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_imultiarch), 0, CLVC_STRING, 0, -1, -1 },
- /* [1943] = */ {
+ /* [1944] = */ {
     "-imultilib",
     "-imultilib <dir>	Set <dir> to be the multilib include subdirectory.",
     NULL,
@@ -20628,7 +20730,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_CXX | CL_D | CL_Fortran | CL_ModulaX2 | CL_ObjC | CL_ObjCXX | CL_JOINED | CL_SEPARATE,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [1944] = */ {
+ /* [1945] = */ {
     "-include",
     "-include <file>	Include the contents of <file> before other files.",
     "missing filename after %qs",
@@ -20637,7 +20739,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_CXX | CL_ObjC | CL_ObjCXX | CL_JOINED | CL_SEPARATE,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [1945] = */ {
+ /* [1946] = */ {
     "-iplugindir=",
     "-iplugindir=<dir>	Set <dir> to be the default plugin directory.",
     NULL,
@@ -20646,7 +20748,7 @@ const struct cl_option cl_options[] =
     CL_COMMON | CL_JOINED,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_plugindir_string), 0, CLVC_STRING, 0, -1, -1 },
- /* [1946] = */ {
+ /* [1947] = */ {
     "-iprefix",
     "-iprefix <path>	Specify <path> as a prefix for next two options.",
     NULL,
@@ -20655,7 +20757,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_CXX | CL_D | CL_Fortran | CL_ModulaX2 | CL_ObjC | CL_ObjCXX | CL_JOINED | CL_SEPARATE,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [1947] = */ {
+ /* [1948] = */ {
     "-iquote",
     "-iquote <dir>	Add <dir> to the end of the quote include path.",
     "missing path after %qs",
@@ -20664,7 +20766,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_CXX | CL_Fortran | CL_ModulaX2 | CL_ObjC | CL_ObjCXX | CL_JOINED | CL_SEPARATE,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [1948] = */ {
+ /* [1949] = */ {
     "-isysroot",
     "-isysroot <dir>	Set <dir> to be the system root directory.",
     "missing path after %qs",
@@ -20673,7 +20775,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_CXX | CL_D | CL_Fortran | CL_ModulaX2 | CL_ObjC | CL_ObjCXX | CL_JOINED | CL_SEPARATE,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [1949] = */ {
+ /* [1950] = */ {
     "-isystem",
     "-isystem <dir>	Add <dir> to the start of the system include path.",
     "missing path after %qs",
@@ -20682,7 +20784,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_CXX | CL_D | CL_Fortran | CL_ModulaX2 | CL_ObjC | CL_ObjCXX | CL_JOINED | CL_SEPARATE,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [1950] = */ {
+ /* [1951] = */ {
     "-iwithprefix",
     "-iwithprefix <dir>	Add <dir> to the end of the system include path.",
     NULL,
@@ -20691,7 +20793,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_CXX | CL_ObjC | CL_ObjCXX | CL_JOINED | CL_SEPARATE,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [1951] = */ {
+ /* [1952] = */ {
     "-iwithprefixbefore",
     "-iwithprefixbefore <dir>	Add <dir> to the end of the main include path.",
     NULL,
@@ -20700,7 +20802,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_CXX | CL_ObjC | CL_ObjCXX | CL_JOINED | CL_SEPARATE,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [1952] = */ {
+ /* [1953] = */ {
     "-k8",
     "Synonym of -gnatk8.",
     NULL,
@@ -20709,7 +20811,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1953] = */ {
+ /* [1954] = */ {
     "-l",
     NULL,
     NULL,
@@ -20718,7 +20820,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER | CL_JOINED | CL_SEPARATE,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [1954] = */ {
+ /* [1955] = */ {
     "-lang-asm",
     NULL,
     NULL,
@@ -20727,7 +20829,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_UNDOCUMENTED,
     0, 0, 0, 0, 0, 1 /* RejectDriver */, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1955] = */ {
+ /* [1956] = */ {
     "-list",
     "Call the dump function for variables and function in IL.",
     NULL,
@@ -20736,7 +20838,7 @@ const struct cl_option cl_options[] =
     CL_LTODump,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_lto_dump_list), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1956] = */ {
+ /* [1957] = */ {
     "-m32bit-doubles",
     "Stores doubles in 32 bits.  This is the default.",
     NULL,
@@ -20744,8 +20846,8 @@ const struct cl_option cl_options[] =
     NULL, NULL, N_OPTS, N_OPTS, 14, /* .neg_idx = */ -1,
     CL_TARGET,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
-    offsetof (struct gcc_options, x_target_flags), 0, CLVC_BIT_CLEAR, MASK_64BIT_DOUBLES, -1, -1 },
- /* [1957] = */ {
+    offsetof (struct gcc_options, x_target_flags), 0, CLVC_BIT_SET, MASK_32BIT_DOUBLES, -1, -1 },
+ /* [1958] = */ {
     "-m64bit-doubles",
     "Store doubles in 64 bits.",
     NULL,
@@ -20754,25 +20856,25 @@ const struct cl_option cl_options[] =
     CL_TARGET,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_target_flags), 0, CLVC_BIT_SET, MASK_64BIT_DOUBLES, -1, -1 },
- /* [1958] = */ {
+ /* [1959] = */ {
     "-mallow-string-insns",
     "Enables or disables the use of the SMOVF, SMOVB, SMOVU, SUNTIL, SWHILE and RMPA instructions.  Enabled by default.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 19, /* .neg_idx = */ 1958,
+    NULL, NULL, N_OPTS, N_OPTS, 19, /* .neg_idx = */ 1959,
     CL_TARGET,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_rx_allow_string_insns), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1959] = */ {
+ /* [1960] = */ {
     "-mas100-syntax",
     "Generate assembler output that is compatible with the Renesas AS100 assembler.  This may restrict some of the compiler's capabilities.  The default is to generate GAS compatible syntax.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 13, /* .neg_idx = */ 1959,
+    NULL, NULL, N_OPTS, N_OPTS, 13, /* .neg_idx = */ 1960,
     CL_TARGET,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_target_flags), 0, CLVC_BIT_SET, MASK_AS100_SYNTAX, -1, -1 },
- /* [1960] = */ {
+ /* [1961] = */ {
     "-mbig-endian-data",
     "Data is stored in big-endian format.",
     NULL,
@@ -20781,7 +20883,7 @@ const struct cl_option cl_options[] =
     CL_TARGET,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_target_flags), 0, CLVC_BIT_SET, MASK_BIG_ENDIAN_DATA, -1, -1 },
- /* [1961] = */ {
+ /* [1962] = */ {
     "-mcpu=",
     "Specify the target RX cpu type.",
     NULL,
@@ -20790,16 +20892,16 @@ const struct cl_option cl_options[] =
     CL_TARGET | CL_JOINED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 1 /* ToLower */, 0,
     offsetof (struct gcc_options, x_rx_cpu_type), 44, CLVC_ENUM, CLEV_NORMAL, -1, -1 },
- /* [1962] = */ {
-    "-mgcc-abi",
-    "Enable the use of the old, broken, ABI where all stacked function arguments are aligned to 32-bits.",
+ /* [1963] = */ {
+    "-mdfpu",
+    "Enable the use of RX DFPU instructions. ",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 8, /* .neg_idx = */ -1,
+    NULL, NULL, N_OPTS, N_OPTS, 5, /* .neg_idx = */ -1,
     CL_TARGET,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
-    offsetof (struct gcc_options, x_target_flags), 0, CLVC_BIT_SET, MASK_GCC_ABI, -1, -1 },
- /* [1963] = */ {
+    offsetof (struct gcc_options, x_flag_dfpu), 0, CLVC_INTEGER, 0, -1, -1 },
+ /* [1964] = */ {
     "-mint-register=",
     "Specifies the number of registers to reserve for interrupt handlers.",
     NULL,
@@ -20807,17 +20909,26 @@ const struct cl_option cl_options[] =
     NULL, NULL, N_OPTS, N_OPTS, 14, /* .neg_idx = */ -1,
     CL_TARGET | CL_JOINED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 1 /* UInteger */, 0, 0, 0,
-    offsetof (struct gcc_options, x_rx_interrupt_registers), 0, CLVC_DEFER, 0, -1, -1 },
- /* [1964] = */ {
+    offsetof (struct gcc_options, x_rx_deferred_options), 0, CLVC_DEFER, 0, -1, -1 },
+ /* [1965] = */ {
+    "-misa=",
+    "Specify RX ISA version.",
+    NULL,
+    NULL,
+    NULL, NULL, N_OPTS, N_OPTS, 5, /* .neg_idx = */ -1,
+    CL_TARGET | CL_JOINED,
+    0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 1 /* ToLower */, 0,
+    offsetof (struct gcc_options, x_rx_isa_version), 45, CLVC_ENUM, CLEV_NORMAL, -1, -1 },
+ /* [1966] = */ {
     "-mjsr",
     "Always use JSR, never BSR, for calls.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 4, /* .neg_idx = */ 1964,
+    NULL, NULL, N_OPTS, N_OPTS, 4, /* .neg_idx = */ 1966,
     CL_TARGET,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_target_flags), 0, CLVC_BIT_SET, MASK_JSR, -1, -1 },
- /* [1965] = */ {
+ /* [1967] = */ {
     "-mlittle-endian-data",
     "Data is stored in little-endian format.  (Default).",
     NULL,
@@ -20826,16 +20937,16 @@ const struct cl_option cl_options[] =
     CL_TARGET,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_target_flags), 0, CLVC_BIT_CLEAR, MASK_BIG_ENDIAN_DATA, -1, -1 },
- /* [1966] = */ {
+ /* [1968] = */ {
     "-mlra",
     "Enable the use of the LRA register allocator.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 4, /* .neg_idx = */ 1966,
+    NULL, NULL, N_OPTS, N_OPTS, 4, /* .neg_idx = */ 1968,
     CL_TARGET,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_target_flags), 0, CLVC_BIT_SET, MASK_ENABLE_LRA, -1, -1 },
- /* [1967] = */ {
+ /* [1969] = */ {
     "-mmax-constant-size=",
     "Maximum size in bytes of constant values allowed as operands.",
     NULL,
@@ -20844,7 +20955,16 @@ const struct cl_option cl_options[] =
     CL_TARGET | CL_JOINED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 1 /* UInteger */, 0, 0, 0,
     offsetof (struct gcc_options, x_rx_max_constant_size), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1968] = */ {
+ /* [1970] = */ {
+    "-mno-balign",
+    "Do not use .balign",
+    NULL,
+    NULL,
+    NULL, NULL, N_OPTS, N_OPTS, 10, /* .neg_idx = */ -1,
+    CL_TARGET,
+    0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
+    offsetof (struct gcc_options, x_target_flags), 0, CLVC_BIT_SET, MASK_NOBALIGN, -1, -1 },
+ /* [1971] = */ {
     "-mnofpu",
     NULL,
     NULL,
@@ -20853,25 +20973,43 @@ const struct cl_option cl_options[] =
     CL_TARGET | CL_UNDOCUMENTED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_target_flags), 0, CLVC_BIT_SET, MASK_NO_USE_FPU, -1, -1 },
- /* [1969] = */ {
+ /* [1972] = */ {
+    "-mnosave-tfu",
+    "Code for saving and restoring the output of the trigonometric function unit (v2) is generated for all interrupt functions.",
+    NULL,
+    NULL,
+    NULL, NULL, N_OPTS, N_OPTS, 11, /* .neg_idx = */ -1,
+    CL_TARGET | CL_UNDOCUMENTED,
+    0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
+    offsetof (struct gcc_options, x_target_flags), 0, CLVC_BIT_SET, MASK_NO_SAVE_TFU, -1, -1 },
+ /* [1973] = */ {
+    "-morder",
+    NULL,
+    "Please use morder0, morder1 or morder2. The default is morder0",
+    NULL,
+    NULL, NULL, N_OPTS, N_OPTS, 6, /* .neg_idx = */ 1973,
+    CL_TARGET | CL_JOINED | CL_UNDOCUMENTED,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    offsetof (struct gcc_options, x_flag_morder), 0, CLVC_STRING, 0, -1, -1 },
+ /* [1974] = */ {
     "-mpid",
     "Enables Position-Independent-Data (PID) mode.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 4, /* .neg_idx = */ 1969,
+    NULL, NULL, N_OPTS, N_OPTS, 4, /* .neg_idx = */ 1974,
     CL_TARGET,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_target_flags), 0, CLVC_BIT_SET, MASK_PID, -1, -1 },
- /* [1970] = */ {
+ /* [1975] = */ {
     "-mrelax",
     "Enable linker relaxation.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 6, /* .neg_idx = */ 1970,
+    NULL, NULL, N_OPTS, N_OPTS, 6, /* .neg_idx = */ 1975,
     CL_TARGET,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    offsetof (struct gcc_options, x_VAR_mrelax), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1971] = */ {
+    offsetof (struct gcc_options, x_target_flags), 0, CLVC_BIT_SET, MASK_RELAX, -1, -1 },
+ /* [1976] = */ {
     "-mrx-abi",
     "Enable the use the standard RX ABI where all stacked function arguments are naturally aligned.  This is the default.",
     NULL,
@@ -20880,25 +21018,43 @@ const struct cl_option cl_options[] =
     CL_TARGET,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_target_flags), 0, CLVC_BIT_CLEAR, MASK_GCC_ABI, -1, -1 },
- /* [1972] = */ {
+ /* [1977] = */ {
+    "-mrxpeephole",
+    "Coremark improvement.",
+    NULL,
+    NULL,
+    NULL, NULL, N_OPTS, N_OPTS, 11, /* .neg_idx = */ 1977,
+    CL_TARGET,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    offsetof (struct gcc_options, x_flag_rxpeephole), 0, CLVC_INTEGER, 0, -1, -1 },
+ /* [1978] = */ {
+    "-mrxv2-fsqrt",
+    "Enable to use of FSQRT hardware instruction for RXv2 instruction set",
+    NULL,
+    NULL,
+    NULL, NULL, N_OPTS, N_OPTS, 11, /* .neg_idx = */ -1,
+    CL_TARGET,
+    0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
+    offsetof (struct gcc_options, x_target_flags), 0, CLVC_BIT_SET, MASK_RX_SQRT, -1, -1 },
+ /* [1979] = */ {
     "-msave-acc-in-interrupts",
     "Specifies whether interrupt functions should save and restore the accumulator register.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 23, /* .neg_idx = */ 1972,
+    NULL, NULL, N_OPTS, N_OPTS, 23, /* .neg_idx = */ 1979,
     CL_TARGET,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_target_flags), 0, CLVC_BIT_SET, MASK_SAVE_ACC_REGISTER, -1, -1 },
- /* [1973] = */ {
+ /* [1980] = */ {
     "-msim",
     "Use the simulator runtime.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 4, /* .neg_idx = */ 1973,
+    NULL, NULL, N_OPTS, N_OPTS, 4, /* .neg_idx = */ 1980,
     CL_TARGET,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_VAR_msim), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1974] = */ {
+ /* [1981] = */ {
     "-msmall-data-limit=",
     "Maximum size of global and static variables which can be placed into the small data area.",
     NULL,
@@ -20907,16 +21063,34 @@ const struct cl_option cl_options[] =
     CL_TARGET | CL_JOINED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 1 /* UInteger */, 0, 0, 0,
     offsetof (struct gcc_options, x_rx_small_data_limit), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1975] = */ {
+ /* [1982] = */ {
+    "-mtfu-version=",
+    "Specify RX TFU version.",
+    NULL,
+    NULL,
+    NULL, NULL, N_OPTS, N_OPTS, 13, /* .neg_idx = */ -1,
+    CL_TARGET | CL_JOINED,
+    0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 1 /* ToLower */, 0,
+    offsetof (struct gcc_options, x_rx_tfu_version), 47, CLVC_ENUM, CLEV_NORMAL, -1, -1 },
+ /* [1983] = */ {
+    "-mtfu=",
+    "Enable the use of RX TFU instructions. ",
+    NULL,
+    NULL,
+    NULL, NULL, N_OPTS, N_OPTS, 5, /* .neg_idx = */ -1,
+    CL_TARGET | CL_JOINED,
+    0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 1 /* ToLower */, 0,
+    offsetof (struct gcc_options, x_rx_tfu_type), 46, CLVC_ENUM, CLEV_NORMAL, -1, -1 },
+ /* [1984] = */ {
     "-mwarn-multiple-fast-interrupts",
     "Warn when multiple, different, fast interrupt handlers are in the compilation unit.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 30, /* .neg_idx = */ 1975,
+    NULL, NULL, N_OPTS, N_OPTS, 30, /* .neg_idx = */ 1984,
     CL_TARGET | CL_WARNING,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_rx_warn_multiple_fast_interrupts), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1976] = */ {
+ /* [1985] = */ {
     "-n",
     NULL,
     NULL,
@@ -20925,7 +21099,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1977] = */ {
+ /* [1986] = */ {
     "-name-sort",
     "Sort the symbols alphabetically.",
     NULL,
@@ -20934,7 +21108,7 @@ const struct cl_option cl_options[] =
     CL_LTODump,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_lto_name_sort), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1978] = */ {
+ /* [1987] = */ {
     "-no-canonical-prefixes",
     NULL,
     NULL,
@@ -20943,7 +21117,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1979] = */ {
+ /* [1988] = */ {
     "-no-integrated-cpp",
     NULL,
     NULL,
@@ -20952,16 +21126,16 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1980] = */ {
+ /* [1989] = */ {
     "-no-pie",
     "Don't create a dynamically linked position independent executable.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 6, /* .neg_idx = */ 2019,
+    NULL, NULL, N_OPTS, N_OPTS, 6, /* .neg_idx = */ 2028,
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1981] = */ {
+ /* [1990] = */ {
     "-nocpp",
     "Disable preprocessing.",
     NULL,
@@ -20970,7 +21144,7 @@ const struct cl_option cl_options[] =
     CL_Fortran,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1982] = */ {
+ /* [1991] = */ {
     "-nodefaultlibs",
     NULL,
     NULL,
@@ -20979,7 +21153,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1983] = */ {
+ /* [1992] = */ {
     "-nofpu",
     "Disable the use of RX FPU instructions.",
     NULL,
@@ -20988,7 +21162,7 @@ const struct cl_option cl_options[] =
     CL_TARGET,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1984] = */ {
+ /* [1993] = */ {
     "-nolibc",
     NULL,
     NULL,
@@ -20997,7 +21171,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1985] = */ {
+ /* [1994] = */ {
     "-nophoboslib",
     "Do not link the standard D library in the compilation.",
     NULL,
@@ -21006,7 +21180,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1986] = */ {
+ /* [1995] = */ {
     "-nostartfiles",
     NULL,
     NULL,
@@ -21015,7 +21189,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1987] = */ {
+ /* [1996] = */ {
     "-nostdinc",
     "Do not search standard system include directories (those specified with -isystem will still be used).",
     NULL,
@@ -21024,7 +21198,7 @@ const struct cl_option cl_options[] =
     CL_Ada | CL_AdaSCIL | CL_AdaWhy | CL_C | CL_CXX | CL_D | CL_Fortran | CL_ObjC | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1988] = */ {
+ /* [1997] = */ {
     "-nostdinc++",
     "Do not search standard system include directories for C++.",
     NULL,
@@ -21033,7 +21207,7 @@ const struct cl_option cl_options[] =
     CL_CXX | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1989] = */ {
+ /* [1998] = */ {
     "-nostdlib",
     "Do not look for object files in standard path.",
     NULL,
@@ -21042,7 +21216,7 @@ const struct cl_option cl_options[] =
     CL_Ada | CL_AdaSCIL | CL_AdaWhy | CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1990] = */ {
+ /* [1999] = */ {
     "-nostdlib++",
     NULL,
     NULL,
@@ -21051,7 +21225,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1991] = */ {
+ /* [2000] = */ {
     "-o",
     "-o <file>	Place output into <file>.",
     "missing filename after %qs",
@@ -21060,7 +21234,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_CXX | CL_Fortran | CL_Go | CL_ObjC | CL_ObjCXX | CL_Rust | CL_COMMON | CL_DRIVER | CL_JOINED | CL_SEPARATE,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_asm_file_name), 0, CLVC_STRING, 0, -1, -1 },
- /* [1992] = */ {
+ /* [2001] = */ {
     "-objects",
     "Dump the details of LTO objects.",
     NULL,
@@ -21069,7 +21243,7 @@ const struct cl_option cl_options[] =
     CL_LTODump,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_lto_dump_objects), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1993] = */ {
+ /* [2002] = */ {
     "-p",
     "Enable function profiling.",
     NULL,
@@ -21078,7 +21252,7 @@ const struct cl_option cl_options[] =
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_profile_flag), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1994] = */ {
+ /* [2003] = */ {
     "-pass-exit-codes",
     NULL,
     NULL,
@@ -21087,7 +21261,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_pass_exit_codes), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1995] = */ {
+ /* [2004] = */ {
     "-pedantic",
     NULL,
     NULL,
@@ -21096,7 +21270,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_CXX | CL_ObjC | CL_ObjCXX | CL_COMMON,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1996] = */ {
+ /* [2005] = */ {
     "-pedantic-errors",
     "Like -pedantic but issue them as errors.",
     NULL,
@@ -21105,7 +21279,7 @@ const struct cl_option cl_options[] =
     CL_COMMON,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_pedantic_errors), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1997] = */ {
+ /* [2006] = */ {
     "-pg",
     NULL,
     NULL,
@@ -21114,16 +21288,16 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1998] = */ {
+ /* [2007] = */ {
     "-pie",
     "Create a dynamically linked position independent executable.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 3, /* .neg_idx = */ 1980,
+    NULL, NULL, N_OPTS, N_OPTS, 3, /* .neg_idx = */ 1989,
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [1999] = */ {
+ /* [2008] = */ {
     "-pipe",
     NULL,
     NULL,
@@ -21132,7 +21306,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_use_pipes), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2000] = */ {
+ /* [2009] = */ {
     "-print-file-name=",
     NULL,
     NULL,
@@ -21141,7 +21315,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER | CL_JOINED,
     0, 0, 0, 0, 0, 0, 0, 1 /* JoinedOrMissing */, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_print_file_name), 0, CLVC_STRING, 0, -1, -1 },
- /* [2001] = */ {
+ /* [2010] = */ {
     "-print-libgcc-file-name",
     NULL,
     NULL,
@@ -21150,7 +21324,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2002] = */ {
+ /* [2011] = */ {
     "-print-multi-directory",
     NULL,
     NULL,
@@ -21159,7 +21333,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_print_multi_directory), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2003] = */ {
+ /* [2012] = */ {
     "-print-multi-lib",
     NULL,
     NULL,
@@ -21168,7 +21342,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_print_multi_lib), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2004] = */ {
+ /* [2013] = */ {
     "-print-multi-os-directory",
     NULL,
     NULL,
@@ -21177,7 +21351,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_print_multi_os_directory), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2005] = */ {
+ /* [2014] = */ {
     "-print-multiarch",
     NULL,
     NULL,
@@ -21186,7 +21360,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_print_multiarch), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2006] = */ {
+ /* [2015] = */ {
     "-print-objc-runtime-info",
     "Generate C header of platform-specific features.",
     NULL,
@@ -21195,7 +21369,7 @@ const struct cl_option cl_options[] =
     CL_ObjC | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2007] = */ {
+ /* [2016] = */ {
     "-print-prog-name=",
     NULL,
     NULL,
@@ -21204,7 +21378,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER | CL_JOINED,
     0, 0, 0, 0, 0, 0, 0, 1 /* JoinedOrMissing */, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_print_prog_name), 0, CLVC_STRING, 0, -1, -1 },
- /* [2008] = */ {
+ /* [2017] = */ {
     "-print-search-dirs",
     NULL,
     NULL,
@@ -21213,7 +21387,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_print_search_dirs), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2009] = */ {
+ /* [2018] = */ {
     "-print-sysroot",
     NULL,
     NULL,
@@ -21222,7 +21396,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_print_sysroot), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2010] = */ {
+ /* [2019] = */ {
     "-print-sysroot-headers-suffix",
     NULL,
     NULL,
@@ -21231,7 +21405,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_print_sysroot_headers_suffix), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2011] = */ {
+ /* [2020] = */ {
     "-print-value",
     "Print the initial values of the variables.",
     NULL,
@@ -21240,7 +21414,7 @@ const struct cl_option cl_options[] =
     CL_LTODump,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_lto_print_value), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2012] = */ {
+ /* [2021] = */ {
     "-quiet",
     "Do not display functions compiled or elapsed time.",
     NULL,
@@ -21249,7 +21423,7 @@ const struct cl_option cl_options[] =
     CL_COMMON,
     0, 0, 0, 0, 0, 1 /* RejectDriver */, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_quiet_flag), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2013] = */ {
+ /* [2022] = */ {
     "-r",
     NULL,
     NULL,
@@ -21258,7 +21432,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2014] = */ {
+ /* [2023] = */ {
     "-remap",
     "Remap file names when including files.",
     NULL,
@@ -21267,7 +21441,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_CXX | CL_ObjC | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2015] = */ {
+ /* [2024] = */ {
     "-reverse-sort",
     "Display the symbols in reverse order.",
     NULL,
@@ -21276,7 +21450,7 @@ const struct cl_option cl_options[] =
     CL_LTODump,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_lto_reverse_sort), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2016] = */ {
+ /* [2025] = */ {
     "-s",
     NULL,
     NULL,
@@ -21285,7 +21459,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2017] = */ {
+ /* [2026] = */ {
     "-save-temps",
     "save temporary preprocessed files",
     NULL,
@@ -21294,7 +21468,7 @@ const struct cl_option cl_options[] =
     CL_ModulaX2 | CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2018] = */ {
+ /* [2027] = */ {
     "-save-temps=",
     "save temporary preprocessed files",
     NULL,
@@ -21303,16 +21477,16 @@ const struct cl_option cl_options[] =
     CL_ModulaX2 | CL_DRIVER | CL_JOINED,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [2019] = */ {
+ /* [2028] = */ {
     "-shared",
     "Create a shared library.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 6, /* .neg_idx = */ 2040,
+    NULL, NULL, N_OPTS, N_OPTS, 6, /* .neg_idx = */ 2049,
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2020] = */ {
+ /* [2029] = */ {
     "-shared-libgcc",
     NULL,
     NULL,
@@ -21321,7 +21495,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2021] = */ {
+ /* [2030] = */ {
     "-shared-libphobos",
     "Link the standard D library dynamically in the compilation.",
     NULL,
@@ -21330,7 +21504,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2022] = */ {
+ /* [2031] = */ {
     "-size-sort",
     "Sort the symbols according to size.",
     NULL,
@@ -21339,7 +21513,7 @@ const struct cl_option cl_options[] =
     CL_LTODump,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_lto_size_sort), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2023] = */ {
+ /* [2032] = */ {
     "-specs",
     NULL,
     NULL,
@@ -21348,7 +21522,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER | CL_SEPARATE,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [2024] = */ {
+ /* [2033] = */ {
     "-specs=",
     NULL,
     NULL,
@@ -21357,7 +21531,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER | CL_JOINED,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [2025] = */ {
+ /* [2034] = */ {
     "-static",
     NULL,
     NULL,
@@ -21366,7 +21540,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2026] = */ {
+ /* [2035] = */ {
     "-static-libasan",
     NULL,
     NULL,
@@ -21375,7 +21549,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2027] = */ {
+ /* [2036] = */ {
     "-static-libgcc",
     NULL,
     NULL,
@@ -21384,7 +21558,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2028] = */ {
+ /* [2037] = */ {
     "-static-libgfortran",
     "Statically link the GNU Fortran helper library (libgfortran).",
     NULL,
@@ -21393,7 +21567,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2029] = */ {
+ /* [2038] = */ {
     "-static-libgm2",
     "Link the standard Modula-2 libraries statically in the compilation.",
     NULL,
@@ -21402,7 +21576,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2030] = */ {
+ /* [2039] = */ {
     "-static-libgo",
     NULL,
     NULL,
@@ -21411,7 +21585,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2031] = */ {
+ /* [2040] = */ {
     "-static-libhwasan",
     NULL,
     NULL,
@@ -21420,7 +21594,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2032] = */ {
+ /* [2041] = */ {
     "-static-liblsan",
     NULL,
     NULL,
@@ -21429,7 +21603,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2033] = */ {
+ /* [2042] = */ {
     "-static-libmpx",
     "Removed in GCC 9.  This switch has no effect.",
     NULL,
@@ -21438,7 +21612,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2034] = */ {
+ /* [2043] = */ {
     "-static-libmpxwrappers",
     "Removed in GCC 9.  This switch has no effect.",
     NULL,
@@ -21447,7 +21621,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2035] = */ {
+ /* [2044] = */ {
     "-static-libphobos",
     "Link the standard D library statically in the compilation.",
     NULL,
@@ -21456,7 +21630,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2036] = */ {
+ /* [2045] = */ {
     "-static-libquadmath",
     "Statically link the GCC Quad-Precision Math Library (libquadmath).",
     NULL,
@@ -21465,7 +21639,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2037] = */ {
+ /* [2046] = */ {
     "-static-libstdc++",
     NULL,
     NULL,
@@ -21474,7 +21648,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2038] = */ {
+ /* [2047] = */ {
     "-static-libtsan",
     NULL,
     NULL,
@@ -21483,7 +21657,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2039] = */ {
+ /* [2048] = */ {
     "-static-libubsan",
     NULL,
     NULL,
@@ -21492,16 +21666,16 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2040] = */ {
+ /* [2049] = */ {
     "-static-pie",
     "Create a static position independent executable.",
     NULL,
     NULL,
-    NULL, NULL, N_OPTS, N_OPTS, 10, /* .neg_idx = */ 1998,
+    NULL, NULL, N_OPTS, N_OPTS, 10, /* .neg_idx = */ 2007,
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2041] = */ {
+ /* [2050] = */ {
     "-std=c++03",
     "Conform to the ISO 1998 C++ standard revised by the 2003 technical corrigendum.",
     NULL,
@@ -21510,7 +21684,7 @@ const struct cl_option cl_options[] =
     CL_CXX | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2042] = */ {
+ /* [2051] = */ {
     "-std=c++0x",
     "Deprecated in favor of -std=c++11.",
     NULL,
@@ -21519,7 +21693,7 @@ const struct cl_option cl_options[] =
     CL_CXX | CL_ObjCXX | CL_UNDOCUMENTED,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2043] = */ {
+ /* [2052] = */ {
     "-std=c++11",
     "Conform to the ISO 2011 C++ standard.",
     NULL,
@@ -21528,7 +21702,7 @@ const struct cl_option cl_options[] =
     CL_CXX | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2044] = */ {
+ /* [2053] = */ {
     "-std=c++14",
     "Conform to the ISO 2014 C++ standard.",
     NULL,
@@ -21537,7 +21711,7 @@ const struct cl_option cl_options[] =
     CL_CXX | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2045] = */ {
+ /* [2054] = */ {
     "-std=c++17",
     "Conform to the ISO 2017 C++ standard.",
     NULL,
@@ -21546,7 +21720,7 @@ const struct cl_option cl_options[] =
     CL_CXX | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2046] = */ {
+ /* [2055] = */ {
     "-std=c++1y",
     "Deprecated in favor of -std=c++14.",
     NULL,
@@ -21555,7 +21729,7 @@ const struct cl_option cl_options[] =
     CL_CXX | CL_ObjCXX | CL_UNDOCUMENTED,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2047] = */ {
+ /* [2056] = */ {
     "-std=c++1z",
     "Deprecated in favor of -std=c++17.",
     NULL,
@@ -21564,7 +21738,7 @@ const struct cl_option cl_options[] =
     CL_CXX | CL_ObjCXX | CL_UNDOCUMENTED,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2048] = */ {
+ /* [2057] = */ {
     "-std=c++20",
     "Conform to the ISO 2020 C++ standard (experimental and incomplete support).",
     NULL,
@@ -21573,7 +21747,7 @@ const struct cl_option cl_options[] =
     CL_CXX | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2049] = */ {
+ /* [2058] = */ {
     "-std=c++23",
     "Conform to the ISO 2023 C++ draft standard (experimental and incomplete support).",
     NULL,
@@ -21582,7 +21756,7 @@ const struct cl_option cl_options[] =
     CL_CXX | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2050] = */ {
+ /* [2059] = */ {
     "-std=c++26",
     "Conform to the ISO 2026 C++ draft standard (experimental and incomplete support).",
     NULL,
@@ -21591,7 +21765,7 @@ const struct cl_option cl_options[] =
     CL_CXX | CL_ObjCXX | CL_UNDOCUMENTED,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2051] = */ {
+ /* [2060] = */ {
     "-std=c++2a",
     "Conform to the ISO 2020 C++ standard (experimental and incomplete support).",
     NULL,
@@ -21600,7 +21774,7 @@ const struct cl_option cl_options[] =
     CL_CXX | CL_ObjCXX | CL_UNDOCUMENTED,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2052] = */ {
+ /* [2061] = */ {
     "-std=c++2b",
     "Conform to the ISO 2023 C++ draft standard (experimental and incomplete support).",
     NULL,
@@ -21609,7 +21783,7 @@ const struct cl_option cl_options[] =
     CL_CXX | CL_ObjCXX | CL_UNDOCUMENTED,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2053] = */ {
+ /* [2062] = */ {
     "-std=c++2c",
     "Conform to the ISO 2026 C++ draft standard (experimental and incomplete support).",
     NULL,
@@ -21618,7 +21792,7 @@ const struct cl_option cl_options[] =
     CL_CXX | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2054] = */ {
+ /* [2063] = */ {
     "-std=c++98",
     "Conform to the ISO 1998 C++ standard revised by the 2003 technical corrigendum.",
     NULL,
@@ -21627,7 +21801,7 @@ const struct cl_option cl_options[] =
     CL_CXX | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2055] = */ {
+ /* [2064] = */ {
     "-std=c11",
     "Conform to the ISO 2011 C standard.",
     NULL,
@@ -21636,7 +21810,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_ObjC,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2056] = */ {
+ /* [2065] = */ {
     "-std=c17",
     "Conform to the ISO 2017 C standard (published in 2018).",
     NULL,
@@ -21645,7 +21819,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_ObjC,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2057] = */ {
+ /* [2066] = */ {
     "-std=c18",
     "Conform to the ISO 2017 C standard (published in 2018).",
     NULL,
@@ -21654,7 +21828,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_ObjC,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2058] = */ {
+ /* [2067] = */ {
     "-std=c1x",
     "Deprecated in favor of -std=c11.",
     NULL,
@@ -21663,7 +21837,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_ObjC,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2059] = */ {
+ /* [2068] = */ {
     "-std=c23",
     "Conform to the ISO 2023 C standard draft (expected to be published in 2024) (experimental and incomplete support).",
     NULL,
@@ -21672,7 +21846,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_ObjC,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2060] = */ {
+ /* [2069] = */ {
     "-std=c2x",
     "Deprecated in favor of -std=c23.",
     NULL,
@@ -21681,7 +21855,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_ObjC,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2061] = */ {
+ /* [2070] = */ {
     "-std=c89",
     "Conform to the ISO 1990 C standard.",
     NULL,
@@ -21690,7 +21864,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_ObjC,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2062] = */ {
+ /* [2071] = */ {
     "-std=c90",
     "Conform to the ISO 1990 C standard.",
     NULL,
@@ -21699,7 +21873,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_ObjC,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2063] = */ {
+ /* [2072] = */ {
     "-std=c99",
     "Conform to the ISO 1999 C standard.",
     NULL,
@@ -21708,7 +21882,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_ObjC,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2064] = */ {
+ /* [2073] = */ {
     "-std=c9x",
     "Deprecated in favor of -std=c99.",
     NULL,
@@ -21717,7 +21891,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_ObjC,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2065] = */ {
+ /* [2074] = */ {
     "-std=f2003",
     "Conform to the ISO Fortran 2003 standard.",
     NULL,
@@ -21726,7 +21900,7 @@ const struct cl_option cl_options[] =
     CL_Fortran,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2066] = */ {
+ /* [2075] = */ {
     "-std=f2008",
     "Conform to the ISO Fortran 2008 standard.",
     NULL,
@@ -21735,7 +21909,7 @@ const struct cl_option cl_options[] =
     CL_Fortran,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2067] = */ {
+ /* [2076] = */ {
     "-std=f2008ts",
     "Conform to the ISO Fortran 2008 standard including TS 29113.",
     NULL,
@@ -21744,7 +21918,7 @@ const struct cl_option cl_options[] =
     CL_Fortran,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2068] = */ {
+ /* [2077] = */ {
     "-std=f2018",
     "Conform to the ISO Fortran 2018 standard.",
     NULL,
@@ -21753,7 +21927,7 @@ const struct cl_option cl_options[] =
     CL_Fortran,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2069] = */ {
+ /* [2078] = */ {
     "-std=f2023",
     "Conform to the ISO Fortran 2023 standard.",
     NULL,
@@ -21762,7 +21936,7 @@ const struct cl_option cl_options[] =
     CL_Fortran,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2070] = */ {
+ /* [2079] = */ {
     "-std=f95",
     "Conform to the ISO Fortran 95 standard.",
     NULL,
@@ -21771,7 +21945,7 @@ const struct cl_option cl_options[] =
     CL_Fortran,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2071] = */ {
+ /* [2080] = */ {
     "-std=gnu",
     "Conform to nothing in particular.",
     NULL,
@@ -21780,7 +21954,7 @@ const struct cl_option cl_options[] =
     CL_Fortran,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2072] = */ {
+ /* [2081] = */ {
     "-std=gnu++03",
     "Conform to the ISO 1998 C++ standard revised by the 2003 technical corrigendum with GNU extensions.",
     NULL,
@@ -21789,7 +21963,7 @@ const struct cl_option cl_options[] =
     CL_CXX | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2073] = */ {
+ /* [2082] = */ {
     "-std=gnu++0x",
     "Deprecated in favor of -std=gnu++11.",
     NULL,
@@ -21798,7 +21972,7 @@ const struct cl_option cl_options[] =
     CL_CXX | CL_ObjCXX | CL_UNDOCUMENTED,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2074] = */ {
+ /* [2083] = */ {
     "-std=gnu++11",
     "Conform to the ISO 2011 C++ standard with GNU extensions.",
     NULL,
@@ -21807,7 +21981,7 @@ const struct cl_option cl_options[] =
     CL_CXX | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2075] = */ {
+ /* [2084] = */ {
     "-std=gnu++14",
     "Conform to the ISO 2014 C++ standard with GNU extensions.",
     NULL,
@@ -21816,7 +21990,7 @@ const struct cl_option cl_options[] =
     CL_CXX | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2076] = */ {
+ /* [2085] = */ {
     "-std=gnu++17",
     "Conform to the ISO 2017 C++ standard with GNU extensions.",
     NULL,
@@ -21825,7 +21999,7 @@ const struct cl_option cl_options[] =
     CL_CXX | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2077] = */ {
+ /* [2086] = */ {
     "-std=gnu++1y",
     "Deprecated in favor of -std=gnu++14.",
     NULL,
@@ -21834,7 +22008,7 @@ const struct cl_option cl_options[] =
     CL_CXX | CL_ObjCXX | CL_UNDOCUMENTED,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2078] = */ {
+ /* [2087] = */ {
     "-std=gnu++1z",
     "Deprecated in favor of -std=gnu++17.",
     NULL,
@@ -21843,7 +22017,7 @@ const struct cl_option cl_options[] =
     CL_CXX | CL_ObjCXX | CL_UNDOCUMENTED,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2079] = */ {
+ /* [2088] = */ {
     "-std=gnu++20",
     "Conform to the ISO 2020 C++ standard with GNU extensions (experimental and incomplete support).",
     NULL,
@@ -21852,7 +22026,7 @@ const struct cl_option cl_options[] =
     CL_CXX | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2080] = */ {
+ /* [2089] = */ {
     "-std=gnu++23",
     "Conform to the ISO 2023 C++ draft standard with GNU extensions (experimental and incomplete support).",
     NULL,
@@ -21861,7 +22035,7 @@ const struct cl_option cl_options[] =
     CL_CXX | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2081] = */ {
+ /* [2090] = */ {
     "-std=gnu++26",
     "Conform to the ISO 2026 C++ draft standard with GNU extensions (experimental and incomplete support).",
     NULL,
@@ -21870,7 +22044,7 @@ const struct cl_option cl_options[] =
     CL_CXX | CL_ObjCXX | CL_UNDOCUMENTED,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2082] = */ {
+ /* [2091] = */ {
     "-std=gnu++2a",
     "Conform to the ISO 2020 C++ standard with GNU extensions (experimental and incomplete support).",
     NULL,
@@ -21879,7 +22053,7 @@ const struct cl_option cl_options[] =
     CL_CXX | CL_ObjCXX | CL_UNDOCUMENTED,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2083] = */ {
+ /* [2092] = */ {
     "-std=gnu++2b",
     "Conform to the ISO 2023 C++ draft standard with GNU extensions (experimental and incomplete support).",
     NULL,
@@ -21888,7 +22062,7 @@ const struct cl_option cl_options[] =
     CL_CXX | CL_ObjCXX | CL_UNDOCUMENTED,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2084] = */ {
+ /* [2093] = */ {
     "-std=gnu++2c",
     "Conform to the ISO 2026 C++ draft standard with GNU extensions (experimental and incomplete support).",
     NULL,
@@ -21897,7 +22071,7 @@ const struct cl_option cl_options[] =
     CL_CXX | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2085] = */ {
+ /* [2094] = */ {
     "-std=gnu++98",
     "Conform to the ISO 1998 C++ standard revised by the 2003 technical corrigendum with GNU extensions.",
     NULL,
@@ -21906,7 +22080,7 @@ const struct cl_option cl_options[] =
     CL_CXX | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2086] = */ {
+ /* [2095] = */ {
     "-std=gnu11",
     "Conform to the ISO 2011 C standard with GNU extensions.",
     NULL,
@@ -21915,7 +22089,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_ObjC,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2087] = */ {
+ /* [2096] = */ {
     "-std=gnu17",
     "Conform to the ISO 2017 C standard (published in 2018) with GNU extensions.",
     NULL,
@@ -21924,7 +22098,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_ObjC,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2088] = */ {
+ /* [2097] = */ {
     "-std=gnu18",
     "Conform to the ISO 2017 C standard (published in 2018) with GNU extensions.",
     NULL,
@@ -21933,7 +22107,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_ObjC,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2089] = */ {
+ /* [2098] = */ {
     "-std=gnu1x",
     "Deprecated in favor of -std=gnu11.",
     NULL,
@@ -21942,7 +22116,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_ObjC,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2090] = */ {
+ /* [2099] = */ {
     "-std=gnu23",
     "Conform to the ISO 2023 C standard draft (expected to be published in 2024) with GNU extensions (experimental and incomplete support).",
     NULL,
@@ -21951,7 +22125,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_ObjC,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2091] = */ {
+ /* [2100] = */ {
     "-std=gnu2x",
     "Deprecated in favor of -std=gnu23.",
     NULL,
@@ -21960,7 +22134,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_ObjC,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2092] = */ {
+ /* [2101] = */ {
     "-std=gnu89",
     "Conform to the ISO 1990 C standard with GNU extensions.",
     NULL,
@@ -21969,7 +22143,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_ObjC,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2093] = */ {
+ /* [2102] = */ {
     "-std=gnu90",
     "Conform to the ISO 1990 C standard with GNU extensions.",
     NULL,
@@ -21978,7 +22152,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_ObjC,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2094] = */ {
+ /* [2103] = */ {
     "-std=gnu99",
     "Conform to the ISO 1999 C standard with GNU extensions.",
     NULL,
@@ -21987,7 +22161,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_ObjC,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2095] = */ {
+ /* [2104] = */ {
     "-std=gnu9x",
     "Deprecated in favor of -std=gnu99.",
     NULL,
@@ -21996,7 +22170,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_ObjC,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2096] = */ {
+ /* [2105] = */ {
     "-std=iso9899:1990",
     "Conform to the ISO 1990 C standard.",
     NULL,
@@ -22005,7 +22179,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_ObjC,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2097] = */ {
+ /* [2106] = */ {
     "-std=iso9899:199409",
     "Conform to the ISO 1990 C standard as amended in 1994.",
     NULL,
@@ -22014,7 +22188,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_ObjC,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2098] = */ {
+ /* [2107] = */ {
     "-std=iso9899:1999",
     "Conform to the ISO 1999 C standard.",
     NULL,
@@ -22023,7 +22197,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_ObjC,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2099] = */ {
+ /* [2108] = */ {
     "-std=iso9899:199x",
     "Deprecated in favor of -std=iso9899:1999.",
     NULL,
@@ -22032,7 +22206,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_ObjC,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2100] = */ {
+ /* [2109] = */ {
     "-std=iso9899:2011",
     "Conform to the ISO 2011 C standard.",
     NULL,
@@ -22041,7 +22215,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_ObjC,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2101] = */ {
+ /* [2110] = */ {
     "-std=iso9899:2017",
     "Conform to the ISO 2017 C standard (published in 2018).",
     NULL,
@@ -22050,7 +22224,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_ObjC,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2102] = */ {
+ /* [2111] = */ {
     "-std=iso9899:2018",
     "Conform to the ISO 2017 C standard (published in 2018).",
     NULL,
@@ -22059,7 +22233,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_ObjC,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2103] = */ {
+ /* [2112] = */ {
     "-std=iso9899:2024",
     "Conform to the ISO 2023 C standard draft (expected to be published in 2024) (experimental and incomplete support).",
     NULL,
@@ -22068,7 +22242,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_ObjC,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2104] = */ {
+ /* [2113] = */ {
     "-std=legacy",
     "Accept extensions to support legacy code.",
     NULL,
@@ -22077,7 +22251,7 @@ const struct cl_option cl_options[] =
     CL_Fortran,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2105] = */ {
+ /* [2114] = */ {
     "-stdlib=",
     "-stdlib=[libstdc++|libc++]	The standard library to be used for C++ headers and runtime.",
     NULL,
@@ -22090,8 +22264,8 @@ const struct cl_option cl_options[] =
     0,
     1 /* Disabled.  */, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 #endif
-    offsetof (struct gcc_options, x_flag_stdlib_kind), 48, CLVC_ENUM, CLEV_NORMAL, -1, -1 },
- /* [2106] = */ {
+    offsetof (struct gcc_options, x_flag_stdlib_kind), 51, CLVC_ENUM, CLEV_NORMAL, -1, -1 },
+ /* [2115] = */ {
     "-symbol=",
     NULL,
     NULL,
@@ -22100,7 +22274,7 @@ const struct cl_option cl_options[] =
     CL_LTODump | CL_JOINED,
     0, 0, 0, 0, 0, 0, 1 /* RejectNegative */, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_lto_dump_symbol), 0, CLVC_STRING, 0, -1, -1 },
- /* [2107] = */ {
+ /* [2116] = */ {
     "-symbolic",
     NULL,
     NULL,
@@ -22109,7 +22283,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2108] = */ {
+ /* [2117] = */ {
     "-t",
     NULL,
     NULL,
@@ -22118,7 +22292,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2109] = */ {
+ /* [2118] = */ {
     "-time",
     NULL,
     NULL,
@@ -22127,7 +22301,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_report_times), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2110] = */ {
+ /* [2119] = */ {
     "-time=",
     NULL,
     NULL,
@@ -22136,7 +22310,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER | CL_JOINED,
     0, 0, 0, 0, 0, 0, 0, 1 /* JoinedOrMissing */, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [2111] = */ {
+ /* [2120] = */ {
     "-traditional",
     NULL,
     NULL,
@@ -22145,7 +22319,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2112] = */ {
+ /* [2121] = */ {
     "-traditional-cpp",
     "Enable traditional preprocessing.",
     NULL,
@@ -22154,7 +22328,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_CXX | CL_ModulaX2 | CL_ObjC | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2113] = */ {
+ /* [2122] = */ {
     "-tree-stats",
     "Dump the statistics of trees.",
     NULL,
@@ -22163,7 +22337,7 @@ const struct cl_option cl_options[] =
     CL_LTODump,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_lto_tree_stats), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2114] = */ {
+ /* [2123] = */ {
     "-trigraphs",
     "-trigraphs	Support ISO C trigraphs.",
     NULL,
@@ -22172,7 +22346,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_CXX | CL_ObjC | CL_ObjCXX,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2115] = */ {
+ /* [2124] = */ {
     "-type-stats",
     "Dump the statistics of tree types.",
     NULL,
@@ -22181,7 +22355,7 @@ const struct cl_option cl_options[] =
     CL_LTODump,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_lto_dump_type_stats), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2116] = */ {
+ /* [2125] = */ {
     "-u",
     NULL,
     NULL,
@@ -22190,7 +22364,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER | CL_JOINED | CL_SEPARATE,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [2117] = */ {
+ /* [2126] = */ {
     "-undef",
     "Do not predefine system-specific and GCC-specific macros.",
     NULL,
@@ -22199,7 +22373,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_CXX | CL_Fortran | CL_ObjC | CL_ObjCXX | CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_flag_undef), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2118] = */ {
+ /* [2127] = */ {
     "-v",
     "Enable verbose output.",
     NULL,
@@ -22208,7 +22382,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_CXX | CL_D | CL_Fortran | CL_ObjC | CL_ObjCXX | CL_COMMON | CL_DRIVER,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_verbose_flag), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2119] = */ {
+ /* [2128] = */ {
     "-version",
     "Display the compiler's version.",
     NULL,
@@ -22217,7 +22391,7 @@ const struct cl_option cl_options[] =
     CL_COMMON,
     0, 0, 0, 0, 0, 1 /* RejectDriver */, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_version_flag), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2120] = */ {
+ /* [2129] = */ {
     "-w",
     "Suppress warnings.",
     NULL,
@@ -22226,7 +22400,7 @@ const struct cl_option cl_options[] =
     CL_C | CL_CXX | CL_ObjC | CL_ObjCXX | CL_COMMON,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_inhibit_warnings), 0, CLVC_INTEGER, 0, -1, -1 },
- /* [2121] = */ {
+ /* [2130] = */ {
     "-wrapper",
     NULL,
     NULL,
@@ -22235,7 +22409,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER | CL_SEPARATE,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     offsetof (struct gcc_options, x_wrapper_string), 0, CLVC_STRING, 0, -1, -1 },
- /* [2122] = */ {
+ /* [2131] = */ {
     "-x",
     NULL,
     NULL,
@@ -22244,7 +22418,7 @@ const struct cl_option cl_options[] =
     CL_DRIVER | CL_JOINED | CL_SEPARATE,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     (unsigned short) -1, 0, CLVC_STRING, 0, -1, -1 },
- /* [2123] = */ {
+ /* [2132] = */ {
     "-z",
     NULL,
     NULL,

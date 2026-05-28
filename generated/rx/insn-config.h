@@ -14,9 +14,9 @@
 #define HAVE_lo_sum 0
 #define HAVE_rotate 1
 #define HAVE_rotatert 1
-#define HAVE_peephole 0
+#define HAVE_peephole 1
 #define HAVE_peephole2 1
-#define MAX_INSNS_PER_PEEP2 2
+#define MAX_INSNS_PER_PEEP2 5
 #define NUM_REGISTER_FILTERS 0
 
 #endif /* GCC_INSN_CONFIG_H */

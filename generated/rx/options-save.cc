@@ -11982,8 +11982,8 @@ cl_optimization_stream_out (struct output_block *ob,
     bp_pack_var_len_int (bp, ptr->x_param_scev_max_expr_complexity ^ 10);
   else
     bp_pack_var_len_int (bp, ptr->x_param_scev_max_expr_complexity);
-  if (100 > (int ) 10)
-    bp_pack_var_len_int (bp, ptr->x_param_scev_max_expr_size ^ 100);
+  if (20 > (int ) 10)
+    bp_pack_var_len_int (bp, ptr->x_param_scev_max_expr_size ^ 20);
   else
     bp_pack_var_len_int (bp, ptr->x_param_scev_max_expr_size);
   if (-1 > (int ) 10)
@@ -13020,8 +13020,8 @@ cl_optimization_stream_in (struct data_in *data_in ATTRIBUTE_UNUSED,
   if (10 > (int ) 10)
     ptr->x_param_scev_max_expr_complexity ^= 10;
   ptr->x_param_scev_max_expr_size = (int ) bp_unpack_var_len_int (bp);
-  if (100 > (int ) 10)
-    ptr->x_param_scev_max_expr_size ^= 100;
+  if (20 > (int ) 10)
+    ptr->x_param_scev_max_expr_size ^= 20;
   ptr->x_param_sched_autopref_queue_depth = (int ) bp_unpack_var_len_int (bp);
   if (-1 > (int ) 10)
     ptr->x_param_sched_autopref_queue_depth ^= -1;
@@ -15831,6 +15831,8 @@ cl_optimization_compare (gcc_options *ptr1, gcc_options *ptr2)
     internal_error ("%<global_options%> are modified in local context");
   if (ptr1->x_flag_sized_deallocation != ptr2->x_flag_sized_deallocation)
     internal_error ("%<global_options%> are modified in local context");
+  if (ptr1->x_flag_sort_data != ptr2->x_flag_sort_data)
+    internal_error ("%<global_options%> are modified in local context");
   if (ptr1->x_flag_split_ivs_in_unroller != ptr2->x_flag_split_ivs_in_unroller)
     internal_error ("%<global_options%> are modified in local context");
   if (ptr1->x_flag_split_loops != ptr2->x_flag_split_loops)
@@ -16107,13 +16109,23 @@ cl_optimization_compare (gcc_options *ptr1, gcc_options *ptr2)
     internal_error ("%<global_options%> are modified in local context");
   if (ptr1->x_rx_cpu_type != ptr2->x_rx_cpu_type)
     internal_error ("%<global_options%> are modified in local context");
+  if (ptr1->x_flag_dfpu != ptr2->x_flag_dfpu)
+    internal_error ("%<global_options%> are modified in local context");
   if (ptr1->x_rx_deferred_options != ptr2->x_rx_deferred_options)
     internal_error ("%<global_options%> are modified in local context");
-  if (ptr1->x_rx_interrupt_registers != ptr2->x_rx_interrupt_registers)
+  if (ptr1->x_rx_isa_version != ptr2->x_rx_isa_version)
     internal_error ("%<global_options%> are modified in local context");
   if (ptr1->x_rx_max_constant_size != ptr2->x_rx_max_constant_size)
     internal_error ("%<global_options%> are modified in local context");
+  if (ptr1->x_flag_morder != ptr2->x_flag_morder)
+    internal_error ("%<global_options%> are modified in local context");
+  if (ptr1->x_flag_rxpeephole != ptr2->x_flag_rxpeephole)
+    internal_error ("%<global_options%> are modified in local context");
   if (ptr1->x_rx_small_data_limit != ptr2->x_rx_small_data_limit)
+    internal_error ("%<global_options%> are modified in local context");
+  if (ptr1->x_rx_tfu_version != ptr2->x_rx_tfu_version)
+    internal_error ("%<global_options%> are modified in local context");
+  if (ptr1->x_rx_tfu_type != ptr2->x_rx_tfu_type)
     internal_error ("%<global_options%> are modified in local context");
   if (ptr1->x_rx_warn_multiple_fast_interrupts != ptr2->x_rx_warn_multiple_fast_interrupts)
     internal_error ("%<global_options%> are modified in local context");

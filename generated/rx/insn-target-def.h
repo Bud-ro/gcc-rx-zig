@@ -281,8 +281,8 @@ static bool
 target_have_movstr (void)
 {
   return 
-#line 2404 "config/rx/rx.md"
-(rx_allow_string_insns);
+#line 3847 "/tmp/claude/gcc-14.2.0-rx-patched/gcc/config/rx/rx.md"
+((rx_allow_string_insns && (!optimize_size)));
 }
 
 static rtx_insn *
@@ -470,7 +470,7 @@ static bool
 target_have_return (void)
 {
   return 
-#line 355 "config/rx/rx.md"
+#line 580 "/tmp/claude/gcc-14.2.0-rx-patched/gcc/config/rx/rx.md"
 (rx_can_use_simple_return ());
 }
 

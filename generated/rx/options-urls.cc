@@ -3200,6 +3200,8 @@ get_opt_url_suffix (int option_index, unsigned lang_mask)
        return "gcc/C_002b_002b-Dialect-Options.html#index-fsized-deallocation";
      case OPT_fsoft_check_all:
        break;
+     case OPT_fsort_data:
+       break;
      case OPT_fsources:
        break;
      case OPT_fsplit_ivs_in_unroller:
@@ -3670,32 +3672,48 @@ get_opt_url_suffix (int option_index, unsigned lang_mask)
        return "gcc/RX-Options.html#index-mbig-endian-data";
      case OPT_mcpu_:
        return "gcc/RX-Options.html#index-mcpu-11";
-     case OPT_mgcc_abi:
-       break;
+     case OPT_mdfpu:
+       return "gcc/RX-Options.html#index-mdfpu";
      case OPT_mint_register_:
        return "gcc/RX-Options.html#index-mint-register";
+     case OPT_misa_:
+       return "gcc/RX-Options.html#index-misa-1";
      case OPT_mjsr:
        return "gcc/RX-Options.html#index-mjsr";
      case OPT_mlittle_endian_data:
        return "gcc/RX-Options.html#index-mlittle-endian-data";
      case OPT_mlra:
-       break;
+       return "gcc/RX-Options.html#index-mlra-3";
      case OPT_mmax_constant_size_:
        return "gcc/RX-Options.html#index-mmax-constant-size";
+     case OPT_mno_balign:
+       return "gcc/RX-Options.html#index-mno-balign";
      case OPT_mnofpu:
        break;
+     case OPT_mnosave_tfu:
+       return "gcc/RX-Options.html#index-mnosave-tfu";
+     case OPT_morder:
+       return "gcc/RX-Options.html#index-morder";
      case OPT_mpid:
        return "gcc/RX-Options.html#index-mpid";
      case OPT_mrelax:
        return "gcc/RX-Options.html#index-mrelax-7";
      case OPT_mrx_abi:
        break;
+     case OPT_mrxpeephole:
+       break;
+     case OPT_mrxv2_fsqrt:
+       return "gcc/RX-Options.html#index-mrxv2-fsqrt";
      case OPT_msave_acc_in_interrupts:
        return "gcc/RX-Options.html#index-msave-acc-in-interrupts";
      case OPT_msim:
        return "gcc/RX-Options.html#index-msim-8";
      case OPT_msmall_data_limit_:
        return "gcc/RX-Options.html#index-msmall-data-limit-2";
+     case OPT_mtfu_version_:
+       return "gcc/RX-Options.html#index-mtfu-version";
+     case OPT_mtfu_:
+       return "gcc/RX-Options.html#index-mtfu";
      case OPT_mwarn_multiple_fast_interrupts:
        return "gcc/RX-Options.html#index-mwarn-multiple-fast-interrupts";
      case OPT_n:

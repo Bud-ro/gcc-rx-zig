@@ -6,11 +6,11 @@
     .dependencies = .{
         .gcc_cross = .{
             .url = "git+https://github.com/Bud-ro/gcc-cross-zig#master",
-            .hash = "gcc_cross-0.1.0-4eFHFc5fAQBQytv4WKXEPyS__YZX40a1lvsl_OHK-r0o",
+            .hash = "gcc_cross-0.1.0-4eFHFUmJAQCa-wKTcJNi7FZ1b4YFXr-HbCI-9ZFpxYgX",
         },
         .binutils_src = .{
-            .url = "https://ftpmirror.gnu.org/binutils/binutils-2.42.tar.xz",
-            .hash = "N-V-__8AAPblthG44vv4VJstQXAW9H1st195aiHNgrOaanfd",
+            .url = "https://ftpmirror.gnu.org/binutils/binutils-2.44.tar.xz",
+            .hash = "N-V-__8AAIzgjBGD6yHVmz0Y717C5k_ZVMIbsWwesV2XNB09",
         },
         .gcc_src = .{
             .url = "https://ftpmirror.gnu.org/gcc/gcc-14.2.0/gcc-14.2.0.tar.xz",

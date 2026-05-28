@@ -1,5 +1,5 @@
 /* Generated automatically by the program 'build/genpreds'
-   from the machine description file 'config/rx/rx.md'.  */
+   from the machine description file '/tmp/claude/gcc-14.2.0-rx-patched/gcc/config/rx/rx.md'.  */
 
 #define IN_TARGET_CODE 1
 #include "config.h"
@@ -35,7 +35,7 @@ struct target_constraints *this_target_constraints = &default_target_constraints
 #endif
 static inline bool
 aligned_register_operand_1 (rtx op ATTRIBUTE_UNUSED, machine_mode mode ATTRIBUTE_UNUSED)
-#line 25 "common.md"
+#line 25 "/tmp/claude/gcc-14.2.0-rx-patched/gcc/common.md"
 {
   /* Require the offset in a non-paradoxical subreg to be naturally aligned.
      For example, if we have a subreg of something that is double the size of
@@ -79,7 +79,7 @@ bool
 rx_call_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return ((GET_CODE (op) == REG) || ((
-#line 28 "config/rx/predicates.md"
+#line 28 "/tmp/claude/gcc-14.2.0-rx-patched/gcc/config/rx/predicates.md"
 (!TARGET_JSR)) && (GET_CODE (op) == SYMBOL_REF))) && (
 (mode == VOIDmode || GET_MODE (op) == mode));
 }
@@ -95,7 +95,7 @@ bool
 rx_shift_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (register_operand (op, mode)) || (((GET_CODE (op) == CONST_INT) && (
-#line 44 "config/rx/predicates.md"
+#line 44 "/tmp/claude/gcc-14.2.0-rx-patched/gcc/config/rx/predicates.md"
 (IN_RANGE (INTVAL (op), 0, 31)))) && (
 (mode == VOIDmode || GET_MODE (op) == mode || GET_MODE (op) == VOIDmode)));
 }
@@ -104,15 +104,31 @@ bool
 rx_constshift_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (GET_CODE (op) == CONST_INT) && (
-#line 49 "config/rx/predicates.md"
+#line 49 "/tmp/claude/gcc-14.2.0-rx-patched/gcc/config/rx/predicates.md"
 (IN_RANGE (INTVAL (op), 0, 31)));
+}
+
+bool
+rx_bitclr_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
+{
+  return (GET_CODE (op) == CONST_INT) && (
+#line 54 "/tmp/claude/gcc-14.2.0-rx-patched/gcc/config/rx/predicates.md"
+(exact_log2 (~INTVAL (op)) != -1));
+}
+
+bool
+rx_bitset_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
+{
+  return (GET_CODE (op) == CONST_INT) && (
+#line 59 "/tmp/claude/gcc-14.2.0-rx-patched/gcc/config/rx/predicates.md"
+(exact_log2 (INTVAL (op)) != -1));
 }
 
 bool
 rx_restricted_mem_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return ((GET_CODE (op) == MEM) && (
-#line 54 "config/rx/predicates.md"
+#line 64 "/tmp/claude/gcc-14.2.0-rx-patched/gcc/config/rx/predicates.md"
 (rx_is_restricted_memory_address (XEXP (op, 0), mode)))) && (
 (mode == VOIDmode || GET_MODE (op) == mode));
 }
@@ -121,6 +137,14 @@ bool
 rx_source_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (register_operand (op, mode)) || ((immediate_operand (op, mode)) || (rx_restricted_mem_operand (op, mode)));
+}
+
+bool
+rx_speed_source_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
+{
+  return (register_operand (op, mode)) || ((immediate_operand (op, mode)) || ((
+#line 80 "/tmp/claude/gcc-14.2.0-rx-patched/gcc/config/rx/predicates.md"
+(optimize_size)) && (rx_restricted_mem_operand (op, mode))));
 }
 
 bool
@@ -135,9 +159,25 @@ rx_minmaxex_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
   return (immediate_operand (op, mode)) || (rx_restricted_mem_operand (op, mode));
 }
 
+bool
+rx_speed_minmaxex_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
+{
+  return (immediate_operand (op, mode)) || ((
+#line 106 "/tmp/claude/gcc-14.2.0-rx-patched/gcc/config/rx/predicates.md"
+(optimize_size)) && (rx_restricted_mem_operand (op, mode)));
+}
+
+bool
+rx_speed_compare_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
+{
+  return (register_operand (op, mode)) || ((
+#line 112 "/tmp/claude/gcc-14.2.0-rx-patched/gcc/config/rx/predicates.md"
+(optimize_size)) && (rx_restricted_mem_operand (op, mode)));
+}
+
 static inline bool
 rx_store_multiple_vector_1 (rtx op ATTRIBUTE_UNUSED, machine_mode mode ATTRIBUTE_UNUSED)
-#line 96 "config/rx/predicates.md"
+#line 125 "/tmp/claude/gcc-14.2.0-rx-patched/gcc/config/rx/predicates.md"
 {
   int count = XVECLEN (op, 0);
   unsigned int src_regno;
@@ -159,33 +199,15 @@ rx_store_multiple_vector_1 (rtx op ATTRIBUTE_UNUSED, machine_mode mode ATTRIBUTE
       || ! CONST_INT_P (XEXP (SET_SRC (element), 1)))
     return false;
 	 
-  /* Check that the next element is the first push.  */
-  element = XVECEXP (op, 0, 1);
-  if (   ! SET_P (element)
-      || ! REG_P (SET_SRC (element))
-      || GET_MODE (SET_SRC (element)) != SImode
-      || ! MEM_P (SET_DEST (element))
-      || GET_MODE (SET_DEST (element)) != SImode
-      || GET_CODE (XEXP (SET_DEST (element), 0)) != MINUS
-      || ! REG_P (XEXP (XEXP (SET_DEST (element), 0), 0))
-      ||   REGNO (XEXP (XEXP (SET_DEST (element), 0), 0)) != SP_REG
-      || ! CONST_INT_P (XEXP (XEXP (SET_DEST (element), 0), 1))
-      || INTVAL (XEXP (XEXP (SET_DEST (element), 0), 1))
-        != GET_MODE_SIZE (SImode))
-    return false;
-
-  src_regno = REGNO (SET_SRC (element));
-
   /* Check that the remaining elements use SP-<disp>
      addressing and decreasing register numbers.  */
-  for (i = 2; i < count; i++)
+    for (i = 1; i < count - 1; i++)	
     {
       element = XVECEXP (op, 0, i);
 
       if (   ! SET_P (element)
 	  || ! REG_P (SET_SRC (element))
 	  || GET_MODE (SET_SRC (element)) != SImode
-	  || REGNO (SET_SRC (element)) != src_regno - (i - 1)
 	  || ! MEM_P (SET_DEST (element))
 	  || GET_MODE (SET_DEST (element)) != SImode
 	  || GET_CODE (XEXP (SET_DEST (element), 0)) != MINUS
@@ -208,7 +230,7 @@ rx_store_multiple_vector (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 
 static inline bool
 rx_load_multiple_vector_1 (rtx op ATTRIBUTE_UNUSED, machine_mode mode ATTRIBUTE_UNUSED)
-#line 166 "config/rx/predicates.md"
+#line 177 "/tmp/claude/gcc-14.2.0-rx-patched/gcc/config/rx/predicates.md"
 {
   int count = XVECLEN (op, 0);
   unsigned int dest_regno;
@@ -273,7 +295,7 @@ rx_load_multiple_vector (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 
 static inline bool
 rx_rtsd_vector_1 (rtx op ATTRIBUTE_UNUSED, machine_mode mode ATTRIBUTE_UNUSED)
-#line 231 "config/rx/predicates.md"
+#line 242 "/tmp/claude/gcc-14.2.0-rx-patched/gcc/config/rx/predicates.md"
 {
   int count = XVECLEN (op, 0);
   unsigned int dest_regno;
@@ -425,11 +447,19 @@ lookup_constraint_1 (const char *str)
       if (!strncmp (str + 1, "ALL_OP_SYMBOL_REF", 17))
         return CONSTRAINT_CALL__OP__SYMBOL__REF;
       break;
+    case 'D':
+      if (!strncmp (str + 1, "oubleC", 6))
+        return CONSTRAINT_DoubleC;
+      if (!strncmp (str + 1, "FPUreg", 6))
+        return CONSTRAINT_DFPUreg;
+      break;
     case 'E':
       return CONSTRAINT_E;
     case 'F':
       return CONSTRAINT_F;
     case 'I':
+      if (!strncmp (str + 1, "bset", 4))
+        return CONSTRAINT_Ibset;
       if (!strncmp (str + 1, "nt08", 4))
         return CONSTRAINT_Int08;
       break;
@@ -442,6 +472,16 @@ lookup_constraint_1 (const char *str)
     case 'R':
       if (!strncmp (str + 1, "pda", 3))
         return CONSTRAINT_Rpda;
+      if (!strncmp (str + 1, "reg", 3))
+        return CONSTRAINT_Rreg;
+      if (!strncmp (str + 1, "d05", 3))
+        return CONSTRAINT_Rd05;
+      if (!strncmp (str + 1, "d08", 3))
+        return CONSTRAINT_Rd08;
+      if (!strncmp (str + 1, "XV2", 3))
+        return CONSTRAINT_RXV2;
+      if (!strncmp (str + 1, "XV3", 3))
+        return CONSTRAINT_RXV3;
       if (!strncmp (str + 1, "pid", 3))
         return CONSTRAINT_Rpid;
       break;
@@ -456,6 +496,10 @@ lookup_constraint_1 (const char *str)
         return CONSTRAINT_Symbol;
       break;
     case 'U':
+      if (!strncmp (str + 1, "int05", 5))
+        return CONSTRAINT_Uint05;
+      if (!strncmp (str + 1, "intz5", 5))
+        return CONSTRAINT_Uintz5;
       if (!strncmp (str + 1, "int04", 5))
         return CONSTRAINT_Uint04;
       break;
@@ -551,7 +595,7 @@ const unsigned char lookup_constraint_array[] = {
   CONSTRAINT__UNKNOWN,
   CONSTRAINT__UNKNOWN,
   UCHAR_MAX,
-  CONSTRAINT__UNKNOWN,
+  UCHAR_MAX,
   MIN ((int) CONSTRAINT_E, (int) UCHAR_MAX),
   MIN ((int) CONSTRAINT_F, (int) UCHAR_MAX),
   CONSTRAINT__UNKNOWN,
@@ -747,6 +791,7 @@ reg_class_for_constraint_1 (enum constraint_num c)
   switch (c)
     {
     case CONSTRAINT_r: return GENERAL_REGS;
+    case CONSTRAINT_DFPUreg: return DOUBLE_REGS;
     default: break;
     }
   return NO_REGS;
@@ -754,17 +799,26 @@ reg_class_for_constraint_1 (enum constraint_num c)
 
 bool (*constraint_satisfied_p_array[]) (rtx) = {
   satisfies_constraint_Int08,
+  satisfies_constraint_Ibset,
   satisfies_constraint_NEGint4,
   satisfies_constraint_m,
   satisfies_constraint_o,
   satisfies_constraint_Q,
+  satisfies_constraint_Rreg,
+  satisfies_constraint_Rd05,
+  satisfies_constraint_Rd08,
   satisfies_constraint_p,
   satisfies_constraint_Sint08,
   satisfies_constraint_Sint16,
   satisfies_constraint_Sint24,
   satisfies_constraint_Uint04,
+  satisfies_constraint_Uint05,
+  satisfies_constraint_Uintz5,
+  satisfies_constraint_DoubleC,
   satisfies_constraint_Rpda,
   satisfies_constraint_CALL__OP__SYMBOL__REF,
+  satisfies_constraint_RXV2,
+  satisfies_constraint_RXV3,
   satisfies_constraint_V,
   satisfies_constraint__l,
   satisfies_constraint__g,
@@ -785,12 +839,17 @@ insn_const_int_ok_for_constraint (HOST_WIDE_INT ival, enum constraint_num c)
     {
     case CONSTRAINT_Int08:
       return 
-#line 31 "config/rx/constraints.md"
+#line 31 "/tmp/claude/gcc-14.2.0-rx-patched/gcc/config/rx/constraints.md"
 (IN_RANGE (ival, (HOST_WIDE_INT_M1U << 8), (1 << 8) - 1));
+
+    case CONSTRAINT_Ibset:
+      return 
+#line 38 "/tmp/claude/gcc-14.2.0-rx-patched/gcc/config/rx/constraints.md"
+(exact_log2 (ival) != -1);
 
     case CONSTRAINT_NEGint4:
       return 
-#line 69 "config/rx/constraints.md"
+#line 90 "/tmp/claude/gcc-14.2.0-rx-patched/gcc/config/rx/constraints.md"
 (IN_RANGE (ival, -15, -1));
 
     default: break;

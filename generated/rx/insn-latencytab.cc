@@ -35,10 +35,11 @@ insn_default_latency (rtx_insn *insn ATTRIBUTE_UNUSED)
 
   switch (recog_memoized (insn))
     {
-    case 29:  /* zero_extendqisi2 */
-    case 28:  /* zero_extendhisi2 */
-    case 27:  /* extendqisi2 */
-    case 26:  /* extendhisi2 */
+    case 37:  /* zero_extendqisi2 */
+    case 36:  /* zero_extendhisi2 */
+    case 35:  /* extendqisi2 */
+    case 34:  /* extendhisi2 */
+    case 33:  /* movdf */
       extract_constrain_insn_cached (insn);
       if (which_alternative == 0)
         {
@@ -49,12 +50,12 @@ insn_default_latency (rtx_insn *insn ATTRIBUTE_UNUSED)
 	  return 2;
         }
 
-    case 25:  /* *movqi_internal */
-    case 24:  /* *movhi_internal */
-    case 23:  /* *movsi_internal */
-    case 22:  /* *movsf_internal */
+    case 32:  /* *movqi_internal */
+    case 31:  /* *movhi_internal */
+    case 30:  /* *movsi_internal */
+    case 29:  /* *movsf_internal */
       extract_constrain_insn_cached (insn);
-      if (which_alternative != 5)
+      if (((1ULL << which_alternative) & 0x1fc3fULL))
         {
 	  return 1;
         }
@@ -63,9 +64,9 @@ insn_default_latency (rtx_insn *insn ATTRIBUTE_UNUSED)
 	  return 2;
         }
 
-    case 33:  /* stack_popm */
-    case 32:  /* stack_pop */
-    case 14:  /* pop_and_return */
+    case 42:  /* stack_popm */
+    case 41:  /* stack_pop */
+    case 21:  /* pop_and_return */
       return 2;
 
     case -1:

@@ -949,6 +949,10 @@ extern void gt_ggc_mx_hash_table_omp_declare_variant_hasher_ (void *);
   if ((intptr_t)(X) != 0) gt_ggc_mx_hash_table_omp_declare_variant_alt_hasher_ (X);\
   } while (0)
 extern void gt_ggc_mx_hash_table_omp_declare_variant_alt_hasher_ (void *);
+#define gt_ggc_m_37hash_map_nofree_string_hash_unsigned_(X) do { \
+  if ((intptr_t)(X) != 0) gt_ggc_mx_hash_map_nofree_string_hash_unsigned_ (X);\
+  } while (0)
+extern void gt_ggc_mx_hash_map_nofree_string_hash_unsigned_ (void *);
 #define gt_ggc_m_24hash_map_char__unsigned_(X) do { \
   if ((intptr_t)(X) != 0) gt_ggc_mx_hash_map_char__unsigned_ (X);\
   } while (0)
@@ -2514,6 +2518,10 @@ extern void gt_pch_nx_hash_table_omp_declare_variant_hasher_ (void *);
   if ((intptr_t)(X) != 0) gt_pch_nx_hash_table_omp_declare_variant_alt_hasher_ (X);\
   } while (0)
 extern void gt_pch_nx_hash_table_omp_declare_variant_alt_hasher_ (void *);
+#define gt_pch_n_37hash_map_nofree_string_hash_unsigned_(X) do { \
+  if ((intptr_t)(X) != 0) gt_pch_nx_hash_map_nofree_string_hash_unsigned_ (X);\
+  } while (0)
+extern void gt_pch_nx_hash_map_nofree_string_hash_unsigned_ (void *);
 #define gt_pch_n_24hash_map_char__unsigned_(X) do { \
   if ((intptr_t)(X) != 0) gt_pch_nx_hash_map_char__unsigned_ (X);\
   } while (0)
@@ -3734,6 +3742,8 @@ extern void gt_pch_p_30omp_declare_variant_base_entry
 extern void gt_pch_p_38hash_table_omp_declare_variant_hasher_
     (void *, void *, gt_pointer_operator, void *);
 extern void gt_pch_p_42hash_table_omp_declare_variant_alt_hasher_
+    (void *, void *, gt_pointer_operator, void *);
+extern void gt_pch_p_37hash_map_nofree_string_hash_unsigned_
     (void *, void *, gt_pointer_operator, void *);
 extern void gt_pch_p_24hash_map_char__unsigned_
     (void *, void *, gt_pointer_operator, void *);

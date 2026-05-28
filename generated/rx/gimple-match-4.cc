@@ -7220,7 +7220,7 @@ gimple_simplify_CFN_BUILT_IN_COPYSIGNF32 (gimple_match_op *res_op, gimple_seq *s
 		    tree captures[2] ATTRIBUTE_UNUSED = { _q20, _p1 };
 		    const combined_fn copysigns = CFN_BUILT_IN_COPYSIGNF32;
 		    gimple_seq *lseq = seq;
-		    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1869;
+		    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1861;
 		    {
 		      res_op->set_op (copysigns, type, 2);
 		      res_op->ops[0] = captures[0];
@@ -7229,7 +7229,7 @@ gimple_simplify_CFN_BUILT_IN_COPYSIGNF32 (gimple_match_op *res_op, gimple_seq *s
 		      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1015, __FILE__, __LINE__, true);
 		      return true;
 		    }
-next_after_fail1869:;
+next_after_fail1861:;
 		  }
 	          break;
 	        }
@@ -7241,7 +7241,7 @@ next_after_fail1869:;
 		    tree captures[2] ATTRIBUTE_UNUSED = { _q20, _p1 };
 		    const combined_fn copysigns = CFN_BUILT_IN_COPYSIGNF32;
 		    gimple_seq *lseq = seq;
-		    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1870;
+		    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1862;
 		    {
 		      res_op->set_op (copysigns, type, 2);
 		      res_op->ops[0] = captures[0];
@@ -7250,7 +7250,7 @@ next_after_fail1869:;
 		      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1015, __FILE__, __LINE__, true);
 		      return true;
 		    }
-next_after_fail1870:;
+next_after_fail1862:;
 		  }
 	          break;
 	        }
@@ -7379,7 +7379,7 @@ gimple_simplify_CFN_BUILT_IN_COPYSIGNF128 (gimple_match_op *res_op, gimple_seq *
 		    tree captures[2] ATTRIBUTE_UNUSED = { _q20, _p1 };
 		    const combined_fn copysigns = CFN_BUILT_IN_COPYSIGNF128;
 		    gimple_seq *lseq = seq;
-		    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1873;
+		    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1865;
 		    {
 		      res_op->set_op (copysigns, type, 2);
 		      res_op->ops[0] = captures[0];
@@ -7388,7 +7388,7 @@ gimple_simplify_CFN_BUILT_IN_COPYSIGNF128 (gimple_match_op *res_op, gimple_seq *
 		      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1015, __FILE__, __LINE__, true);
 		      return true;
 		    }
-next_after_fail1873:;
+next_after_fail1865:;
 		  }
 	          break;
 	        }
@@ -7400,7 +7400,7 @@ next_after_fail1873:;
 		    tree captures[2] ATTRIBUTE_UNUSED = { _q20, _p1 };
 		    const combined_fn copysigns = CFN_BUILT_IN_COPYSIGNF128;
 		    gimple_seq *lseq = seq;
-		    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1874;
+		    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1866;
 		    {
 		      res_op->set_op (copysigns, type, 2);
 		      res_op->ops[0] = captures[0];
@@ -7409,7 +7409,7 @@ next_after_fail1873:;
 		      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1015, __FILE__, __LINE__, true);
 		      return true;
 		    }
-next_after_fail1874:;
+next_after_fail1866:;
 		  }
 	          break;
 	        }
@@ -7538,7 +7538,7 @@ gimple_simplify_CFN_BUILT_IN_COPYSIGNF64X (gimple_match_op *res_op, gimple_seq *
 		    tree captures[2] ATTRIBUTE_UNUSED = { _q20, _p1 };
 		    const combined_fn copysigns = CFN_BUILT_IN_COPYSIGNF64X;
 		    gimple_seq *lseq = seq;
-		    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1877;
+		    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1869;
 		    {
 		      res_op->set_op (copysigns, type, 2);
 		      res_op->ops[0] = captures[0];
@@ -7547,7 +7547,7 @@ gimple_simplify_CFN_BUILT_IN_COPYSIGNF64X (gimple_match_op *res_op, gimple_seq *
 		      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1015, __FILE__, __LINE__, true);
 		      return true;
 		    }
-next_after_fail1877:;
+next_after_fail1869:;
 		  }
 	          break;
 	        }
@@ -7559,7 +7559,7 @@ next_after_fail1877:;
 		    tree captures[2] ATTRIBUTE_UNUSED = { _q20, _p1 };
 		    const combined_fn copysigns = CFN_BUILT_IN_COPYSIGNF64X;
 		    gimple_seq *lseq = seq;
-		    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1878;
+		    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1870;
 		    {
 		      res_op->set_op (copysigns, type, 2);
 		      res_op->ops[0] = captures[0];
@@ -7568,7 +7568,7 @@ next_after_fail1877:;
 		      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1015, __FILE__, __LINE__, true);
 		      return true;
 		    }
-next_after_fail1878:;
+next_after_fail1870:;
 		  }
 	          break;
 	        }
@@ -7697,7 +7697,7 @@ gimple_simplify_CFN_COPYSIGN (gimple_match_op *res_op, gimple_seq *seq,
 		    tree captures[2] ATTRIBUTE_UNUSED = { _q20, _p1 };
 		    const combined_fn copysigns = CFN_COPYSIGN;
 		    gimple_seq *lseq = seq;
-		    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1881;
+		    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1873;
 		    {
 		      res_op->set_op (copysigns, type, 2);
 		      res_op->ops[0] = captures[0];
@@ -7706,7 +7706,7 @@ gimple_simplify_CFN_COPYSIGN (gimple_match_op *res_op, gimple_seq *seq,
 		      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1015, __FILE__, __LINE__, true);
 		      return true;
 		    }
-next_after_fail1881:;
+next_after_fail1873:;
 		  }
 	          break;
 	        }
@@ -7718,7 +7718,7 @@ next_after_fail1881:;
 		    tree captures[2] ATTRIBUTE_UNUSED = { _q20, _p1 };
 		    const combined_fn copysigns = CFN_COPYSIGN;
 		    gimple_seq *lseq = seq;
-		    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1882;
+		    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1874;
 		    {
 		      res_op->set_op (copysigns, type, 2);
 		      res_op->ops[0] = captures[0];
@@ -7727,7 +7727,7 @@ next_after_fail1881:;
 		      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1015, __FILE__, __LINE__, true);
 		      return true;
 		    }
-next_after_fail1882:;
+next_after_fail1874:;
 		  }
 	          break;
 	        }
@@ -8216,7 +8216,7 @@ if (integer_minus_onep (_p1))
 					        && (!single_use (captures[0])
 					            || !single_use (captures[4])))
 					      lseq = NULL;
-					    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1894;
+					    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1886;
 					    {
 					      res_op->set_op (VEC_COND_EXPR, type, 3);
 					      res_op->ops[0] = captures[1];
@@ -8227,7 +8227,7 @@ if (integer_minus_onep (_p1))
 						gimple_match_op tem_op (res_op->cond.any_else (), FLOOR_DIV_EXPR, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
 						tem_op.resimplify (NULL, valueize);
 						_r1 = maybe_push_res_to_seq (&tem_op, NULL);
-						if (!_r1) goto next_after_fail1894;
+						if (!_r1) goto next_after_fail1886;
 						res_op->ops[1] = _r1;
 					      }
 					      {
@@ -8237,14 +8237,14 @@ if (integer_minus_onep (_p1))
 						gimple_match_op tem_op (res_op->cond.any_else (), FLOOR_DIV_EXPR, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
 						tem_op.resimplify (NULL, valueize);
 						_r1 = maybe_push_res_to_seq (&tem_op, NULL);
-						if (!_r1) goto next_after_fail1894;
+						if (!_r1) goto next_after_fail1886;
 						res_op->ops[2] = _r1;
 					      }
 					      res_op->resimplify (lseq, valueize);
 					      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 925, __FILE__, __LINE__, true);
 					      return true;
 					    }
-next_after_fail1894:;
+next_after_fail1886:;
 					  }
 				      }
 				    }
@@ -8270,7 +8270,7 @@ next_after_fail1894:;
 			if (lseq
 			    && (!single_use (captures[0])))
 			  lseq = NULL;
-			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1895;
+			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1887;
 			{
 			  res_op->set_op (VEC_COND_EXPR, type, 3);
 			  res_op->ops[0] = captures[1];
@@ -8281,7 +8281,7 @@ next_after_fail1894:;
 			    gimple_match_op tem_op (res_op->cond.any_else (), FLOOR_DIV_EXPR, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
 			    tem_op.resimplify (NULL, valueize);
 			    _r1 = maybe_push_res_to_seq (&tem_op, NULL);
-			    if (!_r1) goto next_after_fail1895;
+			    if (!_r1) goto next_after_fail1887;
 			    res_op->ops[1] = _r1;
 			  }
 			  {
@@ -8291,14 +8291,14 @@ next_after_fail1894:;
 			    gimple_match_op tem_op (res_op->cond.any_else (), FLOOR_DIV_EXPR, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
 			    tem_op.resimplify (NULL, valueize);
 			    _r1 = maybe_push_res_to_seq (&tem_op, NULL);
-			    if (!_r1) goto next_after_fail1895;
+			    if (!_r1) goto next_after_fail1887;
 			    res_op->ops[2] = _r1;
 			  }
 			  res_op->resimplify (lseq, valueize);
 			  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 926, __FILE__, __LINE__, true);
 			  return true;
 			}
-next_after_fail1895:;
+next_after_fail1887:;
 		      }
 		  }
 	          break;
@@ -8339,7 +8339,7 @@ next_after_fail1895:;
 			if (lseq
 			    && (!single_use (captures[1])))
 			  lseq = NULL;
-			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1896;
+			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1888;
 			{
 			  res_op->set_op (VEC_COND_EXPR, type, 3);
 			  res_op->ops[0] = captures[2];
@@ -8350,7 +8350,7 @@ next_after_fail1895:;
 			    gimple_match_op tem_op (res_op->cond.any_else (), FLOOR_DIV_EXPR, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
 			    tem_op.resimplify (NULL, valueize);
 			    _r1 = maybe_push_res_to_seq (&tem_op, NULL);
-			    if (!_r1) goto next_after_fail1896;
+			    if (!_r1) goto next_after_fail1888;
 			    res_op->ops[1] = _r1;
 			  }
 			  {
@@ -8360,14 +8360,14 @@ next_after_fail1895:;
 			    gimple_match_op tem_op (res_op->cond.any_else (), FLOOR_DIV_EXPR, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
 			    tem_op.resimplify (NULL, valueize);
 			    _r1 = maybe_push_res_to_seq (&tem_op, NULL);
-			    if (!_r1) goto next_after_fail1896;
+			    if (!_r1) goto next_after_fail1888;
 			    res_op->ops[2] = _r1;
 			  }
 			  res_op->resimplify (lseq, valueize);
 			  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 927, __FILE__, __LINE__, true);
 			  return true;
 			}
-next_after_fail1896:;
+next_after_fail1888:;
 		      }
 		  }
 	          break;
@@ -8855,7 +8855,7 @@ c
 )
 					  {
 					    gimple_seq *lseq = seq;
-					    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1900;
+					    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1892;
 					    {
 					      res_op->set_op (PLUS_EXPR, type, 2);
 					      {
@@ -8865,7 +8865,7 @@ c
 						gimple_match_op tem_op (res_op->cond.any_else (), EXACT_DIV_EXPR, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
 						tem_op.resimplify (lseq, valueize);
 						_r1 = maybe_push_res_to_seq (&tem_op, lseq);
-						if (!_r1) goto next_after_fail1900;
+						if (!_r1) goto next_after_fail1892;
 						res_op->ops[0] = _r1;
 					      }
 					      res_op->ops[1] =  wide_int_to_tree (type,
@@ -8880,7 +8880,7 @@ c
 					      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1017, __FILE__, __LINE__, true);
 					      return true;
 					    }
-next_after_fail1900:;
+next_after_fail1892:;
 					  }
 					else
 					  {
@@ -8896,7 +8896,7 @@ next_after_fail1900:;
 )
 					      {
 						gimple_seq *lseq = seq;
-						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1901;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1893;
 						{
 						  res_op->set_op (PLUS_EXPR, type, 2);
 						  {
@@ -8906,7 +8906,7 @@ next_after_fail1900:;
 						    gimple_match_op tem_op (res_op->cond.any_else (), EXACT_DIV_EXPR, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
 						    tem_op.resimplify (lseq, valueize);
 						    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
-						    if (!_r1) goto next_after_fail1901;
+						    if (!_r1) goto next_after_fail1893;
 						    res_op->ops[0] = _r1;
 						  }
 						  res_op->ops[1] =  wide_int_to_tree (type, -
@@ -8921,7 +8921,7 @@ next_after_fail1900:;
 						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1018, __FILE__, __LINE__, true);
 						  return true;
 						}
-next_after_fail1901:;
+next_after_fail1893:;
 					      }
 					  }
 				      }
@@ -9882,7 +9882,7 @@ gimple_simplify_LT_EXPR (gimple_match_op *res_op, gimple_seq *seq,
 					        && (!single_use (captures[0])
 					            || !single_use (captures[4])))
 					      lseq = NULL;
-					    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1943;
+					    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1935;
 					    {
 					      res_op->set_op (VEC_COND_EXPR, type, 3);
 					      res_op->ops[0] = captures[1];
@@ -9893,7 +9893,7 @@ gimple_simplify_LT_EXPR (gimple_match_op *res_op, gimple_seq *seq,
 						gimple_match_op tem_op (res_op->cond.any_else (), LT_EXPR, type, _o1[0], _o1[1]);
 						tem_op.resimplify (NULL, valueize);
 						_r1 = maybe_push_res_to_seq (&tem_op, NULL);
-						if (!_r1) goto next_after_fail1943;
+						if (!_r1) goto next_after_fail1935;
 						res_op->ops[1] = _r1;
 					      }
 					      {
@@ -9903,14 +9903,14 @@ gimple_simplify_LT_EXPR (gimple_match_op *res_op, gimple_seq *seq,
 						gimple_match_op tem_op (res_op->cond.any_else (), LT_EXPR, type, _o1[0], _o1[1]);
 						tem_op.resimplify (NULL, valueize);
 						_r1 = maybe_push_res_to_seq (&tem_op, NULL);
-						if (!_r1) goto next_after_fail1943;
+						if (!_r1) goto next_after_fail1935;
 						res_op->ops[2] = _r1;
 					      }
 					      res_op->resimplify (lseq, valueize);
 					      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 925, __FILE__, __LINE__, true);
 					      return true;
 					    }
-next_after_fail1943:;
+next_after_fail1935:;
 					  }
 				      }
 				    }
@@ -9936,7 +9936,7 @@ next_after_fail1943:;
 			if (lseq
 			    && (!single_use (captures[0])))
 			  lseq = NULL;
-			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1944;
+			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1936;
 			{
 			  res_op->set_op (VEC_COND_EXPR, type, 3);
 			  res_op->ops[0] = captures[1];
@@ -9947,7 +9947,7 @@ next_after_fail1943:;
 			    gimple_match_op tem_op (res_op->cond.any_else (), LT_EXPR, type, _o1[0], _o1[1]);
 			    tem_op.resimplify (NULL, valueize);
 			    _r1 = maybe_push_res_to_seq (&tem_op, NULL);
-			    if (!_r1) goto next_after_fail1944;
+			    if (!_r1) goto next_after_fail1936;
 			    res_op->ops[1] = _r1;
 			  }
 			  {
@@ -9957,14 +9957,14 @@ next_after_fail1943:;
 			    gimple_match_op tem_op (res_op->cond.any_else (), LT_EXPR, type, _o1[0], _o1[1]);
 			    tem_op.resimplify (NULL, valueize);
 			    _r1 = maybe_push_res_to_seq (&tem_op, NULL);
-			    if (!_r1) goto next_after_fail1944;
+			    if (!_r1) goto next_after_fail1936;
 			    res_op->ops[2] = _r1;
 			  }
 			  res_op->resimplify (lseq, valueize);
 			  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 926, __FILE__, __LINE__, true);
 			  return true;
 			}
-next_after_fail1944:;
+next_after_fail1936:;
 		      }
 		  }
 	          break;
@@ -10005,7 +10005,7 @@ next_after_fail1944:;
 			if (lseq
 			    && (!single_use (captures[1])))
 			  lseq = NULL;
-			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1945;
+			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1937;
 			{
 			  res_op->set_op (VEC_COND_EXPR, type, 3);
 			  res_op->ops[0] = captures[2];
@@ -10016,7 +10016,7 @@ next_after_fail1944:;
 			    gimple_match_op tem_op (res_op->cond.any_else (), LT_EXPR, type, _o1[0], _o1[1]);
 			    tem_op.resimplify (NULL, valueize);
 			    _r1 = maybe_push_res_to_seq (&tem_op, NULL);
-			    if (!_r1) goto next_after_fail1945;
+			    if (!_r1) goto next_after_fail1937;
 			    res_op->ops[1] = _r1;
 			  }
 			  {
@@ -10026,14 +10026,14 @@ next_after_fail1944:;
 			    gimple_match_op tem_op (res_op->cond.any_else (), LT_EXPR, type, _o1[0], _o1[1]);
 			    tem_op.resimplify (NULL, valueize);
 			    _r1 = maybe_push_res_to_seq (&tem_op, NULL);
-			    if (!_r1) goto next_after_fail1945;
+			    if (!_r1) goto next_after_fail1937;
 			    res_op->ops[2] = _r1;
 			  }
 			  res_op->resimplify (lseq, valueize);
 			  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 927, __FILE__, __LINE__, true);
 			  return true;
 			}
-next_after_fail1945:;
+next_after_fail1937:;
 		      }
 		  }
 	          break;
@@ -11177,7 +11177,7 @@ if (uniform_integer_cst_p (_p1))
 )
 					      {
 						gimple_seq *lseq = seq;
-						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1946;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1938;
 						{
 						  tree tem;
 						  tem =  constant_boolean_node (false, type);
@@ -11185,7 +11185,7 @@ if (uniform_integer_cst_p (_p1))
 						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1032, __FILE__, __LINE__, true);
 						  return true;
 						}
-next_after_fail1946:;
+next_after_fail1938:;
 					      }
 					  }
 				        }
@@ -12758,7 +12758,7 @@ gimple_simplify_GT_EXPR (gimple_match_op *res_op, gimple_seq *seq,
 					        && (!single_use (captures[0])
 					            || !single_use (captures[4])))
 					      lseq = NULL;
-					    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1950;
+					    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1942;
 					    {
 					      res_op->set_op (VEC_COND_EXPR, type, 3);
 					      res_op->ops[0] = captures[1];
@@ -12769,7 +12769,7 @@ gimple_simplify_GT_EXPR (gimple_match_op *res_op, gimple_seq *seq,
 						gimple_match_op tem_op (res_op->cond.any_else (), GT_EXPR, type, _o1[0], _o1[1]);
 						tem_op.resimplify (NULL, valueize);
 						_r1 = maybe_push_res_to_seq (&tem_op, NULL);
-						if (!_r1) goto next_after_fail1950;
+						if (!_r1) goto next_after_fail1942;
 						res_op->ops[1] = _r1;
 					      }
 					      {
@@ -12779,14 +12779,14 @@ gimple_simplify_GT_EXPR (gimple_match_op *res_op, gimple_seq *seq,
 						gimple_match_op tem_op (res_op->cond.any_else (), GT_EXPR, type, _o1[0], _o1[1]);
 						tem_op.resimplify (NULL, valueize);
 						_r1 = maybe_push_res_to_seq (&tem_op, NULL);
-						if (!_r1) goto next_after_fail1950;
+						if (!_r1) goto next_after_fail1942;
 						res_op->ops[2] = _r1;
 					      }
 					      res_op->resimplify (lseq, valueize);
 					      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 925, __FILE__, __LINE__, true);
 					      return true;
 					    }
-next_after_fail1950:;
+next_after_fail1942:;
 					  }
 				      }
 				    }
@@ -12812,7 +12812,7 @@ next_after_fail1950:;
 			if (lseq
 			    && (!single_use (captures[0])))
 			  lseq = NULL;
-			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1951;
+			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1943;
 			{
 			  res_op->set_op (VEC_COND_EXPR, type, 3);
 			  res_op->ops[0] = captures[1];
@@ -12823,7 +12823,7 @@ next_after_fail1950:;
 			    gimple_match_op tem_op (res_op->cond.any_else (), GT_EXPR, type, _o1[0], _o1[1]);
 			    tem_op.resimplify (NULL, valueize);
 			    _r1 = maybe_push_res_to_seq (&tem_op, NULL);
-			    if (!_r1) goto next_after_fail1951;
+			    if (!_r1) goto next_after_fail1943;
 			    res_op->ops[1] = _r1;
 			  }
 			  {
@@ -12833,14 +12833,14 @@ next_after_fail1950:;
 			    gimple_match_op tem_op (res_op->cond.any_else (), GT_EXPR, type, _o1[0], _o1[1]);
 			    tem_op.resimplify (NULL, valueize);
 			    _r1 = maybe_push_res_to_seq (&tem_op, NULL);
-			    if (!_r1) goto next_after_fail1951;
+			    if (!_r1) goto next_after_fail1943;
 			    res_op->ops[2] = _r1;
 			  }
 			  res_op->resimplify (lseq, valueize);
 			  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 926, __FILE__, __LINE__, true);
 			  return true;
 			}
-next_after_fail1951:;
+next_after_fail1943:;
 		      }
 		  }
 	          break;
@@ -12881,7 +12881,7 @@ next_after_fail1951:;
 			if (lseq
 			    && (!single_use (captures[1])))
 			  lseq = NULL;
-			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1952;
+			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1944;
 			{
 			  res_op->set_op (VEC_COND_EXPR, type, 3);
 			  res_op->ops[0] = captures[2];
@@ -12892,7 +12892,7 @@ next_after_fail1951:;
 			    gimple_match_op tem_op (res_op->cond.any_else (), GT_EXPR, type, _o1[0], _o1[1]);
 			    tem_op.resimplify (NULL, valueize);
 			    _r1 = maybe_push_res_to_seq (&tem_op, NULL);
-			    if (!_r1) goto next_after_fail1952;
+			    if (!_r1) goto next_after_fail1944;
 			    res_op->ops[1] = _r1;
 			  }
 			  {
@@ -12902,14 +12902,14 @@ next_after_fail1951:;
 			    gimple_match_op tem_op (res_op->cond.any_else (), GT_EXPR, type, _o1[0], _o1[1]);
 			    tem_op.resimplify (NULL, valueize);
 			    _r1 = maybe_push_res_to_seq (&tem_op, NULL);
-			    if (!_r1) goto next_after_fail1952;
+			    if (!_r1) goto next_after_fail1944;
 			    res_op->ops[2] = _r1;
 			  }
 			  res_op->resimplify (lseq, valueize);
 			  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 927, __FILE__, __LINE__, true);
 			  return true;
 			}
-next_after_fail1952:;
+next_after_fail1944:;
 		      }
 		  }
 	          break;
@@ -14092,7 +14092,7 @@ if (uniform_integer_cst_p (_p1))
 )
 					      {
 						gimple_seq *lseq = seq;
-						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1953;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail1945;
 						{
 						  tree tem;
 						  tem =  constant_boolean_node (false, type);
@@ -14100,7 +14100,7 @@ if (uniform_integer_cst_p (_p1))
 						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1032, __FILE__, __LINE__, true);
 						  return true;
 						}
-next_after_fail1953:;
+next_after_fail1945:;
 					      }
 					  }
 				        }
@@ -14930,7 +14930,7 @@ gimple_simplify_CFN_BUILT_IN_POWI (gimple_match_op *res_op, gimple_seq *seq,
 )
 			    {
 			      gimple_seq *lseq = seq;
-			      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2045;
+			      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2037;
 			      {
 				res_op->set_op (CFN_BUILT_IN_POWI, type, 2);
 				res_op->ops[0] = captures[0];
@@ -14939,7 +14939,7 @@ gimple_simplify_CFN_BUILT_IN_POWI (gimple_match_op *res_op, gimple_seq *seq,
 				if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1052, __FILE__, __LINE__, true);
 				return true;
 			      }
-next_after_fail2045:;
+next_after_fail2037:;
 			    }
 			}
 		        break;
@@ -14962,7 +14962,7 @@ next_after_fail2045:;
 )
 			    {
 			      gimple_seq *lseq = seq;
-			      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2046;
+			      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2038;
 			      {
 				res_op->set_op (CFN_BUILT_IN_POWI, type, 2);
 				res_op->ops[0] = captures[0];
@@ -14971,7 +14971,7 @@ next_after_fail2045:;
 				if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1052, __FILE__, __LINE__, true);
 				return true;
 			      }
-next_after_fail2046:;
+next_after_fail2038:;
 			    }
 			}
 		        break;
@@ -15003,7 +15003,7 @@ next_after_fail2046:;
 )
 			      {
 				gimple_seq *lseq = seq;
-				if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2047;
+				if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2039;
 				{
 				  res_op->set_op (CFN_BUILT_IN_POWI, type, 2);
 				  res_op->ops[0] = captures[0];
@@ -15012,7 +15012,7 @@ next_after_fail2046:;
 				  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1053, __FILE__, __LINE__, true);
 				  return true;
 				}
-next_after_fail2047:;
+next_after_fail2039:;
 			      }
 			  }
 		          break;
@@ -15039,7 +15039,7 @@ next_after_fail2047:;
 )
 			      {
 				gimple_seq *lseq = seq;
-				if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2048;
+				if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2040;
 				{
 				  res_op->set_op (CFN_BUILT_IN_POWI, type, 2);
 				  res_op->ops[0] = captures[0];
@@ -15048,7 +15048,7 @@ next_after_fail2047:;
 				  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1053, __FILE__, __LINE__, true);
 				  return true;
 				}
-next_after_fail2048:;
+next_after_fail2040:;
 			      }
 			  }
 		          break;
@@ -15075,7 +15075,7 @@ next_after_fail2048:;
 )
 			      {
 				gimple_seq *lseq = seq;
-				if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2049;
+				if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2041;
 				{
 				  res_op->set_op (CFN_BUILT_IN_POWI, type, 2);
 				  res_op->ops[0] = captures[0];
@@ -15084,7 +15084,7 @@ next_after_fail2048:;
 				  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1053, __FILE__, __LINE__, true);
 				  return true;
 				}
-next_after_fail2049:;
+next_after_fail2041:;
 			      }
 			  }
 		          break;
@@ -15111,7 +15111,7 @@ next_after_fail2049:;
 )
 			      {
 				gimple_seq *lseq = seq;
-				if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2050;
+				if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2042;
 				{
 				  res_op->set_op (CFN_BUILT_IN_POWI, type, 2);
 				  res_op->ops[0] = captures[0];
@@ -15120,7 +15120,7 @@ next_after_fail2049:;
 				  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1053, __FILE__, __LINE__, true);
 				  return true;
 				}
-next_after_fail2050:;
+next_after_fail2042:;
 			      }
 			  }
 		          break;
@@ -15153,7 +15153,7 @@ if (real_onep (_p0))
 )
 	    {
 	      gimple_seq *lseq = seq;
-	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2051;
+	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2043;
 	      {
 		tree tem;
 		tem =  build_real (type, dconst1);
@@ -15161,7 +15161,7 @@ if (real_onep (_p0))
 		if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1054, __FILE__, __LINE__, true);
 		return true;
 	      }
-next_after_fail2051:;
+next_after_fail2043:;
 	    }
 	  else
 	    {
@@ -15169,7 +15169,7 @@ next_after_fail2051:;
 )
 		{
 		  gimple_seq *lseq = seq;
-		  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2052;
+		  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2044;
 		  {
 		    tree tem;
 		    tem = captures[0];
@@ -15177,7 +15177,7 @@ next_after_fail2051:;
 		    if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1055, __FILE__, __LINE__, true);
 		    return true;
 		  }
-next_after_fail2052:;
+next_after_fail2044:;
 		}
 	      else
 		{
@@ -15185,7 +15185,7 @@ next_after_fail2052:;
 )
 		    {
 		      gimple_seq *lseq = seq;
-		      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2053;
+		      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2045;
 		      {
 			res_op->set_op (RDIV_EXPR, type, 2);
 			res_op->ops[0] =  build_real (type, dconst1);
@@ -15194,7 +15194,7 @@ next_after_fail2052:;
 			if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1056, __FILE__, __LINE__, true);
 			return true;
 		      }
-next_after_fail2053:;
+next_after_fail2045:;
 		    }
 		}
 	    }
@@ -15228,7 +15228,7 @@ gimple_simplify_CFN_HYPOT (gimple_match_op *res_op, gimple_seq *seq,
 		    tree captures[2] ATTRIBUTE_UNUSED = { _q20, _p1 };
 		    const combined_fn hypots = CFN_HYPOT;
 		    gimple_seq *lseq = seq;
-		    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2075;
+		    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2067;
 		    {
 		      res_op->set_op (hypots, type, 2);
 		      res_op->ops[0] = captures[0];
@@ -15237,7 +15237,7 @@ gimple_simplify_CFN_HYPOT (gimple_match_op *res_op, gimple_seq *seq,
 		      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1057, __FILE__, __LINE__, true);
 		      return true;
 		    }
-next_after_fail2075:;
+next_after_fail2067:;
 		  }
 	          break;
 	        }
@@ -15249,7 +15249,7 @@ next_after_fail2075:;
 		    tree captures[2] ATTRIBUTE_UNUSED = { _q20, _p1 };
 		    const combined_fn hypots = CFN_HYPOT;
 		    gimple_seq *lseq = seq;
-		    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2076;
+		    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2068;
 		    {
 		      res_op->set_op (hypots, type, 2);
 		      res_op->ops[0] = captures[0];
@@ -15258,7 +15258,7 @@ next_after_fail2075:;
 		      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1057, __FILE__, __LINE__, true);
 		      return true;
 		    }
-next_after_fail2076:;
+next_after_fail2068:;
 		  }
 	          break;
 	        }
@@ -15284,7 +15284,7 @@ next_after_fail2076:;
 		    tree captures[2] ATTRIBUTE_UNUSED = { _p0, _q30 };
 		    const combined_fn hypots = CFN_HYPOT;
 		    gimple_seq *lseq = seq;
-		    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2077;
+		    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2069;
 		    {
 		      res_op->set_op (hypots, type, 2);
 		      res_op->ops[0] = captures[0];
@@ -15293,7 +15293,7 @@ next_after_fail2076:;
 		      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1058, __FILE__, __LINE__, true);
 		      return true;
 		    }
-next_after_fail2077:;
+next_after_fail2069:;
 		  }
 	          break;
 	        }
@@ -15305,7 +15305,7 @@ next_after_fail2077:;
 		    tree captures[2] ATTRIBUTE_UNUSED = { _p0, _q30 };
 		    const combined_fn hypots = CFN_HYPOT;
 		    gimple_seq *lseq = seq;
-		    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2078;
+		    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2070;
 		    {
 		      res_op->set_op (hypots, type, 2);
 		      res_op->ops[0] = captures[0];
@@ -15314,7 +15314,7 @@ next_after_fail2077:;
 		      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1058, __FILE__, __LINE__, true);
 		      return true;
 		    }
-next_after_fail2078:;
+next_after_fail2070:;
 		  }
 	          break;
 	        }
@@ -15572,7 +15572,7 @@ gimple_simplify_CFN_BUILT_IN_FMINL (gimple_match_op *res_op, gimple_seq *seq,
 					    && (!single_use (captures[0])
 					        || !single_use (captures[2])))
 					  lseq = NULL;
-					if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2116;
+					if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2108;
 					{
 					  res_op->set_op (NEGATE_EXPR, type, 1);
 					  {
@@ -15582,14 +15582,14 @@ gimple_simplify_CFN_BUILT_IN_FMINL (gimple_match_op *res_op, gimple_seq *seq,
 					    gimple_match_op tem_op (res_op->cond.any_else (), CFN_BUILT_IN_FMAXL, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
 					    tem_op.resimplify (lseq, valueize);
 					    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
-					    if (!_r1) goto next_after_fail2116;
+					    if (!_r1) goto next_after_fail2108;
 					    res_op->ops[0] = _r1;
 					  }
 					  res_op->resimplify (lseq, valueize);
 					  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1073, __FILE__, __LINE__, true);
 					  return true;
 					}
-next_after_fail2116:;
+next_after_fail2108:;
 				      }
 				  }
 			          break;
@@ -15692,7 +15692,7 @@ gimple_simplify_CFN_BUILT_IN_FMINF64 (gimple_match_op *res_op, gimple_seq *seq,
 					    && (!single_use (captures[0])
 					        || !single_use (captures[2])))
 					  lseq = NULL;
-					if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2119;
+					if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2111;
 					{
 					  res_op->set_op (NEGATE_EXPR, type, 1);
 					  {
@@ -15702,14 +15702,14 @@ gimple_simplify_CFN_BUILT_IN_FMINF64 (gimple_match_op *res_op, gimple_seq *seq,
 					    gimple_match_op tem_op (res_op->cond.any_else (), CFN_BUILT_IN_FMAXF64, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
 					    tem_op.resimplify (lseq, valueize);
 					    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
-					    if (!_r1) goto next_after_fail2119;
+					    if (!_r1) goto next_after_fail2111;
 					    res_op->ops[0] = _r1;
 					  }
 					  res_op->resimplify (lseq, valueize);
 					  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1073, __FILE__, __LINE__, true);
 					  return true;
 					}
-next_after_fail2119:;
+next_after_fail2111:;
 				      }
 				  }
 			          break;
@@ -15812,7 +15812,7 @@ gimple_simplify_CFN_BUILT_IN_FMINF64X (gimple_match_op *res_op, gimple_seq *seq,
 					    && (!single_use (captures[0])
 					        || !single_use (captures[2])))
 					  lseq = NULL;
-					if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2122;
+					if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2114;
 					{
 					  res_op->set_op (NEGATE_EXPR, type, 1);
 					  {
@@ -15822,14 +15822,14 @@ gimple_simplify_CFN_BUILT_IN_FMINF64X (gimple_match_op *res_op, gimple_seq *seq,
 					    gimple_match_op tem_op (res_op->cond.any_else (), CFN_BUILT_IN_FMAXF64X, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
 					    tem_op.resimplify (lseq, valueize);
 					    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
-					    if (!_r1) goto next_after_fail2122;
+					    if (!_r1) goto next_after_fail2114;
 					    res_op->ops[0] = _r1;
 					  }
 					  res_op->resimplify (lseq, valueize);
 					  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1073, __FILE__, __LINE__, true);
 					  return true;
 					}
-next_after_fail2122:;
+next_after_fail2114:;
 				      }
 				  }
 			          break;
@@ -15932,7 +15932,7 @@ gimple_simplify_CFN_BUILT_IN_FMAXF (gimple_match_op *res_op, gimple_seq *seq,
 					    && (!single_use (captures[0])
 					        || !single_use (captures[2])))
 					  lseq = NULL;
-					if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2125;
+					if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2117;
 					{
 					  res_op->set_op (NEGATE_EXPR, type, 1);
 					  {
@@ -15940,6 +15940,246 @@ gimple_simplify_CFN_BUILT_IN_FMAXF (gimple_match_op *res_op, gimple_seq *seq,
 					    _o1[0] = captures[1];
 					    _o1[1] = captures[3];
 					    gimple_match_op tem_op (res_op->cond.any_else (), CFN_BUILT_IN_FMINF, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
+					    tem_op.resimplify (lseq, valueize);
+					    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+					    if (!_r1) goto next_after_fail2117;
+					    res_op->ops[0] = _r1;
+					  }
+					  res_op->resimplify (lseq, valueize);
+					  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1073, __FILE__, __LINE__, true);
+					  return true;
+					}
+next_after_fail2117:;
+				      }
+				  }
+			          break;
+			        }
+			      default:;
+			      }
+		        }
+		      break;
+		    default:;
+		    }
+	          break;
+	        }
+	      default:;
+	      }
+        }
+      break;
+    default:;
+    }
+  return false;
+}
+
+bool
+gimple_simplify_CFN_BUILT_IN_FMAXF32 (gimple_match_op *res_op, gimple_seq *seq,
+                 tree (*valueize)(tree) ATTRIBUTE_UNUSED,
+                 code_helper ARG_UNUSED (code), tree ARG_UNUSED (type), tree _p0, tree _p1)
+{
+  const bool debug_dump = dump_file && (dump_flags & TDF_FOLDING);
+  if ((_p1 == _p0 && ! TREE_SIDE_EFFECTS (_p1)) || (operand_equal_p (_p1, _p0, 0) && types_match (_p1, _p0)))
+    {
+      {
+	tree captures[1] ATTRIBUTE_UNUSED = { _p0 };
+	if (gimple_simplify_492 (res_op, seq, valueize, type, captures, CFN_BUILT_IN_FMAXF32))
+	  return true;
+      }
+    }
+  switch (TREE_CODE (_p1))
+    {
+    case REAL_CST:
+      {
+	{
+	  tree captures[2] ATTRIBUTE_UNUSED = { _p0, _p1 };
+	  if (gimple_simplify_493 (res_op, seq, valueize, type, captures, CFN_BUILT_IN_FMAXF32))
+	    return true;
+	}
+        break;
+      }
+    default:;
+    }
+  switch (TREE_CODE (_p0))
+    {
+    case REAL_CST:
+      {
+	{
+	  tree captures[2] ATTRIBUTE_UNUSED = { _p1, _p0 };
+	  if (gimple_simplify_493 (res_op, seq, valueize, type, captures, CFN_BUILT_IN_FMAXF32))
+	    return true;
+	}
+        break;
+      }
+    default:;
+    }
+  {
+    tree captures[2] ATTRIBUTE_UNUSED = { _p0, _p1 };
+    if (gimple_simplify_495 (res_op, seq, valueize, type, captures, CFN_BUILT_IN_FMAXF32))
+      return true;
+  }
+  switch (TREE_CODE (_p0))
+    {
+    case SSA_NAME:
+      if (gimple *_d1 = get_def (valueize, _p0))
+        {
+	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
+	    switch (gimple_assign_rhs_code (_a1))
+	      {
+	      case NEGATE_EXPR:
+	        {
+		  tree _q20 = gimple_assign_rhs1 (_a1);
+		  _q20 = do_valueize (valueize, _q20);
+		  switch (TREE_CODE (_p1))
+		    {
+		    case SSA_NAME:
+		      if (gimple *_d2 = get_def (valueize, _p1))
+		        {
+			  if (gassign *_a2 = dyn_cast <gassign *> (_d2))
+			    switch (gimple_assign_rhs_code (_a2))
+			      {
+			      case NEGATE_EXPR:
+			        {
+				  tree _q40 = gimple_assign_rhs1 (_a2);
+				  _q40 = do_valueize (valueize, _q40);
+				  {
+				    tree captures[4] ATTRIBUTE_UNUSED = { _p0, _q20, _p1, _q40 };
+				    if (FLOAT_TYPE_P (TREE_TYPE (captures[1]))
+ || (ANY_INTEGRAL_TYPE_P (TREE_TYPE (captures[1]))
+ && TYPE_OVERFLOW_UNDEFINED (TREE_TYPE (captures[1])))
+)
+				      {
+					gimple_seq *lseq = seq;
+					if (lseq
+					    && (!single_use (captures[0])
+					        || !single_use (captures[2])))
+					  lseq = NULL;
+					if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2121;
+					{
+					  res_op->set_op (NEGATE_EXPR, type, 1);
+					  {
+					    tree _o1[2], _r1;
+					    _o1[0] = captures[1];
+					    _o1[1] = captures[3];
+					    gimple_match_op tem_op (res_op->cond.any_else (), CFN_BUILT_IN_FMINF32, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
+					    tem_op.resimplify (lseq, valueize);
+					    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+					    if (!_r1) goto next_after_fail2121;
+					    res_op->ops[0] = _r1;
+					  }
+					  res_op->resimplify (lseq, valueize);
+					  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1073, __FILE__, __LINE__, true);
+					  return true;
+					}
+next_after_fail2121:;
+				      }
+				  }
+			          break;
+			        }
+			      default:;
+			      }
+		        }
+		      break;
+		    default:;
+		    }
+	          break;
+	        }
+	      default:;
+	      }
+        }
+      break;
+    default:;
+    }
+  return false;
+}
+
+bool
+gimple_simplify_CFN_BUILT_IN_FMAXF64X (gimple_match_op *res_op, gimple_seq *seq,
+                 tree (*valueize)(tree) ATTRIBUTE_UNUSED,
+                 code_helper ARG_UNUSED (code), tree ARG_UNUSED (type), tree _p0, tree _p1)
+{
+  const bool debug_dump = dump_file && (dump_flags & TDF_FOLDING);
+  if ((_p1 == _p0 && ! TREE_SIDE_EFFECTS (_p1)) || (operand_equal_p (_p1, _p0, 0) && types_match (_p1, _p0)))
+    {
+      {
+	tree captures[1] ATTRIBUTE_UNUSED = { _p0 };
+	if (gimple_simplify_492 (res_op, seq, valueize, type, captures, CFN_BUILT_IN_FMAXF64X))
+	  return true;
+      }
+    }
+  switch (TREE_CODE (_p1))
+    {
+    case REAL_CST:
+      {
+	{
+	  tree captures[2] ATTRIBUTE_UNUSED = { _p0, _p1 };
+	  if (gimple_simplify_493 (res_op, seq, valueize, type, captures, CFN_BUILT_IN_FMAXF64X))
+	    return true;
+	}
+        break;
+      }
+    default:;
+    }
+  switch (TREE_CODE (_p0))
+    {
+    case REAL_CST:
+      {
+	{
+	  tree captures[2] ATTRIBUTE_UNUSED = { _p1, _p0 };
+	  if (gimple_simplify_493 (res_op, seq, valueize, type, captures, CFN_BUILT_IN_FMAXF64X))
+	    return true;
+	}
+        break;
+      }
+    default:;
+    }
+  {
+    tree captures[2] ATTRIBUTE_UNUSED = { _p0, _p1 };
+    if (gimple_simplify_495 (res_op, seq, valueize, type, captures, CFN_BUILT_IN_FMAXF64X))
+      return true;
+  }
+  switch (TREE_CODE (_p0))
+    {
+    case SSA_NAME:
+      if (gimple *_d1 = get_def (valueize, _p0))
+        {
+	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
+	    switch (gimple_assign_rhs_code (_a1))
+	      {
+	      case NEGATE_EXPR:
+	        {
+		  tree _q20 = gimple_assign_rhs1 (_a1);
+		  _q20 = do_valueize (valueize, _q20);
+		  switch (TREE_CODE (_p1))
+		    {
+		    case SSA_NAME:
+		      if (gimple *_d2 = get_def (valueize, _p1))
+		        {
+			  if (gassign *_a2 = dyn_cast <gassign *> (_d2))
+			    switch (gimple_assign_rhs_code (_a2))
+			      {
+			      case NEGATE_EXPR:
+			        {
+				  tree _q40 = gimple_assign_rhs1 (_a2);
+				  _q40 = do_valueize (valueize, _q40);
+				  {
+				    tree captures[4] ATTRIBUTE_UNUSED = { _p0, _q20, _p1, _q40 };
+				    if (FLOAT_TYPE_P (TREE_TYPE (captures[1]))
+ || (ANY_INTEGRAL_TYPE_P (TREE_TYPE (captures[1]))
+ && TYPE_OVERFLOW_UNDEFINED (TREE_TYPE (captures[1])))
+)
+				      {
+					gimple_seq *lseq = seq;
+					if (lseq
+					    && (!single_use (captures[0])
+					        || !single_use (captures[2])))
+					  lseq = NULL;
+					if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2125;
+					{
+					  res_op->set_op (NEGATE_EXPR, type, 1);
+					  {
+					    tree _o1[2], _r1;
+					    _o1[0] = captures[1];
+					    _o1[1] = captures[3];
+					    gimple_match_op tem_op (res_op->cond.any_else (), CFN_BUILT_IN_FMINF64X, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
 					    tem_op.resimplify (lseq, valueize);
 					    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
 					    if (!_r1) goto next_after_fail2125;
@@ -15972,247 +16212,7 @@ next_after_fail2125:;
 }
 
 bool
-gimple_simplify_CFN_BUILT_IN_FMAXF16 (gimple_match_op *res_op, gimple_seq *seq,
-                 tree (*valueize)(tree) ATTRIBUTE_UNUSED,
-                 code_helper ARG_UNUSED (code), tree ARG_UNUSED (type), tree _p0, tree _p1)
-{
-  const bool debug_dump = dump_file && (dump_flags & TDF_FOLDING);
-  if ((_p1 == _p0 && ! TREE_SIDE_EFFECTS (_p1)) || (operand_equal_p (_p1, _p0, 0) && types_match (_p1, _p0)))
-    {
-      {
-	tree captures[1] ATTRIBUTE_UNUSED = { _p0 };
-	if (gimple_simplify_492 (res_op, seq, valueize, type, captures, CFN_BUILT_IN_FMAXF16))
-	  return true;
-      }
-    }
-  switch (TREE_CODE (_p1))
-    {
-    case REAL_CST:
-      {
-	{
-	  tree captures[2] ATTRIBUTE_UNUSED = { _p0, _p1 };
-	  if (gimple_simplify_493 (res_op, seq, valueize, type, captures, CFN_BUILT_IN_FMAXF16))
-	    return true;
-	}
-        break;
-      }
-    default:;
-    }
-  switch (TREE_CODE (_p0))
-    {
-    case REAL_CST:
-      {
-	{
-	  tree captures[2] ATTRIBUTE_UNUSED = { _p1, _p0 };
-	  if (gimple_simplify_493 (res_op, seq, valueize, type, captures, CFN_BUILT_IN_FMAXF16))
-	    return true;
-	}
-        break;
-      }
-    default:;
-    }
-  {
-    tree captures[2] ATTRIBUTE_UNUSED = { _p0, _p1 };
-    if (gimple_simplify_495 (res_op, seq, valueize, type, captures, CFN_BUILT_IN_FMAXF16))
-      return true;
-  }
-  switch (TREE_CODE (_p0))
-    {
-    case SSA_NAME:
-      if (gimple *_d1 = get_def (valueize, _p0))
-        {
-	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
-	    switch (gimple_assign_rhs_code (_a1))
-	      {
-	      case NEGATE_EXPR:
-	        {
-		  tree _q20 = gimple_assign_rhs1 (_a1);
-		  _q20 = do_valueize (valueize, _q20);
-		  switch (TREE_CODE (_p1))
-		    {
-		    case SSA_NAME:
-		      if (gimple *_d2 = get_def (valueize, _p1))
-		        {
-			  if (gassign *_a2 = dyn_cast <gassign *> (_d2))
-			    switch (gimple_assign_rhs_code (_a2))
-			      {
-			      case NEGATE_EXPR:
-			        {
-				  tree _q40 = gimple_assign_rhs1 (_a2);
-				  _q40 = do_valueize (valueize, _q40);
-				  {
-				    tree captures[4] ATTRIBUTE_UNUSED = { _p0, _q20, _p1, _q40 };
-				    if (FLOAT_TYPE_P (TREE_TYPE (captures[1]))
- || (ANY_INTEGRAL_TYPE_P (TREE_TYPE (captures[1]))
- && TYPE_OVERFLOW_UNDEFINED (TREE_TYPE (captures[1])))
-)
-				      {
-					gimple_seq *lseq = seq;
-					if (lseq
-					    && (!single_use (captures[0])
-					        || !single_use (captures[2])))
-					  lseq = NULL;
-					if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2128;
-					{
-					  res_op->set_op (NEGATE_EXPR, type, 1);
-					  {
-					    tree _o1[2], _r1;
-					    _o1[0] = captures[1];
-					    _o1[1] = captures[3];
-					    gimple_match_op tem_op (res_op->cond.any_else (), CFN_BUILT_IN_FMINF16, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
-					    tem_op.resimplify (lseq, valueize);
-					    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
-					    if (!_r1) goto next_after_fail2128;
-					    res_op->ops[0] = _r1;
-					  }
-					  res_op->resimplify (lseq, valueize);
-					  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1073, __FILE__, __LINE__, true);
-					  return true;
-					}
-next_after_fail2128:;
-				      }
-				  }
-			          break;
-			        }
-			      default:;
-			      }
-		        }
-		      break;
-		    default:;
-		    }
-	          break;
-	        }
-	      default:;
-	      }
-        }
-      break;
-    default:;
-    }
-  return false;
-}
-
-bool
-gimple_simplify_CFN_BUILT_IN_FMAXF32X (gimple_match_op *res_op, gimple_seq *seq,
-                 tree (*valueize)(tree) ATTRIBUTE_UNUSED,
-                 code_helper ARG_UNUSED (code), tree ARG_UNUSED (type), tree _p0, tree _p1)
-{
-  const bool debug_dump = dump_file && (dump_flags & TDF_FOLDING);
-  if ((_p1 == _p0 && ! TREE_SIDE_EFFECTS (_p1)) || (operand_equal_p (_p1, _p0, 0) && types_match (_p1, _p0)))
-    {
-      {
-	tree captures[1] ATTRIBUTE_UNUSED = { _p0 };
-	if (gimple_simplify_492 (res_op, seq, valueize, type, captures, CFN_BUILT_IN_FMAXF32X))
-	  return true;
-      }
-    }
-  switch (TREE_CODE (_p1))
-    {
-    case REAL_CST:
-      {
-	{
-	  tree captures[2] ATTRIBUTE_UNUSED = { _p0, _p1 };
-	  if (gimple_simplify_493 (res_op, seq, valueize, type, captures, CFN_BUILT_IN_FMAXF32X))
-	    return true;
-	}
-        break;
-      }
-    default:;
-    }
-  switch (TREE_CODE (_p0))
-    {
-    case REAL_CST:
-      {
-	{
-	  tree captures[2] ATTRIBUTE_UNUSED = { _p1, _p0 };
-	  if (gimple_simplify_493 (res_op, seq, valueize, type, captures, CFN_BUILT_IN_FMAXF32X))
-	    return true;
-	}
-        break;
-      }
-    default:;
-    }
-  {
-    tree captures[2] ATTRIBUTE_UNUSED = { _p0, _p1 };
-    if (gimple_simplify_495 (res_op, seq, valueize, type, captures, CFN_BUILT_IN_FMAXF32X))
-      return true;
-  }
-  switch (TREE_CODE (_p0))
-    {
-    case SSA_NAME:
-      if (gimple *_d1 = get_def (valueize, _p0))
-        {
-	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
-	    switch (gimple_assign_rhs_code (_a1))
-	      {
-	      case NEGATE_EXPR:
-	        {
-		  tree _q20 = gimple_assign_rhs1 (_a1);
-		  _q20 = do_valueize (valueize, _q20);
-		  switch (TREE_CODE (_p1))
-		    {
-		    case SSA_NAME:
-		      if (gimple *_d2 = get_def (valueize, _p1))
-		        {
-			  if (gassign *_a2 = dyn_cast <gassign *> (_d2))
-			    switch (gimple_assign_rhs_code (_a2))
-			      {
-			      case NEGATE_EXPR:
-			        {
-				  tree _q40 = gimple_assign_rhs1 (_a2);
-				  _q40 = do_valueize (valueize, _q40);
-				  {
-				    tree captures[4] ATTRIBUTE_UNUSED = { _p0, _q20, _p1, _q40 };
-				    if (FLOAT_TYPE_P (TREE_TYPE (captures[1]))
- || (ANY_INTEGRAL_TYPE_P (TREE_TYPE (captures[1]))
- && TYPE_OVERFLOW_UNDEFINED (TREE_TYPE (captures[1])))
-)
-				      {
-					gimple_seq *lseq = seq;
-					if (lseq
-					    && (!single_use (captures[0])
-					        || !single_use (captures[2])))
-					  lseq = NULL;
-					if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2132;
-					{
-					  res_op->set_op (NEGATE_EXPR, type, 1);
-					  {
-					    tree _o1[2], _r1;
-					    _o1[0] = captures[1];
-					    _o1[1] = captures[3];
-					    gimple_match_op tem_op (res_op->cond.any_else (), CFN_BUILT_IN_FMINF32X, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
-					    tem_op.resimplify (lseq, valueize);
-					    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
-					    if (!_r1) goto next_after_fail2132;
-					    res_op->ops[0] = _r1;
-					  }
-					  res_op->resimplify (lseq, valueize);
-					  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1073, __FILE__, __LINE__, true);
-					  return true;
-					}
-next_after_fail2132:;
-				      }
-				  }
-			          break;
-			        }
-			      default:;
-			      }
-		        }
-		      break;
-		    default:;
-		    }
-	          break;
-	        }
-	      default:;
-	      }
-        }
-      break;
-    default:;
-    }
-  return false;
-}
-
-bool
-gimple_simplify_LROTATE_EXPR (gimple_match_op *res_op, gimple_seq *seq,
+gimple_simplify_RROTATE_EXPR (gimple_match_op *res_op, gimple_seq *seq,
                  tree (*valueize)(tree) ATTRIBUTE_UNUSED,
                  code_helper ARG_UNUSED (code), tree ARG_UNUSED (type), tree _p0, tree _p1)
 {
@@ -16221,7 +16221,7 @@ gimple_simplify_LROTATE_EXPR (gimple_match_op *res_op, gimple_seq *seq,
     {
       {
 	tree captures[2] ATTRIBUTE_UNUSED = { _p0, _p1 };
-	if (gimple_simplify_568 (res_op, seq, valueize, type, captures, LROTATE_EXPR))
+	if (gimple_simplify_568 (res_op, seq, valueize, type, captures, RROTATE_EXPR))
 	  return true;
       }
     }
@@ -16229,7 +16229,7 @@ gimple_simplify_LROTATE_EXPR (gimple_match_op *res_op, gimple_seq *seq,
     {
       {
 	tree captures[1] ATTRIBUTE_UNUSED = { _p0 };
-	if (gimple_simplify_375 (res_op, seq, valueize, type, captures, LROTATE_EXPR))
+	if (gimple_simplify_375 (res_op, seq, valueize, type, captures, RROTATE_EXPR))
 	  return true;
       }
     }
@@ -16237,7 +16237,7 @@ gimple_simplify_LROTATE_EXPR (gimple_match_op *res_op, gimple_seq *seq,
     {
       {
 	tree captures[2] ATTRIBUTE_UNUSED = { _p0, _p1 };
-	if (gimple_simplify_376 (res_op, seq, valueize, type, captures, LROTATE_EXPR))
+	if (gimple_simplify_376 (res_op, seq, valueize, type, captures, RROTATE_EXPR))
 	  return true;
       }
     }
@@ -16253,7 +16253,7 @@ gimple_simplify_LROTATE_EXPR (gimple_match_op *res_op, gimple_seq *seq,
 	        {
 		  {
 		    tree captures[2] ATTRIBUTE_UNUSED = { _p0, _p1 };
-		    if (gimple_simplify_378 (res_op, seq, valueize, type, captures, LROTATE_EXPR))
+		    if (gimple_simplify_378 (res_op, seq, valueize, type, captures, RROTATE_EXPR))
 		      return true;
 		  }
 	          break;
@@ -16266,28 +16266,8 @@ gimple_simplify_LROTATE_EXPR (gimple_match_op *res_op, gimple_seq *seq,
       {
 	{
 	  tree captures[2] ATTRIBUTE_UNUSED = { _p0, _p1 };
-	  if (gimple_simplify_377 (res_op, seq, valueize, type, captures, LROTATE_EXPR))
+	  if (gimple_simplify_377 (res_op, seq, valueize, type, captures, RROTATE_EXPR))
 	    return true;
-	}
-        break;
-      }
-    case INTEGER_CST:
-      {
-	{
-	  tree captures[2] ATTRIBUTE_UNUSED = { _p0, _p1 };
-	  gimple_seq *lseq = seq;
-	  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2136;
-	  {
-	    res_op->set_op (RROTATE_EXPR, type, 2);
-	    res_op->ops[0] = captures[0];
-	    res_op->ops[1] =  const_binop (MINUS_EXPR, TREE_TYPE (captures[1]),
- build_int_cst (TREE_TYPE (captures[1]),
- element_precision (type)), captures[1]);
-	    res_op->resimplify (lseq, valueize);
-	    if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1078, __FILE__, __LINE__, true);
-	    return true;
-	  }
-next_after_fail2136:;
 	}
         break;
       }
@@ -16301,7 +16281,7 @@ next_after_fail2136:;
 	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
 	    switch (gimple_assign_rhs_code (_a1))
 	      {
-	      case LROTATE_EXPR:
+	      case RROTATE_EXPR:
 	        {
 		  tree _q20 = gimple_assign_rhs1 (_a1);
 		  _q20 = do_valueize (valueize, _q20);
@@ -16317,7 +16297,7 @@ next_after_fail2136:;
 			    {
 			      {
 				tree captures[3] ATTRIBUTE_UNUSED = { _q20, _q21, _p1 };
-				if (gimple_simplify_380 (res_op, seq, valueize, type, captures, LROTATE_EXPR))
+				if (gimple_simplify_380 (res_op, seq, valueize, type, captures, RROTATE_EXPR))
 				  return true;
 			      }
 			      break;
@@ -16340,7 +16320,7 @@ next_after_fail2136:;
 }
 
 bool
-gimple_simplify_UNLT_EXPR (gimple_match_op *res_op, gimple_seq *seq,
+gimple_simplify_UNGE_EXPR (gimple_match_op *res_op, gimple_seq *seq,
                  tree (*valueize)(tree) ATTRIBUTE_UNUSED,
                  code_helper ARG_UNUSED (code), tree ARG_UNUSED (type), tree _p0, tree _p1)
 {
@@ -16381,7 +16361,7 @@ gimple_simplify_UNLT_EXPR (gimple_match_op *res_op, gimple_seq *seq,
 				    {
 				      {
 					tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q20, _q21, _q22, _p1, _q61, _q62 };
-					if (TREE_CODE_CLASS (UNLT_EXPR) != tcc_comparison
+					if (TREE_CODE_CLASS (UNGE_EXPR) != tcc_comparison
  || types_match (type, TREE_TYPE (captures[2]))
  || expand_vec_cond_expr_p (type, TREE_TYPE (captures[1]), ERROR_MARK)
  || (optimize_vectors_before_lowering_p ()
@@ -16394,7 +16374,7 @@ gimple_simplify_UNLT_EXPR (gimple_match_op *res_op, gimple_seq *seq,
 					        && (!single_use (captures[0])
 					            || !single_use (captures[4])))
 					      lseq = NULL;
-					    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2148;
+					    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2149;
 					    {
 					      res_op->set_op (VEC_COND_EXPR, type, 3);
 					      res_op->ops[0] = captures[1];
@@ -16402,27 +16382,27 @@ gimple_simplify_UNLT_EXPR (gimple_match_op *res_op, gimple_seq *seq,
 						tree _o1[2], _r1;
 						_o1[0] = captures[2];
 						_o1[1] = captures[5];
-						gimple_match_op tem_op (res_op->cond.any_else (), UNLT_EXPR, type, _o1[0], _o1[1]);
+						gimple_match_op tem_op (res_op->cond.any_else (), UNGE_EXPR, type, _o1[0], _o1[1]);
 						tem_op.resimplify (NULL, valueize);
 						_r1 = maybe_push_res_to_seq (&tem_op, NULL);
-						if (!_r1) goto next_after_fail2148;
+						if (!_r1) goto next_after_fail2149;
 						res_op->ops[1] = _r1;
 					      }
 					      {
 						tree _o1[2], _r1;
 						_o1[0] = captures[3];
 						_o1[1] = captures[6];
-						gimple_match_op tem_op (res_op->cond.any_else (), UNLT_EXPR, type, _o1[0], _o1[1]);
+						gimple_match_op tem_op (res_op->cond.any_else (), UNGE_EXPR, type, _o1[0], _o1[1]);
 						tem_op.resimplify (NULL, valueize);
 						_r1 = maybe_push_res_to_seq (&tem_op, NULL);
-						if (!_r1) goto next_after_fail2148;
+						if (!_r1) goto next_after_fail2149;
 						res_op->ops[2] = _r1;
 					      }
 					      res_op->resimplify (lseq, valueize);
 					      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 925, __FILE__, __LINE__, true);
 					      return true;
 					    }
-next_after_fail2148:;
+next_after_fail2149:;
 					  }
 				      }
 				    }
@@ -16436,7 +16416,7 @@ next_after_fail2148:;
 		    }
 		  {
 		    tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q20, _q21, _q22, _p1 };
-		    if (TREE_CODE_CLASS (UNLT_EXPR) != tcc_comparison
+		    if (TREE_CODE_CLASS (UNGE_EXPR) != tcc_comparison
  || types_match (type, TREE_TYPE (captures[2]))
  || expand_vec_cond_expr_p (type, TREE_TYPE (captures[1]), ERROR_MARK)
  || (optimize_vectors_before_lowering_p ()
@@ -16448,7 +16428,7 @@ next_after_fail2148:;
 			if (lseq
 			    && (!single_use (captures[0])))
 			  lseq = NULL;
-			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2149;
+			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2150;
 			{
 			  res_op->set_op (VEC_COND_EXPR, type, 3);
 			  res_op->ops[0] = captures[1];
@@ -16456,27 +16436,27 @@ next_after_fail2148:;
 			    tree _o1[2], _r1;
 			    _o1[0] = captures[2];
 			    _o1[1] = captures[4];
-			    gimple_match_op tem_op (res_op->cond.any_else (), UNLT_EXPR, type, _o1[0], _o1[1]);
+			    gimple_match_op tem_op (res_op->cond.any_else (), UNGE_EXPR, type, _o1[0], _o1[1]);
 			    tem_op.resimplify (NULL, valueize);
 			    _r1 = maybe_push_res_to_seq (&tem_op, NULL);
-			    if (!_r1) goto next_after_fail2149;
+			    if (!_r1) goto next_after_fail2150;
 			    res_op->ops[1] = _r1;
 			  }
 			  {
 			    tree _o1[2], _r1;
 			    _o1[0] = captures[3];
 			    _o1[1] = captures[4];
-			    gimple_match_op tem_op (res_op->cond.any_else (), UNLT_EXPR, type, _o1[0], _o1[1]);
+			    gimple_match_op tem_op (res_op->cond.any_else (), UNGE_EXPR, type, _o1[0], _o1[1]);
 			    tem_op.resimplify (NULL, valueize);
 			    _r1 = maybe_push_res_to_seq (&tem_op, NULL);
-			    if (!_r1) goto next_after_fail2149;
+			    if (!_r1) goto next_after_fail2150;
 			    res_op->ops[2] = _r1;
 			  }
 			  res_op->resimplify (lseq, valueize);
 			  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 926, __FILE__, __LINE__, true);
 			  return true;
 			}
-next_after_fail2149:;
+next_after_fail2150:;
 		      }
 		  }
 	          break;
@@ -16505,7 +16485,7 @@ next_after_fail2149:;
 		  _q32 = do_valueize (valueize, _q32);
 		  {
 		    tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _q32 };
-		    if (TREE_CODE_CLASS (UNLT_EXPR) != tcc_comparison
+		    if (TREE_CODE_CLASS (UNGE_EXPR) != tcc_comparison
  || types_match (type, TREE_TYPE (captures[3]))
  || expand_vec_cond_expr_p (type, TREE_TYPE (captures[2]), ERROR_MARK)
  || (optimize_vectors_before_lowering_p ()
@@ -16517,7 +16497,7 @@ next_after_fail2149:;
 			if (lseq
 			    && (!single_use (captures[1])))
 			  lseq = NULL;
-			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2150;
+			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2151;
 			{
 			  res_op->set_op (VEC_COND_EXPR, type, 3);
 			  res_op->ops[0] = captures[2];
@@ -16525,27 +16505,27 @@ next_after_fail2149:;
 			    tree _o1[2], _r1;
 			    _o1[0] = captures[0];
 			    _o1[1] = captures[3];
-			    gimple_match_op tem_op (res_op->cond.any_else (), UNLT_EXPR, type, _o1[0], _o1[1]);
+			    gimple_match_op tem_op (res_op->cond.any_else (), UNGE_EXPR, type, _o1[0], _o1[1]);
 			    tem_op.resimplify (NULL, valueize);
 			    _r1 = maybe_push_res_to_seq (&tem_op, NULL);
-			    if (!_r1) goto next_after_fail2150;
+			    if (!_r1) goto next_after_fail2151;
 			    res_op->ops[1] = _r1;
 			  }
 			  {
 			    tree _o1[2], _r1;
 			    _o1[0] = captures[0];
 			    _o1[1] = captures[4];
-			    gimple_match_op tem_op (res_op->cond.any_else (), UNLT_EXPR, type, _o1[0], _o1[1]);
+			    gimple_match_op tem_op (res_op->cond.any_else (), UNGE_EXPR, type, _o1[0], _o1[1]);
 			    tem_op.resimplify (NULL, valueize);
 			    _r1 = maybe_push_res_to_seq (&tem_op, NULL);
-			    if (!_r1) goto next_after_fail2150;
+			    if (!_r1) goto next_after_fail2151;
 			    res_op->ops[2] = _r1;
 			  }
 			  res_op->resimplify (lseq, valueize);
 			  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 927, __FILE__, __LINE__, true);
 			  return true;
 			}
-next_after_fail2150:;
+next_after_fail2151:;
 		      }
 		  }
 	          break;
@@ -16560,7 +16540,7 @@ next_after_fail2150:;
     {
       {
 	tree captures[1] ATTRIBUTE_UNUSED = { _p0 };
-	if (gimple_simplify_595 (res_op, seq, valueize, type, captures, UNLT_EXPR))
+	if (gimple_simplify_596 (res_op, seq, valueize, type, captures, UNGE_EXPR))
 	  return true;
       }
     }
@@ -16590,7 +16570,7 @@ next_after_fail2150:;
 				  _q40 = do_valueize (valueize, _q40);
 				  {
 				    tree captures[3] ATTRIBUTE_UNUSED = { _p0, _q20, _q40 };
-				    if (gimple_simplify_257 (res_op, seq, valueize, type, captures, UNLT_EXPR, LT_EXPR))
+				    if (gimple_simplify_257 (res_op, seq, valueize, type, captures, UNGE_EXPR, GE_EXPR))
 				      return true;
 				  }
 			          break;
@@ -16621,7 +16601,7 @@ next_after_fail2150:;
 				  _q40 = do_valueize (valueize, _q40);
 				  {
 				    tree captures[2] ATTRIBUTE_UNUSED = { _q20, _q40 };
-				    if (gimple_simplify_260 (res_op, seq, valueize, type, captures, UNLT_EXPR, UNGT_EXPR))
+				    if (gimple_simplify_260 (res_op, seq, valueize, type, captures, UNGE_EXPR, UNLE_EXPR))
 				      return true;
 				  }
 			          break;
@@ -16636,7 +16616,7 @@ next_after_fail2150:;
 		  {
 		    {
 		      tree captures[2] ATTRIBUTE_UNUSED = { _q20, _p1 };
-		      if (gimple_simplify_261 (res_op, seq, valueize, type, captures, UNLT_EXPR, UNGT_EXPR))
+		      if (gimple_simplify_261 (res_op, seq, valueize, type, captures, UNGE_EXPR, UNLE_EXPR))
 		        return true;
 		    }
 		  }
@@ -16654,7 +16634,7 @@ next_after_fail2150:;
       {
 	{
 	  tree captures[2] ATTRIBUTE_UNUSED = { _p0, _p1 };
-	  if (gimple_simplify_594 (res_op, seq, valueize, type, captures, UNLT_EXPR))
+	  if (gimple_simplify_594 (res_op, seq, valueize, type, captures, UNGE_EXPR))
 	    return true;
 	}
         break;
@@ -16665,9 +16645,159 @@ next_after_fail2150:;
 }
 
 bool
-gimple_simplify_LTGT_EXPR (gimple_match_op *res_op, gimple_seq *seq,
+gimple_simplify_CFN_BUILT_IN_LDEXPF (gimple_match_op *res_op, gimple_seq *seq,
                  tree (*valueize)(tree) ATTRIBUTE_UNUSED,
                  code_helper ARG_UNUSED (code), tree ARG_UNUSED (type), tree _p0, tree _p1)
+{
+  const bool debug_dump = dump_file && (dump_flags & TDF_FOLDING);
+  if (real_zerop (_p0))
+    {
+      {
+	tree captures[2] ATTRIBUTE_UNUSED = { _p0, _p1 };
+	if (gimple_simplify_608 (res_op, seq, valueize, type, captures))
+	  return true;
+      }
+    }
+  if (integer_zerop (_p1))
+    {
+      {
+	tree captures[2] ATTRIBUTE_UNUSED = { _p0, _p1 };
+	if (gimple_simplify_609 (res_op, seq, valueize, type, captures))
+	  return true;
+      }
+    }
+  switch (TREE_CODE (_p0))
+    {
+    case REAL_CST:
+      {
+	{
+	  tree captures[2] ATTRIBUTE_UNUSED = { _p0, _p1 };
+	  if (!real_isfinite (TREE_REAL_CST_PTR (captures[0]))
+)
+	    {
+	      gimple_seq *lseq = seq;
+	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2159;
+	      {
+		tree tem;
+		tem = captures[0];
+		res_op->set_value (tem);
+		if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1085, __FILE__, __LINE__, true);
+		return true;
+	      }
+next_after_fail2159:;
+	    }
+	}
+        break;
+      }
+    default:;
+    }
+  return false;
+}
+
+bool
+gimple_simplify_CFN_LDEXP (gimple_match_op *res_op, gimple_seq *seq,
+                 tree (*valueize)(tree) ATTRIBUTE_UNUSED,
+                 code_helper ARG_UNUSED (code), tree ARG_UNUSED (type), tree _p0, tree _p1)
+{
+  const bool debug_dump = dump_file && (dump_flags & TDF_FOLDING);
+  if (real_zerop (_p0))
+    {
+      {
+	tree captures[2] ATTRIBUTE_UNUSED = { _p0, _p1 };
+	if (gimple_simplify_608 (res_op, seq, valueize, type, captures))
+	  return true;
+      }
+    }
+  if (integer_zerop (_p1))
+    {
+      {
+	tree captures[2] ATTRIBUTE_UNUSED = { _p0, _p1 };
+	if (gimple_simplify_609 (res_op, seq, valueize, type, captures))
+	  return true;
+      }
+    }
+  switch (TREE_CODE (_p0))
+    {
+    case REAL_CST:
+      {
+	{
+	  tree captures[2] ATTRIBUTE_UNUSED = { _p0, _p1 };
+	  if (!real_isfinite (TREE_REAL_CST_PTR (captures[0]))
+)
+	    {
+	      gimple_seq *lseq = seq;
+	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2162;
+	      {
+		tree tem;
+		tem = captures[0];
+		res_op->set_value (tem);
+		if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1085, __FILE__, __LINE__, true);
+		return true;
+	      }
+next_after_fail2162:;
+	    }
+	}
+        break;
+      }
+    default:;
+    }
+  return false;
+}
+
+bool
+gimple_simplify_CFN_BUILT_IN_SCALBLN (gimple_match_op *res_op, gimple_seq *seq,
+                 tree (*valueize)(tree) ATTRIBUTE_UNUSED,
+                 code_helper ARG_UNUSED (code), tree ARG_UNUSED (type), tree _p0, tree _p1)
+{
+  const bool debug_dump = dump_file && (dump_flags & TDF_FOLDING);
+  if (real_zerop (_p0))
+    {
+      {
+	tree captures[2] ATTRIBUTE_UNUSED = { _p0, _p1 };
+	if (gimple_simplify_608 (res_op, seq, valueize, type, captures))
+	  return true;
+      }
+    }
+  if (integer_zerop (_p1))
+    {
+      {
+	tree captures[2] ATTRIBUTE_UNUSED = { _p0, _p1 };
+	if (gimple_simplify_609 (res_op, seq, valueize, type, captures))
+	  return true;
+      }
+    }
+  switch (TREE_CODE (_p0))
+    {
+    case REAL_CST:
+      {
+	{
+	  tree captures[2] ATTRIBUTE_UNUSED = { _p0, _p1 };
+	  if (!real_isfinite (TREE_REAL_CST_PTR (captures[0]))
+)
+	    {
+	      gimple_seq *lseq = seq;
+	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2167;
+	      {
+		tree tem;
+		tem = captures[0];
+		res_op->set_value (tem);
+		if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1085, __FILE__, __LINE__, true);
+		return true;
+	      }
+next_after_fail2167:;
+	    }
+	}
+        break;
+      }
+    default:;
+    }
+  return false;
+}
+
+bool
+gimple_simplify_VEC_COND_EXPR (gimple_match_op *res_op, gimple_seq *seq,
+                 tree (*valueize)(tree) ATTRIBUTE_UNUSED,
+                 code_helper ARG_UNUSED (code), tree ARG_UNUSED (type), tree _p0, tree _p1, tree _p2)
 {
   const bool debug_dump = dump_file && (dump_flags & TDF_FOLDING);
   switch (TREE_CODE (_p0))
@@ -16686,70 +16816,355 @@ gimple_simplify_LTGT_EXPR (gimple_match_op *res_op, gimple_seq *seq,
 		  _q21 = do_valueize (valueize, _q21);
 		  tree _q22 = gimple_assign_rhs3 (_a1);
 		  _q22 = do_valueize (valueize, _q22);
-		  switch (TREE_CODE (_p1))
+		  if (integer_zerop (_q22))
+		    {
+		      {
+			tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q20, _q21, _p1, _p2 };
+			if (optimize_vectors_before_lowering_p () && types_match (captures[1], captures[2])
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (lseq
+			        && (!single_use (captures[0])))
+			      lseq = NULL;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2225;
+			    {
+			      res_op->set_op (VEC_COND_EXPR, type, 3);
+			      {
+				tree _o1[2], _r1;
+				_o1[0] = captures[1];
+				_o1[1] = captures[2];
+				gimple_match_op tem_op (res_op->cond.any_else (), BIT_AND_EXPR, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2225;
+				res_op->ops[0] = _r1;
+			      }
+			      res_op->ops[1] = captures[3];
+			      res_op->ops[2] = captures[4];
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1110, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2225:;
+			  }
+		      }
+		    }
+		  if (integer_all_onesp (_q21))
+		    {
+		      {
+			tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q20, _q22, _p1, _p2 };
+			if (optimize_vectors_before_lowering_p () && types_match (captures[1], captures[2])
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (lseq
+			        && (!single_use (captures[0])))
+			      lseq = NULL;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2226;
+			    {
+			      res_op->set_op (VEC_COND_EXPR, type, 3);
+			      {
+				tree _o1[2], _r1;
+				_o1[0] = captures[1];
+				_o1[1] = captures[2];
+				gimple_match_op tem_op (res_op->cond.any_else (), BIT_IOR_EXPR, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2226;
+				res_op->ops[0] = _r1;
+			      }
+			      res_op->ops[1] = captures[3];
+			      res_op->ops[2] = captures[4];
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1111, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2226:;
+			  }
+		      }
+		    }
+		  if (integer_zerop (_q21))
+		    {
+		      {
+			tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q20, _q22, _p1, _p2 };
+			if (optimize_vectors_before_lowering_p () && types_match (captures[1], captures[2])
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (lseq
+			        && (!single_use (captures[0])))
+			      lseq = NULL;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2227;
+			    {
+			      res_op->set_op (VEC_COND_EXPR, type, 3);
+			      {
+				tree _o1[2], _r1;
+				_o1[0] = captures[1];
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[2];
+				  gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2227;
+				  _o1[1] = _r2;
+				}
+				gimple_match_op tem_op (res_op->cond.any_else (), BIT_IOR_EXPR, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2227;
+				res_op->ops[0] = _r1;
+			      }
+			      res_op->ops[1] = captures[4];
+			      res_op->ops[2] = captures[3];
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1112, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2227:;
+			  }
+		      }
+		    }
+		  if (integer_all_onesp (_q22))
+		    {
+		      {
+			tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q20, _q21, _p1, _p2 };
+			if (optimize_vectors_before_lowering_p () && types_match (captures[1], captures[2])
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (lseq
+			        && (!single_use (captures[0])))
+			      lseq = NULL;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2228;
+			    {
+			      res_op->set_op (VEC_COND_EXPR, type, 3);
+			      {
+				tree _o1[2], _r1;
+				_o1[0] = captures[1];
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[2];
+				  gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2228;
+				  _o1[1] = _r2;
+				}
+				gimple_match_op tem_op (res_op->cond.any_else (), BIT_AND_EXPR, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2228;
+				res_op->ops[0] = _r1;
+			      }
+			      res_op->ops[1] = captures[4];
+			      res_op->ops[2] = captures[3];
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1113, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2228:;
+			  }
+		      }
+		    }
+	          break;
+	        }
+	      case LT_EXPR:
+	        {
+		  tree _q20 = gimple_assign_rhs1 (_a1);
+		  _q20 = do_valueize (valueize, _q20);
+		  tree _q21 = gimple_assign_rhs2 (_a1);
+		  _q21 = do_valueize (valueize, _q21);
+		  switch (TREE_CODE (_q20))
 		    {
 		    case SSA_NAME:
-		      if (gimple *_d2 = get_def (valueize, _p1))
+		      if (gimple *_d2 = get_def (valueize, _q20))
 		        {
 			  if (gassign *_a2 = dyn_cast <gassign *> (_d2))
 			    switch (gimple_assign_rhs_code (_a2))
 			      {
-			      case VEC_COND_EXPR:
+			      case VIEW_CONVERT_EXPR:
 			        {
-				  tree _q60 = gimple_assign_rhs1 (_a2);
-				  _q60 = do_valueize (valueize, _q60);
-				  tree _q61 = gimple_assign_rhs2 (_a2);
-				  _q61 = do_valueize (valueize, _q61);
-				  tree _q62 = gimple_assign_rhs3 (_a2);
-				  _q62 = do_valueize (valueize, _q62);
-				  if ((_q60 == _q20 && ! TREE_SIDE_EFFECTS (_q60)) || (operand_equal_p (_q60, _q20, 0) && types_match (_q60, _q20)))
+				  tree _q30 = TREE_OPERAND (gimple_assign_rhs1 (_a2), 0);
+				  if ((TREE_CODE (_q30) == SSA_NAME
+				       || is_gimple_min_invariant (_q30)))
 				    {
-				      {
-					tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q20, _q21, _q22, _p1, _q61, _q62 };
-					if (TREE_CODE_CLASS (LTGT_EXPR) != tcc_comparison
- || types_match (type, TREE_TYPE (captures[2]))
- || expand_vec_cond_expr_p (type, TREE_TYPE (captures[1]), ERROR_MARK)
- || (optimize_vectors_before_lowering_p ()
- && !expand_vec_cond_expr_p (TREE_TYPE (captures[2]),
- TREE_TYPE (captures[1]), ERROR_MARK))
-)
-					  {
-					    gimple_seq *lseq = seq;
-					    if (lseq
-					        && (!single_use (captures[0])
-					            || !single_use (captures[4])))
-					      lseq = NULL;
-					    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2163;
+				      _q30 = do_valueize (valueize, _q30);
+				      switch (TREE_CODE (_q30))
+				        {
+					case SSA_NAME:
+					  if (gimple *_d3 = get_def (valueize, _q30))
 					    {
-					      res_op->set_op (VEC_COND_EXPR, type, 3);
-					      res_op->ops[0] = captures[1];
-					      {
-						tree _o1[2], _r1;
-						_o1[0] = captures[2];
-						_o1[1] = captures[5];
-						gimple_match_op tem_op (res_op->cond.any_else (), LTGT_EXPR, type, _o1[0], _o1[1]);
-						tem_op.resimplify (NULL, valueize);
-						_r1 = maybe_push_res_to_seq (&tem_op, NULL);
-						if (!_r1) goto next_after_fail2163;
-						res_op->ops[1] = _r1;
-					      }
-					      {
-						tree _o1[2], _r1;
-						_o1[0] = captures[3];
-						_o1[1] = captures[6];
-						gimple_match_op tem_op (res_op->cond.any_else (), LTGT_EXPR, type, _o1[0], _o1[1]);
-						tem_op.resimplify (NULL, valueize);
-						_r1 = maybe_push_res_to_seq (&tem_op, NULL);
-						if (!_r1) goto next_after_fail2163;
-						res_op->ops[2] = _r1;
-					      }
-					      res_op->resimplify (lseq, valueize);
-					      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 925, __FILE__, __LINE__, true);
-					      return true;
+					      if (gassign *_a3 = dyn_cast <gassign *> (_d3))
+					        switch (gimple_assign_rhs_code (_a3))
+						  {
+						  case VEC_COND_EXPR:
+						    {
+						      tree _q40 = gimple_assign_rhs1 (_a3);
+						      _q40 = do_valueize (valueize, _q40);
+						      tree _q41 = gimple_assign_rhs2 (_a3);
+						      _q41 = do_valueize (valueize, _q41);
+						      tree _q42 = gimple_assign_rhs3 (_a3);
+						      _q42 = do_valueize (valueize, _q42);
+						      switch (TREE_CODE (_q40))
+						        {
+							case SSA_NAME:
+							  if (gimple *_d4 = get_def (valueize, _q40))
+							    {
+							      if (gassign *_a4 = dyn_cast <gassign *> (_d4))
+							        switch (gimple_assign_rhs_code (_a4))
+								  {
+								  case LT_EXPR:
+								    {
+								      tree _q50 = gimple_assign_rhs1 (_a4);
+								      _q50 = do_valueize (valueize, _q50);
+								      tree _q51 = gimple_assign_rhs2 (_a4);
+								      _q51 = do_valueize (valueize, _q51);
+								      if (integer_all_onesp (_q41))
+									{
+									  if (integer_zerop (_q42))
+									    {
+									      if (integer_zerop (_q21))
+										{
+										  {
+										    tree captures[7] ATTRIBUTE_UNUSED = { _q20, _q30, _q40, _q50, _q51, _p1, _p2 };
+										    if (gimple_simplify_574 (res_op, seq, valueize, type, captures, LT_EXPR))
+										      return true;
+										  }
+									        }
+									    }
+								        }
+								      break;
+								    }
+								  case LE_EXPR:
+								    {
+								      tree _q50 = gimple_assign_rhs1 (_a4);
+								      _q50 = do_valueize (valueize, _q50);
+								      tree _q51 = gimple_assign_rhs2 (_a4);
+								      _q51 = do_valueize (valueize, _q51);
+								      if (integer_all_onesp (_q41))
+									{
+									  if (integer_zerop (_q42))
+									    {
+									      if (integer_zerop (_q21))
+										{
+										  {
+										    tree captures[7] ATTRIBUTE_UNUSED = { _q20, _q30, _q40, _q50, _q51, _p1, _p2 };
+										    if (gimple_simplify_574 (res_op, seq, valueize, type, captures, LE_EXPR))
+										      return true;
+										  }
+									        }
+									    }
+								        }
+								      break;
+								    }
+								  case EQ_EXPR:
+								    {
+								      tree _q50 = gimple_assign_rhs1 (_a4);
+								      _q50 = do_valueize (valueize, _q50);
+								      tree _q51 = gimple_assign_rhs2 (_a4);
+								      _q51 = do_valueize (valueize, _q51);
+								      if (tree_swap_operands_p (_q50, _q51))
+								        std::swap (_q50, _q51);
+								      if (integer_all_onesp (_q41))
+									{
+									  if (integer_zerop (_q42))
+									    {
+									      if (integer_zerop (_q21))
+										{
+										  {
+										    tree captures[7] ATTRIBUTE_UNUSED = { _q20, _q30, _q40, _q50, _q51, _p1, _p2 };
+										    if (gimple_simplify_574 (res_op, seq, valueize, type, captures, EQ_EXPR))
+										      return true;
+										  }
+									        }
+									    }
+								        }
+								      break;
+								    }
+								  case NE_EXPR:
+								    {
+								      tree _q50 = gimple_assign_rhs1 (_a4);
+								      _q50 = do_valueize (valueize, _q50);
+								      tree _q51 = gimple_assign_rhs2 (_a4);
+								      _q51 = do_valueize (valueize, _q51);
+								      if (tree_swap_operands_p (_q50, _q51))
+								        std::swap (_q50, _q51);
+								      if (integer_all_onesp (_q41))
+									{
+									  if (integer_zerop (_q42))
+									    {
+									      if (integer_zerop (_q21))
+										{
+										  {
+										    tree captures[7] ATTRIBUTE_UNUSED = { _q20, _q30, _q40, _q50, _q51, _p1, _p2 };
+										    if (gimple_simplify_574 (res_op, seq, valueize, type, captures, NE_EXPR))
+										      return true;
+										  }
+									        }
+									    }
+								        }
+								      break;
+								    }
+								  case GE_EXPR:
+								    {
+								      tree _q50 = gimple_assign_rhs1 (_a4);
+								      _q50 = do_valueize (valueize, _q50);
+								      tree _q51 = gimple_assign_rhs2 (_a4);
+								      _q51 = do_valueize (valueize, _q51);
+								      if (integer_all_onesp (_q41))
+									{
+									  if (integer_zerop (_q42))
+									    {
+									      if (integer_zerop (_q21))
+										{
+										  {
+										    tree captures[7] ATTRIBUTE_UNUSED = { _q20, _q30, _q40, _q50, _q51, _p1, _p2 };
+										    if (gimple_simplify_574 (res_op, seq, valueize, type, captures, GE_EXPR))
+										      return true;
+										  }
+									        }
+									    }
+								        }
+								      break;
+								    }
+								  case GT_EXPR:
+								    {
+								      tree _q50 = gimple_assign_rhs1 (_a4);
+								      _q50 = do_valueize (valueize, _q50);
+								      tree _q51 = gimple_assign_rhs2 (_a4);
+								      _q51 = do_valueize (valueize, _q51);
+								      if (integer_all_onesp (_q41))
+									{
+									  if (integer_zerop (_q42))
+									    {
+									      if (integer_zerop (_q21))
+										{
+										  {
+										    tree captures[7] ATTRIBUTE_UNUSED = { _q20, _q30, _q40, _q50, _q51, _p1, _p2 };
+										    if (gimple_simplify_574 (res_op, seq, valueize, type, captures, GT_EXPR))
+										      return true;
+										  }
+									        }
+									    }
+								        }
+								      break;
+								    }
+								  default:;
+								  }
+							    }
+							  break;
+						        default:;
+						        }
+						      break;
+						    }
+						  default:;
+						  }
 					    }
-next_after_fail2163:;
-					  }
-				      }
+					  break;
+				        default:;
+				        }
 				    }
 			          break;
 			        }
@@ -16759,51 +17174,160 @@ next_after_fail2163:;
 		      break;
 		    default:;
 		    }
-		  {
-		    tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q20, _q21, _q22, _p1 };
-		    if (TREE_CODE_CLASS (LTGT_EXPR) != tcc_comparison
- || types_match (type, TREE_TYPE (captures[2]))
- || expand_vec_cond_expr_p (type, TREE_TYPE (captures[1]), ERROR_MARK)
- || (optimize_vectors_before_lowering_p ()
- && !expand_vec_cond_expr_p (TREE_TYPE (captures[2]),
- TREE_TYPE (captures[1]), ERROR_MARK))
+	          break;
+	        }
+	      default:;
+	      }
+        }
+      break;
+    case VECTOR_CST:
+      {
+	{
+	  tree captures[3] ATTRIBUTE_UNUSED = { _p0, _p1, _p2 };
+	  if (integer_all_onesp (captures[0])
 )
-		      {
-			gimple_seq *lseq = seq;
-			if (lseq
-			    && (!single_use (captures[0])))
-			  lseq = NULL;
-			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2164;
-			{
-			  res_op->set_op (VEC_COND_EXPR, type, 3);
-			  res_op->ops[0] = captures[1];
-			  {
-			    tree _o1[2], _r1;
-			    _o1[0] = captures[2];
-			    _o1[1] = captures[4];
-			    gimple_match_op tem_op (res_op->cond.any_else (), LTGT_EXPR, type, _o1[0], _o1[1]);
-			    tem_op.resimplify (NULL, valueize);
-			    _r1 = maybe_push_res_to_seq (&tem_op, NULL);
-			    if (!_r1) goto next_after_fail2164;
-			    res_op->ops[1] = _r1;
-			  }
-			  {
-			    tree _o1[2], _r1;
-			    _o1[0] = captures[3];
-			    _o1[1] = captures[4];
-			    gimple_match_op tem_op (res_op->cond.any_else (), LTGT_EXPR, type, _o1[0], _o1[1]);
-			    tem_op.resimplify (NULL, valueize);
-			    _r1 = maybe_push_res_to_seq (&tem_op, NULL);
-			    if (!_r1) goto next_after_fail2164;
-			    res_op->ops[2] = _r1;
-			  }
-			  res_op->resimplify (lseq, valueize);
-			  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 926, __FILE__, __LINE__, true);
-			  return true;
-			}
-next_after_fail2164:;
-		      }
+	    {
+	      gimple_seq *lseq = seq;
+	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2229;
+	      {
+		tree tem;
+		tem = captures[1];
+		res_op->set_value (tem);
+		if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1114, __FILE__, __LINE__, true);
+		return true;
+	      }
+next_after_fail2229:;
+	    }
+	  else
+	    {
+	      if (integer_zerop (captures[0])
+)
+		{
+		  gimple_seq *lseq = seq;
+		  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2230;
+		  {
+		    tree tem;
+		    tem = captures[2];
+		    res_op->set_value (tem);
+		    if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1115, __FILE__, __LINE__, true);
+		    return true;
 		  }
+next_after_fail2230:;
+		}
+	    }
+	}
+        break;
+      }
+    default:;
+    }
+  switch (TREE_CODE (_p1))
+    {
+    case SSA_NAME:
+      if (gimple *_d1 = get_def (valueize, _p1))
+        {
+	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
+	    switch (gimple_assign_rhs_code (_a1))
+	      {
+	      case VEC_COND_EXPR:
+	        {
+		  tree _q30 = gimple_assign_rhs1 (_a1);
+		  _q30 = do_valueize (valueize, _q30);
+		  tree _q31 = gimple_assign_rhs2 (_a1);
+		  _q31 = do_valueize (valueize, _q31);
+		  tree _q32 = gimple_assign_rhs3 (_a1);
+		  _q32 = do_valueize (valueize, _q32);
+		  if ((_p2 == _q32 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q32, 0) && types_match (_p2, _q32)))
+		    {
+		      {
+			tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _q32 };
+			if (optimize_vectors_before_lowering_p () && types_match (captures[0], captures[2])
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (lseq
+			        && (!single_use (captures[1])))
+			      lseq = NULL;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2231;
+			    {
+			      res_op->set_op (VEC_COND_EXPR, type, 3);
+			      {
+				tree _o1[2], _r1;
+				_o1[0] = captures[0];
+				_o1[1] = captures[2];
+				gimple_match_op tem_op (res_op->cond.any_else (), BIT_AND_EXPR, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2231;
+				res_op->ops[0] = _r1;
+			      }
+			      res_op->ops[1] = captures[3];
+			      res_op->ops[2] = captures[4];
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1116, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2231:;
+			  }
+		      }
+		    }
+	          break;
+	        }
+	      default:;
+	      }
+        }
+      break;
+    default:;
+    }
+  switch (TREE_CODE (_p2))
+    {
+    case SSA_NAME:
+      if (gimple *_d1 = get_def (valueize, _p2))
+        {
+	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
+	    switch (gimple_assign_rhs_code (_a1))
+	      {
+	      case VEC_COND_EXPR:
+	        {
+		  tree _q40 = gimple_assign_rhs1 (_a1);
+		  _q40 = do_valueize (valueize, _q40);
+		  tree _q41 = gimple_assign_rhs2 (_a1);
+		  _q41 = do_valueize (valueize, _q41);
+		  tree _q42 = gimple_assign_rhs3 (_a1);
+		  _q42 = do_valueize (valueize, _q42);
+		  if ((_q41 == _p1 && ! TREE_SIDE_EFFECTS (_q41)) || (operand_equal_p (_q41, _p1, 0) && types_match (_q41, _p1)))
+		    {
+		      {
+			tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _p2, _q40, _q42 };
+			if (optimize_vectors_before_lowering_p () && types_match (captures[0], captures[3])
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (lseq
+			        && (!single_use (captures[2])))
+			      lseq = NULL;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2232;
+			    {
+			      res_op->set_op (VEC_COND_EXPR, type, 3);
+			      {
+				tree _o1[2], _r1;
+				_o1[0] = captures[0];
+				_o1[1] = captures[3];
+				gimple_match_op tem_op (res_op->cond.any_else (), BIT_IOR_EXPR, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2232;
+				res_op->ops[0] = _r1;
+			      }
+			      res_op->ops[1] = captures[1];
+			      res_op->ops[2] = captures[4];
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1117, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2232:;
+			  }
+		      }
+		    }
 	          break;
 	        }
 	      default:;
@@ -16828,51 +17352,48 @@ next_after_fail2164:;
 		  _q31 = do_valueize (valueize, _q31);
 		  tree _q32 = gimple_assign_rhs3 (_a1);
 		  _q32 = do_valueize (valueize, _q32);
-		  {
-		    tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _q32 };
-		    if (TREE_CODE_CLASS (LTGT_EXPR) != tcc_comparison
- || types_match (type, TREE_TYPE (captures[3]))
- || expand_vec_cond_expr_p (type, TREE_TYPE (captures[2]), ERROR_MARK)
- || (optimize_vectors_before_lowering_p ()
- && !expand_vec_cond_expr_p (TREE_TYPE (captures[3]),
- TREE_TYPE (captures[2]), ERROR_MARK))
-)
+		  if ((_p2 == _q31 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q31, 0) && types_match (_p2, _q31)))
+		    {
 		      {
-			gimple_seq *lseq = seq;
-			if (lseq
-			    && (!single_use (captures[1])))
-			  lseq = NULL;
-			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2165;
-			{
-			  res_op->set_op (VEC_COND_EXPR, type, 3);
-			  res_op->ops[0] = captures[2];
+			tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _q32 };
+			if (optimize_vectors_before_lowering_p () && types_match (captures[0], captures[2])
+)
 			  {
-			    tree _o1[2], _r1;
-			    _o1[0] = captures[0];
-			    _o1[1] = captures[3];
-			    gimple_match_op tem_op (res_op->cond.any_else (), LTGT_EXPR, type, _o1[0], _o1[1]);
-			    tem_op.resimplify (NULL, valueize);
-			    _r1 = maybe_push_res_to_seq (&tem_op, NULL);
-			    if (!_r1) goto next_after_fail2165;
-			    res_op->ops[1] = _r1;
+			    gimple_seq *lseq = seq;
+			    if (lseq
+			        && (!single_use (captures[1])))
+			      lseq = NULL;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2233;
+			    {
+			      res_op->set_op (VEC_COND_EXPR, type, 3);
+			      {
+				tree _o1[2], _r1;
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[0];
+				  gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2233;
+				  _o1[0] = _r2;
+				}
+				_o1[1] = captures[2];
+				gimple_match_op tem_op (res_op->cond.any_else (), BIT_IOR_EXPR, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2233;
+				res_op->ops[0] = _r1;
+			      }
+			      res_op->ops[1] = captures[3];
+			      res_op->ops[2] = captures[4];
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1118, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2233:;
 			  }
-			  {
-			    tree _o1[2], _r1;
-			    _o1[0] = captures[0];
-			    _o1[1] = captures[4];
-			    gimple_match_op tem_op (res_op->cond.any_else (), LTGT_EXPR, type, _o1[0], _o1[1]);
-			    tem_op.resimplify (NULL, valueize);
-			    _r1 = maybe_push_res_to_seq (&tem_op, NULL);
-			    if (!_r1) goto next_after_fail2165;
-			    res_op->ops[2] = _r1;
-			  }
-			  res_op->resimplify (lseq, valueize);
-			  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 927, __FILE__, __LINE__, true);
-			  return true;
-			}
-next_after_fail2165:;
 		      }
-		  }
+		    }
 	          break;
 	        }
 	      default:;
@@ -16881,102 +17402,64 @@ next_after_fail2165:;
       break;
     default:;
     }
-  if ((_p1 == _p0 && ! TREE_SIDE_EFFECTS (_p1)) || (operand_equal_p (_p1, _p0, 0) && types_match (_p1, _p0)))
-    {
-      {
-	tree captures[1] ATTRIBUTE_UNUSED = { _p0 };
-	if (!flag_trapping_math || !tree_expr_maybe_nan_p (captures[0])
-)
-	  {
-	    gimple_seq *lseq = seq;
-	    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2166;
-	    {
-	      tree tem;
-	      tem =  constant_boolean_node (false, type);
-	      res_op->set_value (tem);
-	      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1084, __FILE__, __LINE__, true);
-	      return true;
-	    }
-next_after_fail2166:;
-	  }
-      }
-    }
-  switch (TREE_CODE (_p0))
+  switch (TREE_CODE (_p2))
     {
     case SSA_NAME:
-      if (gimple *_d1 = get_def (valueize, _p0))
+      if (gimple *_d1 = get_def (valueize, _p2))
         {
 	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
 	    switch (gimple_assign_rhs_code (_a1))
 	      {
-	      case FLOAT_EXPR:
+	      case VEC_COND_EXPR:
 	        {
-		  tree _q20 = gimple_assign_rhs1 (_a1);
-		  _q20 = do_valueize (valueize, _q20);
-		  switch (TREE_CODE (_p1))
+		  tree _q40 = gimple_assign_rhs1 (_a1);
+		  _q40 = do_valueize (valueize, _q40);
+		  tree _q41 = gimple_assign_rhs2 (_a1);
+		  _q41 = do_valueize (valueize, _q41);
+		  tree _q42 = gimple_assign_rhs3 (_a1);
+		  _q42 = do_valueize (valueize, _q42);
+		  if ((_q42 == _p1 && ! TREE_SIDE_EFFECTS (_q42)) || (operand_equal_p (_q42, _p1, 0) && types_match (_q42, _p1)))
 		    {
-		    case SSA_NAME:
-		      if (gimple *_d2 = get_def (valueize, _p1))
-		        {
-			  if (gassign *_a2 = dyn_cast <gassign *> (_d2))
-			    switch (gimple_assign_rhs_code (_a2))
+		      {
+			tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _p2, _q40, _q41 };
+			if (optimize_vectors_before_lowering_p () && types_match (captures[0], captures[3])
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (lseq
+			        && (!single_use (captures[2])))
+			      lseq = NULL;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2234;
+			    {
+			      res_op->set_op (VEC_COND_EXPR, type, 3);
 			      {
-			      case FLOAT_EXPR:
-			        {
-				  tree _q40 = gimple_assign_rhs1 (_a2);
-				  _q40 = do_valueize (valueize, _q40);
-				  {
-				    tree captures[3] ATTRIBUTE_UNUSED = { _p0, _q20, _q40 };
-				    if (gimple_simplify_257 (res_op, seq, valueize, type, captures, LTGT_EXPR, NE_EXPR))
-				      return true;
-				  }
-			          break;
-			        }
-			      default:;
+				tree _o1[2], _r1;
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[0];
+				  gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2234;
+				  _o1[0] = _r2;
+				}
+				_o1[1] = captures[3];
+				gimple_match_op tem_op (res_op->cond.any_else (), BIT_AND_EXPR, TREE_TYPE (_o1[0]), _o1[0], _o1[1]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2234;
+				res_op->ops[0] = _r1;
 			      }
-		        }
-		      break;
-		    default:;
+			      res_op->ops[1] = captures[4];
+			      res_op->ops[2] = captures[1];
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1119, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2234:;
+			  }
+		      }
 		    }
-	          break;
-	        }
-	      case NEGATE_EXPR:
-	        {
-		  tree _q20 = gimple_assign_rhs1 (_a1);
-		  _q20 = do_valueize (valueize, _q20);
-		  switch (TREE_CODE (_p1))
-		    {
-		    case SSA_NAME:
-		      if (gimple *_d2 = get_def (valueize, _p1))
-		        {
-			  if (gassign *_a2 = dyn_cast <gassign *> (_d2))
-			    switch (gimple_assign_rhs_code (_a2))
-			      {
-			      case NEGATE_EXPR:
-			        {
-				  tree _q40 = gimple_assign_rhs1 (_a2);
-				  _q40 = do_valueize (valueize, _q40);
-				  {
-				    tree captures[2] ATTRIBUTE_UNUSED = { _q20, _q40 };
-				    if (gimple_simplify_260 (res_op, seq, valueize, type, captures, LTGT_EXPR, LTGT_EXPR))
-				      return true;
-				  }
-			          break;
-			        }
-			      default:;
-			      }
-		        }
-		      break;
-		    default:;
-		    }
-		if (CONSTANT_CLASS_P (_p1))
-		  {
-		    {
-		      tree captures[2] ATTRIBUTE_UNUSED = { _q20, _p1 };
-		      if (gimple_simplify_261 (res_op, seq, valueize, type, captures, LTGT_EXPR, LTGT_EXPR))
-		        return true;
-		    }
-		  }
 	          break;
 	        }
 	      default:;
@@ -16987,115 +17470,59 @@ next_after_fail2166:;
     }
   switch (TREE_CODE (_p1))
     {
-    case REAL_CST:
+    case VECTOR_CST:
       {
-	{
-	  tree captures[2] ATTRIBUTE_UNUSED = { _p0, _p1 };
-	  if (gimple_simplify_594 (res_op, seq, valueize, type, captures, LTGT_EXPR))
-	    return true;
-	}
+	switch (TREE_CODE (_p2))
+	  {
+	  case VECTOR_CST:
+	    {
+	      {
+		tree captures[3] ATTRIBUTE_UNUSED = { _p0, _p1, _p2 };
+		if (VECTOR_BOOLEAN_TYPE_P (type)
+ && types_match (type, TREE_TYPE (captures[0]))
+)
+		  {
+		    if (integer_zerop (captures[1]) && integer_all_onesp (captures[2])
+)
+		      {
+			gimple_seq *lseq = seq;
+			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2235;
+			{
+			  res_op->set_op (BIT_NOT_EXPR, type, 1);
+			  res_op->ops[0] = captures[0];
+			  res_op->resimplify (lseq, valueize);
+			  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1120, __FILE__, __LINE__, true);
+			  return true;
+			}
+next_after_fail2235:;
+		      }
+		    else
+		      {
+			if (integer_all_onesp (captures[1]) && integer_zerop (captures[2])
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2236;
+			    {
+			      tree tem;
+			      tem = captures[0];
+			      res_op->set_value (tem);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1121, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2236:;
+			  }
+		      }
+		  }
+	      }
+	      break;
+	    }
+          default:;
+          }
         break;
       }
     default:;
     }
-  return false;
-}
-
-bool
-gimple_simplify_BIT_INSERT_EXPR (gimple_match_op *res_op, gimple_seq *seq,
-                 tree (*valueize)(tree) ATTRIBUTE_UNUSED,
-                 code_helper ARG_UNUSED (code), tree ARG_UNUSED (type), tree _p0, tree _p1, tree _p2)
-{
-  const bool debug_dump = dump_file && (dump_flags & TDF_FOLDING);
-  switch (TREE_CODE (_p1))
-    {
-    case SSA_NAME:
-      if (gimple *_d1 = get_def (valueize, _p1))
-        {
-	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
-	    switch (gimple_assign_rhs_code (_a1))
-	      {
-	      case BIT_FIELD_REF:
-	        {
-		  tree _q30 = TREE_OPERAND (gimple_assign_rhs1 (_a1), 0);
-		  if ((TREE_CODE (_q30) == SSA_NAME
-		       || is_gimple_min_invariant (_q30)))
-		    {
-		      _q30 = do_valueize (valueize, _q30);
-		      tree _q31 = TREE_OPERAND (gimple_assign_rhs1 (_a1), 1);
-		      if ((TREE_CODE (_q31) == SSA_NAME
-		           || is_gimple_min_invariant (_q31)))
-		        {
-			  _q31 = do_valueize (valueize, _q31);
-			  tree _q32 = TREE_OPERAND (gimple_assign_rhs1 (_a1), 2);
-			  if ((TREE_CODE (_q32) == SSA_NAME
-			       || is_gimple_min_invariant (_q32)))
-			    {
-			      _q32 = do_valueize (valueize, _q32);
-			      {
-				tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _q32, _p2 };
-				if (VECTOR_TYPE_P (type)
- && (VECTOR_MODE_P (TYPE_MODE (type))
- || optimize_vectors_before_lowering_p ())
- && types_match (captures[0], captures[2])
- && types_match (TREE_TYPE (TREE_TYPE (captures[0])), TREE_TYPE (captures[1]))
- && TYPE_VECTOR_SUBPARTS (type).is_constant ()
- && multiple_p (wi::to_poly_offset (captures[4]),
- wi::to_poly_offset (TYPE_SIZE (TREE_TYPE (type))))
-)
-				  {
-				    {
- unsigned HOST_WIDE_INT elsz
- = tree_to_uhwi (TYPE_SIZE (TREE_TYPE (TREE_TYPE (captures[2]))));
- poly_uint64 relt = exact_div (tree_to_poly_uint64 (captures[4]), elsz);
- poly_uint64 ielt = exact_div (tree_to_poly_uint64 (captures[5]), elsz);
- unsigned nunits = TYPE_VECTOR_SUBPARTS (type).to_constant ();
- vec_perm_builder builder;
- builder.new_vector (nunits, nunits, 1);
- for (unsigned i = 0; i < nunits; ++i)
- builder.quick_push (known_eq (ielt, i) ? nunits + relt : i);
- vec_perm_indices sel (builder, 2, nunits);
-					if (!VECTOR_MODE_P (TYPE_MODE (type))
- || can_vec_perm_const_p (TYPE_MODE (type), TYPE_MODE (type), sel, false)
-)
-					  {
-					    gimple_seq *lseq = seq;
-					    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2373;
-					    {
-					      res_op->set_op (VEC_PERM_EXPR, type, 3);
-					      res_op->ops[0] = captures[0];
-					      res_op->ops[1] = captures[2];
-					      res_op->ops[2] =  vec_perm_indices_to_tree
- (build_vector_type (ssizetype, nunits), sel);
-					      res_op->resimplify (lseq, valueize);
-					      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1142, __FILE__, __LINE__, true);
-					      return true;
-					    }
-next_after_fail2373:;
-					  }
-				    }
-				  }
-			      }
-			    }
-		        }
-		    }
-	          break;
-	        }
-	      default:;
-	      }
-        }
-      break;
-    default:;
-    }
-  return false;
-}
-
-bool
-gimple_simplify_CFN_BUILT_IN_FMAF (gimple_match_op *res_op, gimple_seq *seq,
-                 tree (*valueize)(tree) ATTRIBUTE_UNUSED,
-                 code_helper ARG_UNUSED (code), tree ARG_UNUSED (type), tree _p0, tree _p1, tree _p2)
-{
-  const bool debug_dump = dump_file && (dump_flags & TDF_FOLDING);
   switch (TREE_CODE (_p0))
     {
     case SSA_NAME:
@@ -17104,483 +17531,247 @@ gimple_simplify_CFN_BUILT_IN_FMAF (gimple_match_op *res_op, gimple_seq *seq,
 	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
 	    switch (gimple_assign_rhs_code (_a1))
 	      {
-	      case NEGATE_EXPR:
+	      case LT_EXPR:
 	        {
 		  tree _q20 = gimple_assign_rhs1 (_a1);
 		  _q20 = do_valueize (valueize, _q20);
-		  {
-		    tree captures[3] ATTRIBUTE_UNUSED = { _q20, _p1, _p2 };
-		    if (gimple_simplify_619 (res_op, seq, valueize, type, captures, CFN_BUILT_IN_FMAF))
-		      return true;
-		  }
-		  switch (TREE_CODE (_p2))
+		  tree _q21 = gimple_assign_rhs2 (_a1);
+		  _q21 = do_valueize (valueize, _q21);
+		  if ((_p1 == _q20 && ! TREE_SIDE_EFFECTS (_p1)) || (operand_equal_p (_p1, _q20, 0) && types_match (_p1, _q20)))
 		    {
-		    case SSA_NAME:
-		      if (gimple *_d2 = get_def (valueize, _p2))
-		        {
-			  if (gassign *_a2 = dyn_cast <gassign *> (_d2))
-			    switch (gimple_assign_rhs_code (_a2))
-			      {
-			      case NEGATE_EXPR:
-			        {
-				  tree _q50 = gimple_assign_rhs1 (_a2);
-				  _q50 = do_valueize (valueize, _q50);
-				  {
-				    tree captures[3] ATTRIBUTE_UNUSED = { _q20, _p1, _q50 };
-				    if (gimple_simplify_620 (res_op, seq, valueize, type, captures, CFN_BUILT_IN_FMAF))
-				      return true;
-				  }
-			          break;
-			        }
-			      default:;
-			      }
-		        }
-		      break;
-		    default:;
-		    }
-	          break;
-	        }
-	      default:;
-	      }
-        }
-      break;
-    default:;
-    }
-  switch (TREE_CODE (_p1))
-    {
-    case SSA_NAME:
-      if (gimple *_d1 = get_def (valueize, _p1))
-        {
-	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
-	    switch (gimple_assign_rhs_code (_a1))
-	      {
-	      case NEGATE_EXPR:
-	        {
-		  tree _q30 = gimple_assign_rhs1 (_a1);
-		  _q30 = do_valueize (valueize, _q30);
-		  {
-		    tree captures[3] ATTRIBUTE_UNUSED = { _q30, _p0, _p2 };
-		    if (gimple_simplify_619 (res_op, seq, valueize, type, captures, CFN_BUILT_IN_FMAF))
-		      return true;
-		  }
-	          break;
-	        }
-	      default:;
-	      }
-        }
-      break;
-    default:;
-    }
-  switch (TREE_CODE (_p2))
-    {
-    case SSA_NAME:
-      if (gimple *_d1 = get_def (valueize, _p2))
-        {
-	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
-	    switch (gimple_assign_rhs_code (_a1))
-	      {
-	      case NEGATE_EXPR:
-	        {
-		  tree _q40 = gimple_assign_rhs1 (_a1);
-		  _q40 = do_valueize (valueize, _q40);
-		  {
-		    tree captures[3] ATTRIBUTE_UNUSED = { _p0, _p1, _q40 };
-		    if (gimple_simplify_621 (res_op, seq, valueize, type, captures, CFN_BUILT_IN_FMAF))
-		      return true;
-		  }
-	          break;
-	        }
-	      default:;
-	      }
-        }
-      break;
-    default:;
-    }
-  switch (TREE_CODE (_p1))
-    {
-    case SSA_NAME:
-      if (gimple *_d1 = get_def (valueize, _p1))
-        {
-	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
-	    switch (gimple_assign_rhs_code (_a1))
-	      {
-	      case NEGATE_EXPR:
-	        {
-		  tree _q30 = gimple_assign_rhs1 (_a1);
-		  _q30 = do_valueize (valueize, _q30);
-		  switch (TREE_CODE (_p2))
-		    {
-		    case SSA_NAME:
-		      if (gimple *_d2 = get_def (valueize, _p2))
-		        {
-			  if (gassign *_a2 = dyn_cast <gassign *> (_d2))
-			    switch (gimple_assign_rhs_code (_a2))
-			      {
-			      case NEGATE_EXPR:
-			        {
-				  tree _q50 = gimple_assign_rhs1 (_a2);
-				  _q50 = do_valueize (valueize, _q50);
-				  {
-				    tree captures[3] ATTRIBUTE_UNUSED = { _q30, _p0, _q50 };
-				    if (gimple_simplify_620 (res_op, seq, valueize, type, captures, CFN_BUILT_IN_FMAF))
-				      return true;
-				  }
-			          break;
-			        }
-			      default:;
-			      }
-		        }
-		      break;
-		    default:;
-		    }
-	          break;
-	        }
-	      default:;
-	      }
-        }
-      break;
-    default:;
-    }
-  return false;
-}
-
-bool
-gimple_simplify_CFN_BUILT_IN_FMAL (gimple_match_op *res_op, gimple_seq *seq,
-                 tree (*valueize)(tree) ATTRIBUTE_UNUSED,
-                 code_helper ARG_UNUSED (code), tree ARG_UNUSED (type), tree _p0, tree _p1, tree _p2)
-{
-  const bool debug_dump = dump_file && (dump_flags & TDF_FOLDING);
-  switch (TREE_CODE (_p0))
-    {
-    case SSA_NAME:
-      if (gimple *_d1 = get_def (valueize, _p0))
-        {
-	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
-	    switch (gimple_assign_rhs_code (_a1))
-	      {
-	      case NEGATE_EXPR:
-	        {
-		  tree _q20 = gimple_assign_rhs1 (_a1);
-		  _q20 = do_valueize (valueize, _q20);
-		  {
-		    tree captures[3] ATTRIBUTE_UNUSED = { _q20, _p1, _p2 };
-		    if (gimple_simplify_619 (res_op, seq, valueize, type, captures, CFN_BUILT_IN_FMAL))
-		      return true;
-		  }
-		  switch (TREE_CODE (_p2))
-		    {
-		    case SSA_NAME:
-		      if (gimple *_d2 = get_def (valueize, _p2))
-		        {
-			  if (gassign *_a2 = dyn_cast <gassign *> (_d2))
-			    switch (gimple_assign_rhs_code (_a2))
-			      {
-			      case NEGATE_EXPR:
-			        {
-				  tree _q50 = gimple_assign_rhs1 (_a2);
-				  _q50 = do_valueize (valueize, _q50);
-				  {
-				    tree captures[3] ATTRIBUTE_UNUSED = { _q20, _p1, _q50 };
-				    if (gimple_simplify_620 (res_op, seq, valueize, type, captures, CFN_BUILT_IN_FMAL))
-				      return true;
-				  }
-			          break;
-			        }
-			      default:;
-			      }
-		        }
-		      break;
-		    default:;
-		    }
-	          break;
-	        }
-	      default:;
-	      }
-        }
-      break;
-    default:;
-    }
-  switch (TREE_CODE (_p1))
-    {
-    case SSA_NAME:
-      if (gimple *_d1 = get_def (valueize, _p1))
-        {
-	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
-	    switch (gimple_assign_rhs_code (_a1))
-	      {
-	      case NEGATE_EXPR:
-	        {
-		  tree _q30 = gimple_assign_rhs1 (_a1);
-		  _q30 = do_valueize (valueize, _q30);
-		  {
-		    tree captures[3] ATTRIBUTE_UNUSED = { _q30, _p0, _p2 };
-		    if (gimple_simplify_619 (res_op, seq, valueize, type, captures, CFN_BUILT_IN_FMAL))
-		      return true;
-		  }
-	          break;
-	        }
-	      default:;
-	      }
-        }
-      break;
-    default:;
-    }
-  switch (TREE_CODE (_p2))
-    {
-    case SSA_NAME:
-      if (gimple *_d1 = get_def (valueize, _p2))
-        {
-	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
-	    switch (gimple_assign_rhs_code (_a1))
-	      {
-	      case NEGATE_EXPR:
-	        {
-		  tree _q40 = gimple_assign_rhs1 (_a1);
-		  _q40 = do_valueize (valueize, _q40);
-		  {
-		    tree captures[3] ATTRIBUTE_UNUSED = { _p0, _p1, _q40 };
-		    if (gimple_simplify_621 (res_op, seq, valueize, type, captures, CFN_BUILT_IN_FMAL))
-		      return true;
-		  }
-	          break;
-	        }
-	      default:;
-	      }
-        }
-      break;
-    default:;
-    }
-  switch (TREE_CODE (_p1))
-    {
-    case SSA_NAME:
-      if (gimple *_d1 = get_def (valueize, _p1))
-        {
-	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
-	    switch (gimple_assign_rhs_code (_a1))
-	      {
-	      case NEGATE_EXPR:
-	        {
-		  tree _q30 = gimple_assign_rhs1 (_a1);
-		  _q30 = do_valueize (valueize, _q30);
-		  switch (TREE_CODE (_p2))
-		    {
-		    case SSA_NAME:
-		      if (gimple *_d2 = get_def (valueize, _p2))
-		        {
-			  if (gassign *_a2 = dyn_cast <gassign *> (_d2))
-			    switch (gimple_assign_rhs_code (_a2))
-			      {
-			      case NEGATE_EXPR:
-			        {
-				  tree _q50 = gimple_assign_rhs1 (_a2);
-				  _q50 = do_valueize (valueize, _q50);
-				  {
-				    tree captures[3] ATTRIBUTE_UNUSED = { _q30, _p0, _q50 };
-				    if (gimple_simplify_620 (res_op, seq, valueize, type, captures, CFN_BUILT_IN_FMAL))
-				      return true;
-				  }
-			          break;
-			        }
-			      default:;
-			      }
-		        }
-		      break;
-		    default:;
-		    }
-	          break;
-	        }
-	      default:;
-	      }
-        }
-      break;
-    default:;
-    }
-  return false;
-}
-
-bool
-gimple_simplify_CFN_FNMA (gimple_match_op *res_op, gimple_seq *seq,
-                 tree (*valueize)(tree) ATTRIBUTE_UNUSED,
-                 code_helper ARG_UNUSED (code), tree ARG_UNUSED (type), tree _p0, tree _p1, tree _p2)
-{
-  const bool debug_dump = dump_file && (dump_flags & TDF_FOLDING);
-  switch (TREE_CODE (_p0))
-    {
-    case SSA_NAME:
-      if (gimple *_d1 = get_def (valueize, _p0))
-        {
-	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
-	    switch (gimple_assign_rhs_code (_a1))
-	      {
-	      case NEGATE_EXPR:
-	        {
-		  tree _q20 = gimple_assign_rhs1 (_a1);
-		  _q20 = do_valueize (valueize, _q20);
-		  {
-		    tree captures[3] ATTRIBUTE_UNUSED = { _q20, _p1, _p2 };
-		    if (gimple_simplify_624 (res_op, seq, valueize, type, captures))
-		      return true;
-		  }
-		  switch (TREE_CODE (_p2))
-		    {
-		    case SSA_NAME:
-		      if (gimple *_d2 = get_def (valueize, _p2))
-		        {
-			  if (gassign *_a2 = dyn_cast <gassign *> (_d2))
-			    switch (gimple_assign_rhs_code (_a2))
-			      {
-			      case NEGATE_EXPR:
-			        {
-				  tree _q50 = gimple_assign_rhs1 (_a2);
-				  _q50 = do_valueize (valueize, _q50);
-				  {
-				    tree captures[3] ATTRIBUTE_UNUSED = { _q20, _p1, _q50 };
-				    if (gimple_simplify_625 (res_op, seq, valueize, type, captures))
-				      return true;
-				  }
-			          break;
-			        }
-			      default:;
-			      }
-		        }
-		      break;
-		    default:;
-		    }
-	          break;
-	        }
-	      default:;
-	      }
-        }
-      break;
-    default:;
-    }
-  switch (TREE_CODE (_p1))
-    {
-    case SSA_NAME:
-      if (gimple *_d1 = get_def (valueize, _p1))
-        {
-	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
-	    switch (gimple_assign_rhs_code (_a1))
-	      {
-	      case NEGATE_EXPR:
-	        {
-		  tree _q30 = gimple_assign_rhs1 (_a1);
-		  _q30 = do_valueize (valueize, _q30);
-		  {
-		    tree captures[3] ATTRIBUTE_UNUSED = { _q30, _p0, _p2 };
-		    if (gimple_simplify_624 (res_op, seq, valueize, type, captures))
-		      return true;
-		  }
-	          break;
-	        }
-	      default:;
-	      }
-        }
-      break;
-    default:;
-    }
-  switch (TREE_CODE (_p2))
-    {
-    case SSA_NAME:
-      if (gimple *_d1 = get_def (valueize, _p2))
-        {
-	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
-	    switch (gimple_assign_rhs_code (_a1))
-	      {
-	      case NEGATE_EXPR:
-	        {
-		  tree _q40 = gimple_assign_rhs1 (_a1);
-		  _q40 = do_valueize (valueize, _q40);
-		  {
-		    tree captures[3] ATTRIBUTE_UNUSED = { _p0, _p1, _q40 };
-		    if (canonicalize_math_after_vectorization_p ()
-)
-		      {
-			gimple_seq *lseq = seq;
-			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2375;
+		      if ((_p2 == _q21 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q21, 0) && types_match (_p2, _q21)))
 			{
-			  res_op->set_op (CFN_FNMS, type, 3);
-			  res_op->ops[0] = captures[0];
-			  res_op->ops[1] = captures[1];
-			  res_op->ops[2] = captures[2];
-			  res_op->resimplify (lseq, valueize);
-			  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1144, __FILE__, __LINE__, true);
-			  return true;
-			}
-next_after_fail2375:;
-		      }
-		  }
-	          break;
-	        }
-	      default:;
-	      }
-        }
-      break;
-    default:;
-    }
-  switch (TREE_CODE (_p1))
-    {
-    case SSA_NAME:
-      if (gimple *_d1 = get_def (valueize, _p1))
-        {
-	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
-	    switch (gimple_assign_rhs_code (_a1))
-	      {
-	      case NEGATE_EXPR:
-	        {
-		  tree _q30 = gimple_assign_rhs1 (_a1);
-		  _q30 = do_valueize (valueize, _q30);
-		  switch (TREE_CODE (_p2))
-		    {
-		    case SSA_NAME:
-		      if (gimple *_d2 = get_def (valueize, _p2))
-		        {
-			  if (gassign *_a2 = dyn_cast <gassign *> (_d2))
-			    switch (gimple_assign_rhs_code (_a2))
-			      {
-			      case NEGATE_EXPR:
-			        {
-				  tree _q50 = gimple_assign_rhs1 (_a2);
-				  _q50 = do_valueize (valueize, _q50);
-				  {
-				    tree captures[3] ATTRIBUTE_UNUSED = { _q30, _p0, _q50 };
-				    if (gimple_simplify_625 (res_op, seq, valueize, type, captures))
-				      return true;
-				  }
-			          break;
-			        }
-			      default:;
-			      }
+			  {
+			    tree captures[2] ATTRIBUTE_UNUSED = { _q20, _q21 };
+			    if (gimple_simplify_575 (res_op, seq, valueize, type, captures, LT_EXPR, MIN_EXPR, MIN_EXPR))
+			      return true;
+			  }
 		        }
-		      break;
-		    default:;
+		    }
+		  if ((_p1 == _q21 && ! TREE_SIDE_EFFECTS (_p1)) || (operand_equal_p (_p1, _q21, 0) && types_match (_p1, _q21)))
+		    {
+		      if ((_p2 == _q20 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q20, 0) && types_match (_p2, _q20)))
+			{
+			  {
+			    tree captures[2] ATTRIBUTE_UNUSED = { _q20, _q21 };
+			    if (gimple_simplify_576 (res_op, seq, valueize, type, captures, LT_EXPR, MAX_EXPR, MAX_EXPR))
+			      return true;
+			  }
+		        }
 		    }
 	          break;
 	        }
-	      default:;
-	      }
-        }
-      break;
-    default:;
-    }
-  return false;
-}
-
-bool
-gimple_simplify_VEC_PERM_EXPR (gimple_match_op *res_op, gimple_seq *seq,
-                 tree (*valueize)(tree) ATTRIBUTE_UNUSED,
-                 code_helper ARG_UNUSED (code), tree ARG_UNUSED (type), tree _p0, tree _p1, tree _p2)
-{
-  const bool debug_dump = dump_file && (dump_flags & TDF_FOLDING);
-  switch (TREE_CODE (_p0))
-    {
-    case SSA_NAME:
-      if (gimple *_d1 = get_def (valueize, _p0))
-        {
-	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
-	    switch (gimple_assign_rhs_code (_a1))
-	      {
-	      case PLUS_EXPR:
+	      case LE_EXPR:
+	        {
+		  tree _q20 = gimple_assign_rhs1 (_a1);
+		  _q20 = do_valueize (valueize, _q20);
+		  tree _q21 = gimple_assign_rhs2 (_a1);
+		  _q21 = do_valueize (valueize, _q21);
+		  if ((_p1 == _q20 && ! TREE_SIDE_EFFECTS (_p1)) || (operand_equal_p (_p1, _q20, 0) && types_match (_p1, _q20)))
+		    {
+		      if ((_p2 == _q21 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q21, 0) && types_match (_p2, _q21)))
+			{
+			  {
+			    tree captures[2] ATTRIBUTE_UNUSED = { _q20, _q21 };
+			    if (gimple_simplify_575 (res_op, seq, valueize, type, captures, LE_EXPR, MIN_EXPR, MIN_EXPR))
+			      return true;
+			  }
+		        }
+		    }
+		  if ((_p1 == _q21 && ! TREE_SIDE_EFFECTS (_p1)) || (operand_equal_p (_p1, _q21, 0) && types_match (_p1, _q21)))
+		    {
+		      if ((_p2 == _q20 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q20, 0) && types_match (_p2, _q20)))
+			{
+			  {
+			    tree captures[2] ATTRIBUTE_UNUSED = { _q20, _q21 };
+			    if (gimple_simplify_576 (res_op, seq, valueize, type, captures, LE_EXPR, MAX_EXPR, MAX_EXPR))
+			      return true;
+			  }
+		        }
+		    }
+	          break;
+	        }
+	      case UNGT_EXPR:
+	        {
+		  tree _q20 = gimple_assign_rhs1 (_a1);
+		  _q20 = do_valueize (valueize, _q20);
+		  tree _q21 = gimple_assign_rhs2 (_a1);
+		  _q21 = do_valueize (valueize, _q21);
+		  if ((_p1 == _q20 && ! TREE_SIDE_EFFECTS (_p1)) || (operand_equal_p (_p1, _q20, 0) && types_match (_p1, _q20)))
+		    {
+		      if ((_p2 == _q21 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q21, 0) && types_match (_p2, _q21)))
+			{
+			  {
+			    tree captures[2] ATTRIBUTE_UNUSED = { _q20, _q21 };
+			    if (gimple_simplify_575 (res_op, seq, valueize, type, captures, UNGT_EXPR, MIN_EXPR, MIN_EXPR))
+			      return true;
+			  }
+		        }
+		    }
+		  if ((_p1 == _q21 && ! TREE_SIDE_EFFECTS (_p1)) || (operand_equal_p (_p1, _q21, 0) && types_match (_p1, _q21)))
+		    {
+		      if ((_p2 == _q20 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q20, 0) && types_match (_p2, _q20)))
+			{
+			  {
+			    tree captures[2] ATTRIBUTE_UNUSED = { _q20, _q21 };
+			    if (gimple_simplify_576 (res_op, seq, valueize, type, captures, UNGT_EXPR, MAX_EXPR, MAX_EXPR))
+			      return true;
+			  }
+		        }
+		    }
+	          break;
+	        }
+	      case UNGE_EXPR:
+	        {
+		  tree _q20 = gimple_assign_rhs1 (_a1);
+		  _q20 = do_valueize (valueize, _q20);
+		  tree _q21 = gimple_assign_rhs2 (_a1);
+		  _q21 = do_valueize (valueize, _q21);
+		  if ((_p1 == _q20 && ! TREE_SIDE_EFFECTS (_p1)) || (operand_equal_p (_p1, _q20, 0) && types_match (_p1, _q20)))
+		    {
+		      if ((_p2 == _q21 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q21, 0) && types_match (_p2, _q21)))
+			{
+			  {
+			    tree captures[2] ATTRIBUTE_UNUSED = { _q20, _q21 };
+			    if (gimple_simplify_575 (res_op, seq, valueize, type, captures, UNGE_EXPR, MIN_EXPR, MIN_EXPR))
+			      return true;
+			  }
+		        }
+		    }
+		  if ((_p1 == _q21 && ! TREE_SIDE_EFFECTS (_p1)) || (operand_equal_p (_p1, _q21, 0) && types_match (_p1, _q21)))
+		    {
+		      if ((_p2 == _q20 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q20, 0) && types_match (_p2, _q20)))
+			{
+			  {
+			    tree captures[2] ATTRIBUTE_UNUSED = { _q20, _q21 };
+			    if (gimple_simplify_576 (res_op, seq, valueize, type, captures, UNGE_EXPR, MAX_EXPR, MAX_EXPR))
+			      return true;
+			  }
+		        }
+		    }
+	          break;
+	        }
+	      case GT_EXPR:
+	        {
+		  tree _q20 = gimple_assign_rhs1 (_a1);
+		  _q20 = do_valueize (valueize, _q20);
+		  tree _q21 = gimple_assign_rhs2 (_a1);
+		  _q21 = do_valueize (valueize, _q21);
+		  if ((_p1 == _q20 && ! TREE_SIDE_EFFECTS (_p1)) || (operand_equal_p (_p1, _q20, 0) && types_match (_p1, _q20)))
+		    {
+		      if ((_p2 == _q21 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q21, 0) && types_match (_p2, _q21)))
+			{
+			  {
+			    tree captures[2] ATTRIBUTE_UNUSED = { _q20, _q21 };
+			    if (gimple_simplify_575 (res_op, seq, valueize, type, captures, GT_EXPR, MAX_EXPR, MAX_EXPR))
+			      return true;
+			  }
+		        }
+		    }
+		  if ((_p1 == _q21 && ! TREE_SIDE_EFFECTS (_p1)) || (operand_equal_p (_p1, _q21, 0) && types_match (_p1, _q21)))
+		    {
+		      if ((_p2 == _q20 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q20, 0) && types_match (_p2, _q20)))
+			{
+			  {
+			    tree captures[2] ATTRIBUTE_UNUSED = { _q20, _q21 };
+			    if (gimple_simplify_576 (res_op, seq, valueize, type, captures, GT_EXPR, MIN_EXPR, MIN_EXPR))
+			      return true;
+			  }
+		        }
+		    }
+	          break;
+	        }
+	      case GE_EXPR:
+	        {
+		  tree _q20 = gimple_assign_rhs1 (_a1);
+		  _q20 = do_valueize (valueize, _q20);
+		  tree _q21 = gimple_assign_rhs2 (_a1);
+		  _q21 = do_valueize (valueize, _q21);
+		  if ((_p1 == _q20 && ! TREE_SIDE_EFFECTS (_p1)) || (operand_equal_p (_p1, _q20, 0) && types_match (_p1, _q20)))
+		    {
+		      if ((_p2 == _q21 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q21, 0) && types_match (_p2, _q21)))
+			{
+			  {
+			    tree captures[2] ATTRIBUTE_UNUSED = { _q20, _q21 };
+			    if (gimple_simplify_575 (res_op, seq, valueize, type, captures, GE_EXPR, MAX_EXPR, MAX_EXPR))
+			      return true;
+			  }
+		        }
+		    }
+		  if ((_p1 == _q21 && ! TREE_SIDE_EFFECTS (_p1)) || (operand_equal_p (_p1, _q21, 0) && types_match (_p1, _q21)))
+		    {
+		      if ((_p2 == _q20 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q20, 0) && types_match (_p2, _q20)))
+			{
+			  {
+			    tree captures[2] ATTRIBUTE_UNUSED = { _q20, _q21 };
+			    if (gimple_simplify_576 (res_op, seq, valueize, type, captures, GE_EXPR, MIN_EXPR, MIN_EXPR))
+			      return true;
+			  }
+		        }
+		    }
+	          break;
+	        }
+	      case UNLT_EXPR:
+	        {
+		  tree _q20 = gimple_assign_rhs1 (_a1);
+		  _q20 = do_valueize (valueize, _q20);
+		  tree _q21 = gimple_assign_rhs2 (_a1);
+		  _q21 = do_valueize (valueize, _q21);
+		  if ((_p1 == _q20 && ! TREE_SIDE_EFFECTS (_p1)) || (operand_equal_p (_p1, _q20, 0) && types_match (_p1, _q20)))
+		    {
+		      if ((_p2 == _q21 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q21, 0) && types_match (_p2, _q21)))
+			{
+			  {
+			    tree captures[2] ATTRIBUTE_UNUSED = { _q20, _q21 };
+			    if (gimple_simplify_575 (res_op, seq, valueize, type, captures, UNLT_EXPR, MAX_EXPR, MAX_EXPR))
+			      return true;
+			  }
+		        }
+		    }
+		  if ((_p1 == _q21 && ! TREE_SIDE_EFFECTS (_p1)) || (operand_equal_p (_p1, _q21, 0) && types_match (_p1, _q21)))
+		    {
+		      if ((_p2 == _q20 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q20, 0) && types_match (_p2, _q20)))
+			{
+			  {
+			    tree captures[2] ATTRIBUTE_UNUSED = { _q20, _q21 };
+			    if (gimple_simplify_576 (res_op, seq, valueize, type, captures, UNLT_EXPR, MIN_EXPR, MIN_EXPR))
+			      return true;
+			  }
+		        }
+		    }
+	          break;
+	        }
+	      case UNLE_EXPR:
+	        {
+		  tree _q20 = gimple_assign_rhs1 (_a1);
+		  _q20 = do_valueize (valueize, _q20);
+		  tree _q21 = gimple_assign_rhs2 (_a1);
+		  _q21 = do_valueize (valueize, _q21);
+		  if ((_p1 == _q20 && ! TREE_SIDE_EFFECTS (_p1)) || (operand_equal_p (_p1, _q20, 0) && types_match (_p1, _q20)))
+		    {
+		      if ((_p2 == _q21 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q21, 0) && types_match (_p2, _q21)))
+			{
+			  {
+			    tree captures[2] ATTRIBUTE_UNUSED = { _q20, _q21 };
+			    if (gimple_simplify_575 (res_op, seq, valueize, type, captures, UNLE_EXPR, MAX_EXPR, MAX_EXPR))
+			      return true;
+			  }
+		        }
+		    }
+		  if ((_p1 == _q21 && ! TREE_SIDE_EFFECTS (_p1)) || (operand_equal_p (_p1, _q21, 0) && types_match (_p1, _q21)))
+		    {
+		      if ((_p2 == _q20 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q20, 0) && types_match (_p2, _q20)))
+			{
+			  {
+			    tree captures[2] ATTRIBUTE_UNUSED = { _q20, _q21 };
+			    if (gimple_simplify_576 (res_op, seq, valueize, type, captures, UNLE_EXPR, MIN_EXPR, MIN_EXPR))
+			      return true;
+			  }
+		        }
+		    }
+	          break;
+	        }
+	      case NE_EXPR:
 	        {
 		  tree _q20 = gimple_assign_rhs1 (_a1);
 		  _q20 = do_valueize (valueize, _q20);
@@ -17602,18 +17793,645 @@ gimple_simplify_VEC_PERM_EXPR (gimple_match_op *res_op, gimple_seq *seq,
 				  _q50 = do_valueize (valueize, _q50);
 				  tree _q51 = gimple_assign_rhs2 (_a2);
 				  _q51 = do_valueize (valueize, _q51);
-				  switch (TREE_CODE (_p2))
+				  if ((_q50 == _q20 && ! TREE_SIDE_EFFECTS (_q50)) || (operand_equal_p (_q50, _q20, 0) && types_match (_q50, _q20)))
 				    {
-				    case VECTOR_CST:
-				      {
+				      if ((_q51 == _q21 && ! TREE_SIDE_EFFECTS (_q51)) || (operand_equal_p (_q51, _q21, 0) && types_match (_q51, _q21)))
 					{
-					  tree captures[5] ATTRIBUTE_UNUSED = { _q20, _q21, _q50, _q51, _p2 };
-					  if (gimple_simplify_647 (res_op, seq, valueize, type, captures, PLUS_EXPR, MINUS_EXPR))
-					    return true;
-					}
-				        break;
-				      }
-				    default:;
+					  if (integer_zerop (_p2))
+					    {
+					      {
+						tree captures[3] ATTRIBUTE_UNUSED = { _q20, _q21, _p1 };
+						if (gimple_simplify_577 (res_op, seq, valueize, type, captures))
+						  return true;
+					      }
+					    }
+				        }
+				    }
+				  if ((_q50 == _q21 && ! TREE_SIDE_EFFECTS (_q50)) || (operand_equal_p (_q50, _q21, 0) && types_match (_q50, _q21)))
+				    {
+				      if ((_q51 == _q20 && ! TREE_SIDE_EFFECTS (_q51)) || (operand_equal_p (_q51, _q20, 0) && types_match (_q51, _q20)))
+					{
+					  if (integer_zerop (_p2))
+					    {
+					      {
+						tree captures[3] ATTRIBUTE_UNUSED = { _q21, _q20, _p1 };
+						if (gimple_simplify_577 (res_op, seq, valueize, type, captures))
+						  return true;
+					      }
+					    }
+				        }
+				    }
+			          break;
+			        }
+			      case BIT_XOR_EXPR:
+			        {
+				  tree _q50 = gimple_assign_rhs1 (_a2);
+				  _q50 = do_valueize (valueize, _q50);
+				  tree _q51 = gimple_assign_rhs2 (_a2);
+				  _q51 = do_valueize (valueize, _q51);
+				  if (tree_swap_operands_p (_q50, _q51))
+				    std::swap (_q50, _q51);
+				  if ((_q50 == _q20 && ! TREE_SIDE_EFFECTS (_q50)) || (operand_equal_p (_q50, _q20, 0) && types_match (_q50, _q20)))
+				    {
+				      if ((_q51 == _q21 && ! TREE_SIDE_EFFECTS (_q51)) || (operand_equal_p (_q51, _q21, 0) && types_match (_q51, _q21)))
+					{
+					  if (integer_zerop (_p2))
+					    {
+					      {
+						tree captures[3] ATTRIBUTE_UNUSED = { _q20, _q21, _p1 };
+						if (gimple_simplify_578 (res_op, seq, valueize, type, captures))
+						  return true;
+					      }
+					      {
+						tree captures[3] ATTRIBUTE_UNUSED = { _q21, _q20, _p1 };
+						if (gimple_simplify_578 (res_op, seq, valueize, type, captures))
+						  return true;
+					      }
+					    }
+				        }
+				    }
+				  if ((_q50 == _q21 && ! TREE_SIDE_EFFECTS (_q50)) || (operand_equal_p (_q50, _q21, 0) && types_match (_q50, _q21)))
+				    {
+				      if ((_q51 == _q20 && ! TREE_SIDE_EFFECTS (_q51)) || (operand_equal_p (_q51, _q20, 0) && types_match (_q51, _q20)))
+					{
+					  if (integer_zerop (_p2))
+					    {
+					      {
+						tree captures[3] ATTRIBUTE_UNUSED = { _q20, _q21, _p1 };
+						if (gimple_simplify_578 (res_op, seq, valueize, type, captures))
+						  return true;
+					      }
+					      {
+						tree captures[3] ATTRIBUTE_UNUSED = { _q21, _q20, _p1 };
+						if (gimple_simplify_578 (res_op, seq, valueize, type, captures))
+						  return true;
+					      }
+					    }
+				        }
+				    }
+			          break;
+			        }
+			      case BIT_AND_EXPR:
+			        {
+				  tree _q50 = gimple_assign_rhs1 (_a2);
+				  _q50 = do_valueize (valueize, _q50);
+				  tree _q51 = gimple_assign_rhs2 (_a2);
+				  _q51 = do_valueize (valueize, _q51);
+				  if (tree_swap_operands_p (_q50, _q51))
+				    std::swap (_q50, _q51);
+				  if ((_q50 == _q20 && ! TREE_SIDE_EFFECTS (_q50)) || (operand_equal_p (_q50, _q20, 0) && types_match (_q50, _q20)))
+				    {
+				      if ((_q51 == _q21 && ! TREE_SIDE_EFFECTS (_q51)) || (operand_equal_p (_q51, _q21, 0) && types_match (_q51, _q21)))
+					{
+					  if ((_p2 == _q20 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q20, 0) && types_match (_p2, _q20)))
+					    {
+					      {
+						tree captures[3] ATTRIBUTE_UNUSED = { _q20, _q21, _p1 };
+						if (gimple_simplify_579 (res_op, seq, valueize, type, captures, BIT_AND_EXPR))
+						  return true;
+					      }
+					    }
+					  if ((_p2 == _q21 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q21, 0) && types_match (_p2, _q21)))
+					    {
+					      {
+						tree captures[3] ATTRIBUTE_UNUSED = { _q21, _q20, _p1 };
+						if (gimple_simplify_579 (res_op, seq, valueize, type, captures, BIT_AND_EXPR))
+						  return true;
+					      }
+					    }
+				        }
+				    }
+				  if ((_q50 == _q21 && ! TREE_SIDE_EFFECTS (_q50)) || (operand_equal_p (_q50, _q21, 0) && types_match (_q50, _q21)))
+				    {
+				      if ((_q51 == _q20 && ! TREE_SIDE_EFFECTS (_q51)) || (operand_equal_p (_q51, _q20, 0) && types_match (_q51, _q20)))
+					{
+					  if ((_p2 == _q20 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q20, 0) && types_match (_p2, _q20)))
+					    {
+					      {
+						tree captures[3] ATTRIBUTE_UNUSED = { _q20, _q21, _p1 };
+						if (gimple_simplify_579 (res_op, seq, valueize, type, captures, BIT_AND_EXPR))
+						  return true;
+					      }
+					    }
+					  if ((_p2 == _q21 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q21, 0) && types_match (_p2, _q21)))
+					    {
+					      {
+						tree captures[3] ATTRIBUTE_UNUSED = { _q21, _q20, _p1 };
+						if (gimple_simplify_579 (res_op, seq, valueize, type, captures, BIT_AND_EXPR))
+						  return true;
+					      }
+					    }
+				        }
+				    }
+			          break;
+			        }
+			      case BIT_IOR_EXPR:
+			        {
+				  tree _q50 = gimple_assign_rhs1 (_a2);
+				  _q50 = do_valueize (valueize, _q50);
+				  tree _q51 = gimple_assign_rhs2 (_a2);
+				  _q51 = do_valueize (valueize, _q51);
+				  if (tree_swap_operands_p (_q50, _q51))
+				    std::swap (_q50, _q51);
+				  if ((_q50 == _q20 && ! TREE_SIDE_EFFECTS (_q50)) || (operand_equal_p (_q50, _q20, 0) && types_match (_q50, _q20)))
+				    {
+				      if ((_q51 == _q21 && ! TREE_SIDE_EFFECTS (_q51)) || (operand_equal_p (_q51, _q21, 0) && types_match (_q51, _q21)))
+					{
+					  if ((_p2 == _q20 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q20, 0) && types_match (_p2, _q20)))
+					    {
+					      {
+						tree captures[3] ATTRIBUTE_UNUSED = { _q20, _q21, _p1 };
+						if (gimple_simplify_579 (res_op, seq, valueize, type, captures, BIT_IOR_EXPR))
+						  return true;
+					      }
+					    }
+					  if ((_p2 == _q21 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q21, 0) && types_match (_p2, _q21)))
+					    {
+					      {
+						tree captures[3] ATTRIBUTE_UNUSED = { _q21, _q20, _p1 };
+						if (gimple_simplify_579 (res_op, seq, valueize, type, captures, BIT_IOR_EXPR))
+						  return true;
+					      }
+					    }
+				        }
+				    }
+				  if ((_q50 == _q21 && ! TREE_SIDE_EFFECTS (_q50)) || (operand_equal_p (_q50, _q21, 0) && types_match (_q50, _q21)))
+				    {
+				      if ((_q51 == _q20 && ! TREE_SIDE_EFFECTS (_q51)) || (operand_equal_p (_q51, _q20, 0) && types_match (_q51, _q20)))
+					{
+					  if ((_p2 == _q20 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q20, 0) && types_match (_p2, _q20)))
+					    {
+					      {
+						tree captures[3] ATTRIBUTE_UNUSED = { _q20, _q21, _p1 };
+						if (gimple_simplify_579 (res_op, seq, valueize, type, captures, BIT_IOR_EXPR))
+						  return true;
+					      }
+					    }
+					  if ((_p2 == _q21 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q21, 0) && types_match (_p2, _q21)))
+					    {
+					      {
+						tree captures[3] ATTRIBUTE_UNUSED = { _q21, _q20, _p1 };
+						if (gimple_simplify_579 (res_op, seq, valueize, type, captures, BIT_IOR_EXPR))
+						  return true;
+					      }
+					    }
+				        }
+				    }
+			          break;
+			        }
+			      case MIN_EXPR:
+			        {
+				  tree _q50 = gimple_assign_rhs1 (_a2);
+				  _q50 = do_valueize (valueize, _q50);
+				  tree _q51 = gimple_assign_rhs2 (_a2);
+				  _q51 = do_valueize (valueize, _q51);
+				  if (tree_swap_operands_p (_q50, _q51))
+				    std::swap (_q50, _q51);
+				  if ((_q50 == _q20 && ! TREE_SIDE_EFFECTS (_q50)) || (operand_equal_p (_q50, _q20, 0) && types_match (_q50, _q20)))
+				    {
+				      if ((_q51 == _q21 && ! TREE_SIDE_EFFECTS (_q51)) || (operand_equal_p (_q51, _q21, 0) && types_match (_q51, _q21)))
+					{
+					  if ((_p2 == _q20 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q20, 0) && types_match (_p2, _q20)))
+					    {
+					      {
+						tree captures[3] ATTRIBUTE_UNUSED = { _q20, _q21, _p1 };
+						if (gimple_simplify_579 (res_op, seq, valueize, type, captures, MIN_EXPR))
+						  return true;
+					      }
+					    }
+					  if ((_p2 == _q21 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q21, 0) && types_match (_p2, _q21)))
+					    {
+					      {
+						tree captures[3] ATTRIBUTE_UNUSED = { _q21, _q20, _p1 };
+						if (gimple_simplify_579 (res_op, seq, valueize, type, captures, MIN_EXPR))
+						  return true;
+					      }
+					    }
+				        }
+				    }
+				  if ((_q50 == _q21 && ! TREE_SIDE_EFFECTS (_q50)) || (operand_equal_p (_q50, _q21, 0) && types_match (_q50, _q21)))
+				    {
+				      if ((_q51 == _q20 && ! TREE_SIDE_EFFECTS (_q51)) || (operand_equal_p (_q51, _q20, 0) && types_match (_q51, _q20)))
+					{
+					  if ((_p2 == _q20 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q20, 0) && types_match (_p2, _q20)))
+					    {
+					      {
+						tree captures[3] ATTRIBUTE_UNUSED = { _q20, _q21, _p1 };
+						if (gimple_simplify_579 (res_op, seq, valueize, type, captures, MIN_EXPR))
+						  return true;
+					      }
+					    }
+					  if ((_p2 == _q21 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q21, 0) && types_match (_p2, _q21)))
+					    {
+					      {
+						tree captures[3] ATTRIBUTE_UNUSED = { _q21, _q20, _p1 };
+						if (gimple_simplify_579 (res_op, seq, valueize, type, captures, MIN_EXPR))
+						  return true;
+					      }
+					    }
+				        }
+				    }
+			          break;
+			        }
+			      case MAX_EXPR:
+			        {
+				  tree _q50 = gimple_assign_rhs1 (_a2);
+				  _q50 = do_valueize (valueize, _q50);
+				  tree _q51 = gimple_assign_rhs2 (_a2);
+				  _q51 = do_valueize (valueize, _q51);
+				  if (tree_swap_operands_p (_q50, _q51))
+				    std::swap (_q50, _q51);
+				  if ((_q50 == _q20 && ! TREE_SIDE_EFFECTS (_q50)) || (operand_equal_p (_q50, _q20, 0) && types_match (_q50, _q20)))
+				    {
+				      if ((_q51 == _q21 && ! TREE_SIDE_EFFECTS (_q51)) || (operand_equal_p (_q51, _q21, 0) && types_match (_q51, _q21)))
+					{
+					  if ((_p2 == _q20 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q20, 0) && types_match (_p2, _q20)))
+					    {
+					      {
+						tree captures[3] ATTRIBUTE_UNUSED = { _q20, _q21, _p1 };
+						if (gimple_simplify_579 (res_op, seq, valueize, type, captures, MAX_EXPR))
+						  return true;
+					      }
+					    }
+					  if ((_p2 == _q21 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q21, 0) && types_match (_p2, _q21)))
+					    {
+					      {
+						tree captures[3] ATTRIBUTE_UNUSED = { _q21, _q20, _p1 };
+						if (gimple_simplify_579 (res_op, seq, valueize, type, captures, MAX_EXPR))
+						  return true;
+					      }
+					    }
+				        }
+				    }
+				  if ((_q50 == _q21 && ! TREE_SIDE_EFFECTS (_q50)) || (operand_equal_p (_q50, _q21, 0) && types_match (_q50, _q21)))
+				    {
+				      if ((_q51 == _q20 && ! TREE_SIDE_EFFECTS (_q51)) || (operand_equal_p (_q51, _q20, 0) && types_match (_q51, _q20)))
+					{
+					  if ((_p2 == _q20 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q20, 0) && types_match (_p2, _q20)))
+					    {
+					      {
+						tree captures[3] ATTRIBUTE_UNUSED = { _q20, _q21, _p1 };
+						if (gimple_simplify_579 (res_op, seq, valueize, type, captures, MAX_EXPR))
+						  return true;
+					      }
+					    }
+					  if ((_p2 == _q21 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q21, 0) && types_match (_p2, _q21)))
+					    {
+					      {
+						tree captures[3] ATTRIBUTE_UNUSED = { _q21, _q20, _p1 };
+						if (gimple_simplify_579 (res_op, seq, valueize, type, captures, MAX_EXPR))
+						  return true;
+					      }
+					    }
+				        }
+				    }
+			          break;
+			        }
+			      case MULT_EXPR:
+			        {
+				  tree _q50 = gimple_assign_rhs1 (_a2);
+				  _q50 = do_valueize (valueize, _q50);
+				  tree _q51 = gimple_assign_rhs2 (_a2);
+				  _q51 = do_valueize (valueize, _q51);
+				  if (tree_swap_operands_p (_q50, _q51))
+				    std::swap (_q50, _q51);
+				  if ((_q50 == _q20 && ! TREE_SIDE_EFFECTS (_q50)) || (operand_equal_p (_q50, _q20, 0) && types_match (_q50, _q20)))
+				    {
+				      if ((_q51 == _q21 && ! TREE_SIDE_EFFECTS (_q51)) || (operand_equal_p (_q51, _q21, 0) && types_match (_q51, _q21)))
+					{
+					  switch (TREE_CODE (_p2))
+					    {
+					    case SSA_NAME:
+					      if (gimple *_d3 = get_def (valueize, _p2))
+					        {
+						  if (gassign *_a3 = dyn_cast <gassign *> (_d3))
+						    switch (gimple_assign_rhs_code (_a3))
+						      {
+						      case MULT_EXPR:
+						        {
+							  tree _q80 = gimple_assign_rhs1 (_a3);
+							  _q80 = do_valueize (valueize, _q80);
+							  tree _q81 = gimple_assign_rhs2 (_a3);
+							  _q81 = do_valueize (valueize, _q81);
+							  if (tree_swap_operands_p (_q80, _q81))
+							    std::swap (_q80, _q81);
+							  if ((_q80 == _q20 && ! TREE_SIDE_EFFECTS (_q80)) || (operand_equal_p (_q80, _q20, 0) && types_match (_q80, _q20)))
+							    {
+							      if ((_q81 == _q20 && ! TREE_SIDE_EFFECTS (_q81)) || (operand_equal_p (_q81, _q20, 0) && types_match (_q81, _q20)))
+								{
+								  {
+								    tree captures[3] ATTRIBUTE_UNUSED = { _q20, _q21, _p1 };
+								    const enum tree_code op = MULT_EXPR;
+								    if (ANY_INTEGRAL_TYPE_P (type)
+)
+								      {
+									gimple_seq *lseq = seq;
+									if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2237;
+									{
+									  tree tem;
+									  tem = captures[2];
+									  res_op->set_value (tem);
+									  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 718, __FILE__, __LINE__, true);
+									  return true;
+									}
+next_after_fail2237:;
+								      }
+								  }
+							        }
+							    }
+						          break;
+						        }
+						      default:;
+						      }
+					        }
+					      break;
+					    default:;
+					    }
+				        }
+				    }
+				  if ((_q50 == _q21 && ! TREE_SIDE_EFFECTS (_q50)) || (operand_equal_p (_q50, _q21, 0) && types_match (_q50, _q21)))
+				    {
+				      if ((_q51 == _q20 && ! TREE_SIDE_EFFECTS (_q51)) || (operand_equal_p (_q51, _q20, 0) && types_match (_q51, _q20)))
+					{
+					  switch (TREE_CODE (_p2))
+					    {
+					    case SSA_NAME:
+					      if (gimple *_d3 = get_def (valueize, _p2))
+					        {
+						  if (gassign *_a3 = dyn_cast <gassign *> (_d3))
+						    switch (gimple_assign_rhs_code (_a3))
+						      {
+						      case MULT_EXPR:
+						        {
+							  tree _q80 = gimple_assign_rhs1 (_a3);
+							  _q80 = do_valueize (valueize, _q80);
+							  tree _q81 = gimple_assign_rhs2 (_a3);
+							  _q81 = do_valueize (valueize, _q81);
+							  if (tree_swap_operands_p (_q80, _q81))
+							    std::swap (_q80, _q81);
+							  if ((_q80 == _q21 && ! TREE_SIDE_EFFECTS (_q80)) || (operand_equal_p (_q80, _q21, 0) && types_match (_q80, _q21)))
+							    {
+							      if ((_q81 == _q21 && ! TREE_SIDE_EFFECTS (_q81)) || (operand_equal_p (_q81, _q21, 0) && types_match (_q81, _q21)))
+								{
+								  {
+								    tree captures[3] ATTRIBUTE_UNUSED = { _q21, _q20, _p1 };
+								    const enum tree_code op = MULT_EXPR;
+								    if (ANY_INTEGRAL_TYPE_P (type)
+)
+								      {
+									gimple_seq *lseq = seq;
+									if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2238;
+									{
+									  tree tem;
+									  tem = captures[2];
+									  res_op->set_value (tem);
+									  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 718, __FILE__, __LINE__, true);
+									  return true;
+									}
+next_after_fail2238:;
+								      }
+								  }
+							        }
+							    }
+						          break;
+						        }
+						      default:;
+						      }
+					        }
+					      break;
+					    default:;
+					    }
+				        }
+				    }
+			          break;
+			        }
+			      case PLUS_EXPR:
+			        {
+				  tree _q50 = gimple_assign_rhs1 (_a2);
+				  _q50 = do_valueize (valueize, _q50);
+				  tree _q51 = gimple_assign_rhs2 (_a2);
+				  _q51 = do_valueize (valueize, _q51);
+				  if (tree_swap_operands_p (_q50, _q51))
+				    std::swap (_q50, _q51);
+				  if ((_q50 == _q20 && ! TREE_SIDE_EFFECTS (_q50)) || (operand_equal_p (_q50, _q20, 0) && types_match (_q50, _q20)))
+				    {
+				      if ((_q51 == _q21 && ! TREE_SIDE_EFFECTS (_q51)) || (operand_equal_p (_q51, _q21, 0) && types_match (_q51, _q21)))
+					{
+					  switch (TREE_CODE (_p2))
+					    {
+					    case SSA_NAME:
+					      if (gimple *_d3 = get_def (valueize, _p2))
+					        {
+						  if (gassign *_a3 = dyn_cast <gassign *> (_d3))
+						    switch (gimple_assign_rhs_code (_a3))
+						      {
+						      case PLUS_EXPR:
+						        {
+							  tree _q80 = gimple_assign_rhs1 (_a3);
+							  _q80 = do_valueize (valueize, _q80);
+							  tree _q81 = gimple_assign_rhs2 (_a3);
+							  _q81 = do_valueize (valueize, _q81);
+							  if (tree_swap_operands_p (_q80, _q81))
+							    std::swap (_q80, _q81);
+							  if ((_q80 == _q20 && ! TREE_SIDE_EFFECTS (_q80)) || (operand_equal_p (_q80, _q20, 0) && types_match (_q80, _q20)))
+							    {
+							      if ((_q81 == _q20 && ! TREE_SIDE_EFFECTS (_q81)) || (operand_equal_p (_q81, _q20, 0) && types_match (_q81, _q20)))
+								{
+								  {
+								    tree captures[3] ATTRIBUTE_UNUSED = { _q20, _q21, _p1 };
+								    const enum tree_code op = PLUS_EXPR;
+								    if (ANY_INTEGRAL_TYPE_P (type)
+)
+								      {
+									gimple_seq *lseq = seq;
+									if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2239;
+									{
+									  tree tem;
+									  tem = captures[2];
+									  res_op->set_value (tem);
+									  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 718, __FILE__, __LINE__, true);
+									  return true;
+									}
+next_after_fail2239:;
+								      }
+								  }
+							        }
+							    }
+						          break;
+						        }
+						      case MULT_EXPR:
+						        {
+							  tree _q80 = gimple_assign_rhs1 (_a3);
+							  _q80 = do_valueize (valueize, _q80);
+							  tree _q81 = gimple_assign_rhs2 (_a3);
+							  _q81 = do_valueize (valueize, _q81);
+							  if (tree_swap_operands_p (_q80, _q81))
+							    std::swap (_q80, _q81);
+							  if ((_q80 == _q20 && ! TREE_SIDE_EFFECTS (_q80)) || (operand_equal_p (_q80, _q20, 0) && types_match (_q80, _q20)))
+							    {
+							      if (uniform_integer_cst_p (_q81))
+								{
+								  {
+								    tree captures[4] ATTRIBUTE_UNUSED = { _q20, _q21, _p1, _q81 };
+								    if (wi::to_wide (uniform_integer_cst_p (captures[3])) == 2
+)
+								      {
+									gimple_seq *lseq = seq;
+									if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2240;
+									{
+									  tree tem;
+									  tem = captures[2];
+									  res_op->set_value (tem);
+									  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 719, __FILE__, __LINE__, true);
+									  return true;
+									}
+next_after_fail2240:;
+								      }
+								  }
+							        }
+							    }
+							  if ((_q80 == _q21 && ! TREE_SIDE_EFFECTS (_q80)) || (operand_equal_p (_q80, _q21, 0) && types_match (_q80, _q21)))
+							    {
+							      if (uniform_integer_cst_p (_q81))
+								{
+								  {
+								    tree captures[4] ATTRIBUTE_UNUSED = { _q21, _q20, _p1, _q81 };
+								    if (wi::to_wide (uniform_integer_cst_p (captures[3])) == 2
+)
+								      {
+									gimple_seq *lseq = seq;
+									if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2241;
+									{
+									  tree tem;
+									  tem = captures[2];
+									  res_op->set_value (tem);
+									  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 719, __FILE__, __LINE__, true);
+									  return true;
+									}
+next_after_fail2241:;
+								      }
+								  }
+							        }
+							    }
+						          break;
+						        }
+						      default:;
+						      }
+					        }
+					      break;
+					    default:;
+					    }
+				        }
+				    }
+				  if ((_q50 == _q21 && ! TREE_SIDE_EFFECTS (_q50)) || (operand_equal_p (_q50, _q21, 0) && types_match (_q50, _q21)))
+				    {
+				      if ((_q51 == _q20 && ! TREE_SIDE_EFFECTS (_q51)) || (operand_equal_p (_q51, _q20, 0) && types_match (_q51, _q20)))
+					{
+					  switch (TREE_CODE (_p2))
+					    {
+					    case SSA_NAME:
+					      if (gimple *_d3 = get_def (valueize, _p2))
+					        {
+						  if (gassign *_a3 = dyn_cast <gassign *> (_d3))
+						    switch (gimple_assign_rhs_code (_a3))
+						      {
+						      case PLUS_EXPR:
+						        {
+							  tree _q80 = gimple_assign_rhs1 (_a3);
+							  _q80 = do_valueize (valueize, _q80);
+							  tree _q81 = gimple_assign_rhs2 (_a3);
+							  _q81 = do_valueize (valueize, _q81);
+							  if (tree_swap_operands_p (_q80, _q81))
+							    std::swap (_q80, _q81);
+							  if ((_q80 == _q21 && ! TREE_SIDE_EFFECTS (_q80)) || (operand_equal_p (_q80, _q21, 0) && types_match (_q80, _q21)))
+							    {
+							      if ((_q81 == _q21 && ! TREE_SIDE_EFFECTS (_q81)) || (operand_equal_p (_q81, _q21, 0) && types_match (_q81, _q21)))
+								{
+								  {
+								    tree captures[3] ATTRIBUTE_UNUSED = { _q21, _q20, _p1 };
+								    const enum tree_code op = PLUS_EXPR;
+								    if (ANY_INTEGRAL_TYPE_P (type)
+)
+								      {
+									gimple_seq *lseq = seq;
+									if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2242;
+									{
+									  tree tem;
+									  tem = captures[2];
+									  res_op->set_value (tem);
+									  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 718, __FILE__, __LINE__, true);
+									  return true;
+									}
+next_after_fail2242:;
+								      }
+								  }
+							        }
+							    }
+						          break;
+						        }
+						      case MULT_EXPR:
+						        {
+							  tree _q80 = gimple_assign_rhs1 (_a3);
+							  _q80 = do_valueize (valueize, _q80);
+							  tree _q81 = gimple_assign_rhs2 (_a3);
+							  _q81 = do_valueize (valueize, _q81);
+							  if (tree_swap_operands_p (_q80, _q81))
+							    std::swap (_q80, _q81);
+							  if ((_q80 == _q20 && ! TREE_SIDE_EFFECTS (_q80)) || (operand_equal_p (_q80, _q20, 0) && types_match (_q80, _q20)))
+							    {
+							      if (uniform_integer_cst_p (_q81))
+								{
+								  {
+								    tree captures[4] ATTRIBUTE_UNUSED = { _q20, _q21, _p1, _q81 };
+								    if (wi::to_wide (uniform_integer_cst_p (captures[3])) == 2
+)
+								      {
+									gimple_seq *lseq = seq;
+									if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2243;
+									{
+									  tree tem;
+									  tem = captures[2];
+									  res_op->set_value (tem);
+									  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 719, __FILE__, __LINE__, true);
+									  return true;
+									}
+next_after_fail2243:;
+								      }
+								  }
+							        }
+							    }
+							  if ((_q80 == _q21 && ! TREE_SIDE_EFFECTS (_q80)) || (operand_equal_p (_q80, _q21, 0) && types_match (_q80, _q21)))
+							    {
+							      if (uniform_integer_cst_p (_q81))
+								{
+								  {
+								    tree captures[4] ATTRIBUTE_UNUSED = { _q21, _q20, _p1, _q81 };
+								    if (wi::to_wide (uniform_integer_cst_p (captures[3])) == 2
+)
+								      {
+									gimple_seq *lseq = seq;
+									if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2244;
+									{
+									  tree tem;
+									  tem = captures[2];
+									  res_op->set_value (tem);
+									  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 719, __FILE__, __LINE__, true);
+									  return true;
+									}
+next_after_fail2244:;
+								      }
+								  }
+							        }
+							    }
+						          break;
+						        }
+						      default:;
+						      }
+					        }
+					      break;
+					    default:;
+					    }
+				        }
 				    }
 			          break;
 			        }
@@ -17625,48 +18443,45 @@ gimple_simplify_VEC_PERM_EXPR (gimple_match_op *res_op, gimple_seq *seq,
 		    }
 	          break;
 	        }
-	      case MINUS_EXPR:
+	      default:;
+	      }
+        }
+      break;
+    default:;
+    }
+  switch (TREE_CODE (_p1))
+    {
+    case SSA_NAME:
+      if (gimple *_d1 = get_def (valueize, _p1))
+        {
+	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
+	    switch (gimple_assign_rhs_code (_a1))
+	      {
+	      case VEC_COND_EXPR:
 	        {
-		  tree _q20 = gimple_assign_rhs1 (_a1);
-		  _q20 = do_valueize (valueize, _q20);
-		  tree _q21 = gimple_assign_rhs2 (_a1);
-		  _q21 = do_valueize (valueize, _q21);
-		  switch (TREE_CODE (_p1))
+		  tree _q30 = gimple_assign_rhs1 (_a1);
+		  _q30 = do_valueize (valueize, _q30);
+		  tree _q31 = gimple_assign_rhs2 (_a1);
+		  _q31 = do_valueize (valueize, _q31);
+		  tree _q32 = gimple_assign_rhs3 (_a1);
+		  _q32 = do_valueize (valueize, _q32);
+		  if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
 		    {
-		    case SSA_NAME:
-		      if (gimple *_d2 = get_def (valueize, _p1))
-		        {
-			  if (gassign *_a2 = dyn_cast <gassign *> (_d2))
-			    switch (gimple_assign_rhs_code (_a2))
-			      {
-			      case PLUS_EXPR:
-			        {
-				  tree _q50 = gimple_assign_rhs1 (_a2);
-				  _q50 = do_valueize (valueize, _q50);
-				  tree _q51 = gimple_assign_rhs2 (_a2);
-				  _q51 = do_valueize (valueize, _q51);
-				  if (tree_swap_operands_p (_q50, _q51))
-				    std::swap (_q50, _q51);
-				  switch (TREE_CODE (_p2))
-				    {
-				    case VECTOR_CST:
-				      {
-					{
-					  tree captures[5] ATTRIBUTE_UNUSED = { _q20, _q21, _q50, _q51, _p2 };
-					  if (gimple_simplify_647 (res_op, seq, valueize, type, captures, MINUS_EXPR, PLUS_EXPR))
-					    return true;
-					}
-				        break;
-				      }
-				    default:;
-				    }
-			          break;
-			        }
-			      default:;
-			      }
-		        }
-		      break;
-		    default:;
+		      {
+			tree captures[4] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _p2 };
+			gimple_seq *lseq = seq;
+			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2245;
+			{
+			  res_op->set_op (VEC_COND_EXPR, type, 3);
+			  res_op->ops[0] = captures[0];
+			  res_op->ops[1] = captures[1];
+			  res_op->ops[2] = captures[3];
+			  res_op->resimplify (lseq, valueize);
+			  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1102, __FILE__, __LINE__, true);
+			  return true;
+			}
+next_after_fail2245:;
+		      }
 		    }
 	          break;
 	        }
@@ -17678,285 +18493,57 @@ gimple_simplify_VEC_PERM_EXPR (gimple_match_op *res_op, gimple_seq *seq,
     }
   switch (TREE_CODE (_p2))
     {
-    case VECTOR_CST:
-      {
-	{
-	  tree captures[3] ATTRIBUTE_UNUSED = { _p0, _p1, _p2 };
-	  {
- tree op0 = captures[0], op1 = captures[1], op2 = captures[2];
- machine_mode result_mode = TYPE_MODE (type);
- machine_mode op_mode = TYPE_MODE (TREE_TYPE (op0));
- vec_perm_builder builder;
-	      if (tree_to_vec_perm_builder (&builder, op2)
-)
-		{
-		  {
- poly_uint64 nelts = TYPE_VECTOR_SUBPARTS (type);
- bool single_arg = (op0 == op1);
- vec_perm_indices sel (builder, single_arg ? 1 : 2, nelts);
-		      if (sel.series_p (0, 1, 0, 1)
-)
-			{
-			  gimple_seq *lseq = seq;
-			  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2377;
-			  {
-			    tree tem;
-			    tem =  op0;
-			    res_op->set_value (tem);
-			    if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1146, __FILE__, __LINE__, true);
-			    return true;
-			  }
-next_after_fail2377:;
-			}
-		      else
-			{
-			  if (sel.series_p (0, 1, nelts, 1)
-)
-			    {
-			      gimple_seq *lseq = seq;
-			      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2378;
-			      {
-				tree tem;
-				tem =  op1;
-				res_op->set_value (tem);
-				if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1147, __FILE__, __LINE__, true);
-				return true;
-			      }
-next_after_fail2378:;
-			    }
-			  else
-			    {
-			      {
- if (!single_arg)
- {
- if (sel.all_from_input_p (0))
- op1 = op0;
- else if (sel.all_from_input_p (1))
- {
- op0 = op1;
- sel.rotate_inputs (1);
- }
- else if (known_ge (poly_uint64 (sel[0]), nelts))
- {
- std::swap (op0, op1);
- sel.rotate_inputs (1);
- }
- }
- gassign *def;
- tree cop0 = op0, cop1 = op1;
- if (TREE_CODE (op0) == SSA_NAME
- && (def = dyn_cast <gassign *> (SSA_NAME_DEF_STMT (op0)))
- && gimple_assign_rhs_code (def) == CONSTRUCTOR)
- cop0 = gimple_assign_rhs1 (def);
- if (TREE_CODE (op1) == SSA_NAME
- && (def = dyn_cast <gassign *> (SSA_NAME_DEF_STMT (op1)))
- && gimple_assign_rhs_code (def) == CONSTRUCTOR)
- cop1 = gimple_assign_rhs1 (def);
- tree t;
-				  if ((TREE_CODE (cop0) == VECTOR_CST
- || TREE_CODE (cop0) == CONSTRUCTOR)
- && (TREE_CODE (cop1) == VECTOR_CST
- || TREE_CODE (cop1) == CONSTRUCTOR)
- && (t = fold_vec_perm (type, cop0, cop1, sel))
-)
-				    {
-				      gimple_seq *lseq = seq;
-				      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2379;
-				      {
-					tree tem;
-					tem =  t;
-					res_op->set_value (tem);
-					if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1148, __FILE__, __LINE__, true);
-					return true;
-				      }
-next_after_fail2379:;
-				    }
-				  else
-				    {
-				      {
- bool changed = (op0 == op1 && !single_arg);
- tree ins = NULL_TREE;
- unsigned at = 0;
- if (op_mode != BLKmode
- && (TREE_CODE (cop0) == VECTOR_CST
- || TREE_CODE (cop0) == CONSTRUCTOR
- || TREE_CODE (cop1) == VECTOR_CST
- || TREE_CODE (cop1) == CONSTRUCTOR))
- {
- bool insert_first_p = sel.series_p (1, 1, nelts + 1, 1);
- if (insert_first_p)
- {
- at = 0;
- if ((ins = fold_read_from_vector (cop0, sel[0])))
- op0 = op1;
- }
- if (!insert_first_p || (!ins && maybe_eq (nelts, 2u)))
- {
- unsigned int encoded_nelts = sel.encoding ().encoded_nelts ();
- for (at = 0; at < encoded_nelts; ++at)
- if (maybe_ne (sel[at], at))
- break;
- if (at < encoded_nelts
- && (known_eq (at + 1, nelts)
- || sel.series_p (at + 1, 1, at + 1, 1)))
- {
- if (known_lt (poly_uint64 (sel[at]), nelts))
- ins = fold_read_from_vector (cop0, sel[at]);
- else
- ins = fold_read_from_vector (cop1, sel[at] - nelts);
- }
- }
- }
- if (!ins && sel.encoding () != builder)
- {
- tree oldop2 = op2;
- if (sel.ninputs () == 2
- || can_vec_perm_const_p (result_mode, op_mode, sel, false))
- op2 = vec_perm_indices_to_tree (TREE_TYPE (op2), sel);
- else
- {
- vec_perm_indices sel2 (builder, 2, nelts);
- if (can_vec_perm_const_p (result_mode, op_mode, sel2, false))
- op2 = vec_perm_indices_to_tree (TREE_TYPE (op2), sel2);
- else
- op2 = vec_perm_indices_to_tree (TREE_TYPE (op2), sel);
- }
- if (!operand_equal_p (op2, oldop2, 0))
- changed = true;
- }
-					  if (ins
-)
-					    {
-					      gimple_seq *lseq = seq;
-					      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2380;
-					      {
-						res_op->set_op (BIT_INSERT_EXPR, type, 3);
-						res_op->ops[0] =  op0;
-						res_op->ops[1] =  ins;
-						res_op->ops[2] =  bitsize_int (at * vector_element_bits (type));
-						res_op->resimplify (lseq, valueize);
-						if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1149, __FILE__, __LINE__, true);
-						return true;
-					      }
-next_after_fail2380:;
-					    }
-					  else
-					    {
-					      if (changed
-)
-						{
-						  gimple_seq *lseq = seq;
-						  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2381;
-						  {
-						    res_op->set_op (VEC_PERM_EXPR, type, 3);
-						    res_op->ops[0] =  op0;
-						    res_op->ops[1] =  op1;
-						    res_op->ops[2] =  op2;
-						    res_op->resimplify (lseq, valueize);
-						    if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1150, __FILE__, __LINE__, true);
-						    return true;
-						  }
-next_after_fail2381:;
-						}
-					    }
-				      }
-				    }
-			      }
-			    }
-			}
-		  }
-		}
-	  }
-	}
-        break;
-      }
-    default:;
-    }
-  switch (TREE_CODE (_p0))
-    {
     case SSA_NAME:
-      if (gimple *_d1 = get_def (valueize, _p0))
+      if (gimple *_d1 = get_def (valueize, _p2))
         {
 	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
 	    switch (gimple_assign_rhs_code (_a1))
 	      {
-	      case VEC_PERM_EXPR:
+	      case VEC_COND_EXPR:
 	        {
-		  tree _q20 = gimple_assign_rhs1 (_a1);
-		  _q20 = do_valueize (valueize, _q20);
-		  tree _q21 = gimple_assign_rhs2 (_a1);
-		  _q21 = do_valueize (valueize, _q21);
-		  tree _q22 = gimple_assign_rhs3 (_a1);
-		  _q22 = do_valueize (valueize, _q22);
-		  switch (TREE_CODE (_q22))
+		  tree _q40 = gimple_assign_rhs1 (_a1);
+		  _q40 = do_valueize (valueize, _q40);
+		  tree _q41 = gimple_assign_rhs2 (_a1);
+		  _q41 = do_valueize (valueize, _q41);
+		  tree _q42 = gimple_assign_rhs3 (_a1);
+		  _q42 = do_valueize (valueize, _q42);
+		  if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
 		    {
-		    case VECTOR_CST:
 		      {
-			if ((_p1 == _p0 && ! TREE_SIDE_EFFECTS (_p1)) || (operand_equal_p (_p1, _p0, 0) && types_match (_p1, _p0)))
-			  {
-			    switch (TREE_CODE (_p2))
-			      {
-			      case VECTOR_CST:
-			        {
-				  {
-				    tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q20, _q21, _q22, _p2 };
-				    if (TYPE_VECTOR_SUBPARTS (type).is_constant ()
-)
-				      {
-					{
- machine_mode result_mode = TYPE_MODE (type);
- machine_mode op_mode = TYPE_MODE (TREE_TYPE (captures[1]));
- int nelts = TYPE_VECTOR_SUBPARTS (type).to_constant ();
- vec_perm_builder builder0;
- vec_perm_builder builder1;
- vec_perm_builder builder2 (nelts, nelts, 1);
-					    if (tree_to_vec_perm_builder (&builder0, captures[3])
- && tree_to_vec_perm_builder (&builder1, captures[4])
-)
-					      {
-						{
- vec_perm_indices sel0 (builder0, 2, nelts);
- vec_perm_indices sel1 (builder1, 1, nelts);
- for (int i = 0; i < nelts; i++)
- builder2.quick_push (sel0[sel1[i].to_constant ()]);
- vec_perm_indices sel2 (builder2, 2, nelts);
- tree op0 = NULL_TREE;
- if (can_vec_perm_const_p (result_mode, op_mode, sel2, false)
- || (single_use (captures[0])
- ? (!can_vec_perm_const_p (result_mode, op_mode, sel0, false)
- || !can_vec_perm_const_p (result_mode, op_mode, sel1, false))
- : !can_vec_perm_const_p (result_mode, op_mode, sel1, false)))
- op0 = vec_perm_indices_to_tree (TREE_TYPE (captures[4]), sel2);
-						    if (op0
-)
-						      {
-							gimple_seq *lseq = seq;
-							if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2382;
-							{
-							  res_op->set_op (VEC_PERM_EXPR, type, 3);
-							  res_op->ops[0] = captures[1];
-							  res_op->ops[1] = captures[2];
-							  res_op->ops[2] =  op0;
-							  res_op->resimplify (lseq, valueize);
-							  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1151, __FILE__, __LINE__, true);
-							  return true;
-							}
-next_after_fail2382:;
-						      }
-						}
-					      }
-					}
-				      }
-				  }
-			          break;
-			        }
-			      default:;
-			      }
-			  }
-		        break;
+			tree captures[4] ATTRIBUTE_UNUSED = { _p0, _p1, _q41, _q42 };
+			gimple_seq *lseq = seq;
+			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2246;
+			{
+			  res_op->set_op (VEC_COND_EXPR, type, 3);
+			  res_op->ops[0] = captures[0];
+			  res_op->ops[1] = captures[1];
+			  res_op->ops[2] = captures[3];
+			  res_op->resimplify (lseq, valueize);
+			  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1103, __FILE__, __LINE__, true);
+			  return true;
+			}
+next_after_fail2246:;
 		      }
-		    default:;
 		    }
+		  {
+		    tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42 };
+		    if (inverse_conditions_p (captures[0], captures[2])
+)
+		      {
+			gimple_seq *lseq = seq;
+			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2247;
+			{
+			  res_op->set_op (VEC_COND_EXPR, type, 3);
+			  res_op->ops[0] = captures[0];
+			  res_op->ops[1] = captures[1];
+			  res_op->ops[2] = captures[3];
+			  res_op->resimplify (lseq, valueize);
+			  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1104, __FILE__, __LINE__, true);
+			  return true;
+			}
+next_after_fail2247:;
+		      }
+		  }
 	          break;
 	        }
 	      default:;
@@ -17965,49 +18552,6 @@ next_after_fail2382:;
       break;
     default:;
     }
-if (gimple_vec_same_elem_p (_p0, valueize))
-  {
-    if ((_p1 == _p0 && ! TREE_SIDE_EFFECTS (_p1)) || (operand_equal_p (_p1, _p0, 0) && types_match (_p1, _p0)))
-      {
-	{
-	  tree captures[2] ATTRIBUTE_UNUSED = { _p0, _p2 };
-	  if (types_match (type, TREE_TYPE (captures[0]))
-)
-	    {
-	      gimple_seq *lseq = seq;
-	      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2383;
-	      {
-		tree tem;
-		tem = captures[0];
-		res_op->set_value (tem);
-		if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1152, __FILE__, __LINE__, true);
-		return true;
-	      }
-next_after_fail2383:;
-	    }
-	  else
-	    {
-	      {
- tree elem = uniform_vector_p (captures[0]);
-		  if (elem
-)
-		    {
-		      gimple_seq *lseq = seq;
-		      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2384;
-		      {
-			tree tem;
-			tem =  build_vector_from_val (type, elem);
-			res_op->set_value (tem);
-			if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1153, __FILE__, __LINE__, true);
-			return true;
-		      }
-next_after_fail2384:;
-		    }
-	      }
-	    }
-	}
-      }
-  }
   switch (TREE_CODE (_p1))
     {
     case SSA_NAME:
@@ -18016,7 +18560,7 @@ next_after_fail2384:;
 	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
 	    switch (gimple_assign_rhs_code (_a1))
 	      {
-	      case VEC_PERM_EXPR:
+	      case VEC_COND_EXPR:
 	        {
 		  tree _q30 = gimple_assign_rhs1 (_a1);
 		  _q30 = do_valueize (valueize, _q30);
@@ -18024,116 +18568,1535 @@ next_after_fail2384:;
 		  _q31 = do_valueize (valueize, _q31);
 		  tree _q32 = gimple_assign_rhs3 (_a1);
 		  _q32 = do_valueize (valueize, _q32);
-		  switch (TREE_CODE (_q32))
-		    {
-		    case VECTOR_CST:
+		  {
+		    tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q30, _q31, _q32, _p2 };
+		    if (inverse_conditions_p (captures[0], captures[1])
+)
 		      {
-			switch (TREE_CODE (_p2))
-			  {
-			  case VECTOR_CST:
+			gimple_seq *lseq = seq;
+			if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2248;
+			{
+			  res_op->set_op (VEC_COND_EXPR, type, 3);
+			  res_op->ops[0] = captures[0];
+			  res_op->ops[1] = captures[3];
+			  res_op->ops[2] = captures[4];
+			  res_op->resimplify (lseq, valueize);
+			  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1105, __FILE__, __LINE__, true);
+			  return true;
+			}
+next_after_fail2248:;
+		      }
+		  }
+	          break;
+	        }
+	      default:;
+	      }
+        }
+      break;
+    default:;
+    }
+  if ((_p2 == _p1 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _p1, 0) && types_match (_p2, _p1)))
+    {
+      {
+	tree captures[2] ATTRIBUTE_UNUSED = { _p0, _p1 };
+	gimple_seq *lseq = seq;
+	if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2249;
+	{
+	  tree tem;
+	  tem = captures[1];
+	  res_op->set_value (tem);
+	  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1106, __FILE__, __LINE__, true);
+	  return true;
+	}
+next_after_fail2249:;
+      }
+    }
+  switch (TREE_CODE (_p0))
+    {
+    case SSA_NAME:
+      if (gimple *_d1 = get_def (valueize, _p0))
+        {
+	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
+	    switch (gimple_assign_rhs_code (_a1))
+	      {
+	      case EQ_EXPR:
+	        {
+		  tree _q20 = gimple_assign_rhs1 (_a1);
+		  _q20 = do_valueize (valueize, _q20);
+		  tree _q21 = gimple_assign_rhs2 (_a1);
+		  _q21 = do_valueize (valueize, _q21);
+		  if (tree_swap_operands_p (_q20, _q21))
+		    std::swap (_q20, _q21);
+		  if (zerop (_q21))
+		    {
+		      switch (TREE_CODE (_p2))
+		        {
+			case SSA_NAME:
+			  if (gimple *_d2 = get_def (valueize, _p2))
 			    {
-			      {
-				tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _q32, _p2 };
-				if (TYPE_VECTOR_SUBPARTS (type).is_constant ()
-)
+			      if (gassign *_a2 = dyn_cast <gassign *> (_d2))
+			        switch (gimple_assign_rhs_code (_a2))
 				  {
+				  case NEGATE_EXPR:
 				    {
- machine_mode result_mode = TYPE_MODE (type);
- machine_mode op_mode = TYPE_MODE (TREE_TYPE (captures[2]));
- int nelts = TYPE_VECTOR_SUBPARTS (type).to_constant ();
- vec_perm_builder builder0;
- vec_perm_builder builder1;
- vec_perm_builder builder2 (nelts, nelts, 2);
-					if (tree_to_vec_perm_builder (&builder0, captures[4])
- && tree_to_vec_perm_builder (&builder1, captures[5])
-)
+				      tree _q60 = gimple_assign_rhs1 (_a2);
+				      _q60 = do_valueize (valueize, _q60);
+				      if ((_q60 == _p1 && ! TREE_SIDE_EFFECTS (_q60)) || (operand_equal_p (_q60, _p1, 0) && types_match (_q60, _p1)))
+					{
 					  {
+					    tree captures[3] ATTRIBUTE_UNUSED = { _q20, _p1, _p2 };
+					    const enum tree_code cmp = EQ_EXPR;
+					    if (!HONOR_SIGNED_ZEROS (type)
+ && bitwise_equal_p (captures[0], captures[1])
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2250;
+						{
+						  tree tem;
+						  tem = captures[2];
+						  res_op->set_value (tem);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 725, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2250:;
+					      }
+					  }
+				        }
+				      break;
+				    }
+				  default:;
+				  }
+			    }
+			  break;
+		        default:;
+		        }
+		      if (zerop (_p1))
+			{
+			  switch (TREE_CODE (_p2))
+			    {
+			    case SSA_NAME:
+			      if (gimple *_d2 = get_def (valueize, _p2))
+			        {
+				  if (gassign *_a2 = dyn_cast <gassign *> (_d2))
+				    switch (gimple_assign_rhs_code (_a2))
+				      {
+				      case NEGATE_EXPR:
+				        {
+					  tree _q60 = gimple_assign_rhs1 (_a2);
+					  _q60 = do_valueize (valueize, _q60);
+					  {
+					    tree captures[3] ATTRIBUTE_UNUSED = { _q20, _p2, _q60 };
+					    const enum tree_code cmp = EQ_EXPR;
+					    if (!HONOR_SIGNED_ZEROS (type)
+ && bitwise_equal_p (captures[0], captures[2])
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2251;
+						{
+						  tree tem;
+						  tem = captures[1];
+						  res_op->set_value (tem);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 726, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2251:;
+					      }
+					  }
+				          break;
+				        }
+				      default:;
+				      }
+			        }
+			      break;
+			    default:;
+			    }
+		        }
+		    }
+		  switch (TREE_CODE (_q20))
+		    {
+		    case SSA_NAME:
+		      if (gimple *_d2 = get_def (valueize, _q20))
+		        {
+			  if (gassign *_a2 = dyn_cast <gassign *> (_d2))
+			    switch (gimple_assign_rhs_code (_a2))
+			      {
+			      case MINUS_EXPR:
+			        {
+				  tree _q30 = gimple_assign_rhs1 (_a2);
+				  _q30 = do_valueize (valueize, _q30);
+				  tree _q31 = gimple_assign_rhs2 (_a2);
+				  _q31 = do_valueize (valueize, _q31);
+				  if (zerop (_q21))
+				    {
+				      if ((_p1 == _q20 && ! TREE_SIDE_EFFECTS (_p1)) || (operand_equal_p (_p1, _q20, 0) && types_match (_p1, _q20)))
+					{
+					  switch (TREE_CODE (_p2))
 					    {
- vec_perm_indices sel0 (builder0, 2, nelts);
- vec_perm_indices sel1 (builder1, 2, nelts);
- bool use_1 = false, use_2 = false;
- for (int i = 0; i < nelts; i++)
- {
- if (known_lt ((poly_uint64)sel1[i], sel1.nelts_per_input ()))
- builder2.quick_push (sel1[i]);
- else
- {
- poly_uint64 j = sel0[(sel1[i] - sel1.nelts_per_input ())
- .to_constant ()];
- if (known_lt (j, sel0.nelts_per_input ()))
- use_1 = true;
- else
- {
- use_2 = true;
- j -= sel0.nelts_per_input ();
- }
- builder2.quick_push (j + sel1.nelts_per_input ());
- }
- }
-						if (use_1 ^ use_2
+					    case SSA_NAME:
+					      if (gimple *_d3 = get_def (valueize, _p2))
+					        {
+						  if (gassign *_a3 = dyn_cast <gassign *> (_d3))
+						    switch (gimple_assign_rhs_code (_a3))
+						      {
+						      case MINUS_EXPR:
+						        {
+							  tree _q80 = gimple_assign_rhs1 (_a3);
+							  _q80 = do_valueize (valueize, _q80);
+							  tree _q81 = gimple_assign_rhs2 (_a3);
+							  _q81 = do_valueize (valueize, _q81);
+							  if ((_q80 == _q31 && ! TREE_SIDE_EFFECTS (_q80)) || (operand_equal_p (_q80, _q31, 0) && types_match (_q80, _q31)))
+							    {
+							      if ((_q81 == _q30 && ! TREE_SIDE_EFFECTS (_q81)) || (operand_equal_p (_q81, _q30, 0) && types_match (_q81, _q30)))
+								{
+								  {
+								    tree captures[4] ATTRIBUTE_UNUSED = { _q20, _q30, _q31, _p2 };
+								    const enum tree_code cmp = EQ_EXPR;
+								    if (!HONOR_SIGNED_ZEROS (type)
+)
+								      {
+									gimple_seq *lseq = seq;
+									if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2252;
+									{
+									  tree tem;
+									  tem = captures[3];
+									  res_op->set_value (tem);
+									  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 727, __FILE__, __LINE__, true);
+									  return true;
+									}
+next_after_fail2252:;
+								      }
+								  }
+							        }
+							    }
+						          break;
+						        }
+						      default:;
+						      }
+					        }
+					      break;
+					    default:;
+					    }
+				        }
+				    }
+				  if (integer_zerop (_q21))
+				    {
+				      if (integer_zerop (_p1))
+					{
+					  switch (TREE_CODE (_p2))
+					    {
+					    case SSA_NAME:
+					      if (gimple *_d3 = get_def (valueize, _p2))
+					        {
+						  if (gassign *_a3 = dyn_cast <gassign *> (_d3))
+						    switch (gimple_assign_rhs_code (_a3))
+						      {
+						      case MINUS_EXPR:
+						        {
+							  tree _q80 = gimple_assign_rhs1 (_a3);
+							  _q80 = do_valueize (valueize, _q80);
+							  tree _q81 = gimple_assign_rhs2 (_a3);
+							  _q81 = do_valueize (valueize, _q81);
+							  if ((_q80 == _q31 && ! TREE_SIDE_EFFECTS (_q80)) || (operand_equal_p (_q80, _q31, 0) && types_match (_q80, _q31)))
+							    {
+							      if ((_q81 == _q30 && ! TREE_SIDE_EFFECTS (_q81)) || (operand_equal_p (_q81, _q30, 0) && types_match (_q81, _q30)))
+								{
+								  {
+								    tree captures[4] ATTRIBUTE_UNUSED = { _q20, _q30, _q31, _p2 };
+								    if (gimple_simplify_580 (res_op, seq, valueize, type, captures, EQ_EXPR))
+								      return true;
+								  }
+							        }
+							    }
+						          break;
+						        }
+						      default:;
+						      }
+					        }
+					      break;
+					    default:;
+					    }
+				        }
+				    }
+			          break;
+			        }
+			      default:;
+			      }
+		        }
+		      break;
+		    default:;
+		    }
+	          break;
+	        }
+	      case UNEQ_EXPR:
+	        {
+		  tree _q20 = gimple_assign_rhs1 (_a1);
+		  _q20 = do_valueize (valueize, _q20);
+		  tree _q21 = gimple_assign_rhs2 (_a1);
+		  _q21 = do_valueize (valueize, _q21);
+		  if (tree_swap_operands_p (_q20, _q21))
+		    std::swap (_q20, _q21);
+		  if (zerop (_q21))
+		    {
+		      switch (TREE_CODE (_p2))
+		        {
+			case SSA_NAME:
+			  if (gimple *_d2 = get_def (valueize, _p2))
+			    {
+			      if (gassign *_a2 = dyn_cast <gassign *> (_d2))
+			        switch (gimple_assign_rhs_code (_a2))
+				  {
+				  case NEGATE_EXPR:
+				    {
+				      tree _q60 = gimple_assign_rhs1 (_a2);
+				      _q60 = do_valueize (valueize, _q60);
+				      if ((_q60 == _p1 && ! TREE_SIDE_EFFECTS (_q60)) || (operand_equal_p (_q60, _p1, 0) && types_match (_q60, _p1)))
+					{
+					  {
+					    tree captures[3] ATTRIBUTE_UNUSED = { _q20, _p1, _p2 };
+					    const enum tree_code cmp = UNEQ_EXPR;
+					    if (!HONOR_SIGNED_ZEROS (type)
+ && bitwise_equal_p (captures[0], captures[1])
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2253;
+						{
+						  tree tem;
+						  tem = captures[2];
+						  res_op->set_value (tem);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 725, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2253:;
+					      }
+					  }
+				        }
+				      break;
+				    }
+				  default:;
+				  }
+			    }
+			  break;
+		        default:;
+		        }
+		      if (zerop (_p1))
+			{
+			  switch (TREE_CODE (_p2))
+			    {
+			    case SSA_NAME:
+			      if (gimple *_d2 = get_def (valueize, _p2))
+			        {
+				  if (gassign *_a2 = dyn_cast <gassign *> (_d2))
+				    switch (gimple_assign_rhs_code (_a2))
+				      {
+				      case NEGATE_EXPR:
+				        {
+					  tree _q60 = gimple_assign_rhs1 (_a2);
+					  _q60 = do_valueize (valueize, _q60);
+					  {
+					    tree captures[3] ATTRIBUTE_UNUSED = { _q20, _p2, _q60 };
+					    const enum tree_code cmp = UNEQ_EXPR;
+					    if (!HONOR_SIGNED_ZEROS (type)
+ && bitwise_equal_p (captures[0], captures[2])
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2254;
+						{
+						  tree tem;
+						  tem = captures[1];
+						  res_op->set_value (tem);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 726, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2254:;
+					      }
+					  }
+				          break;
+				        }
+				      default:;
+				      }
+			        }
+			      break;
+			    default:;
+			    }
+		        }
+		    }
+		  switch (TREE_CODE (_q20))
+		    {
+		    case SSA_NAME:
+		      if (gimple *_d2 = get_def (valueize, _q20))
+		        {
+			  if (gassign *_a2 = dyn_cast <gassign *> (_d2))
+			    switch (gimple_assign_rhs_code (_a2))
+			      {
+			      case MINUS_EXPR:
+			        {
+				  tree _q30 = gimple_assign_rhs1 (_a2);
+				  _q30 = do_valueize (valueize, _q30);
+				  tree _q31 = gimple_assign_rhs2 (_a2);
+				  _q31 = do_valueize (valueize, _q31);
+				  if (zerop (_q21))
+				    {
+				      if ((_p1 == _q20 && ! TREE_SIDE_EFFECTS (_p1)) || (operand_equal_p (_p1, _q20, 0) && types_match (_p1, _q20)))
+					{
+					  switch (TREE_CODE (_p2))
+					    {
+					    case SSA_NAME:
+					      if (gimple *_d3 = get_def (valueize, _p2))
+					        {
+						  if (gassign *_a3 = dyn_cast <gassign *> (_d3))
+						    switch (gimple_assign_rhs_code (_a3))
+						      {
+						      case MINUS_EXPR:
+						        {
+							  tree _q80 = gimple_assign_rhs1 (_a3);
+							  _q80 = do_valueize (valueize, _q80);
+							  tree _q81 = gimple_assign_rhs2 (_a3);
+							  _q81 = do_valueize (valueize, _q81);
+							  if ((_q80 == _q31 && ! TREE_SIDE_EFFECTS (_q80)) || (operand_equal_p (_q80, _q31, 0) && types_match (_q80, _q31)))
+							    {
+							      if ((_q81 == _q30 && ! TREE_SIDE_EFFECTS (_q81)) || (operand_equal_p (_q81, _q30, 0) && types_match (_q81, _q30)))
+								{
+								  {
+								    tree captures[4] ATTRIBUTE_UNUSED = { _q20, _q30, _q31, _p2 };
+								    const enum tree_code cmp = UNEQ_EXPR;
+								    if (!HONOR_SIGNED_ZEROS (type)
+)
+								      {
+									gimple_seq *lseq = seq;
+									if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2255;
+									{
+									  tree tem;
+									  tem = captures[3];
+									  res_op->set_value (tem);
+									  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 727, __FILE__, __LINE__, true);
+									  return true;
+									}
+next_after_fail2255:;
+								      }
+								  }
+							        }
+							    }
+						          break;
+						        }
+						      default:;
+						      }
+					        }
+					      break;
+					    default:;
+					    }
+				        }
+				    }
+				  if (integer_zerop (_q21))
+				    {
+				      if (integer_zerop (_p1))
+					{
+					  switch (TREE_CODE (_p2))
+					    {
+					    case SSA_NAME:
+					      if (gimple *_d3 = get_def (valueize, _p2))
+					        {
+						  if (gassign *_a3 = dyn_cast <gassign *> (_d3))
+						    switch (gimple_assign_rhs_code (_a3))
+						      {
+						      case MINUS_EXPR:
+						        {
+							  tree _q80 = gimple_assign_rhs1 (_a3);
+							  _q80 = do_valueize (valueize, _q80);
+							  tree _q81 = gimple_assign_rhs2 (_a3);
+							  _q81 = do_valueize (valueize, _q81);
+							  if ((_q80 == _q31 && ! TREE_SIDE_EFFECTS (_q80)) || (operand_equal_p (_q80, _q31, 0) && types_match (_q80, _q31)))
+							    {
+							      if ((_q81 == _q30 && ! TREE_SIDE_EFFECTS (_q81)) || (operand_equal_p (_q81, _q30, 0) && types_match (_q81, _q30)))
+								{
+								  {
+								    tree captures[4] ATTRIBUTE_UNUSED = { _q20, _q30, _q31, _p2 };
+								    if (gimple_simplify_580 (res_op, seq, valueize, type, captures, UNEQ_EXPR))
+								      return true;
+								  }
+							        }
+							    }
+						          break;
+						        }
+						      default:;
+						      }
+					        }
+					      break;
+					    default:;
+					    }
+				        }
+				    }
+			          break;
+			        }
+			      default:;
+			      }
+		        }
+		      break;
+		    default:;
+		    }
+	          break;
+	        }
+	      case NE_EXPR:
+	        {
+		  tree _q20 = gimple_assign_rhs1 (_a1);
+		  _q20 = do_valueize (valueize, _q20);
+		  tree _q21 = gimple_assign_rhs2 (_a1);
+		  _q21 = do_valueize (valueize, _q21);
+		  if (tree_swap_operands_p (_q20, _q21))
+		    std::swap (_q20, _q21);
+		  if (zerop (_q21))
+		    {
+		      switch (TREE_CODE (_p2))
+		        {
+			case SSA_NAME:
+			  if (gimple *_d2 = get_def (valueize, _p2))
+			    {
+			      if (gassign *_a2 = dyn_cast <gassign *> (_d2))
+			        switch (gimple_assign_rhs_code (_a2))
+				  {
+				  case NEGATE_EXPR:
+				    {
+				      tree _q60 = gimple_assign_rhs1 (_a2);
+				      _q60 = do_valueize (valueize, _q60);
+				      if ((_q60 == _p1 && ! TREE_SIDE_EFFECTS (_q60)) || (operand_equal_p (_q60, _p1, 0) && types_match (_q60, _p1)))
+					{
+					  {
+					    tree captures[2] ATTRIBUTE_UNUSED = { _q20, _p1 };
+					    const enum tree_code cmp = NE_EXPR;
+					    if (!HONOR_SIGNED_ZEROS (type)
+ && bitwise_equal_p (captures[0], captures[1])
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2256;
+						{
+						  tree tem;
+						  tem = captures[1];
+						  res_op->set_value (tem);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 729, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2256:;
+					      }
+					  }
+				        }
+				      break;
+				    }
+				  default:;
+				  }
+			    }
+			  break;
+		        default:;
+		        }
+		    if (integer_zerop (_p2))
+		      {
+			{
+			  tree captures[2] ATTRIBUTE_UNUSED = { _q20, _p1 };
+			  const enum tree_code cmp = NE_EXPR;
+			  if (!HONOR_SIGNED_ZEROS (type)
+ && bitwise_equal_p (captures[0], captures[1])
+)
+			    {
+			      gimple_seq *lseq = seq;
+			      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2257;
+			      {
+				tree tem;
+				tem = captures[1];
+				res_op->set_value (tem);
+				if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 730, __FILE__, __LINE__, true);
+				return true;
+			      }
+next_after_fail2257:;
+			    }
+			}
+		      }
+		    }
+		  switch (TREE_CODE (_q20))
+		    {
+		    case SSA_NAME:
+		      if (gimple *_d2 = get_def (valueize, _q20))
+		        {
+			  if (gassign *_a2 = dyn_cast <gassign *> (_d2))
+			    switch (gimple_assign_rhs_code (_a2))
+			      {
+			      case MINUS_EXPR:
+			        {
+				  tree _q30 = gimple_assign_rhs1 (_a2);
+				  _q30 = do_valueize (valueize, _q30);
+				  tree _q31 = gimple_assign_rhs2 (_a2);
+				  _q31 = do_valueize (valueize, _q31);
+				  if (zerop (_q21))
+				    {
+				      if ((_p1 == _q20 && ! TREE_SIDE_EFFECTS (_p1)) || (operand_equal_p (_p1, _q20, 0) && types_match (_p1, _q20)))
+					{
+					  switch (TREE_CODE (_p2))
+					    {
+					    case SSA_NAME:
+					      if (gimple *_d3 = get_def (valueize, _p2))
+					        {
+						  if (gassign *_a3 = dyn_cast <gassign *> (_d3))
+						    switch (gimple_assign_rhs_code (_a3))
+						      {
+						      case MINUS_EXPR:
+						        {
+							  tree _q80 = gimple_assign_rhs1 (_a3);
+							  _q80 = do_valueize (valueize, _q80);
+							  tree _q81 = gimple_assign_rhs2 (_a3);
+							  _q81 = do_valueize (valueize, _q81);
+							  if ((_q80 == _q31 && ! TREE_SIDE_EFFECTS (_q80)) || (operand_equal_p (_q80, _q31, 0) && types_match (_q80, _q31)))
+							    {
+							      if ((_q81 == _q30 && ! TREE_SIDE_EFFECTS (_q81)) || (operand_equal_p (_q81, _q30, 0) && types_match (_q81, _q30)))
+								{
+								  {
+								    tree captures[3] ATTRIBUTE_UNUSED = { _q20, _q30, _q31 };
+								    const enum tree_code cmp = NE_EXPR;
+								    if (!HONOR_SIGNED_ZEROS (type)
+)
+								      {
+									gimple_seq *lseq = seq;
+									if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2258;
+									{
+									  tree tem;
+									  tem = captures[0];
+									  res_op->set_value (tem);
+									  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 731, __FILE__, __LINE__, true);
+									  return true;
+									}
+next_after_fail2258:;
+								      }
+								  }
+							        }
+							    }
+						          break;
+						        }
+						      default:;
+						      }
+					        }
+					      break;
+					    default:;
+					    }
+				        }
+				    }
+				  if (integer_zerop (_q21))
+				    {
+				      if ((_p1 == _q20 && ! TREE_SIDE_EFFECTS (_p1)) || (operand_equal_p (_p1, _q20, 0) && types_match (_p1, _q20)))
+					{
+					  if (integer_zerop (_p2))
+					    {
+					      {
+						tree captures[3] ATTRIBUTE_UNUSED = { _q20, _q30, _q31 };
+						if (gimple_simplify_581 (res_op, seq, valueize, type, captures, NE_EXPR))
+						  return true;
+					      }
+					    }
+				        }
+				    }
+			          break;
+			        }
+			      default:;
+			      }
+		        }
+		      break;
+		    default:;
+		    }
+	          break;
+	        }
+	      case LTGT_EXPR:
+	        {
+		  tree _q20 = gimple_assign_rhs1 (_a1);
+		  _q20 = do_valueize (valueize, _q20);
+		  tree _q21 = gimple_assign_rhs2 (_a1);
+		  _q21 = do_valueize (valueize, _q21);
+		  if (tree_swap_operands_p (_q20, _q21))
+		    std::swap (_q20, _q21);
+		  if (zerop (_q21))
+		    {
+		      switch (TREE_CODE (_p2))
+		        {
+			case SSA_NAME:
+			  if (gimple *_d2 = get_def (valueize, _p2))
+			    {
+			      if (gassign *_a2 = dyn_cast <gassign *> (_d2))
+			        switch (gimple_assign_rhs_code (_a2))
+				  {
+				  case NEGATE_EXPR:
+				    {
+				      tree _q60 = gimple_assign_rhs1 (_a2);
+				      _q60 = do_valueize (valueize, _q60);
+				      if ((_q60 == _p1 && ! TREE_SIDE_EFFECTS (_q60)) || (operand_equal_p (_q60, _p1, 0) && types_match (_q60, _p1)))
+					{
+					  {
+					    tree captures[2] ATTRIBUTE_UNUSED = { _q20, _p1 };
+					    const enum tree_code cmp = LTGT_EXPR;
+					    if (!HONOR_SIGNED_ZEROS (type)
+ && bitwise_equal_p (captures[0], captures[1])
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2259;
+						{
+						  tree tem;
+						  tem = captures[1];
+						  res_op->set_value (tem);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 729, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2259:;
+					      }
+					  }
+				        }
+				      break;
+				    }
+				  default:;
+				  }
+			    }
+			  break;
+		        default:;
+		        }
+		    if (integer_zerop (_p2))
+		      {
+			{
+			  tree captures[2] ATTRIBUTE_UNUSED = { _q20, _p1 };
+			  const enum tree_code cmp = LTGT_EXPR;
+			  if (!HONOR_SIGNED_ZEROS (type)
+ && bitwise_equal_p (captures[0], captures[1])
+)
+			    {
+			      gimple_seq *lseq = seq;
+			      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2260;
+			      {
+				tree tem;
+				tem = captures[1];
+				res_op->set_value (tem);
+				if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 730, __FILE__, __LINE__, true);
+				return true;
+			      }
+next_after_fail2260:;
+			    }
+			}
+		      }
+		    }
+		  switch (TREE_CODE (_q20))
+		    {
+		    case SSA_NAME:
+		      if (gimple *_d2 = get_def (valueize, _q20))
+		        {
+			  if (gassign *_a2 = dyn_cast <gassign *> (_d2))
+			    switch (gimple_assign_rhs_code (_a2))
+			      {
+			      case MINUS_EXPR:
+			        {
+				  tree _q30 = gimple_assign_rhs1 (_a2);
+				  _q30 = do_valueize (valueize, _q30);
+				  tree _q31 = gimple_assign_rhs2 (_a2);
+				  _q31 = do_valueize (valueize, _q31);
+				  if (zerop (_q21))
+				    {
+				      if ((_p1 == _q20 && ! TREE_SIDE_EFFECTS (_p1)) || (operand_equal_p (_p1, _q20, 0) && types_match (_p1, _q20)))
+					{
+					  switch (TREE_CODE (_p2))
+					    {
+					    case SSA_NAME:
+					      if (gimple *_d3 = get_def (valueize, _p2))
+					        {
+						  if (gassign *_a3 = dyn_cast <gassign *> (_d3))
+						    switch (gimple_assign_rhs_code (_a3))
+						      {
+						      case MINUS_EXPR:
+						        {
+							  tree _q80 = gimple_assign_rhs1 (_a3);
+							  _q80 = do_valueize (valueize, _q80);
+							  tree _q81 = gimple_assign_rhs2 (_a3);
+							  _q81 = do_valueize (valueize, _q81);
+							  if ((_q80 == _q31 && ! TREE_SIDE_EFFECTS (_q80)) || (operand_equal_p (_q80, _q31, 0) && types_match (_q80, _q31)))
+							    {
+							      if ((_q81 == _q30 && ! TREE_SIDE_EFFECTS (_q81)) || (operand_equal_p (_q81, _q30, 0) && types_match (_q81, _q30)))
+								{
+								  {
+								    tree captures[3] ATTRIBUTE_UNUSED = { _q20, _q30, _q31 };
+								    const enum tree_code cmp = LTGT_EXPR;
+								    if (!HONOR_SIGNED_ZEROS (type)
+)
+								      {
+									gimple_seq *lseq = seq;
+									if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2261;
+									{
+									  tree tem;
+									  tem = captures[0];
+									  res_op->set_value (tem);
+									  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 731, __FILE__, __LINE__, true);
+									  return true;
+									}
+next_after_fail2261:;
+								      }
+								  }
+							        }
+							    }
+						          break;
+						        }
+						      default:;
+						      }
+					        }
+					      break;
+					    default:;
+					    }
+				        }
+				    }
+				  if (integer_zerop (_q21))
+				    {
+				      if ((_p1 == _q20 && ! TREE_SIDE_EFFECTS (_p1)) || (operand_equal_p (_p1, _q20, 0) && types_match (_p1, _q20)))
+					{
+					  if (integer_zerop (_p2))
+					    {
+					      {
+						tree captures[3] ATTRIBUTE_UNUSED = { _q20, _q30, _q31 };
+						if (gimple_simplify_581 (res_op, seq, valueize, type, captures, LTGT_EXPR))
+						  return true;
+					      }
+					    }
+				        }
+				    }
+			          break;
+			        }
+			      default:;
+			      }
+		        }
+		      break;
+		    default:;
+		    }
+	          break;
+	        }
+	      case GE_EXPR:
+	        {
+		  tree _q20 = gimple_assign_rhs1 (_a1);
+		  _q20 = do_valueize (valueize, _q20);
+		  tree _q21 = gimple_assign_rhs2 (_a1);
+		  _q21 = do_valueize (valueize, _q21);
+		  if (zerop (_q21))
+		    {
+		      switch (TREE_CODE (_p2))
+		        {
+			case SSA_NAME:
+			  if (gimple *_d2 = get_def (valueize, _p2))
+			    {
+			      if (gassign *_a2 = dyn_cast <gassign *> (_d2))
+			        switch (gimple_assign_rhs_code (_a2))
+				  {
+				  case NEGATE_EXPR:
+				    {
+				      tree _q60 = gimple_assign_rhs1 (_a2);
+				      _q60 = do_valueize (valueize, _q60);
+				      if ((_q60 == _p1 && ! TREE_SIDE_EFFECTS (_q60)) || (operand_equal_p (_q60, _p1, 0) && types_match (_q60, _p1)))
+					{
+					  {
+					    tree captures[2] ATTRIBUTE_UNUSED = { _q20, _p1 };
+					    const enum tree_code cmp = GE_EXPR;
+					    if (!HONOR_SIGNED_ZEROS (TREE_TYPE(captures[0]))
+ && !TYPE_UNSIGNED (TREE_TYPE(captures[0]))
+ && bitwise_equal_p (captures[0], captures[1])
+)
+					      {
+						if (TYPE_UNSIGNED (type)
+)
+						  {
+						    gimple_seq *lseq = seq;
+						    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2262;
+						    {
+						      res_op->set_op (ABSU_EXPR, type, 1);
+						      res_op->ops[0] = captures[0];
+						      res_op->resimplify (lseq, valueize);
+						      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 735, __FILE__, __LINE__, true);
+						      return true;
+						    }
+next_after_fail2262:;
+						  }
+						else
+						  {
+						    gimple_seq *lseq = seq;
+						    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2263;
+						    {
+						      res_op->set_op (ABS_EXPR, type, 1);
+						      res_op->ops[0] = captures[0];
+						      res_op->resimplify (lseq, valueize);
+						      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 736, __FILE__, __LINE__, true);
+						      return true;
+						    }
+next_after_fail2263:;
+						  }
+					      }
+					  }
+				        }
+				      break;
+				    }
+				  default:;
+				  }
+			    }
+			  break;
+		        default:;
+		        }
+		    }
+		  switch (TREE_CODE (_q20))
+		    {
+		    case SSA_NAME:
+		      if (gimple *_d2 = get_def (valueize, _q20))
+		        {
+			  if (gassign *_a2 = dyn_cast <gassign *> (_d2))
+			    switch (gimple_assign_rhs_code (_a2))
+			      {
+			      case MINUS_EXPR:
+			        {
+				  tree _q30 = gimple_assign_rhs1 (_a2);
+				  _q30 = do_valueize (valueize, _q30);
+				  tree _q31 = gimple_assign_rhs2 (_a2);
+				  _q31 = do_valueize (valueize, _q31);
+				  if (zerop (_q21))
+				    {
+				      if ((_p1 == _q20 && ! TREE_SIDE_EFFECTS (_p1)) || (operand_equal_p (_p1, _q20, 0) && types_match (_p1, _q20)))
+					{
+					  switch (TREE_CODE (_p2))
+					    {
+					    case SSA_NAME:
+					      if (gimple *_d3 = get_def (valueize, _p2))
+					        {
+						  if (gassign *_a3 = dyn_cast <gassign *> (_d3))
+						    switch (gimple_assign_rhs_code (_a3))
+						      {
+						      case MINUS_EXPR:
+						        {
+							  tree _q80 = gimple_assign_rhs1 (_a3);
+							  _q80 = do_valueize (valueize, _q80);
+							  tree _q81 = gimple_assign_rhs2 (_a3);
+							  _q81 = do_valueize (valueize, _q81);
+							  if ((_q80 == _q31 && ! TREE_SIDE_EFFECTS (_q80)) || (operand_equal_p (_q80, _q31, 0) && types_match (_q80, _q31)))
+							    {
+							      if ((_q81 == _q30 && ! TREE_SIDE_EFFECTS (_q81)) || (operand_equal_p (_q81, _q30, 0) && types_match (_q81, _q30)))
+								{
+								  {
+								    tree captures[3] ATTRIBUTE_UNUSED = { _q20, _q30, _q31 };
+								    const enum tree_code cmp = GE_EXPR;
+								    if (!HONOR_SIGNED_ZEROS (type)
+ && !TYPE_UNSIGNED (type)
+)
+								      {
+									gimple_seq *lseq = seq;
+									if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2264;
+									{
+									  res_op->set_op (ABS_EXPR, type, 1);
+									  res_op->ops[0] = captures[0];
+									  res_op->resimplify (lseq, valueize);
+									  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 737, __FILE__, __LINE__, true);
+									  return true;
+									}
+next_after_fail2264:;
+								      }
+								  }
+							        }
+							    }
+						          break;
+						        }
+						      default:;
+						      }
+					        }
+					      break;
+					    default:;
+					    }
+				        }
+				    }
+			          break;
+			        }
+			      default:;
+			      }
+		        }
+		      break;
+		    default:;
+		    }
+	          break;
+	        }
+	      case GT_EXPR:
+	        {
+		  tree _q20 = gimple_assign_rhs1 (_a1);
+		  _q20 = do_valueize (valueize, _q20);
+		  tree _q21 = gimple_assign_rhs2 (_a1);
+		  _q21 = do_valueize (valueize, _q21);
+		  if (zerop (_q21))
+		    {
+		      switch (TREE_CODE (_p2))
+		        {
+			case SSA_NAME:
+			  if (gimple *_d2 = get_def (valueize, _p2))
+			    {
+			      if (gassign *_a2 = dyn_cast <gassign *> (_d2))
+			        switch (gimple_assign_rhs_code (_a2))
+				  {
+				  case NEGATE_EXPR:
+				    {
+				      tree _q60 = gimple_assign_rhs1 (_a2);
+				      _q60 = do_valueize (valueize, _q60);
+				      if ((_q60 == _p1 && ! TREE_SIDE_EFFECTS (_q60)) || (operand_equal_p (_q60, _p1, 0) && types_match (_q60, _p1)))
+					{
+					  {
+					    tree captures[2] ATTRIBUTE_UNUSED = { _q20, _p1 };
+					    const enum tree_code cmp = GT_EXPR;
+					    if (!HONOR_SIGNED_ZEROS (TREE_TYPE(captures[0]))
+ && !TYPE_UNSIGNED (TREE_TYPE(captures[0]))
+ && bitwise_equal_p (captures[0], captures[1])
+)
+					      {
+						if (TYPE_UNSIGNED (type)
+)
+						  {
+						    gimple_seq *lseq = seq;
+						    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2265;
+						    {
+						      res_op->set_op (ABSU_EXPR, type, 1);
+						      res_op->ops[0] = captures[0];
+						      res_op->resimplify (lseq, valueize);
+						      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 735, __FILE__, __LINE__, true);
+						      return true;
+						    }
+next_after_fail2265:;
+						  }
+						else
+						  {
+						    gimple_seq *lseq = seq;
+						    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2266;
+						    {
+						      res_op->set_op (ABS_EXPR, type, 1);
+						      res_op->ops[0] = captures[0];
+						      res_op->resimplify (lseq, valueize);
+						      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 736, __FILE__, __LINE__, true);
+						      return true;
+						    }
+next_after_fail2266:;
+						  }
+					      }
+					  }
+				        }
+				      break;
+				    }
+				  default:;
+				  }
+			    }
+			  break;
+		        default:;
+		        }
+		    }
+		  switch (TREE_CODE (_q20))
+		    {
+		    case SSA_NAME:
+		      if (gimple *_d2 = get_def (valueize, _q20))
+		        {
+			  if (gassign *_a2 = dyn_cast <gassign *> (_d2))
+			    switch (gimple_assign_rhs_code (_a2))
+			      {
+			      case MINUS_EXPR:
+			        {
+				  tree _q30 = gimple_assign_rhs1 (_a2);
+				  _q30 = do_valueize (valueize, _q30);
+				  tree _q31 = gimple_assign_rhs2 (_a2);
+				  _q31 = do_valueize (valueize, _q31);
+				  if (zerop (_q21))
+				    {
+				      if ((_p1 == _q20 && ! TREE_SIDE_EFFECTS (_p1)) || (operand_equal_p (_p1, _q20, 0) && types_match (_p1, _q20)))
+					{
+					  switch (TREE_CODE (_p2))
+					    {
+					    case SSA_NAME:
+					      if (gimple *_d3 = get_def (valueize, _p2))
+					        {
+						  if (gassign *_a3 = dyn_cast <gassign *> (_d3))
+						    switch (gimple_assign_rhs_code (_a3))
+						      {
+						      case MINUS_EXPR:
+						        {
+							  tree _q80 = gimple_assign_rhs1 (_a3);
+							  _q80 = do_valueize (valueize, _q80);
+							  tree _q81 = gimple_assign_rhs2 (_a3);
+							  _q81 = do_valueize (valueize, _q81);
+							  if ((_q80 == _q31 && ! TREE_SIDE_EFFECTS (_q80)) || (operand_equal_p (_q80, _q31, 0) && types_match (_q80, _q31)))
+							    {
+							      if ((_q81 == _q30 && ! TREE_SIDE_EFFECTS (_q81)) || (operand_equal_p (_q81, _q30, 0) && types_match (_q81, _q30)))
+								{
+								  {
+								    tree captures[3] ATTRIBUTE_UNUSED = { _q20, _q30, _q31 };
+								    const enum tree_code cmp = GT_EXPR;
+								    if (!HONOR_SIGNED_ZEROS (type)
+ && !TYPE_UNSIGNED (type)
+)
+								      {
+									gimple_seq *lseq = seq;
+									if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2267;
+									{
+									  res_op->set_op (ABS_EXPR, type, 1);
+									  res_op->ops[0] = captures[0];
+									  res_op->resimplify (lseq, valueize);
+									  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 737, __FILE__, __LINE__, true);
+									  return true;
+									}
+next_after_fail2267:;
+								      }
+								  }
+							        }
+							    }
+						          break;
+						        }
+						      default:;
+						      }
+					        }
+					      break;
+					    default:;
+					    }
+				        }
+				    }
+			          break;
+			        }
+			      default:;
+			      }
+		        }
+		      break;
+		    default:;
+		    }
+	          break;
+	        }
+	      case LE_EXPR:
+	        {
+		  tree _q20 = gimple_assign_rhs1 (_a1);
+		  _q20 = do_valueize (valueize, _q20);
+		  tree _q21 = gimple_assign_rhs2 (_a1);
+		  _q21 = do_valueize (valueize, _q21);
+		  if (zerop (_q21))
+		    {
+		      switch (TREE_CODE (_p2))
+		        {
+			case SSA_NAME:
+			  if (gimple *_d2 = get_def (valueize, _p2))
+			    {
+			      if (gassign *_a2 = dyn_cast <gassign *> (_d2))
+			        switch (gimple_assign_rhs_code (_a2))
+				  {
+				  case NEGATE_EXPR:
+				    {
+				      tree _q60 = gimple_assign_rhs1 (_a2);
+				      _q60 = do_valueize (valueize, _q60);
+				      if ((_q60 == _p1 && ! TREE_SIDE_EFFECTS (_q60)) || (operand_equal_p (_q60, _p1, 0) && types_match (_q60, _p1)))
+					{
+					  {
+					    tree captures[2] ATTRIBUTE_UNUSED = { _q20, _p1 };
+					    const enum tree_code cmp = LE_EXPR;
+					    if (!HONOR_SIGNED_ZEROS (TREE_TYPE(captures[0]))
+ && !TYPE_UNSIGNED (TREE_TYPE(captures[0]))
+ && bitwise_equal_p (captures[0], captures[1])
+)
+					      {
+						if ((ANY_INTEGRAL_TYPE_P (TREE_TYPE (captures[0]))
+ && !TYPE_OVERFLOW_WRAPS (TREE_TYPE (captures[0])))
+ || TYPE_UNSIGNED (type)
 )
 						  {
 						    {
- vec_perm_indices sel2 (builder2, 2, nelts);
- tree op0 = NULL_TREE;
- if (can_vec_perm_const_p (result_mode, op_mode, sel2, false)
- || (single_use (captures[1])
- ? (!can_vec_perm_const_p (result_mode, op_mode, sel0, false)
- || !can_vec_perm_const_p (result_mode, op_mode, sel1, false))
- : !can_vec_perm_const_p (result_mode, op_mode, sel1, false)))
- op0 = vec_perm_indices_to_tree (TREE_TYPE (captures[5]), sel2);
-							if (op0
-)
+ tree utype = unsigned_type_for (TREE_TYPE(captures[0]));
+							gimple_seq *lseq = seq;
+							if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2268;
+							{
+							  res_op->set_op (NOP_EXPR, type, 1);
 							  {
-							    if (use_1
-)
-							      {
-								gimple_seq *lseq = seq;
-								if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2385;
-								{
-								  res_op->set_op (VEC_PERM_EXPR, type, 3);
-								  res_op->ops[0] = captures[0];
-								  res_op->ops[1] = captures[2];
-								  res_op->ops[2] =  op0;
-								  res_op->resimplify (lseq, valueize);
-								  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1154, __FILE__, __LINE__, true);
-								  return true;
-								}
-next_after_fail2385:;
-							      }
-							    else
-							      {
-								if (use_2
-)
-								  {
-								    gimple_seq *lseq = seq;
-								    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2386;
-								    {
-								      res_op->set_op (VEC_PERM_EXPR, type, 3);
-								      res_op->ops[0] = captures[0];
-								      res_op->ops[1] = captures[3];
-								      res_op->ops[2] =  op0;
-								      res_op->resimplify (lseq, valueize);
-								      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1155, __FILE__, __LINE__, true);
-								      return true;
-								    }
-next_after_fail2386:;
-								  }
-							      }
+							    tree _o1[1], _r1;
+							    {
+							      tree _o2[1], _r2;
+							      _o2[0] = captures[0];
+							      gimple_match_op tem_op (res_op->cond.any_else (), ABSU_EXPR, utype, _o2[0]);
+							      tem_op.resimplify (lseq, valueize);
+							      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+							      if (!_r2) goto next_after_fail2268;
+							      _o1[0] = _r2;
+							    }
+							    gimple_match_op tem_op (res_op->cond.any_else (), NEGATE_EXPR, TREE_TYPE (_o1[0]), _o1[0]);
+							    tem_op.resimplify (lseq, valueize);
+							    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+							    if (!_r1) goto next_after_fail2268;
+							    res_op->ops[0] = _r1;
 							  }
+							  res_op->resimplify (lseq, valueize);
+							  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 742, __FILE__, __LINE__, true);
+							  return true;
+							}
+next_after_fail2268:;
 						    }
 						  }
-					    }
+						else
+						  {
+						    gimple_seq *lseq = seq;
+						    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2269;
+						    {
+						      res_op->set_op (NEGATE_EXPR, type, 1);
+						      {
+							tree _o1[1], _r1;
+							_o1[0] = captures[0];
+							gimple_match_op tem_op (res_op->cond.any_else (), ABS_EXPR, TREE_TYPE (_o1[0]), _o1[0]);
+							tem_op.resimplify (lseq, valueize);
+							_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+							if (!_r1) goto next_after_fail2269;
+							res_op->ops[0] = _r1;
+						      }
+						      res_op->resimplify (lseq, valueize);
+						      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 743, __FILE__, __LINE__, true);
+						      return true;
+						    }
+next_after_fail2269:;
+						  }
+					      }
 					  }
+				        }
+				      break;
 				    }
+				  default:;
 				  }
-			      }
-			      break;
 			    }
-		          default:;
-		          }
-		        break;
-		      }
+			  break;
+		        default:;
+		        }
+		    }
+		  switch (TREE_CODE (_q20))
+		    {
+		    case SSA_NAME:
+		      if (gimple *_d2 = get_def (valueize, _q20))
+		        {
+			  if (gassign *_a2 = dyn_cast <gassign *> (_d2))
+			    switch (gimple_assign_rhs_code (_a2))
+			      {
+			      case MINUS_EXPR:
+			        {
+				  tree _q30 = gimple_assign_rhs1 (_a2);
+				  _q30 = do_valueize (valueize, _q30);
+				  tree _q31 = gimple_assign_rhs2 (_a2);
+				  _q31 = do_valueize (valueize, _q31);
+				  if (zerop (_q21))
+				    {
+				      if ((_p1 == _q20 && ! TREE_SIDE_EFFECTS (_p1)) || (operand_equal_p (_p1, _q20, 0) && types_match (_p1, _q20)))
+					{
+					  switch (TREE_CODE (_p2))
+					    {
+					    case SSA_NAME:
+					      if (gimple *_d3 = get_def (valueize, _p2))
+					        {
+						  if (gassign *_a3 = dyn_cast <gassign *> (_d3))
+						    switch (gimple_assign_rhs_code (_a3))
+						      {
+						      case MINUS_EXPR:
+						        {
+							  tree _q80 = gimple_assign_rhs1 (_a3);
+							  _q80 = do_valueize (valueize, _q80);
+							  tree _q81 = gimple_assign_rhs2 (_a3);
+							  _q81 = do_valueize (valueize, _q81);
+							  if ((_q80 == _q31 && ! TREE_SIDE_EFFECTS (_q80)) || (operand_equal_p (_q80, _q31, 0) && types_match (_q80, _q31)))
+							    {
+							      if ((_q81 == _q30 && ! TREE_SIDE_EFFECTS (_q81)) || (operand_equal_p (_q81, _q30, 0) && types_match (_q81, _q30)))
+								{
+								  {
+								    tree captures[3] ATTRIBUTE_UNUSED = { _q20, _q30, _q31 };
+								    const enum tree_code cmp = LE_EXPR;
+								    if (!HONOR_SIGNED_ZEROS (type)
+ && !TYPE_UNSIGNED (type)
+)
+								      {
+									if (ANY_INTEGRAL_TYPE_P (type)
+ && !TYPE_OVERFLOW_WRAPS (type)
+)
+									  {
+									    {
+ tree utype = unsigned_type_for (type);
+										gimple_seq *lseq = seq;
+										if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2270;
+										{
+										  res_op->set_op (NOP_EXPR, type, 1);
+										  {
+										    tree _o1[1], _r1;
+										    {
+										      tree _o2[1], _r2;
+										      _o2[0] = captures[0];
+										      gimple_match_op tem_op (res_op->cond.any_else (), ABSU_EXPR, utype, _o2[0]);
+										      tem_op.resimplify (lseq, valueize);
+										      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+										      if (!_r2) goto next_after_fail2270;
+										      _o1[0] = _r2;
+										    }
+										    gimple_match_op tem_op (res_op->cond.any_else (), NEGATE_EXPR, TREE_TYPE (_o1[0]), _o1[0]);
+										    tem_op.resimplify (lseq, valueize);
+										    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+										    if (!_r1) goto next_after_fail2270;
+										    res_op->ops[0] = _r1;
+										  }
+										  res_op->resimplify (lseq, valueize);
+										  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 744, __FILE__, __LINE__, true);
+										  return true;
+										}
+next_after_fail2270:;
+									    }
+									  }
+									else
+									  {
+									    gimple_seq *lseq = seq;
+									    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2271;
+									    {
+									      res_op->set_op (NEGATE_EXPR, type, 1);
+									      {
+										tree _o1[1], _r1;
+										_o1[0] = captures[0];
+										gimple_match_op tem_op (res_op->cond.any_else (), ABS_EXPR, TREE_TYPE (_o1[0]), _o1[0]);
+										tem_op.resimplify (lseq, valueize);
+										_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+										if (!_r1) goto next_after_fail2271;
+										res_op->ops[0] = _r1;
+									      }
+									      res_op->resimplify (lseq, valueize);
+									      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 745, __FILE__, __LINE__, true);
+									      return true;
+									    }
+next_after_fail2271:;
+									  }
+								      }
+								  }
+							        }
+							    }
+						          break;
+						        }
+						      default:;
+						      }
+					        }
+					      break;
+					    default:;
+					    }
+				        }
+				    }
+			          break;
+			        }
+			      default:;
+			      }
+		        }
+		      break;
+		    default:;
+		    }
+	          break;
+	        }
+	      case LT_EXPR:
+	        {
+		  tree _q20 = gimple_assign_rhs1 (_a1);
+		  _q20 = do_valueize (valueize, _q20);
+		  tree _q21 = gimple_assign_rhs2 (_a1);
+		  _q21 = do_valueize (valueize, _q21);
+		  if (zerop (_q21))
+		    {
+		      switch (TREE_CODE (_p2))
+		        {
+			case SSA_NAME:
+			  if (gimple *_d2 = get_def (valueize, _p2))
+			    {
+			      if (gassign *_a2 = dyn_cast <gassign *> (_d2))
+			        switch (gimple_assign_rhs_code (_a2))
+				  {
+				  case NEGATE_EXPR:
+				    {
+				      tree _q60 = gimple_assign_rhs1 (_a2);
+				      _q60 = do_valueize (valueize, _q60);
+				      if ((_q60 == _p1 && ! TREE_SIDE_EFFECTS (_q60)) || (operand_equal_p (_q60, _p1, 0) && types_match (_q60, _p1)))
+					{
+					  {
+					    tree captures[2] ATTRIBUTE_UNUSED = { _q20, _p1 };
+					    const enum tree_code cmp = LT_EXPR;
+					    if (!HONOR_SIGNED_ZEROS (TREE_TYPE(captures[0]))
+ && !TYPE_UNSIGNED (TREE_TYPE(captures[0]))
+ && bitwise_equal_p (captures[0], captures[1])
+)
+					      {
+						if ((ANY_INTEGRAL_TYPE_P (TREE_TYPE (captures[0]))
+ && !TYPE_OVERFLOW_WRAPS (TREE_TYPE (captures[0])))
+ || TYPE_UNSIGNED (type)
+)
+						  {
+						    {
+ tree utype = unsigned_type_for (TREE_TYPE(captures[0]));
+							gimple_seq *lseq = seq;
+							if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2272;
+							{
+							  res_op->set_op (NOP_EXPR, type, 1);
+							  {
+							    tree _o1[1], _r1;
+							    {
+							      tree _o2[1], _r2;
+							      _o2[0] = captures[0];
+							      gimple_match_op tem_op (res_op->cond.any_else (), ABSU_EXPR, utype, _o2[0]);
+							      tem_op.resimplify (lseq, valueize);
+							      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+							      if (!_r2) goto next_after_fail2272;
+							      _o1[0] = _r2;
+							    }
+							    gimple_match_op tem_op (res_op->cond.any_else (), NEGATE_EXPR, TREE_TYPE (_o1[0]), _o1[0]);
+							    tem_op.resimplify (lseq, valueize);
+							    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+							    if (!_r1) goto next_after_fail2272;
+							    res_op->ops[0] = _r1;
+							  }
+							  res_op->resimplify (lseq, valueize);
+							  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 742, __FILE__, __LINE__, true);
+							  return true;
+							}
+next_after_fail2272:;
+						    }
+						  }
+						else
+						  {
+						    gimple_seq *lseq = seq;
+						    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2273;
+						    {
+						      res_op->set_op (NEGATE_EXPR, type, 1);
+						      {
+							tree _o1[1], _r1;
+							_o1[0] = captures[0];
+							gimple_match_op tem_op (res_op->cond.any_else (), ABS_EXPR, TREE_TYPE (_o1[0]), _o1[0]);
+							tem_op.resimplify (lseq, valueize);
+							_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+							if (!_r1) goto next_after_fail2273;
+							res_op->ops[0] = _r1;
+						      }
+						      res_op->resimplify (lseq, valueize);
+						      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 743, __FILE__, __LINE__, true);
+						      return true;
+						    }
+next_after_fail2273:;
+						  }
+					      }
+					  }
+				        }
+				      break;
+				    }
+				  default:;
+				  }
+			    }
+			  break;
+		        default:;
+		        }
+		    }
+		  switch (TREE_CODE (_q20))
+		    {
+		    case SSA_NAME:
+		      if (gimple *_d2 = get_def (valueize, _q20))
+		        {
+			  if (gassign *_a2 = dyn_cast <gassign *> (_d2))
+			    switch (gimple_assign_rhs_code (_a2))
+			      {
+			      case MINUS_EXPR:
+			        {
+				  tree _q30 = gimple_assign_rhs1 (_a2);
+				  _q30 = do_valueize (valueize, _q30);
+				  tree _q31 = gimple_assign_rhs2 (_a2);
+				  _q31 = do_valueize (valueize, _q31);
+				  if (zerop (_q21))
+				    {
+				      if ((_p1 == _q20 && ! TREE_SIDE_EFFECTS (_p1)) || (operand_equal_p (_p1, _q20, 0) && types_match (_p1, _q20)))
+					{
+					  switch (TREE_CODE (_p2))
+					    {
+					    case SSA_NAME:
+					      if (gimple *_d3 = get_def (valueize, _p2))
+					        {
+						  if (gassign *_a3 = dyn_cast <gassign *> (_d3))
+						    switch (gimple_assign_rhs_code (_a3))
+						      {
+						      case MINUS_EXPR:
+						        {
+							  tree _q80 = gimple_assign_rhs1 (_a3);
+							  _q80 = do_valueize (valueize, _q80);
+							  tree _q81 = gimple_assign_rhs2 (_a3);
+							  _q81 = do_valueize (valueize, _q81);
+							  if ((_q80 == _q31 && ! TREE_SIDE_EFFECTS (_q80)) || (operand_equal_p (_q80, _q31, 0) && types_match (_q80, _q31)))
+							    {
+							      if ((_q81 == _q30 && ! TREE_SIDE_EFFECTS (_q81)) || (operand_equal_p (_q81, _q30, 0) && types_match (_q81, _q30)))
+								{
+								  {
+								    tree captures[3] ATTRIBUTE_UNUSED = { _q20, _q30, _q31 };
+								    const enum tree_code cmp = LT_EXPR;
+								    if (!HONOR_SIGNED_ZEROS (type)
+ && !TYPE_UNSIGNED (type)
+)
+								      {
+									if (ANY_INTEGRAL_TYPE_P (type)
+ && !TYPE_OVERFLOW_WRAPS (type)
+)
+									  {
+									    {
+ tree utype = unsigned_type_for (type);
+										gimple_seq *lseq = seq;
+										if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2274;
+										{
+										  res_op->set_op (NOP_EXPR, type, 1);
+										  {
+										    tree _o1[1], _r1;
+										    {
+										      tree _o2[1], _r2;
+										      _o2[0] = captures[0];
+										      gimple_match_op tem_op (res_op->cond.any_else (), ABSU_EXPR, utype, _o2[0]);
+										      tem_op.resimplify (lseq, valueize);
+										      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+										      if (!_r2) goto next_after_fail2274;
+										      _o1[0] = _r2;
+										    }
+										    gimple_match_op tem_op (res_op->cond.any_else (), NEGATE_EXPR, TREE_TYPE (_o1[0]), _o1[0]);
+										    tem_op.resimplify (lseq, valueize);
+										    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+										    if (!_r1) goto next_after_fail2274;
+										    res_op->ops[0] = _r1;
+										  }
+										  res_op->resimplify (lseq, valueize);
+										  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 744, __FILE__, __LINE__, true);
+										  return true;
+										}
+next_after_fail2274:;
+									    }
+									  }
+									else
+									  {
+									    gimple_seq *lseq = seq;
+									    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2275;
+									    {
+									      res_op->set_op (NEGATE_EXPR, type, 1);
+									      {
+										tree _o1[1], _r1;
+										_o1[0] = captures[0];
+										gimple_match_op tem_op (res_op->cond.any_else (), ABS_EXPR, TREE_TYPE (_o1[0]), _o1[0]);
+										tem_op.resimplify (lseq, valueize);
+										_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+										if (!_r1) goto next_after_fail2275;
+										res_op->ops[0] = _r1;
+									      }
+									      res_op->resimplify (lseq, valueize);
+									      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 745, __FILE__, __LINE__, true);
+									      return true;
+									    }
+next_after_fail2275:;
+									  }
+								      }
+								  }
+							        }
+							    }
+						          break;
+						        }
+						      default:;
+						      }
+					        }
+					      break;
+					    default:;
+					    }
+				        }
+				    }
+			          break;
+			        }
+			      default:;
+			      }
+		        }
+		      break;
 		    default:;
 		    }
 	          break;
@@ -18144,135 +20107,8888 @@ next_after_fail2386:;
       break;
     default:;
     }
-  switch (TREE_CODE (_p0))
+{
+  tree _p0_pops[1];
+  if (gimple_logical_inverted_value (_p0, _p0_pops, valueize))
+    {
+      tree _q20 = _p0_pops[0];
+      if (gimple_truth_valued_p (_q20, valueize))
+	{
+	  {
+	    tree captures[3] ATTRIBUTE_UNUSED = { _q20, _p1, _p2 };
+	    if (VEC_COND_EXPR == VEC_COND_EXPR
+ || TYPE_UNSIGNED (TREE_TYPE (captures[0]))
+)
+	      {
+		gimple_seq *lseq = seq;
+		if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2276;
+		{
+		  res_op->set_op (VEC_COND_EXPR, type, 3);
+		  res_op->ops[0] = captures[0];
+		  res_op->ops[1] = captures[2];
+		  res_op->ops[2] = captures[1];
+		  res_op->resimplify (lseq, valueize);
+		  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1107, __FILE__, __LINE__, true);
+		  return true;
+		}
+next_after_fail2276:;
+	      }
+	  }
+        }
+}
+}
+  switch (TREE_CODE (_p1))
     {
     case SSA_NAME:
-      if (gimple *_d1 = get_def (valueize, _p0))
+      if (gimple *_d1 = get_def (valueize, _p1))
         {
 	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
 	    switch (gimple_assign_rhs_code (_a1))
 	      {
-	      case VEC_PERM_EXPR:
+	      case VIEW_CONVERT_EXPR:
 	        {
-		  tree _q20 = gimple_assign_rhs1 (_a1);
-		  _q20 = do_valueize (valueize, _q20);
-		  tree _q21 = gimple_assign_rhs2 (_a1);
-		  _q21 = do_valueize (valueize, _q21);
-		  tree _q22 = gimple_assign_rhs3 (_a1);
-		  _q22 = do_valueize (valueize, _q22);
-		  switch (TREE_CODE (_q22))
+		  tree _q30 = TREE_OPERAND (gimple_assign_rhs1 (_a1), 0);
+		  if ((TREE_CODE (_q30) == SSA_NAME
+		       || is_gimple_min_invariant (_q30)))
 		    {
-		    case VECTOR_CST:
-		      {
-			switch (TREE_CODE (_p2))
-			  {
-			  case VECTOR_CST:
+		      _q30 = do_valueize (valueize, _q30);
+		      switch (TREE_CODE (_q30))
+		        {
+			case SSA_NAME:
+			  if (gimple *_d2 = get_def (valueize, _q30))
 			    {
-			      {
-				tree captures[6] ATTRIBUTE_UNUSED = { _p0, _q20, _q21, _q22, _p1, _p2 };
-				if (TYPE_VECTOR_SUBPARTS (type).is_constant ()
-)
+			      if (gassign *_a2 = dyn_cast <gassign *> (_d2))
+			        switch (gimple_assign_rhs_code (_a2))
 				  {
+				  case NEGATE_EXPR:
 				    {
- machine_mode result_mode = TYPE_MODE (type);
- machine_mode op_mode = TYPE_MODE (TREE_TYPE (captures[1]));
- int nelts = TYPE_VECTOR_SUBPARTS (type).to_constant ();
- vec_perm_builder builder0;
- vec_perm_builder builder1;
- vec_perm_builder builder2 (nelts, nelts, 2);
-					if (tree_to_vec_perm_builder (&builder0, captures[3])
- && tree_to_vec_perm_builder (&builder1, captures[5])
+				      tree _q40 = gimple_assign_rhs1 (_a2);
+				      _q40 = do_valueize (valueize, _q40);
+				      {
+					tree captures[4] ATTRIBUTE_UNUSED = { _p0, _q30, _q40, _p2 };
+					{
+ tree op_type = TREE_TYPE (captures[1]);
+					    if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_NEG), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
 )
-					  {
-					    {
- vec_perm_indices sel0 (builder0, 2, nelts);
- vec_perm_indices sel1 (builder1, 2, nelts);
- bool use_1 = false, use_2 = false;
- for (int i = 0; i < nelts; i++)
- {
- if (known_ge ((poly_uint64)sel1[i], sel1.nelts_per_input ()))
- builder2.quick_push (sel1[i]);
- else
- {
- poly_uint64 j = sel0[sel1[i].to_constant ()];
- if (known_lt (j, sel0.nelts_per_input ()))
- use_1 = true;
- else
- {
- use_2 = true;
- j -= sel0.nelts_per_input ();
- }
- builder2.quick_push (j);
- }
- }
-						if (use_1 ^ use_2
-)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2277;
+						{
+						  res_op->set_op (CFN_COND_NEG, type, 3);
+						  res_op->ops[0] = captures[0];
 						  {
-						    {
- vec_perm_indices sel2 (builder2, 2, nelts);
- tree op0 = NULL_TREE;
- if (can_vec_perm_const_p (result_mode, op_mode, sel2, false)
- || (single_use (captures[0])
- ? (!can_vec_perm_const_p (result_mode, op_mode, sel0, false)
- || !can_vec_perm_const_p (result_mode, op_mode, sel1, false))
- : !can_vec_perm_const_p (result_mode, op_mode, sel1, false)))
- op0 = vec_perm_indices_to_tree (TREE_TYPE (captures[5]), sel2);
-							if (op0
-)
-							  {
-							    if (use_1
-)
-							      {
-								gimple_seq *lseq = seq;
-								if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2387;
-								{
-								  res_op->set_op (VEC_PERM_EXPR, type, 3);
-								  res_op->ops[0] = captures[1];
-								  res_op->ops[1] = captures[4];
-								  res_op->ops[2] =  op0;
-								  res_op->resimplify (lseq, valueize);
-								  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1156, __FILE__, __LINE__, true);
-								  return true;
-								}
-next_after_fail2387:;
-							      }
-							    else
-							      {
-								if (use_2
-)
-								  {
-								    gimple_seq *lseq = seq;
-								    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2388;
-								    {
-								      res_op->set_op (VEC_PERM_EXPR, type, 3);
-								      res_op->ops[0] = captures[2];
-								      res_op->ops[1] = captures[4];
-								      res_op->ops[2] =  op0;
-								      res_op->resimplify (lseq, valueize);
-								      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1157, __FILE__, __LINE__, true);
-								      return true;
-								    }
-next_after_fail2388:;
-								  }
-							      }
-							  }
-						    }
+						    tree _o1[1], _r1;
+						    _o1[0] = captures[2];
+						    gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, type, _o1[0]);
+						    tem_op.resimplify (lseq, valueize);
+						    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						    if (!_r1) goto next_after_fail2277;
+						    res_op->ops[1] = _r1;
 						  }
-					    }
-					  }
+						  res_op->ops[2] = captures[3];
+						  res_op->resimplify (lseq, valueize);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1122, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2277:;
+					      }
+					}
+				      }
+				      break;
 				    }
+				  case BIT_NOT_EXPR:
+				    {
+				      tree _q40 = gimple_assign_rhs1 (_a2);
+				      _q40 = do_valueize (valueize, _q40);
+				      {
+					tree captures[4] ATTRIBUTE_UNUSED = { _p0, _q30, _q40, _p2 };
+					{
+ tree op_type = TREE_TYPE (captures[1]);
+					    if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_NOT), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2278;
+						{
+						  res_op->set_op (CFN_COND_NOT, type, 3);
+						  res_op->ops[0] = captures[0];
+						  {
+						    tree _o1[1], _r1;
+						    _o1[0] = captures[2];
+						    gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, type, _o1[0]);
+						    tem_op.resimplify (lseq, valueize);
+						    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						    if (!_r1) goto next_after_fail2278;
+						    res_op->ops[1] = _r1;
+						  }
+						  res_op->ops[2] = captures[3];
+						  res_op->resimplify (lseq, valueize);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1122, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2278:;
+					      }
+					}
+				      }
+				      break;
+				    }
+				  default:;
 				  }
-			      }
-			      break;
 			    }
-		          default:;
-		          }
-		        break;
-		      }
-		    default:;
+			  break;
+		        default:;
+		        }
 		    }
 	          break;
 	        }
+	      case NEGATE_EXPR:
+	        {
+		  tree _q30 = gimple_assign_rhs1 (_a1);
+		  _q30 = do_valueize (valueize, _q30);
+		  {
+		    tree captures[4] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _p2 };
+		    {
+ tree op_type = TREE_TYPE (captures[1]);
+			if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_NEG), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2279;
+			    {
+			      res_op->set_op (CFN_COND_NEG, type, 3);
+			      res_op->ops[0] = captures[0];
+			      {
+				tree _o1[1], _r1;
+				_o1[0] = captures[2];
+				gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, type, _o1[0]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2279;
+				res_op->ops[1] = _r1;
+			      }
+			      res_op->ops[2] = captures[3];
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1122, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2279:;
+			  }
+		    }
+		  }
+	          break;
+	        }
+	      case BIT_NOT_EXPR:
+	        {
+		  tree _q30 = gimple_assign_rhs1 (_a1);
+		  _q30 = do_valueize (valueize, _q30);
+		  {
+		    tree captures[4] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _p2 };
+		    {
+ tree op_type = TREE_TYPE (captures[1]);
+			if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_NOT), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2280;
+			    {
+			      res_op->set_op (CFN_COND_NOT, type, 3);
+			      res_op->ops[0] = captures[0];
+			      {
+				tree _o1[1], _r1;
+				_o1[0] = captures[2];
+				gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, type, _o1[0]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2280;
+				res_op->ops[1] = _r1;
+			      }
+			      res_op->ops[2] = captures[3];
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1122, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2280:;
+			  }
+		    }
+		  }
+	          break;
+	        }
+	      default:;
+	      }
+        }
+      break;
+    default:;
+    }
+  switch (TREE_CODE (_p2))
+    {
+    case SSA_NAME:
+      if (gimple *_d1 = get_def (valueize, _p2))
+        {
+	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
+	    switch (gimple_assign_rhs_code (_a1))
+	      {
+	      case VIEW_CONVERT_EXPR:
+	        {
+		  tree _q40 = TREE_OPERAND (gimple_assign_rhs1 (_a1), 0);
+		  if ((TREE_CODE (_q40) == SSA_NAME
+		       || is_gimple_min_invariant (_q40)))
+		    {
+		      _q40 = do_valueize (valueize, _q40);
+		      switch (TREE_CODE (_q40))
+		        {
+			case SSA_NAME:
+			  if (gimple *_d2 = get_def (valueize, _q40))
+			    {
+			      if (gassign *_a2 = dyn_cast <gassign *> (_d2))
+			        switch (gimple_assign_rhs_code (_a2))
+				  {
+				  case NEGATE_EXPR:
+				    {
+				      tree _q50 = gimple_assign_rhs1 (_a2);
+				      _q50 = do_valueize (valueize, _q50);
+				      {
+					tree captures[4] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q50 };
+					{
+ tree op_type = TREE_TYPE (captures[2]);
+					    if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_NEG), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2281;
+						{
+						  res_op->set_op (CFN_COND_NEG, type, 3);
+						  {
+						    tree _o1[1], _r1;
+						    _o1[0] = captures[0];
+						    gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o1[0]), _o1[0]);
+						    tem_op.resimplify (lseq, valueize);
+						    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						    if (!_r1) goto next_after_fail2281;
+						    res_op->ops[0] = _r1;
+						  }
+						  {
+						    tree _o1[1], _r1;
+						    _o1[0] = captures[3];
+						    gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, type, _o1[0]);
+						    tem_op.resimplify (lseq, valueize);
+						    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						    if (!_r1) goto next_after_fail2281;
+						    res_op->ops[1] = _r1;
+						  }
+						  res_op->ops[2] = captures[1];
+						  res_op->resimplify (lseq, valueize);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1123, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2281:;
+					      }
+					}
+				      }
+				      break;
+				    }
+				  case BIT_NOT_EXPR:
+				    {
+				      tree _q50 = gimple_assign_rhs1 (_a2);
+				      _q50 = do_valueize (valueize, _q50);
+				      {
+					tree captures[4] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q50 };
+					{
+ tree op_type = TREE_TYPE (captures[2]);
+					    if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_NOT), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2282;
+						{
+						  res_op->set_op (CFN_COND_NOT, type, 3);
+						  {
+						    tree _o1[1], _r1;
+						    _o1[0] = captures[0];
+						    gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o1[0]), _o1[0]);
+						    tem_op.resimplify (lseq, valueize);
+						    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						    if (!_r1) goto next_after_fail2282;
+						    res_op->ops[0] = _r1;
+						  }
+						  {
+						    tree _o1[1], _r1;
+						    _o1[0] = captures[3];
+						    gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, type, _o1[0]);
+						    tem_op.resimplify (lseq, valueize);
+						    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						    if (!_r1) goto next_after_fail2282;
+						    res_op->ops[1] = _r1;
+						  }
+						  res_op->ops[2] = captures[1];
+						  res_op->resimplify (lseq, valueize);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1123, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2282:;
+					      }
+					}
+				      }
+				      break;
+				    }
+				  default:;
+				  }
+			    }
+			  break;
+		        default:;
+		        }
+		    }
+	          break;
+	        }
+	      case NEGATE_EXPR:
+	        {
+		  tree _q40 = gimple_assign_rhs1 (_a1);
+		  _q40 = do_valueize (valueize, _q40);
+		  {
+		    tree captures[4] ATTRIBUTE_UNUSED = { _p0, _p1, _p2, _q40 };
+		    {
+ tree op_type = TREE_TYPE (captures[2]);
+			if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_NEG), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2283;
+			    {
+			      res_op->set_op (CFN_COND_NEG, type, 3);
+			      {
+				tree _o1[1], _r1;
+				_o1[0] = captures[0];
+				gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o1[0]), _o1[0]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2283;
+				res_op->ops[0] = _r1;
+			      }
+			      {
+				tree _o1[1], _r1;
+				_o1[0] = captures[3];
+				gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, type, _o1[0]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2283;
+				res_op->ops[1] = _r1;
+			      }
+			      res_op->ops[2] = captures[1];
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1123, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2283:;
+			  }
+		    }
+		  }
+	          break;
+	        }
+	      case BIT_NOT_EXPR:
+	        {
+		  tree _q40 = gimple_assign_rhs1 (_a1);
+		  _q40 = do_valueize (valueize, _q40);
+		  {
+		    tree captures[4] ATTRIBUTE_UNUSED = { _p0, _p1, _p2, _q40 };
+		    {
+ tree op_type = TREE_TYPE (captures[2]);
+			if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_NOT), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2284;
+			    {
+			      res_op->set_op (CFN_COND_NOT, type, 3);
+			      {
+				tree _o1[1], _r1;
+				_o1[0] = captures[0];
+				gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o1[0]), _o1[0]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2284;
+				res_op->ops[0] = _r1;
+			      }
+			      {
+				tree _o1[1], _r1;
+				_o1[0] = captures[3];
+				gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, type, _o1[0]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2284;
+				res_op->ops[1] = _r1;
+			      }
+			      res_op->ops[2] = captures[1];
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1123, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2284:;
+			  }
+		    }
+		  }
+	          break;
+	        }
+	      default:;
+	      }
+        }
+      break;
+    default:;
+    }
+  switch (TREE_CODE (_p1))
+    {
+    case SSA_NAME:
+      if (gimple *_d1 = get_def (valueize, _p1))
+        {
+	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
+	    switch (gimple_assign_rhs_code (_a1))
+	      {
+	      case VIEW_CONVERT_EXPR:
+	        {
+		  tree _q30 = TREE_OPERAND (gimple_assign_rhs1 (_a1), 0);
+		  if ((TREE_CODE (_q30) == SSA_NAME
+		       || is_gimple_min_invariant (_q30)))
+		    {
+		      _q30 = do_valueize (valueize, _q30);
+		      switch (TREE_CODE (_q30))
+		        {
+			case SSA_NAME:
+			  if (gimple *_d2 = get_def (valueize, _q30))
+			    {
+			      if (gassign *_a2 = dyn_cast <gassign *> (_d2))
+			        switch (gimple_assign_rhs_code (_a2))
+				  {
+				  case PLUS_EXPR:
+				    {
+				      tree _q40 = gimple_assign_rhs1 (_a2);
+				      _q40 = do_valueize (valueize, _q40);
+				      tree _q41 = gimple_assign_rhs2 (_a2);
+				      _q41 = do_valueize (valueize, _q41);
+				      if (tree_swap_operands_p (_q40, _q41))
+				        std::swap (_q40, _q41);
+				      {
+					tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q30, _q40, _q41, _p2 };
+					{
+ tree op_type = TREE_TYPE (captures[1]);
+					    if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_ADD), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[1])
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2285;
+						{
+						  res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+						  {
+						    tree _o1[4], _r1;
+						    _o1[0] = captures[0];
+						    _o1[1] = captures[2];
+						    _o1[2] = captures[3];
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[4];
+						      gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2285;
+						      _o1[3] = _r2;
+						    }
+						    gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_ADD, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+						    tem_op.resimplify (lseq, valueize);
+						    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						    if (!_r1) goto next_after_fail2285;
+						    res_op->ops[0] = _r1;
+						  }
+						  res_op->resimplify (lseq, valueize);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1124, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2285:;
+					      }
+					}
+				      }
+				      break;
+				    }
+				  case MINUS_EXPR:
+				    {
+				      tree _q40 = gimple_assign_rhs1 (_a2);
+				      _q40 = do_valueize (valueize, _q40);
+				      tree _q41 = gimple_assign_rhs2 (_a2);
+				      _q41 = do_valueize (valueize, _q41);
+				      {
+					tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q30, _q40, _q41, _p2 };
+					{
+ tree op_type = TREE_TYPE (captures[1]);
+					    if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_SUB), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[1])
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2286;
+						{
+						  res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+						  {
+						    tree _o1[4], _r1;
+						    _o1[0] = captures[0];
+						    _o1[1] = captures[2];
+						    _o1[2] = captures[3];
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[4];
+						      gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2286;
+						      _o1[3] = _r2;
+						    }
+						    gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_SUB, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+						    tem_op.resimplify (lseq, valueize);
+						    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						    if (!_r1) goto next_after_fail2286;
+						    res_op->ops[0] = _r1;
+						  }
+						  res_op->resimplify (lseq, valueize);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1124, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2286:;
+					      }
+					}
+				      }
+				      break;
+				    }
+				  case MULT_EXPR:
+				    {
+				      tree _q40 = gimple_assign_rhs1 (_a2);
+				      _q40 = do_valueize (valueize, _q40);
+				      tree _q41 = gimple_assign_rhs2 (_a2);
+				      _q41 = do_valueize (valueize, _q41);
+				      if (tree_swap_operands_p (_q40, _q41))
+				        std::swap (_q40, _q41);
+				      {
+					tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q30, _q40, _q41, _p2 };
+					{
+ tree op_type = TREE_TYPE (captures[1]);
+					    if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_MUL), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[1])
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2287;
+						{
+						  res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+						  {
+						    tree _o1[4], _r1;
+						    _o1[0] = captures[0];
+						    _o1[1] = captures[2];
+						    _o1[2] = captures[3];
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[4];
+						      gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2287;
+						      _o1[3] = _r2;
+						    }
+						    gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_MUL, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+						    tem_op.resimplify (lseq, valueize);
+						    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						    if (!_r1) goto next_after_fail2287;
+						    res_op->ops[0] = _r1;
+						  }
+						  res_op->resimplify (lseq, valueize);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1124, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2287:;
+					      }
+					}
+				      }
+				      break;
+				    }
+				  case TRUNC_DIV_EXPR:
+				    {
+				      tree _q40 = gimple_assign_rhs1 (_a2);
+				      _q40 = do_valueize (valueize, _q40);
+				      tree _q41 = gimple_assign_rhs2 (_a2);
+				      _q41 = do_valueize (valueize, _q41);
+				      {
+					tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q30, _q40, _q41, _p2 };
+					{
+ tree op_type = TREE_TYPE (captures[1]);
+					    if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_DIV), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[1])
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2288;
+						{
+						  res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+						  {
+						    tree _o1[4], _r1;
+						    _o1[0] = captures[0];
+						    _o1[1] = captures[2];
+						    _o1[2] = captures[3];
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[4];
+						      gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2288;
+						      _o1[3] = _r2;
+						    }
+						    gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_DIV, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+						    tem_op.resimplify (lseq, valueize);
+						    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						    if (!_r1) goto next_after_fail2288;
+						    res_op->ops[0] = _r1;
+						  }
+						  res_op->resimplify (lseq, valueize);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1124, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2288:;
+					      }
+					}
+				      }
+				      break;
+				    }
+				  case TRUNC_MOD_EXPR:
+				    {
+				      tree _q40 = gimple_assign_rhs1 (_a2);
+				      _q40 = do_valueize (valueize, _q40);
+				      tree _q41 = gimple_assign_rhs2 (_a2);
+				      _q41 = do_valueize (valueize, _q41);
+				      {
+					tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q30, _q40, _q41, _p2 };
+					{
+ tree op_type = TREE_TYPE (captures[1]);
+					    if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_MOD), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[1])
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2289;
+						{
+						  res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+						  {
+						    tree _o1[4], _r1;
+						    _o1[0] = captures[0];
+						    _o1[1] = captures[2];
+						    _o1[2] = captures[3];
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[4];
+						      gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2289;
+						      _o1[3] = _r2;
+						    }
+						    gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_MOD, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+						    tem_op.resimplify (lseq, valueize);
+						    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						    if (!_r1) goto next_after_fail2289;
+						    res_op->ops[0] = _r1;
+						  }
+						  res_op->resimplify (lseq, valueize);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1124, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2289:;
+					      }
+					}
+				      }
+				      break;
+				    }
+				  case RDIV_EXPR:
+				    {
+				      tree _q40 = gimple_assign_rhs1 (_a2);
+				      _q40 = do_valueize (valueize, _q40);
+				      tree _q41 = gimple_assign_rhs2 (_a2);
+				      _q41 = do_valueize (valueize, _q41);
+				      {
+					tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q30, _q40, _q41, _p2 };
+					{
+ tree op_type = TREE_TYPE (captures[1]);
+					    if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_RDIV), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[1])
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2290;
+						{
+						  res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+						  {
+						    tree _o1[4], _r1;
+						    _o1[0] = captures[0];
+						    _o1[1] = captures[2];
+						    _o1[2] = captures[3];
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[4];
+						      gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2290;
+						      _o1[3] = _r2;
+						    }
+						    gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_RDIV, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+						    tem_op.resimplify (lseq, valueize);
+						    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						    if (!_r1) goto next_after_fail2290;
+						    res_op->ops[0] = _r1;
+						  }
+						  res_op->resimplify (lseq, valueize);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1124, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2290:;
+					      }
+					}
+				      }
+				      break;
+				    }
+				  case MIN_EXPR:
+				    {
+				      tree _q40 = gimple_assign_rhs1 (_a2);
+				      _q40 = do_valueize (valueize, _q40);
+				      tree _q41 = gimple_assign_rhs2 (_a2);
+				      _q41 = do_valueize (valueize, _q41);
+				      if (tree_swap_operands_p (_q40, _q41))
+				        std::swap (_q40, _q41);
+				      {
+					tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q30, _q40, _q41, _p2 };
+					{
+ tree op_type = TREE_TYPE (captures[1]);
+					    if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_MIN), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[1])
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2291;
+						{
+						  res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+						  {
+						    tree _o1[4], _r1;
+						    _o1[0] = captures[0];
+						    _o1[1] = captures[2];
+						    _o1[2] = captures[3];
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[4];
+						      gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2291;
+						      _o1[3] = _r2;
+						    }
+						    gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_MIN, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+						    tem_op.resimplify (lseq, valueize);
+						    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						    if (!_r1) goto next_after_fail2291;
+						    res_op->ops[0] = _r1;
+						  }
+						  res_op->resimplify (lseq, valueize);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1124, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2291:;
+					      }
+					}
+				      }
+				      break;
+				    }
+				  case MAX_EXPR:
+				    {
+				      tree _q40 = gimple_assign_rhs1 (_a2);
+				      _q40 = do_valueize (valueize, _q40);
+				      tree _q41 = gimple_assign_rhs2 (_a2);
+				      _q41 = do_valueize (valueize, _q41);
+				      if (tree_swap_operands_p (_q40, _q41))
+				        std::swap (_q40, _q41);
+				      {
+					tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q30, _q40, _q41, _p2 };
+					{
+ tree op_type = TREE_TYPE (captures[1]);
+					    if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_MAX), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[1])
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2292;
+						{
+						  res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+						  {
+						    tree _o1[4], _r1;
+						    _o1[0] = captures[0];
+						    _o1[1] = captures[2];
+						    _o1[2] = captures[3];
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[4];
+						      gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2292;
+						      _o1[3] = _r2;
+						    }
+						    gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_MAX, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+						    tem_op.resimplify (lseq, valueize);
+						    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						    if (!_r1) goto next_after_fail2292;
+						    res_op->ops[0] = _r1;
+						  }
+						  res_op->resimplify (lseq, valueize);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1124, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2292:;
+					      }
+					}
+				      }
+				      break;
+				    }
+				  case BIT_AND_EXPR:
+				    {
+				      tree _q40 = gimple_assign_rhs1 (_a2);
+				      _q40 = do_valueize (valueize, _q40);
+				      tree _q41 = gimple_assign_rhs2 (_a2);
+				      _q41 = do_valueize (valueize, _q41);
+				      if (tree_swap_operands_p (_q40, _q41))
+				        std::swap (_q40, _q41);
+				      {
+					tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q30, _q40, _q41, _p2 };
+					{
+ tree op_type = TREE_TYPE (captures[1]);
+					    if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_AND), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[1])
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2293;
+						{
+						  res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+						  {
+						    tree _o1[4], _r1;
+						    _o1[0] = captures[0];
+						    _o1[1] = captures[2];
+						    _o1[2] = captures[3];
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[4];
+						      gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2293;
+						      _o1[3] = _r2;
+						    }
+						    gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_AND, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+						    tem_op.resimplify (lseq, valueize);
+						    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						    if (!_r1) goto next_after_fail2293;
+						    res_op->ops[0] = _r1;
+						  }
+						  res_op->resimplify (lseq, valueize);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1124, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2293:;
+					      }
+					}
+				      }
+				      break;
+				    }
+				  case BIT_IOR_EXPR:
+				    {
+				      tree _q40 = gimple_assign_rhs1 (_a2);
+				      _q40 = do_valueize (valueize, _q40);
+				      tree _q41 = gimple_assign_rhs2 (_a2);
+				      _q41 = do_valueize (valueize, _q41);
+				      if (tree_swap_operands_p (_q40, _q41))
+				        std::swap (_q40, _q41);
+				      {
+					tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q30, _q40, _q41, _p2 };
+					{
+ tree op_type = TREE_TYPE (captures[1]);
+					    if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_IOR), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[1])
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2294;
+						{
+						  res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+						  {
+						    tree _o1[4], _r1;
+						    _o1[0] = captures[0];
+						    _o1[1] = captures[2];
+						    _o1[2] = captures[3];
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[4];
+						      gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2294;
+						      _o1[3] = _r2;
+						    }
+						    gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_IOR, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+						    tem_op.resimplify (lseq, valueize);
+						    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						    if (!_r1) goto next_after_fail2294;
+						    res_op->ops[0] = _r1;
+						  }
+						  res_op->resimplify (lseq, valueize);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1124, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2294:;
+					      }
+					}
+				      }
+				      break;
+				    }
+				  case BIT_XOR_EXPR:
+				    {
+				      tree _q40 = gimple_assign_rhs1 (_a2);
+				      _q40 = do_valueize (valueize, _q40);
+				      tree _q41 = gimple_assign_rhs2 (_a2);
+				      _q41 = do_valueize (valueize, _q41);
+				      if (tree_swap_operands_p (_q40, _q41))
+				        std::swap (_q40, _q41);
+				      {
+					tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q30, _q40, _q41, _p2 };
+					{
+ tree op_type = TREE_TYPE (captures[1]);
+					    if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_XOR), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[1])
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2295;
+						{
+						  res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+						  {
+						    tree _o1[4], _r1;
+						    _o1[0] = captures[0];
+						    _o1[1] = captures[2];
+						    _o1[2] = captures[3];
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[4];
+						      gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2295;
+						      _o1[3] = _r2;
+						    }
+						    gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_XOR, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+						    tem_op.resimplify (lseq, valueize);
+						    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						    if (!_r1) goto next_after_fail2295;
+						    res_op->ops[0] = _r1;
+						  }
+						  res_op->resimplify (lseq, valueize);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1124, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2295:;
+					      }
+					}
+				      }
+				      break;
+				    }
+				  case LSHIFT_EXPR:
+				    {
+				      tree _q40 = gimple_assign_rhs1 (_a2);
+				      _q40 = do_valueize (valueize, _q40);
+				      tree _q41 = gimple_assign_rhs2 (_a2);
+				      _q41 = do_valueize (valueize, _q41);
+				      {
+					tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q30, _q40, _q41, _p2 };
+					{
+ tree op_type = TREE_TYPE (captures[1]);
+					    if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_SHL), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[1])
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2296;
+						{
+						  res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+						  {
+						    tree _o1[4], _r1;
+						    _o1[0] = captures[0];
+						    _o1[1] = captures[2];
+						    _o1[2] = captures[3];
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[4];
+						      gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2296;
+						      _o1[3] = _r2;
+						    }
+						    gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_SHL, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+						    tem_op.resimplify (lseq, valueize);
+						    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						    if (!_r1) goto next_after_fail2296;
+						    res_op->ops[0] = _r1;
+						  }
+						  res_op->resimplify (lseq, valueize);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1124, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2296:;
+					      }
+					}
+				      }
+				      break;
+				    }
+				  case RSHIFT_EXPR:
+				    {
+				      tree _q40 = gimple_assign_rhs1 (_a2);
+				      _q40 = do_valueize (valueize, _q40);
+				      tree _q41 = gimple_assign_rhs2 (_a2);
+				      _q41 = do_valueize (valueize, _q41);
+				      {
+					tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q30, _q40, _q41, _p2 };
+					{
+ tree op_type = TREE_TYPE (captures[1]);
+					    if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_SHR), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[1])
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2297;
+						{
+						  res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+						  {
+						    tree _o1[4], _r1;
+						    _o1[0] = captures[0];
+						    _o1[1] = captures[2];
+						    _o1[2] = captures[3];
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[4];
+						      gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2297;
+						      _o1[3] = _r2;
+						    }
+						    gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_SHR, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+						    tem_op.resimplify (lseq, valueize);
+						    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						    if (!_r1) goto next_after_fail2297;
+						    res_op->ops[0] = _r1;
+						  }
+						  res_op->resimplify (lseq, valueize);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1124, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2297:;
+					      }
+					}
+				      }
+				      break;
+				    }
+				  default:;
+				  }
+			      else if (gcall *_c2 = dyn_cast <gcall *> (_d2))
+			        switch (gimple_call_combined_fn (_c2))
+				  {
+				  case CFN_FMAX:
+				    if (gimple_call_num_args (_c2) == 2)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					{
+					  tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q30, _q40, _q41, _p2 };
+					  {
+ tree op_type = TREE_TYPE (captures[1]);
+					      if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_FMAX), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[1])
+)
+						{
+						  gimple_seq *lseq = seq;
+						  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2298;
+						  {
+						    res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+						    {
+						      tree _o1[4], _r1;
+						      _o1[0] = captures[0];
+						      _o1[1] = captures[2];
+						      _o1[2] = captures[3];
+						      {
+							tree _o2[1], _r2;
+							_o2[0] = captures[4];
+							gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+							tem_op.resimplify (lseq, valueize);
+							_r2 = maybe_push_res_to_seq (&tem_op, lseq);
+							if (!_r2) goto next_after_fail2298;
+							_o1[3] = _r2;
+						      }
+						      gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_FMAX, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r1) goto next_after_fail2298;
+						      res_op->ops[0] = _r1;
+						    }
+						    res_op->resimplify (lseq, valueize);
+						    if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1124, __FILE__, __LINE__, true);
+						    return true;
+						  }
+next_after_fail2298:;
+						}
+					  }
+					}
+				      }
+				    break;
+				  case CFN_FMIN:
+				    if (gimple_call_num_args (_c2) == 2)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					{
+					  tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q30, _q40, _q41, _p2 };
+					  {
+ tree op_type = TREE_TYPE (captures[1]);
+					      if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_FMIN), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[1])
+)
+						{
+						  gimple_seq *lseq = seq;
+						  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2299;
+						  {
+						    res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+						    {
+						      tree _o1[4], _r1;
+						      _o1[0] = captures[0];
+						      _o1[1] = captures[2];
+						      _o1[2] = captures[3];
+						      {
+							tree _o2[1], _r2;
+							_o2[0] = captures[4];
+							gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+							tem_op.resimplify (lseq, valueize);
+							_r2 = maybe_push_res_to_seq (&tem_op, lseq);
+							if (!_r2) goto next_after_fail2299;
+							_o1[3] = _r2;
+						      }
+						      gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_FMIN, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r1) goto next_after_fail2299;
+						      res_op->ops[0] = _r1;
+						    }
+						    res_op->resimplify (lseq, valueize);
+						    if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1124, __FILE__, __LINE__, true);
+						    return true;
+						  }
+next_after_fail2299:;
+						}
+					  }
+					}
+				      }
+				    break;
+				  case CFN_COPYSIGN:
+				    if (gimple_call_num_args (_c2) == 2)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					{
+					  tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q30, _q40, _q41, _p2 };
+					  {
+ tree op_type = TREE_TYPE (captures[1]);
+					      if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_COPYSIGN), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[1])
+)
+						{
+						  gimple_seq *lseq = seq;
+						  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2300;
+						  {
+						    res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+						    {
+						      tree _o1[4], _r1;
+						      _o1[0] = captures[0];
+						      _o1[1] = captures[2];
+						      _o1[2] = captures[3];
+						      {
+							tree _o2[1], _r2;
+							_o2[0] = captures[4];
+							gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+							tem_op.resimplify (lseq, valueize);
+							_r2 = maybe_push_res_to_seq (&tem_op, lseq);
+							if (!_r2) goto next_after_fail2300;
+							_o1[3] = _r2;
+						      }
+						      gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_COPYSIGN, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r1) goto next_after_fail2300;
+						      res_op->ops[0] = _r1;
+						    }
+						    res_op->resimplify (lseq, valueize);
+						    if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1124, __FILE__, __LINE__, true);
+						    return true;
+						  }
+next_after_fail2300:;
+						}
+					  }
+					}
+				      }
+				    break;
+				  default:;
+				  }
+			    }
+			  break;
+		        default:;
+		        }
+		    }
+	          break;
+	        }
+	      case PLUS_EXPR:
+	        {
+		  tree _q30 = gimple_assign_rhs1 (_a1);
+		  _q30 = do_valueize (valueize, _q30);
+		  tree _q31 = gimple_assign_rhs2 (_a1);
+		  _q31 = do_valueize (valueize, _q31);
+		  if (tree_swap_operands_p (_q30, _q31))
+		    std::swap (_q30, _q31);
+		  {
+		    tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _p2 };
+		    {
+ tree op_type = TREE_TYPE (captures[1]);
+			if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_ADD), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[1])
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2301;
+			    {
+			      res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+			      {
+				tree _o1[4], _r1;
+				_o1[0] = captures[0];
+				_o1[1] = captures[2];
+				_o1[2] = captures[3];
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[4];
+				  gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2301;
+				  _o1[3] = _r2;
+				}
+				gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_ADD, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2301;
+				res_op->ops[0] = _r1;
+			      }
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1124, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2301:;
+			  }
+		    }
+		  }
+	          break;
+	        }
+	      case MINUS_EXPR:
+	        {
+		  tree _q30 = gimple_assign_rhs1 (_a1);
+		  _q30 = do_valueize (valueize, _q30);
+		  tree _q31 = gimple_assign_rhs2 (_a1);
+		  _q31 = do_valueize (valueize, _q31);
+		  {
+		    tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _p2 };
+		    {
+ tree op_type = TREE_TYPE (captures[1]);
+			if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_SUB), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[1])
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2302;
+			    {
+			      res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+			      {
+				tree _o1[4], _r1;
+				_o1[0] = captures[0];
+				_o1[1] = captures[2];
+				_o1[2] = captures[3];
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[4];
+				  gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2302;
+				  _o1[3] = _r2;
+				}
+				gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_SUB, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2302;
+				res_op->ops[0] = _r1;
+			      }
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1124, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2302:;
+			  }
+		    }
+		  }
+	          break;
+	        }
+	      case MULT_EXPR:
+	        {
+		  tree _q30 = gimple_assign_rhs1 (_a1);
+		  _q30 = do_valueize (valueize, _q30);
+		  tree _q31 = gimple_assign_rhs2 (_a1);
+		  _q31 = do_valueize (valueize, _q31);
+		  if (tree_swap_operands_p (_q30, _q31))
+		    std::swap (_q30, _q31);
+		  {
+		    tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _p2 };
+		    {
+ tree op_type = TREE_TYPE (captures[1]);
+			if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_MUL), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[1])
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2303;
+			    {
+			      res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+			      {
+				tree _o1[4], _r1;
+				_o1[0] = captures[0];
+				_o1[1] = captures[2];
+				_o1[2] = captures[3];
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[4];
+				  gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2303;
+				  _o1[3] = _r2;
+				}
+				gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_MUL, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2303;
+				res_op->ops[0] = _r1;
+			      }
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1124, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2303:;
+			  }
+		    }
+		  }
+	          break;
+	        }
+	      case TRUNC_DIV_EXPR:
+	        {
+		  tree _q30 = gimple_assign_rhs1 (_a1);
+		  _q30 = do_valueize (valueize, _q30);
+		  tree _q31 = gimple_assign_rhs2 (_a1);
+		  _q31 = do_valueize (valueize, _q31);
+		  {
+		    tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _p2 };
+		    {
+ tree op_type = TREE_TYPE (captures[1]);
+			if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_DIV), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[1])
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2304;
+			    {
+			      res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+			      {
+				tree _o1[4], _r1;
+				_o1[0] = captures[0];
+				_o1[1] = captures[2];
+				_o1[2] = captures[3];
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[4];
+				  gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2304;
+				  _o1[3] = _r2;
+				}
+				gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_DIV, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2304;
+				res_op->ops[0] = _r1;
+			      }
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1124, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2304:;
+			  }
+		    }
+		  }
+	          break;
+	        }
+	      case TRUNC_MOD_EXPR:
+	        {
+		  tree _q30 = gimple_assign_rhs1 (_a1);
+		  _q30 = do_valueize (valueize, _q30);
+		  tree _q31 = gimple_assign_rhs2 (_a1);
+		  _q31 = do_valueize (valueize, _q31);
+		  {
+		    tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _p2 };
+		    {
+ tree op_type = TREE_TYPE (captures[1]);
+			if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_MOD), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[1])
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2305;
+			    {
+			      res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+			      {
+				tree _o1[4], _r1;
+				_o1[0] = captures[0];
+				_o1[1] = captures[2];
+				_o1[2] = captures[3];
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[4];
+				  gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2305;
+				  _o1[3] = _r2;
+				}
+				gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_MOD, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2305;
+				res_op->ops[0] = _r1;
+			      }
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1124, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2305:;
+			  }
+		    }
+		  }
+	          break;
+	        }
+	      case RDIV_EXPR:
+	        {
+		  tree _q30 = gimple_assign_rhs1 (_a1);
+		  _q30 = do_valueize (valueize, _q30);
+		  tree _q31 = gimple_assign_rhs2 (_a1);
+		  _q31 = do_valueize (valueize, _q31);
+		  {
+		    tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _p2 };
+		    {
+ tree op_type = TREE_TYPE (captures[1]);
+			if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_RDIV), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[1])
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2306;
+			    {
+			      res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+			      {
+				tree _o1[4], _r1;
+				_o1[0] = captures[0];
+				_o1[1] = captures[2];
+				_o1[2] = captures[3];
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[4];
+				  gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2306;
+				  _o1[3] = _r2;
+				}
+				gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_RDIV, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2306;
+				res_op->ops[0] = _r1;
+			      }
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1124, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2306:;
+			  }
+		    }
+		  }
+	          break;
+	        }
+	      case MIN_EXPR:
+	        {
+		  tree _q30 = gimple_assign_rhs1 (_a1);
+		  _q30 = do_valueize (valueize, _q30);
+		  tree _q31 = gimple_assign_rhs2 (_a1);
+		  _q31 = do_valueize (valueize, _q31);
+		  if (tree_swap_operands_p (_q30, _q31))
+		    std::swap (_q30, _q31);
+		  {
+		    tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _p2 };
+		    {
+ tree op_type = TREE_TYPE (captures[1]);
+			if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_MIN), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[1])
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2307;
+			    {
+			      res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+			      {
+				tree _o1[4], _r1;
+				_o1[0] = captures[0];
+				_o1[1] = captures[2];
+				_o1[2] = captures[3];
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[4];
+				  gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2307;
+				  _o1[3] = _r2;
+				}
+				gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_MIN, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2307;
+				res_op->ops[0] = _r1;
+			      }
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1124, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2307:;
+			  }
+		    }
+		  }
+	          break;
+	        }
+	      case MAX_EXPR:
+	        {
+		  tree _q30 = gimple_assign_rhs1 (_a1);
+		  _q30 = do_valueize (valueize, _q30);
+		  tree _q31 = gimple_assign_rhs2 (_a1);
+		  _q31 = do_valueize (valueize, _q31);
+		  if (tree_swap_operands_p (_q30, _q31))
+		    std::swap (_q30, _q31);
+		  {
+		    tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _p2 };
+		    {
+ tree op_type = TREE_TYPE (captures[1]);
+			if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_MAX), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[1])
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2308;
+			    {
+			      res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+			      {
+				tree _o1[4], _r1;
+				_o1[0] = captures[0];
+				_o1[1] = captures[2];
+				_o1[2] = captures[3];
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[4];
+				  gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2308;
+				  _o1[3] = _r2;
+				}
+				gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_MAX, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2308;
+				res_op->ops[0] = _r1;
+			      }
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1124, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2308:;
+			  }
+		    }
+		  }
+	          break;
+	        }
+	      case BIT_AND_EXPR:
+	        {
+		  tree _q30 = gimple_assign_rhs1 (_a1);
+		  _q30 = do_valueize (valueize, _q30);
+		  tree _q31 = gimple_assign_rhs2 (_a1);
+		  _q31 = do_valueize (valueize, _q31);
+		  if (tree_swap_operands_p (_q30, _q31))
+		    std::swap (_q30, _q31);
+		  {
+		    tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _p2 };
+		    {
+ tree op_type = TREE_TYPE (captures[1]);
+			if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_AND), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[1])
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2309;
+			    {
+			      res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+			      {
+				tree _o1[4], _r1;
+				_o1[0] = captures[0];
+				_o1[1] = captures[2];
+				_o1[2] = captures[3];
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[4];
+				  gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2309;
+				  _o1[3] = _r2;
+				}
+				gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_AND, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2309;
+				res_op->ops[0] = _r1;
+			      }
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1124, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2309:;
+			  }
+		    }
+		  }
+	          break;
+	        }
+	      case BIT_IOR_EXPR:
+	        {
+		  tree _q30 = gimple_assign_rhs1 (_a1);
+		  _q30 = do_valueize (valueize, _q30);
+		  tree _q31 = gimple_assign_rhs2 (_a1);
+		  _q31 = do_valueize (valueize, _q31);
+		  if (tree_swap_operands_p (_q30, _q31))
+		    std::swap (_q30, _q31);
+		  {
+		    tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _p2 };
+		    {
+ tree op_type = TREE_TYPE (captures[1]);
+			if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_IOR), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[1])
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2310;
+			    {
+			      res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+			      {
+				tree _o1[4], _r1;
+				_o1[0] = captures[0];
+				_o1[1] = captures[2];
+				_o1[2] = captures[3];
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[4];
+				  gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2310;
+				  _o1[3] = _r2;
+				}
+				gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_IOR, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2310;
+				res_op->ops[0] = _r1;
+			      }
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1124, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2310:;
+			  }
+		    }
+		  }
+	          break;
+	        }
+	      case BIT_XOR_EXPR:
+	        {
+		  tree _q30 = gimple_assign_rhs1 (_a1);
+		  _q30 = do_valueize (valueize, _q30);
+		  tree _q31 = gimple_assign_rhs2 (_a1);
+		  _q31 = do_valueize (valueize, _q31);
+		  if (tree_swap_operands_p (_q30, _q31))
+		    std::swap (_q30, _q31);
+		  {
+		    tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _p2 };
+		    {
+ tree op_type = TREE_TYPE (captures[1]);
+			if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_XOR), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[1])
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2311;
+			    {
+			      res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+			      {
+				tree _o1[4], _r1;
+				_o1[0] = captures[0];
+				_o1[1] = captures[2];
+				_o1[2] = captures[3];
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[4];
+				  gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2311;
+				  _o1[3] = _r2;
+				}
+				gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_XOR, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2311;
+				res_op->ops[0] = _r1;
+			      }
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1124, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2311:;
+			  }
+		    }
+		  }
+	          break;
+	        }
+	      case LSHIFT_EXPR:
+	        {
+		  tree _q30 = gimple_assign_rhs1 (_a1);
+		  _q30 = do_valueize (valueize, _q30);
+		  tree _q31 = gimple_assign_rhs2 (_a1);
+		  _q31 = do_valueize (valueize, _q31);
+		  {
+		    tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _p2 };
+		    {
+ tree op_type = TREE_TYPE (captures[1]);
+			if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_SHL), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[1])
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2312;
+			    {
+			      res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+			      {
+				tree _o1[4], _r1;
+				_o1[0] = captures[0];
+				_o1[1] = captures[2];
+				_o1[2] = captures[3];
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[4];
+				  gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2312;
+				  _o1[3] = _r2;
+				}
+				gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_SHL, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2312;
+				res_op->ops[0] = _r1;
+			      }
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1124, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2312:;
+			  }
+		    }
+		  }
+	          break;
+	        }
+	      case RSHIFT_EXPR:
+	        {
+		  tree _q30 = gimple_assign_rhs1 (_a1);
+		  _q30 = do_valueize (valueize, _q30);
+		  tree _q31 = gimple_assign_rhs2 (_a1);
+		  _q31 = do_valueize (valueize, _q31);
+		  {
+		    tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _p2 };
+		    {
+ tree op_type = TREE_TYPE (captures[1]);
+			if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_SHR), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[1])
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2313;
+			    {
+			      res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+			      {
+				tree _o1[4], _r1;
+				_o1[0] = captures[0];
+				_o1[1] = captures[2];
+				_o1[2] = captures[3];
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[4];
+				  gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2313;
+				  _o1[3] = _r2;
+				}
+				gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_SHR, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2313;
+				res_op->ops[0] = _r1;
+			      }
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1124, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2313:;
+			  }
+		    }
+		  }
+	          break;
+	        }
+	      default:;
+	      }
+	  else if (gcall *_c1 = dyn_cast <gcall *> (_d1))
+	    switch (gimple_call_combined_fn (_c1))
+	      {
+	      case CFN_FMAX:
+	        if (gimple_call_num_args (_c1) == 2)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    {
+		      tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _p2 };
+		      {
+ tree op_type = TREE_TYPE (captures[1]);
+			  if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_FMAX), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[1])
+)
+			    {
+			      gimple_seq *lseq = seq;
+			      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2314;
+			      {
+				res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+				{
+				  tree _o1[4], _r1;
+				  _o1[0] = captures[0];
+				  _o1[1] = captures[2];
+				  _o1[2] = captures[3];
+				  {
+				    tree _o2[1], _r2;
+				    _o2[0] = captures[4];
+				    gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+				    tem_op.resimplify (lseq, valueize);
+				    _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				    if (!_r2) goto next_after_fail2314;
+				    _o1[3] = _r2;
+				  }
+				  gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_FMAX, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r1) goto next_after_fail2314;
+				  res_op->ops[0] = _r1;
+				}
+				res_op->resimplify (lseq, valueize);
+				if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1124, __FILE__, __LINE__, true);
+				return true;
+			      }
+next_after_fail2314:;
+			    }
+		      }
+		    }
+	          }
+	        break;
+	      case CFN_FMIN:
+	        if (gimple_call_num_args (_c1) == 2)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    {
+		      tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _p2 };
+		      {
+ tree op_type = TREE_TYPE (captures[1]);
+			  if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_FMIN), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[1])
+)
+			    {
+			      gimple_seq *lseq = seq;
+			      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2315;
+			      {
+				res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+				{
+				  tree _o1[4], _r1;
+				  _o1[0] = captures[0];
+				  _o1[1] = captures[2];
+				  _o1[2] = captures[3];
+				  {
+				    tree _o2[1], _r2;
+				    _o2[0] = captures[4];
+				    gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+				    tem_op.resimplify (lseq, valueize);
+				    _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				    if (!_r2) goto next_after_fail2315;
+				    _o1[3] = _r2;
+				  }
+				  gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_FMIN, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r1) goto next_after_fail2315;
+				  res_op->ops[0] = _r1;
+				}
+				res_op->resimplify (lseq, valueize);
+				if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1124, __FILE__, __LINE__, true);
+				return true;
+			      }
+next_after_fail2315:;
+			    }
+		      }
+		    }
+	          }
+	        break;
+	      case CFN_COPYSIGN:
+	        if (gimple_call_num_args (_c1) == 2)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    {
+		      tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _p2 };
+		      {
+ tree op_type = TREE_TYPE (captures[1]);
+			  if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_COPYSIGN), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[1])
+)
+			    {
+			      gimple_seq *lseq = seq;
+			      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2316;
+			      {
+				res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+				{
+				  tree _o1[4], _r1;
+				  _o1[0] = captures[0];
+				  _o1[1] = captures[2];
+				  _o1[2] = captures[3];
+				  {
+				    tree _o2[1], _r2;
+				    _o2[0] = captures[4];
+				    gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+				    tem_op.resimplify (lseq, valueize);
+				    _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				    if (!_r2) goto next_after_fail2316;
+				    _o1[3] = _r2;
+				  }
+				  gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_COPYSIGN, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r1) goto next_after_fail2316;
+				  res_op->ops[0] = _r1;
+				}
+				res_op->resimplify (lseq, valueize);
+				if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1124, __FILE__, __LINE__, true);
+				return true;
+			      }
+next_after_fail2316:;
+			    }
+		      }
+		    }
+	          }
+	        break;
+	      default:;
+	      }
+        }
+      break;
+    default:;
+    }
+  switch (TREE_CODE (_p2))
+    {
+    case SSA_NAME:
+      if (gimple *_d1 = get_def (valueize, _p2))
+        {
+	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
+	    switch (gimple_assign_rhs_code (_a1))
+	      {
+	      case VIEW_CONVERT_EXPR:
+	        {
+		  tree _q40 = TREE_OPERAND (gimple_assign_rhs1 (_a1), 0);
+		  if ((TREE_CODE (_q40) == SSA_NAME
+		       || is_gimple_min_invariant (_q40)))
+		    {
+		      _q40 = do_valueize (valueize, _q40);
+		      switch (TREE_CODE (_q40))
+		        {
+			case SSA_NAME:
+			  if (gimple *_d2 = get_def (valueize, _q40))
+			    {
+			      if (gassign *_a2 = dyn_cast <gassign *> (_d2))
+			        switch (gimple_assign_rhs_code (_a2))
+				  {
+				  case PLUS_EXPR:
+				    {
+				      tree _q50 = gimple_assign_rhs1 (_a2);
+				      _q50 = do_valueize (valueize, _q50);
+				      tree _q51 = gimple_assign_rhs2 (_a2);
+				      _q51 = do_valueize (valueize, _q51);
+				      if (tree_swap_operands_p (_q50, _q51))
+				        std::swap (_q50, _q51);
+				      {
+					tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q50, _q51 };
+					{
+ tree op_type = TREE_TYPE (captures[2]);
+					    if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_ADD), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[2])
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2317;
+						{
+						  res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+						  {
+						    tree _o1[4], _r1;
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[0];
+						      gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2317;
+						      _o1[0] = _r2;
+						    }
+						    _o1[1] = captures[3];
+						    _o1[2] = captures[4];
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[1];
+						      gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2317;
+						      _o1[3] = _r2;
+						    }
+						    gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_ADD, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+						    tem_op.resimplify (lseq, valueize);
+						    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						    if (!_r1) goto next_after_fail2317;
+						    res_op->ops[0] = _r1;
+						  }
+						  res_op->resimplify (lseq, valueize);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1125, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2317:;
+					      }
+					}
+				      }
+				      break;
+				    }
+				  case MINUS_EXPR:
+				    {
+				      tree _q50 = gimple_assign_rhs1 (_a2);
+				      _q50 = do_valueize (valueize, _q50);
+				      tree _q51 = gimple_assign_rhs2 (_a2);
+				      _q51 = do_valueize (valueize, _q51);
+				      {
+					tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q50, _q51 };
+					{
+ tree op_type = TREE_TYPE (captures[2]);
+					    if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_SUB), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[2])
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2318;
+						{
+						  res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+						  {
+						    tree _o1[4], _r1;
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[0];
+						      gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2318;
+						      _o1[0] = _r2;
+						    }
+						    _o1[1] = captures[3];
+						    _o1[2] = captures[4];
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[1];
+						      gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2318;
+						      _o1[3] = _r2;
+						    }
+						    gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_SUB, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+						    tem_op.resimplify (lseq, valueize);
+						    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						    if (!_r1) goto next_after_fail2318;
+						    res_op->ops[0] = _r1;
+						  }
+						  res_op->resimplify (lseq, valueize);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1125, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2318:;
+					      }
+					}
+				      }
+				      break;
+				    }
+				  case MULT_EXPR:
+				    {
+				      tree _q50 = gimple_assign_rhs1 (_a2);
+				      _q50 = do_valueize (valueize, _q50);
+				      tree _q51 = gimple_assign_rhs2 (_a2);
+				      _q51 = do_valueize (valueize, _q51);
+				      if (tree_swap_operands_p (_q50, _q51))
+				        std::swap (_q50, _q51);
+				      {
+					tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q50, _q51 };
+					{
+ tree op_type = TREE_TYPE (captures[2]);
+					    if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_MUL), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[2])
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2319;
+						{
+						  res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+						  {
+						    tree _o1[4], _r1;
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[0];
+						      gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2319;
+						      _o1[0] = _r2;
+						    }
+						    _o1[1] = captures[3];
+						    _o1[2] = captures[4];
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[1];
+						      gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2319;
+						      _o1[3] = _r2;
+						    }
+						    gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_MUL, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+						    tem_op.resimplify (lseq, valueize);
+						    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						    if (!_r1) goto next_after_fail2319;
+						    res_op->ops[0] = _r1;
+						  }
+						  res_op->resimplify (lseq, valueize);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1125, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2319:;
+					      }
+					}
+				      }
+				      break;
+				    }
+				  case TRUNC_DIV_EXPR:
+				    {
+				      tree _q50 = gimple_assign_rhs1 (_a2);
+				      _q50 = do_valueize (valueize, _q50);
+				      tree _q51 = gimple_assign_rhs2 (_a2);
+				      _q51 = do_valueize (valueize, _q51);
+				      {
+					tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q50, _q51 };
+					{
+ tree op_type = TREE_TYPE (captures[2]);
+					    if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_DIV), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[2])
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2320;
+						{
+						  res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+						  {
+						    tree _o1[4], _r1;
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[0];
+						      gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2320;
+						      _o1[0] = _r2;
+						    }
+						    _o1[1] = captures[3];
+						    _o1[2] = captures[4];
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[1];
+						      gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2320;
+						      _o1[3] = _r2;
+						    }
+						    gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_DIV, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+						    tem_op.resimplify (lseq, valueize);
+						    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						    if (!_r1) goto next_after_fail2320;
+						    res_op->ops[0] = _r1;
+						  }
+						  res_op->resimplify (lseq, valueize);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1125, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2320:;
+					      }
+					}
+				      }
+				      break;
+				    }
+				  case TRUNC_MOD_EXPR:
+				    {
+				      tree _q50 = gimple_assign_rhs1 (_a2);
+				      _q50 = do_valueize (valueize, _q50);
+				      tree _q51 = gimple_assign_rhs2 (_a2);
+				      _q51 = do_valueize (valueize, _q51);
+				      {
+					tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q50, _q51 };
+					{
+ tree op_type = TREE_TYPE (captures[2]);
+					    if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_MOD), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[2])
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2321;
+						{
+						  res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+						  {
+						    tree _o1[4], _r1;
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[0];
+						      gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2321;
+						      _o1[0] = _r2;
+						    }
+						    _o1[1] = captures[3];
+						    _o1[2] = captures[4];
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[1];
+						      gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2321;
+						      _o1[3] = _r2;
+						    }
+						    gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_MOD, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+						    tem_op.resimplify (lseq, valueize);
+						    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						    if (!_r1) goto next_after_fail2321;
+						    res_op->ops[0] = _r1;
+						  }
+						  res_op->resimplify (lseq, valueize);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1125, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2321:;
+					      }
+					}
+				      }
+				      break;
+				    }
+				  case RDIV_EXPR:
+				    {
+				      tree _q50 = gimple_assign_rhs1 (_a2);
+				      _q50 = do_valueize (valueize, _q50);
+				      tree _q51 = gimple_assign_rhs2 (_a2);
+				      _q51 = do_valueize (valueize, _q51);
+				      {
+					tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q50, _q51 };
+					{
+ tree op_type = TREE_TYPE (captures[2]);
+					    if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_RDIV), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[2])
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2322;
+						{
+						  res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+						  {
+						    tree _o1[4], _r1;
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[0];
+						      gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2322;
+						      _o1[0] = _r2;
+						    }
+						    _o1[1] = captures[3];
+						    _o1[2] = captures[4];
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[1];
+						      gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2322;
+						      _o1[3] = _r2;
+						    }
+						    gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_RDIV, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+						    tem_op.resimplify (lseq, valueize);
+						    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						    if (!_r1) goto next_after_fail2322;
+						    res_op->ops[0] = _r1;
+						  }
+						  res_op->resimplify (lseq, valueize);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1125, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2322:;
+					      }
+					}
+				      }
+				      break;
+				    }
+				  case MIN_EXPR:
+				    {
+				      tree _q50 = gimple_assign_rhs1 (_a2);
+				      _q50 = do_valueize (valueize, _q50);
+				      tree _q51 = gimple_assign_rhs2 (_a2);
+				      _q51 = do_valueize (valueize, _q51);
+				      if (tree_swap_operands_p (_q50, _q51))
+				        std::swap (_q50, _q51);
+				      {
+					tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q50, _q51 };
+					{
+ tree op_type = TREE_TYPE (captures[2]);
+					    if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_MIN), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[2])
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2323;
+						{
+						  res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+						  {
+						    tree _o1[4], _r1;
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[0];
+						      gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2323;
+						      _o1[0] = _r2;
+						    }
+						    _o1[1] = captures[3];
+						    _o1[2] = captures[4];
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[1];
+						      gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2323;
+						      _o1[3] = _r2;
+						    }
+						    gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_MIN, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+						    tem_op.resimplify (lseq, valueize);
+						    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						    if (!_r1) goto next_after_fail2323;
+						    res_op->ops[0] = _r1;
+						  }
+						  res_op->resimplify (lseq, valueize);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1125, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2323:;
+					      }
+					}
+				      }
+				      break;
+				    }
+				  case MAX_EXPR:
+				    {
+				      tree _q50 = gimple_assign_rhs1 (_a2);
+				      _q50 = do_valueize (valueize, _q50);
+				      tree _q51 = gimple_assign_rhs2 (_a2);
+				      _q51 = do_valueize (valueize, _q51);
+				      if (tree_swap_operands_p (_q50, _q51))
+				        std::swap (_q50, _q51);
+				      {
+					tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q50, _q51 };
+					{
+ tree op_type = TREE_TYPE (captures[2]);
+					    if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_MAX), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[2])
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2324;
+						{
+						  res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+						  {
+						    tree _o1[4], _r1;
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[0];
+						      gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2324;
+						      _o1[0] = _r2;
+						    }
+						    _o1[1] = captures[3];
+						    _o1[2] = captures[4];
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[1];
+						      gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2324;
+						      _o1[3] = _r2;
+						    }
+						    gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_MAX, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+						    tem_op.resimplify (lseq, valueize);
+						    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						    if (!_r1) goto next_after_fail2324;
+						    res_op->ops[0] = _r1;
+						  }
+						  res_op->resimplify (lseq, valueize);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1125, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2324:;
+					      }
+					}
+				      }
+				      break;
+				    }
+				  case BIT_AND_EXPR:
+				    {
+				      tree _q50 = gimple_assign_rhs1 (_a2);
+				      _q50 = do_valueize (valueize, _q50);
+				      tree _q51 = gimple_assign_rhs2 (_a2);
+				      _q51 = do_valueize (valueize, _q51);
+				      if (tree_swap_operands_p (_q50, _q51))
+				        std::swap (_q50, _q51);
+				      {
+					tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q50, _q51 };
+					{
+ tree op_type = TREE_TYPE (captures[2]);
+					    if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_AND), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[2])
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2325;
+						{
+						  res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+						  {
+						    tree _o1[4], _r1;
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[0];
+						      gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2325;
+						      _o1[0] = _r2;
+						    }
+						    _o1[1] = captures[3];
+						    _o1[2] = captures[4];
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[1];
+						      gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2325;
+						      _o1[3] = _r2;
+						    }
+						    gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_AND, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+						    tem_op.resimplify (lseq, valueize);
+						    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						    if (!_r1) goto next_after_fail2325;
+						    res_op->ops[0] = _r1;
+						  }
+						  res_op->resimplify (lseq, valueize);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1125, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2325:;
+					      }
+					}
+				      }
+				      break;
+				    }
+				  case BIT_IOR_EXPR:
+				    {
+				      tree _q50 = gimple_assign_rhs1 (_a2);
+				      _q50 = do_valueize (valueize, _q50);
+				      tree _q51 = gimple_assign_rhs2 (_a2);
+				      _q51 = do_valueize (valueize, _q51);
+				      if (tree_swap_operands_p (_q50, _q51))
+				        std::swap (_q50, _q51);
+				      {
+					tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q50, _q51 };
+					{
+ tree op_type = TREE_TYPE (captures[2]);
+					    if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_IOR), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[2])
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2326;
+						{
+						  res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+						  {
+						    tree _o1[4], _r1;
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[0];
+						      gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2326;
+						      _o1[0] = _r2;
+						    }
+						    _o1[1] = captures[3];
+						    _o1[2] = captures[4];
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[1];
+						      gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2326;
+						      _o1[3] = _r2;
+						    }
+						    gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_IOR, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+						    tem_op.resimplify (lseq, valueize);
+						    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						    if (!_r1) goto next_after_fail2326;
+						    res_op->ops[0] = _r1;
+						  }
+						  res_op->resimplify (lseq, valueize);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1125, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2326:;
+					      }
+					}
+				      }
+				      break;
+				    }
+				  case BIT_XOR_EXPR:
+				    {
+				      tree _q50 = gimple_assign_rhs1 (_a2);
+				      _q50 = do_valueize (valueize, _q50);
+				      tree _q51 = gimple_assign_rhs2 (_a2);
+				      _q51 = do_valueize (valueize, _q51);
+				      if (tree_swap_operands_p (_q50, _q51))
+				        std::swap (_q50, _q51);
+				      {
+					tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q50, _q51 };
+					{
+ tree op_type = TREE_TYPE (captures[2]);
+					    if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_XOR), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[2])
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2327;
+						{
+						  res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+						  {
+						    tree _o1[4], _r1;
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[0];
+						      gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2327;
+						      _o1[0] = _r2;
+						    }
+						    _o1[1] = captures[3];
+						    _o1[2] = captures[4];
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[1];
+						      gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2327;
+						      _o1[3] = _r2;
+						    }
+						    gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_XOR, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+						    tem_op.resimplify (lseq, valueize);
+						    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						    if (!_r1) goto next_after_fail2327;
+						    res_op->ops[0] = _r1;
+						  }
+						  res_op->resimplify (lseq, valueize);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1125, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2327:;
+					      }
+					}
+				      }
+				      break;
+				    }
+				  case LSHIFT_EXPR:
+				    {
+				      tree _q50 = gimple_assign_rhs1 (_a2);
+				      _q50 = do_valueize (valueize, _q50);
+				      tree _q51 = gimple_assign_rhs2 (_a2);
+				      _q51 = do_valueize (valueize, _q51);
+				      {
+					tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q50, _q51 };
+					{
+ tree op_type = TREE_TYPE (captures[2]);
+					    if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_SHL), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[2])
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2328;
+						{
+						  res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+						  {
+						    tree _o1[4], _r1;
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[0];
+						      gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2328;
+						      _o1[0] = _r2;
+						    }
+						    _o1[1] = captures[3];
+						    _o1[2] = captures[4];
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[1];
+						      gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2328;
+						      _o1[3] = _r2;
+						    }
+						    gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_SHL, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+						    tem_op.resimplify (lseq, valueize);
+						    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						    if (!_r1) goto next_after_fail2328;
+						    res_op->ops[0] = _r1;
+						  }
+						  res_op->resimplify (lseq, valueize);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1125, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2328:;
+					      }
+					}
+				      }
+				      break;
+				    }
+				  case RSHIFT_EXPR:
+				    {
+				      tree _q50 = gimple_assign_rhs1 (_a2);
+				      _q50 = do_valueize (valueize, _q50);
+				      tree _q51 = gimple_assign_rhs2 (_a2);
+				      _q51 = do_valueize (valueize, _q51);
+				      {
+					tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q50, _q51 };
+					{
+ tree op_type = TREE_TYPE (captures[2]);
+					    if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_SHR), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[2])
+)
+					      {
+						gimple_seq *lseq = seq;
+						if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2329;
+						{
+						  res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+						  {
+						    tree _o1[4], _r1;
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[0];
+						      gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2329;
+						      _o1[0] = _r2;
+						    }
+						    _o1[1] = captures[3];
+						    _o1[2] = captures[4];
+						    {
+						      tree _o2[1], _r2;
+						      _o2[0] = captures[1];
+						      gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r2) goto next_after_fail2329;
+						      _o1[3] = _r2;
+						    }
+						    gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_SHR, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+						    tem_op.resimplify (lseq, valueize);
+						    _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						    if (!_r1) goto next_after_fail2329;
+						    res_op->ops[0] = _r1;
+						  }
+						  res_op->resimplify (lseq, valueize);
+						  if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1125, __FILE__, __LINE__, true);
+						  return true;
+						}
+next_after_fail2329:;
+					      }
+					}
+				      }
+				      break;
+				    }
+				  default:;
+				  }
+			      else if (gcall *_c2 = dyn_cast <gcall *> (_d2))
+			        switch (gimple_call_combined_fn (_c2))
+				  {
+				  case CFN_FMAX:
+				    if (gimple_call_num_args (_c2) == 2)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					{
+					  tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q50, _q51 };
+					  {
+ tree op_type = TREE_TYPE (captures[2]);
+					      if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_FMAX), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[2])
+)
+						{
+						  gimple_seq *lseq = seq;
+						  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2330;
+						  {
+						    res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+						    {
+						      tree _o1[4], _r1;
+						      {
+							tree _o2[1], _r2;
+							_o2[0] = captures[0];
+							gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+							tem_op.resimplify (lseq, valueize);
+							_r2 = maybe_push_res_to_seq (&tem_op, lseq);
+							if (!_r2) goto next_after_fail2330;
+							_o1[0] = _r2;
+						      }
+						      _o1[1] = captures[3];
+						      _o1[2] = captures[4];
+						      {
+							tree _o2[1], _r2;
+							_o2[0] = captures[1];
+							gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+							tem_op.resimplify (lseq, valueize);
+							_r2 = maybe_push_res_to_seq (&tem_op, lseq);
+							if (!_r2) goto next_after_fail2330;
+							_o1[3] = _r2;
+						      }
+						      gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_FMAX, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r1) goto next_after_fail2330;
+						      res_op->ops[0] = _r1;
+						    }
+						    res_op->resimplify (lseq, valueize);
+						    if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1125, __FILE__, __LINE__, true);
+						    return true;
+						  }
+next_after_fail2330:;
+						}
+					  }
+					}
+				      }
+				    break;
+				  case CFN_FMIN:
+				    if (gimple_call_num_args (_c2) == 2)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					{
+					  tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q50, _q51 };
+					  {
+ tree op_type = TREE_TYPE (captures[2]);
+					      if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_FMIN), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[2])
+)
+						{
+						  gimple_seq *lseq = seq;
+						  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2331;
+						  {
+						    res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+						    {
+						      tree _o1[4], _r1;
+						      {
+							tree _o2[1], _r2;
+							_o2[0] = captures[0];
+							gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+							tem_op.resimplify (lseq, valueize);
+							_r2 = maybe_push_res_to_seq (&tem_op, lseq);
+							if (!_r2) goto next_after_fail2331;
+							_o1[0] = _r2;
+						      }
+						      _o1[1] = captures[3];
+						      _o1[2] = captures[4];
+						      {
+							tree _o2[1], _r2;
+							_o2[0] = captures[1];
+							gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+							tem_op.resimplify (lseq, valueize);
+							_r2 = maybe_push_res_to_seq (&tem_op, lseq);
+							if (!_r2) goto next_after_fail2331;
+							_o1[3] = _r2;
+						      }
+						      gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_FMIN, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r1) goto next_after_fail2331;
+						      res_op->ops[0] = _r1;
+						    }
+						    res_op->resimplify (lseq, valueize);
+						    if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1125, __FILE__, __LINE__, true);
+						    return true;
+						  }
+next_after_fail2331:;
+						}
+					  }
+					}
+				      }
+				    break;
+				  case CFN_COPYSIGN:
+				    if (gimple_call_num_args (_c2) == 2)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					{
+					  tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q50, _q51 };
+					  {
+ tree op_type = TREE_TYPE (captures[2]);
+					      if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_COPYSIGN), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[2])
+)
+						{
+						  gimple_seq *lseq = seq;
+						  if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2332;
+						  {
+						    res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+						    {
+						      tree _o1[4], _r1;
+						      {
+							tree _o2[1], _r2;
+							_o2[0] = captures[0];
+							gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+							tem_op.resimplify (lseq, valueize);
+							_r2 = maybe_push_res_to_seq (&tem_op, lseq);
+							if (!_r2) goto next_after_fail2332;
+							_o1[0] = _r2;
+						      }
+						      _o1[1] = captures[3];
+						      _o1[2] = captures[4];
+						      {
+							tree _o2[1], _r2;
+							_o2[0] = captures[1];
+							gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+							tem_op.resimplify (lseq, valueize);
+							_r2 = maybe_push_res_to_seq (&tem_op, lseq);
+							if (!_r2) goto next_after_fail2332;
+							_o1[3] = _r2;
+						      }
+						      gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_COPYSIGN, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+						      tem_op.resimplify (lseq, valueize);
+						      _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+						      if (!_r1) goto next_after_fail2332;
+						      res_op->ops[0] = _r1;
+						    }
+						    res_op->resimplify (lseq, valueize);
+						    if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1125, __FILE__, __LINE__, true);
+						    return true;
+						  }
+next_after_fail2332:;
+						}
+					  }
+					}
+				      }
+				    break;
+				  default:;
+				  }
+			    }
+			  break;
+		        default:;
+		        }
+		    }
+	          break;
+	        }
+	      case PLUS_EXPR:
+	        {
+		  tree _q40 = gimple_assign_rhs1 (_a1);
+		  _q40 = do_valueize (valueize, _q40);
+		  tree _q41 = gimple_assign_rhs2 (_a1);
+		  _q41 = do_valueize (valueize, _q41);
+		  if (tree_swap_operands_p (_q40, _q41))
+		    std::swap (_q40, _q41);
+		  {
+		    tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _p2, _q40, _q41 };
+		    {
+ tree op_type = TREE_TYPE (captures[2]);
+			if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_ADD), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[2])
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2333;
+			    {
+			      res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+			      {
+				tree _o1[4], _r1;
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[0];
+				  gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2333;
+				  _o1[0] = _r2;
+				}
+				_o1[1] = captures[3];
+				_o1[2] = captures[4];
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[1];
+				  gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2333;
+				  _o1[3] = _r2;
+				}
+				gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_ADD, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2333;
+				res_op->ops[0] = _r1;
+			      }
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1125, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2333:;
+			  }
+		    }
+		  }
+	          break;
+	        }
+	      case MINUS_EXPR:
+	        {
+		  tree _q40 = gimple_assign_rhs1 (_a1);
+		  _q40 = do_valueize (valueize, _q40);
+		  tree _q41 = gimple_assign_rhs2 (_a1);
+		  _q41 = do_valueize (valueize, _q41);
+		  {
+		    tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _p2, _q40, _q41 };
+		    {
+ tree op_type = TREE_TYPE (captures[2]);
+			if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_SUB), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[2])
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2334;
+			    {
+			      res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+			      {
+				tree _o1[4], _r1;
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[0];
+				  gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2334;
+				  _o1[0] = _r2;
+				}
+				_o1[1] = captures[3];
+				_o1[2] = captures[4];
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[1];
+				  gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2334;
+				  _o1[3] = _r2;
+				}
+				gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_SUB, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2334;
+				res_op->ops[0] = _r1;
+			      }
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1125, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2334:;
+			  }
+		    }
+		  }
+	          break;
+	        }
+	      case MULT_EXPR:
+	        {
+		  tree _q40 = gimple_assign_rhs1 (_a1);
+		  _q40 = do_valueize (valueize, _q40);
+		  tree _q41 = gimple_assign_rhs2 (_a1);
+		  _q41 = do_valueize (valueize, _q41);
+		  if (tree_swap_operands_p (_q40, _q41))
+		    std::swap (_q40, _q41);
+		  {
+		    tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _p2, _q40, _q41 };
+		    {
+ tree op_type = TREE_TYPE (captures[2]);
+			if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_MUL), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[2])
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2335;
+			    {
+			      res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+			      {
+				tree _o1[4], _r1;
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[0];
+				  gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2335;
+				  _o1[0] = _r2;
+				}
+				_o1[1] = captures[3];
+				_o1[2] = captures[4];
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[1];
+				  gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2335;
+				  _o1[3] = _r2;
+				}
+				gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_MUL, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2335;
+				res_op->ops[0] = _r1;
+			      }
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1125, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2335:;
+			  }
+		    }
+		  }
+	          break;
+	        }
+	      case TRUNC_DIV_EXPR:
+	        {
+		  tree _q40 = gimple_assign_rhs1 (_a1);
+		  _q40 = do_valueize (valueize, _q40);
+		  tree _q41 = gimple_assign_rhs2 (_a1);
+		  _q41 = do_valueize (valueize, _q41);
+		  {
+		    tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _p2, _q40, _q41 };
+		    {
+ tree op_type = TREE_TYPE (captures[2]);
+			if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_DIV), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[2])
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2336;
+			    {
+			      res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+			      {
+				tree _o1[4], _r1;
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[0];
+				  gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2336;
+				  _o1[0] = _r2;
+				}
+				_o1[1] = captures[3];
+				_o1[2] = captures[4];
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[1];
+				  gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2336;
+				  _o1[3] = _r2;
+				}
+				gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_DIV, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2336;
+				res_op->ops[0] = _r1;
+			      }
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1125, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2336:;
+			  }
+		    }
+		  }
+	          break;
+	        }
+	      case TRUNC_MOD_EXPR:
+	        {
+		  tree _q40 = gimple_assign_rhs1 (_a1);
+		  _q40 = do_valueize (valueize, _q40);
+		  tree _q41 = gimple_assign_rhs2 (_a1);
+		  _q41 = do_valueize (valueize, _q41);
+		  {
+		    tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _p2, _q40, _q41 };
+		    {
+ tree op_type = TREE_TYPE (captures[2]);
+			if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_MOD), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[2])
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2337;
+			    {
+			      res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+			      {
+				tree _o1[4], _r1;
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[0];
+				  gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2337;
+				  _o1[0] = _r2;
+				}
+				_o1[1] = captures[3];
+				_o1[2] = captures[4];
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[1];
+				  gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2337;
+				  _o1[3] = _r2;
+				}
+				gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_MOD, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2337;
+				res_op->ops[0] = _r1;
+			      }
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1125, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2337:;
+			  }
+		    }
+		  }
+	          break;
+	        }
+	      case RDIV_EXPR:
+	        {
+		  tree _q40 = gimple_assign_rhs1 (_a1);
+		  _q40 = do_valueize (valueize, _q40);
+		  tree _q41 = gimple_assign_rhs2 (_a1);
+		  _q41 = do_valueize (valueize, _q41);
+		  {
+		    tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _p2, _q40, _q41 };
+		    {
+ tree op_type = TREE_TYPE (captures[2]);
+			if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_RDIV), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[2])
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2338;
+			    {
+			      res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+			      {
+				tree _o1[4], _r1;
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[0];
+				  gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2338;
+				  _o1[0] = _r2;
+				}
+				_o1[1] = captures[3];
+				_o1[2] = captures[4];
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[1];
+				  gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2338;
+				  _o1[3] = _r2;
+				}
+				gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_RDIV, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2338;
+				res_op->ops[0] = _r1;
+			      }
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1125, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2338:;
+			  }
+		    }
+		  }
+	          break;
+	        }
+	      case MIN_EXPR:
+	        {
+		  tree _q40 = gimple_assign_rhs1 (_a1);
+		  _q40 = do_valueize (valueize, _q40);
+		  tree _q41 = gimple_assign_rhs2 (_a1);
+		  _q41 = do_valueize (valueize, _q41);
+		  if (tree_swap_operands_p (_q40, _q41))
+		    std::swap (_q40, _q41);
+		  {
+		    tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _p2, _q40, _q41 };
+		    {
+ tree op_type = TREE_TYPE (captures[2]);
+			if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_MIN), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[2])
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2339;
+			    {
+			      res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+			      {
+				tree _o1[4], _r1;
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[0];
+				  gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2339;
+				  _o1[0] = _r2;
+				}
+				_o1[1] = captures[3];
+				_o1[2] = captures[4];
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[1];
+				  gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2339;
+				  _o1[3] = _r2;
+				}
+				gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_MIN, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2339;
+				res_op->ops[0] = _r1;
+			      }
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1125, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2339:;
+			  }
+		    }
+		  }
+	          break;
+	        }
+	      case MAX_EXPR:
+	        {
+		  tree _q40 = gimple_assign_rhs1 (_a1);
+		  _q40 = do_valueize (valueize, _q40);
+		  tree _q41 = gimple_assign_rhs2 (_a1);
+		  _q41 = do_valueize (valueize, _q41);
+		  if (tree_swap_operands_p (_q40, _q41))
+		    std::swap (_q40, _q41);
+		  {
+		    tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _p2, _q40, _q41 };
+		    {
+ tree op_type = TREE_TYPE (captures[2]);
+			if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_MAX), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[2])
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2340;
+			    {
+			      res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+			      {
+				tree _o1[4], _r1;
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[0];
+				  gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2340;
+				  _o1[0] = _r2;
+				}
+				_o1[1] = captures[3];
+				_o1[2] = captures[4];
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[1];
+				  gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2340;
+				  _o1[3] = _r2;
+				}
+				gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_MAX, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2340;
+				res_op->ops[0] = _r1;
+			      }
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1125, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2340:;
+			  }
+		    }
+		  }
+	          break;
+	        }
+	      case BIT_AND_EXPR:
+	        {
+		  tree _q40 = gimple_assign_rhs1 (_a1);
+		  _q40 = do_valueize (valueize, _q40);
+		  tree _q41 = gimple_assign_rhs2 (_a1);
+		  _q41 = do_valueize (valueize, _q41);
+		  if (tree_swap_operands_p (_q40, _q41))
+		    std::swap (_q40, _q41);
+		  {
+		    tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _p2, _q40, _q41 };
+		    {
+ tree op_type = TREE_TYPE (captures[2]);
+			if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_AND), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[2])
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2341;
+			    {
+			      res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+			      {
+				tree _o1[4], _r1;
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[0];
+				  gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2341;
+				  _o1[0] = _r2;
+				}
+				_o1[1] = captures[3];
+				_o1[2] = captures[4];
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[1];
+				  gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2341;
+				  _o1[3] = _r2;
+				}
+				gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_AND, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2341;
+				res_op->ops[0] = _r1;
+			      }
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1125, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2341:;
+			  }
+		    }
+		  }
+	          break;
+	        }
+	      case BIT_IOR_EXPR:
+	        {
+		  tree _q40 = gimple_assign_rhs1 (_a1);
+		  _q40 = do_valueize (valueize, _q40);
+		  tree _q41 = gimple_assign_rhs2 (_a1);
+		  _q41 = do_valueize (valueize, _q41);
+		  if (tree_swap_operands_p (_q40, _q41))
+		    std::swap (_q40, _q41);
+		  {
+		    tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _p2, _q40, _q41 };
+		    {
+ tree op_type = TREE_TYPE (captures[2]);
+			if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_IOR), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[2])
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2342;
+			    {
+			      res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+			      {
+				tree _o1[4], _r1;
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[0];
+				  gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2342;
+				  _o1[0] = _r2;
+				}
+				_o1[1] = captures[3];
+				_o1[2] = captures[4];
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[1];
+				  gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2342;
+				  _o1[3] = _r2;
+				}
+				gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_IOR, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2342;
+				res_op->ops[0] = _r1;
+			      }
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1125, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2342:;
+			  }
+		    }
+		  }
+	          break;
+	        }
+	      case BIT_XOR_EXPR:
+	        {
+		  tree _q40 = gimple_assign_rhs1 (_a1);
+		  _q40 = do_valueize (valueize, _q40);
+		  tree _q41 = gimple_assign_rhs2 (_a1);
+		  _q41 = do_valueize (valueize, _q41);
+		  if (tree_swap_operands_p (_q40, _q41))
+		    std::swap (_q40, _q41);
+		  {
+		    tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _p2, _q40, _q41 };
+		    {
+ tree op_type = TREE_TYPE (captures[2]);
+			if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_XOR), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[2])
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2343;
+			    {
+			      res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+			      {
+				tree _o1[4], _r1;
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[0];
+				  gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2343;
+				  _o1[0] = _r2;
+				}
+				_o1[1] = captures[3];
+				_o1[2] = captures[4];
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[1];
+				  gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2343;
+				  _o1[3] = _r2;
+				}
+				gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_XOR, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2343;
+				res_op->ops[0] = _r1;
+			      }
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1125, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2343:;
+			  }
+		    }
+		  }
+	          break;
+	        }
+	      case LSHIFT_EXPR:
+	        {
+		  tree _q40 = gimple_assign_rhs1 (_a1);
+		  _q40 = do_valueize (valueize, _q40);
+		  tree _q41 = gimple_assign_rhs2 (_a1);
+		  _q41 = do_valueize (valueize, _q41);
+		  {
+		    tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _p2, _q40, _q41 };
+		    {
+ tree op_type = TREE_TYPE (captures[2]);
+			if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_SHL), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[2])
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2344;
+			    {
+			      res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+			      {
+				tree _o1[4], _r1;
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[0];
+				  gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2344;
+				  _o1[0] = _r2;
+				}
+				_o1[1] = captures[3];
+				_o1[2] = captures[4];
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[1];
+				  gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2344;
+				  _o1[3] = _r2;
+				}
+				gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_SHL, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2344;
+				res_op->ops[0] = _r1;
+			      }
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1125, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2344:;
+			  }
+		    }
+		  }
+	          break;
+	        }
+	      case RSHIFT_EXPR:
+	        {
+		  tree _q40 = gimple_assign_rhs1 (_a1);
+		  _q40 = do_valueize (valueize, _q40);
+		  tree _q41 = gimple_assign_rhs2 (_a1);
+		  _q41 = do_valueize (valueize, _q41);
+		  {
+		    tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _p2, _q40, _q41 };
+		    {
+ tree op_type = TREE_TYPE (captures[2]);
+			if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_SHR), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[2])
+)
+			  {
+			    gimple_seq *lseq = seq;
+			    if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2345;
+			    {
+			      res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+			      {
+				tree _o1[4], _r1;
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[0];
+				  gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2345;
+				  _o1[0] = _r2;
+				}
+				_o1[1] = captures[3];
+				_o1[2] = captures[4];
+				{
+				  tree _o2[1], _r2;
+				  _o2[0] = captures[1];
+				  gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r2) goto next_after_fail2345;
+				  _o1[3] = _r2;
+				}
+				gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_SHR, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+				tem_op.resimplify (lseq, valueize);
+				_r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				if (!_r1) goto next_after_fail2345;
+				res_op->ops[0] = _r1;
+			      }
+			      res_op->resimplify (lseq, valueize);
+			      if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1125, __FILE__, __LINE__, true);
+			      return true;
+			    }
+next_after_fail2345:;
+			  }
+		    }
+		  }
+	          break;
+	        }
+	      default:;
+	      }
+	  else if (gcall *_c1 = dyn_cast <gcall *> (_d1))
+	    switch (gimple_call_combined_fn (_c1))
+	      {
+	      case CFN_FMAX:
+	        if (gimple_call_num_args (_c1) == 2)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    {
+		      tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _p2, _q40, _q41 };
+		      {
+ tree op_type = TREE_TYPE (captures[2]);
+			  if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_FMAX), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[2])
+)
+			    {
+			      gimple_seq *lseq = seq;
+			      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2346;
+			      {
+				res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+				{
+				  tree _o1[4], _r1;
+				  {
+				    tree _o2[1], _r2;
+				    _o2[0] = captures[0];
+				    gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+				    tem_op.resimplify (lseq, valueize);
+				    _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				    if (!_r2) goto next_after_fail2346;
+				    _o1[0] = _r2;
+				  }
+				  _o1[1] = captures[3];
+				  _o1[2] = captures[4];
+				  {
+				    tree _o2[1], _r2;
+				    _o2[0] = captures[1];
+				    gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+				    tem_op.resimplify (lseq, valueize);
+				    _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				    if (!_r2) goto next_after_fail2346;
+				    _o1[3] = _r2;
+				  }
+				  gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_FMAX, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r1) goto next_after_fail2346;
+				  res_op->ops[0] = _r1;
+				}
+				res_op->resimplify (lseq, valueize);
+				if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1125, __FILE__, __LINE__, true);
+				return true;
+			      }
+next_after_fail2346:;
+			    }
+		      }
+		    }
+	          }
+	        break;
+	      case CFN_FMIN:
+	        if (gimple_call_num_args (_c1) == 2)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    {
+		      tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _p2, _q40, _q41 };
+		      {
+ tree op_type = TREE_TYPE (captures[2]);
+			  if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_FMIN), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[2])
+)
+			    {
+			      gimple_seq *lseq = seq;
+			      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2347;
+			      {
+				res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+				{
+				  tree _o1[4], _r1;
+				  {
+				    tree _o2[1], _r2;
+				    _o2[0] = captures[0];
+				    gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+				    tem_op.resimplify (lseq, valueize);
+				    _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				    if (!_r2) goto next_after_fail2347;
+				    _o1[0] = _r2;
+				  }
+				  _o1[1] = captures[3];
+				  _o1[2] = captures[4];
+				  {
+				    tree _o2[1], _r2;
+				    _o2[0] = captures[1];
+				    gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+				    tem_op.resimplify (lseq, valueize);
+				    _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				    if (!_r2) goto next_after_fail2347;
+				    _o1[3] = _r2;
+				  }
+				  gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_FMIN, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r1) goto next_after_fail2347;
+				  res_op->ops[0] = _r1;
+				}
+				res_op->resimplify (lseq, valueize);
+				if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1125, __FILE__, __LINE__, true);
+				return true;
+			      }
+next_after_fail2347:;
+			    }
+		      }
+		    }
+	          }
+	        break;
+	      case CFN_COPYSIGN:
+	        if (gimple_call_num_args (_c1) == 2)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    {
+		      tree captures[5] ATTRIBUTE_UNUSED = { _p0, _p1, _p2, _q40, _q41 };
+		      {
+ tree op_type = TREE_TYPE (captures[2]);
+			  if (vectorized_internal_fn_supported_p (as_internal_fn (CFN_COND_COPYSIGN), op_type)
+ && is_truth_type_for (op_type, TREE_TYPE (captures[0]))
+ && single_use (captures[2])
+)
+			    {
+			      gimple_seq *lseq = seq;
+			      if (UNLIKELY (!dbg_cnt (match))) goto next_after_fail2348;
+			      {
+				res_op->set_op (VIEW_CONVERT_EXPR, type, 1);
+				{
+				  tree _o1[4], _r1;
+				  {
+				    tree _o2[1], _r2;
+				    _o2[0] = captures[0];
+				    gimple_match_op tem_op (res_op->cond.any_else (), BIT_NOT_EXPR, TREE_TYPE (_o2[0]), _o2[0]);
+				    tem_op.resimplify (lseq, valueize);
+				    _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				    if (!_r2) goto next_after_fail2348;
+				    _o1[0] = _r2;
+				  }
+				  _o1[1] = captures[3];
+				  _o1[2] = captures[4];
+				  {
+				    tree _o2[1], _r2;
+				    _o2[0] = captures[1];
+				    gimple_match_op tem_op (res_op->cond.any_else (), VIEW_CONVERT_EXPR, op_type, _o2[0]);
+				    tem_op.resimplify (lseq, valueize);
+				    _r2 = maybe_push_res_to_seq (&tem_op, lseq);
+				    if (!_r2) goto next_after_fail2348;
+				    _o1[3] = _r2;
+				  }
+				  gimple_match_op tem_op (res_op->cond.any_else (), CFN_COND_COPYSIGN, TREE_TYPE (_o1[1]), _o1[0], _o1[1], _o1[2], _o1[3]);
+				  tem_op.resimplify (lseq, valueize);
+				  _r1 = maybe_push_res_to_seq (&tem_op, lseq);
+				  if (!_r1) goto next_after_fail2348;
+				  res_op->ops[0] = _r1;
+				}
+				res_op->resimplify (lseq, valueize);
+				if (UNLIKELY (debug_dump)) gimple_dump_logs ("match.pd", 1125, __FILE__, __LINE__, true);
+				return true;
+			      }
+next_after_fail2348:;
+			    }
+		      }
+		    }
+	          }
+	        break;
+	      default:;
+	      }
+        }
+      break;
+    default:;
+    }
+  switch (TREE_CODE (_p1))
+    {
+    case SSA_NAME:
+      if (gimple *_d1 = get_def (valueize, _p1))
+        {
+	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
+	    switch (gimple_assign_rhs_code (_a1))
+	      {
+	      case VIEW_CONVERT_EXPR:
+	        {
+		  tree _q30 = TREE_OPERAND (gimple_assign_rhs1 (_a1), 0);
+		  if ((TREE_CODE (_q30) == SSA_NAME
+		       || is_gimple_min_invariant (_q30)))
+		    {
+		      _q30 = do_valueize (valueize, _q30);
+		      switch (TREE_CODE (_q30))
+		        {
+			case SSA_NAME:
+			  if (gimple *_d2 = get_def (valueize, _q30))
+			    {
+			      if (gcall *_c2 = dyn_cast <gcall *> (_d2))
+			        switch (gimple_call_combined_fn (_c2))
+				  {
+				  case CFN_FMA:
+				    if (gimple_call_num_args (_c2) == 3)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					if (tree_swap_operands_p (_q40, _q41))
+					  std::swap (_q40, _q41);
+					{
+					  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _q30, _q40, _q41, _q42, _p2 };
+					  if (gimple_simplify_582 (res_op, seq, valueize, type, captures, CFN_FMA, CFN_COND_FMA))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_FMS:
+				    if (gimple_call_num_args (_c2) == 3)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					if (tree_swap_operands_p (_q40, _q41))
+					  std::swap (_q40, _q41);
+					{
+					  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _q30, _q40, _q41, _q42, _p2 };
+					  if (gimple_simplify_582 (res_op, seq, valueize, type, captures, CFN_FMS, CFN_COND_FMS))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_FNMA:
+				    if (gimple_call_num_args (_c2) == 3)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					if (tree_swap_operands_p (_q40, _q41))
+					  std::swap (_q40, _q41);
+					{
+					  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _q30, _q40, _q41, _q42, _p2 };
+					  if (gimple_simplify_582 (res_op, seq, valueize, type, captures, CFN_FNMA, CFN_COND_FNMA))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_FNMS:
+				    if (gimple_call_num_args (_c2) == 3)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					if (tree_swap_operands_p (_q40, _q41))
+					  std::swap (_q40, _q41);
+					{
+					  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _q30, _q40, _q41, _q42, _p2 };
+					  if (gimple_simplify_582 (res_op, seq, valueize, type, captures, CFN_FNMS, CFN_COND_FNMS))
+					    return true;
+					}
+				      }
+				    break;
+				  default:;
+				  }
+			    }
+			  break;
+		        default:;
+		        }
+		    }
+	          break;
+	        }
+	      default:;
+	      }
+	  else if (gcall *_c1 = dyn_cast <gcall *> (_d1))
+	    switch (gimple_call_combined_fn (_c1))
+	      {
+	      case CFN_FMA:
+	        if (gimple_call_num_args (_c1) == 3)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    if (tree_swap_operands_p (_q30, _q31))
+		      std::swap (_q30, _q31);
+		    {
+		      tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _q32, _p2 };
+		      if (gimple_simplify_582 (res_op, seq, valueize, type, captures, CFN_FMA, CFN_COND_FMA))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_FMS:
+	        if (gimple_call_num_args (_c1) == 3)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    if (tree_swap_operands_p (_q30, _q31))
+		      std::swap (_q30, _q31);
+		    {
+		      tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _q32, _p2 };
+		      if (gimple_simplify_582 (res_op, seq, valueize, type, captures, CFN_FMS, CFN_COND_FMS))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_FNMA:
+	        if (gimple_call_num_args (_c1) == 3)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    if (tree_swap_operands_p (_q30, _q31))
+		      std::swap (_q30, _q31);
+		    {
+		      tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _q32, _p2 };
+		      if (gimple_simplify_582 (res_op, seq, valueize, type, captures, CFN_FNMA, CFN_COND_FNMA))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_FNMS:
+	        if (gimple_call_num_args (_c1) == 3)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    if (tree_swap_operands_p (_q30, _q31))
+		      std::swap (_q30, _q31);
+		    {
+		      tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _q32, _p2 };
+		      if (gimple_simplify_582 (res_op, seq, valueize, type, captures, CFN_FNMS, CFN_COND_FNMS))
+		        return true;
+		    }
+	          }
+	        break;
+	      default:;
+	      }
+        }
+      break;
+    default:;
+    }
+  switch (TREE_CODE (_p2))
+    {
+    case SSA_NAME:
+      if (gimple *_d1 = get_def (valueize, _p2))
+        {
+	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
+	    switch (gimple_assign_rhs_code (_a1))
+	      {
+	      case VIEW_CONVERT_EXPR:
+	        {
+		  tree _q40 = TREE_OPERAND (gimple_assign_rhs1 (_a1), 0);
+		  if ((TREE_CODE (_q40) == SSA_NAME
+		       || is_gimple_min_invariant (_q40)))
+		    {
+		      _q40 = do_valueize (valueize, _q40);
+		      switch (TREE_CODE (_q40))
+		        {
+			case SSA_NAME:
+			  if (gimple *_d2 = get_def (valueize, _q40))
+			    {
+			      if (gcall *_c2 = dyn_cast <gcall *> (_d2))
+			        switch (gimple_call_combined_fn (_c2))
+				  {
+				  case CFN_FMA:
+				    if (gimple_call_num_args (_c2) == 3)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					if (tree_swap_operands_p (_q50, _q51))
+					  std::swap (_q50, _q51);
+					{
+					  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q50, _q51, _q52 };
+					  if (gimple_simplify_583 (res_op, seq, valueize, type, captures, CFN_FMA, CFN_COND_FMA))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_FMS:
+				    if (gimple_call_num_args (_c2) == 3)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					if (tree_swap_operands_p (_q50, _q51))
+					  std::swap (_q50, _q51);
+					{
+					  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q50, _q51, _q52 };
+					  if (gimple_simplify_583 (res_op, seq, valueize, type, captures, CFN_FMS, CFN_COND_FMS))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_FNMA:
+				    if (gimple_call_num_args (_c2) == 3)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					if (tree_swap_operands_p (_q50, _q51))
+					  std::swap (_q50, _q51);
+					{
+					  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q50, _q51, _q52 };
+					  if (gimple_simplify_583 (res_op, seq, valueize, type, captures, CFN_FNMA, CFN_COND_FNMA))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_FNMS:
+				    if (gimple_call_num_args (_c2) == 3)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					if (tree_swap_operands_p (_q50, _q51))
+					  std::swap (_q50, _q51);
+					{
+					  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q50, _q51, _q52 };
+					  if (gimple_simplify_583 (res_op, seq, valueize, type, captures, CFN_FNMS, CFN_COND_FNMS))
+					    return true;
+					}
+				      }
+				    break;
+				  default:;
+				  }
+			    }
+			  break;
+		        default:;
+		        }
+		    }
+	          break;
+	        }
+	      default:;
+	      }
+	  else if (gcall *_c1 = dyn_cast <gcall *> (_d1))
+	    switch (gimple_call_combined_fn (_c1))
+	      {
+	      case CFN_FMA:
+	        if (gimple_call_num_args (_c1) == 3)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    if (tree_swap_operands_p (_q40, _q41))
+		      std::swap (_q40, _q41);
+		    {
+		      tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _p2, _q40, _q41, _q42 };
+		      if (gimple_simplify_583 (res_op, seq, valueize, type, captures, CFN_FMA, CFN_COND_FMA))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_FMS:
+	        if (gimple_call_num_args (_c1) == 3)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    if (tree_swap_operands_p (_q40, _q41))
+		      std::swap (_q40, _q41);
+		    {
+		      tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _p2, _q40, _q41, _q42 };
+		      if (gimple_simplify_583 (res_op, seq, valueize, type, captures, CFN_FMS, CFN_COND_FMS))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_FNMA:
+	        if (gimple_call_num_args (_c1) == 3)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    if (tree_swap_operands_p (_q40, _q41))
+		      std::swap (_q40, _q41);
+		    {
+		      tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _p2, _q40, _q41, _q42 };
+		      if (gimple_simplify_583 (res_op, seq, valueize, type, captures, CFN_FNMA, CFN_COND_FNMA))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_FNMS:
+	        if (gimple_call_num_args (_c1) == 3)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    if (tree_swap_operands_p (_q40, _q41))
+		      std::swap (_q40, _q41);
+		    {
+		      tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _p2, _q40, _q41, _q42 };
+		      if (gimple_simplify_583 (res_op, seq, valueize, type, captures, CFN_FNMS, CFN_COND_FNMS))
+		        return true;
+		    }
+	          }
+	        break;
+	      default:;
+	      }
+        }
+      break;
+    default:;
+    }
+  switch (TREE_CODE (_p1))
+    {
+    case SSA_NAME:
+      if (gimple *_d1 = get_def (valueize, _p1))
+        {
+	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
+	    switch (gimple_assign_rhs_code (_a1))
+	      {
+	      case VIEW_CONVERT_EXPR:
+	        {
+		  tree _q30 = TREE_OPERAND (gimple_assign_rhs1 (_a1), 0);
+		  if ((TREE_CODE (_q30) == SSA_NAME
+		       || is_gimple_min_invariant (_q30)))
+		    {
+		      _q30 = do_valueize (valueize, _q30);
+		      switch (TREE_CODE (_q30))
+		        {
+			case SSA_NAME:
+			  if (gimple *_d2 = get_def (valueize, _q30))
+			    {
+			      if (gcall *_c2 = dyn_cast <gcall *> (_d2))
+			        switch (gimple_call_combined_fn (_c2))
+				  {
+				  case CFN_COND_ADD:
+				    if (gimple_call_num_args (_c2) == 4)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					if (tree_swap_operands_p (_q41, _q42))
+					  std::swap (_q41, _q42);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _p2 };
+					      if (gimple_simplify_584 (res_op, seq, valueize, type, captures, CFN_COND_ADD))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_AND:
+				    if (gimple_call_num_args (_c2) == 4)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					if (tree_swap_operands_p (_q41, _q42))
+					  std::swap (_q41, _q42);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _p2 };
+					      if (gimple_simplify_584 (res_op, seq, valueize, type, captures, CFN_COND_AND))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_DIV:
+				    if (gimple_call_num_args (_c2) == 4)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _p2 };
+					      if (gimple_simplify_584 (res_op, seq, valueize, type, captures, CFN_COND_DIV))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_IOR:
+				    if (gimple_call_num_args (_c2) == 4)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					if (tree_swap_operands_p (_q41, _q42))
+					  std::swap (_q41, _q42);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _p2 };
+					      if (gimple_simplify_584 (res_op, seq, valueize, type, captures, CFN_COND_IOR))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_MAX:
+				    if (gimple_call_num_args (_c2) == 4)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					if (tree_swap_operands_p (_q41, _q42))
+					  std::swap (_q41, _q42);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _p2 };
+					      if (gimple_simplify_584 (res_op, seq, valueize, type, captures, CFN_COND_MAX))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_MIN:
+				    if (gimple_call_num_args (_c2) == 4)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					if (tree_swap_operands_p (_q41, _q42))
+					  std::swap (_q41, _q42);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _p2 };
+					      if (gimple_simplify_584 (res_op, seq, valueize, type, captures, CFN_COND_MIN))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_MOD:
+				    if (gimple_call_num_args (_c2) == 4)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _p2 };
+					      if (gimple_simplify_584 (res_op, seq, valueize, type, captures, CFN_COND_MOD))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_MUL:
+				    if (gimple_call_num_args (_c2) == 4)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					if (tree_swap_operands_p (_q41, _q42))
+					  std::swap (_q41, _q42);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _p2 };
+					      if (gimple_simplify_584 (res_op, seq, valueize, type, captures, CFN_COND_MUL))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_SHL:
+				    if (gimple_call_num_args (_c2) == 4)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _p2 };
+					      if (gimple_simplify_584 (res_op, seq, valueize, type, captures, CFN_COND_SHL))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_SHR:
+				    if (gimple_call_num_args (_c2) == 4)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _p2 };
+					      if (gimple_simplify_584 (res_op, seq, valueize, type, captures, CFN_COND_SHR))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_SUB:
+				    if (gimple_call_num_args (_c2) == 4)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _p2 };
+					      if (gimple_simplify_584 (res_op, seq, valueize, type, captures, CFN_COND_SUB))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_XOR:
+				    if (gimple_call_num_args (_c2) == 4)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					if (tree_swap_operands_p (_q41, _q42))
+					  std::swap (_q41, _q42);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _p2 };
+					      if (gimple_simplify_584 (res_op, seq, valueize, type, captures, CFN_COND_XOR))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_COPYSIGN:
+				    if (gimple_call_num_args (_c2) == 4)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _p2 };
+					      if (gimple_simplify_584 (res_op, seq, valueize, type, captures, CFN_COND_COPYSIGN))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_FMAX:
+				    if (gimple_call_num_args (_c2) == 4)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					if (tree_swap_operands_p (_q41, _q42))
+					  std::swap (_q41, _q42);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _p2 };
+					      if (gimple_simplify_584 (res_op, seq, valueize, type, captures, CFN_COND_FMAX))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_FMIN:
+				    if (gimple_call_num_args (_c2) == 4)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					if (tree_swap_operands_p (_q41, _q42))
+					  std::swap (_q41, _q42);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _p2 };
+					      if (gimple_simplify_584 (res_op, seq, valueize, type, captures, CFN_COND_FMIN))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_RDIV:
+				    if (gimple_call_num_args (_c2) == 4)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _p2 };
+					      if (gimple_simplify_584 (res_op, seq, valueize, type, captures, CFN_COND_RDIV))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  default:;
+				  }
+			    }
+			  break;
+		        default:;
+		        }
+		    }
+	          break;
+	        }
+	      default:;
+	      }
+	  else if (gcall *_c1 = dyn_cast <gcall *> (_d1))
+	    switch (gimple_call_combined_fn (_c1))
+	      {
+	      case CFN_COND_ADD:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _p2 };
+			  if (gimple_simplify_584 (res_op, seq, valueize, type, captures, CFN_COND_ADD))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_AND:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _p2 };
+			  if (gimple_simplify_584 (res_op, seq, valueize, type, captures, CFN_COND_AND))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_DIV:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _p2 };
+			  if (gimple_simplify_584 (res_op, seq, valueize, type, captures, CFN_COND_DIV))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_IOR:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _p2 };
+			  if (gimple_simplify_584 (res_op, seq, valueize, type, captures, CFN_COND_IOR))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_MAX:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _p2 };
+			  if (gimple_simplify_584 (res_op, seq, valueize, type, captures, CFN_COND_MAX))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_MIN:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _p2 };
+			  if (gimple_simplify_584 (res_op, seq, valueize, type, captures, CFN_COND_MIN))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_MOD:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _p2 };
+			  if (gimple_simplify_584 (res_op, seq, valueize, type, captures, CFN_COND_MOD))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_MUL:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _p2 };
+			  if (gimple_simplify_584 (res_op, seq, valueize, type, captures, CFN_COND_MUL))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_SHL:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _p2 };
+			  if (gimple_simplify_584 (res_op, seq, valueize, type, captures, CFN_COND_SHL))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_SHR:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _p2 };
+			  if (gimple_simplify_584 (res_op, seq, valueize, type, captures, CFN_COND_SHR))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_SUB:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _p2 };
+			  if (gimple_simplify_584 (res_op, seq, valueize, type, captures, CFN_COND_SUB))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_XOR:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _p2 };
+			  if (gimple_simplify_584 (res_op, seq, valueize, type, captures, CFN_COND_XOR))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_COPYSIGN:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _p2 };
+			  if (gimple_simplify_584 (res_op, seq, valueize, type, captures, CFN_COND_COPYSIGN))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_FMAX:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _p2 };
+			  if (gimple_simplify_584 (res_op, seq, valueize, type, captures, CFN_COND_FMAX))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_FMIN:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _p2 };
+			  if (gimple_simplify_584 (res_op, seq, valueize, type, captures, CFN_COND_FMIN))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_RDIV:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[5] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _p2 };
+			  if (gimple_simplify_584 (res_op, seq, valueize, type, captures, CFN_COND_RDIV))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      default:;
+	      }
+        }
+      break;
+    default:;
+    }
+  switch (TREE_CODE (_p2))
+    {
+    case SSA_NAME:
+      if (gimple *_d1 = get_def (valueize, _p2))
+        {
+	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
+	    switch (gimple_assign_rhs_code (_a1))
+	      {
+	      case VIEW_CONVERT_EXPR:
+	        {
+		  tree _q40 = TREE_OPERAND (gimple_assign_rhs1 (_a1), 0);
+		  if ((TREE_CODE (_q40) == SSA_NAME
+		       || is_gimple_min_invariant (_q40)))
+		    {
+		      _q40 = do_valueize (valueize, _q40);
+		      switch (TREE_CODE (_q40))
+		        {
+			case SSA_NAME:
+			  if (gimple *_d2 = get_def (valueize, _q40))
+			    {
+			      if (gcall *_c2 = dyn_cast <gcall *> (_d2))
+			        switch (gimple_call_combined_fn (_c2))
+				  {
+				  case CFN_COND_ADD:
+				    if (gimple_call_num_args (_c2) == 4)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					if (tree_swap_operands_p (_q51, _q52))
+					  std::swap (_q51, _q52);
+					{
+					  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53 };
+					  if (gimple_simplify_585 (res_op, seq, valueize, type, captures, CFN_COND_ADD))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_AND:
+				    if (gimple_call_num_args (_c2) == 4)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					if (tree_swap_operands_p (_q51, _q52))
+					  std::swap (_q51, _q52);
+					{
+					  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53 };
+					  if (gimple_simplify_585 (res_op, seq, valueize, type, captures, CFN_COND_AND))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_DIV:
+				    if (gimple_call_num_args (_c2) == 4)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					{
+					  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53 };
+					  if (gimple_simplify_585 (res_op, seq, valueize, type, captures, CFN_COND_DIV))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_IOR:
+				    if (gimple_call_num_args (_c2) == 4)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					if (tree_swap_operands_p (_q51, _q52))
+					  std::swap (_q51, _q52);
+					{
+					  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53 };
+					  if (gimple_simplify_585 (res_op, seq, valueize, type, captures, CFN_COND_IOR))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_MAX:
+				    if (gimple_call_num_args (_c2) == 4)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					if (tree_swap_operands_p (_q51, _q52))
+					  std::swap (_q51, _q52);
+					{
+					  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53 };
+					  if (gimple_simplify_585 (res_op, seq, valueize, type, captures, CFN_COND_MAX))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_MIN:
+				    if (gimple_call_num_args (_c2) == 4)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					if (tree_swap_operands_p (_q51, _q52))
+					  std::swap (_q51, _q52);
+					{
+					  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53 };
+					  if (gimple_simplify_585 (res_op, seq, valueize, type, captures, CFN_COND_MIN))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_MOD:
+				    if (gimple_call_num_args (_c2) == 4)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					{
+					  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53 };
+					  if (gimple_simplify_585 (res_op, seq, valueize, type, captures, CFN_COND_MOD))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_MUL:
+				    if (gimple_call_num_args (_c2) == 4)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					if (tree_swap_operands_p (_q51, _q52))
+					  std::swap (_q51, _q52);
+					{
+					  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53 };
+					  if (gimple_simplify_585 (res_op, seq, valueize, type, captures, CFN_COND_MUL))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_SHL:
+				    if (gimple_call_num_args (_c2) == 4)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					{
+					  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53 };
+					  if (gimple_simplify_585 (res_op, seq, valueize, type, captures, CFN_COND_SHL))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_SHR:
+				    if (gimple_call_num_args (_c2) == 4)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					{
+					  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53 };
+					  if (gimple_simplify_585 (res_op, seq, valueize, type, captures, CFN_COND_SHR))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_SUB:
+				    if (gimple_call_num_args (_c2) == 4)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					{
+					  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53 };
+					  if (gimple_simplify_585 (res_op, seq, valueize, type, captures, CFN_COND_SUB))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_XOR:
+				    if (gimple_call_num_args (_c2) == 4)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					if (tree_swap_operands_p (_q51, _q52))
+					  std::swap (_q51, _q52);
+					{
+					  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53 };
+					  if (gimple_simplify_585 (res_op, seq, valueize, type, captures, CFN_COND_XOR))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_COPYSIGN:
+				    if (gimple_call_num_args (_c2) == 4)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					{
+					  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53 };
+					  if (gimple_simplify_585 (res_op, seq, valueize, type, captures, CFN_COND_COPYSIGN))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_FMAX:
+				    if (gimple_call_num_args (_c2) == 4)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					if (tree_swap_operands_p (_q51, _q52))
+					  std::swap (_q51, _q52);
+					{
+					  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53 };
+					  if (gimple_simplify_585 (res_op, seq, valueize, type, captures, CFN_COND_FMAX))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_FMIN:
+				    if (gimple_call_num_args (_c2) == 4)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					if (tree_swap_operands_p (_q51, _q52))
+					  std::swap (_q51, _q52);
+					{
+					  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53 };
+					  if (gimple_simplify_585 (res_op, seq, valueize, type, captures, CFN_COND_FMIN))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_RDIV:
+				    if (gimple_call_num_args (_c2) == 4)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					{
+					  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53 };
+					  if (gimple_simplify_585 (res_op, seq, valueize, type, captures, CFN_COND_RDIV))
+					    return true;
+					}
+				      }
+				    break;
+				  default:;
+				  }
+			    }
+			  break;
+		        default:;
+		        }
+		    }
+	          break;
+	        }
+	      default:;
+	      }
+	  else if (gcall *_c1 = dyn_cast <gcall *> (_d1))
+	    switch (gimple_call_combined_fn (_c1))
+	      {
+	      case CFN_COND_ADD:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    if (tree_swap_operands_p (_q41, _q42))
+		      std::swap (_q41, _q42);
+		    {
+		      tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43 };
+		      if (gimple_simplify_585 (res_op, seq, valueize, type, captures, CFN_COND_ADD))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_AND:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    if (tree_swap_operands_p (_q41, _q42))
+		      std::swap (_q41, _q42);
+		    {
+		      tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43 };
+		      if (gimple_simplify_585 (res_op, seq, valueize, type, captures, CFN_COND_AND))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_DIV:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    {
+		      tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43 };
+		      if (gimple_simplify_585 (res_op, seq, valueize, type, captures, CFN_COND_DIV))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_IOR:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    if (tree_swap_operands_p (_q41, _q42))
+		      std::swap (_q41, _q42);
+		    {
+		      tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43 };
+		      if (gimple_simplify_585 (res_op, seq, valueize, type, captures, CFN_COND_IOR))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_MAX:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    if (tree_swap_operands_p (_q41, _q42))
+		      std::swap (_q41, _q42);
+		    {
+		      tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43 };
+		      if (gimple_simplify_585 (res_op, seq, valueize, type, captures, CFN_COND_MAX))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_MIN:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    if (tree_swap_operands_p (_q41, _q42))
+		      std::swap (_q41, _q42);
+		    {
+		      tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43 };
+		      if (gimple_simplify_585 (res_op, seq, valueize, type, captures, CFN_COND_MIN))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_MOD:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    {
+		      tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43 };
+		      if (gimple_simplify_585 (res_op, seq, valueize, type, captures, CFN_COND_MOD))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_MUL:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    if (tree_swap_operands_p (_q41, _q42))
+		      std::swap (_q41, _q42);
+		    {
+		      tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43 };
+		      if (gimple_simplify_585 (res_op, seq, valueize, type, captures, CFN_COND_MUL))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_SHL:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    {
+		      tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43 };
+		      if (gimple_simplify_585 (res_op, seq, valueize, type, captures, CFN_COND_SHL))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_SHR:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    {
+		      tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43 };
+		      if (gimple_simplify_585 (res_op, seq, valueize, type, captures, CFN_COND_SHR))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_SUB:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    {
+		      tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43 };
+		      if (gimple_simplify_585 (res_op, seq, valueize, type, captures, CFN_COND_SUB))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_XOR:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    if (tree_swap_operands_p (_q41, _q42))
+		      std::swap (_q41, _q42);
+		    {
+		      tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43 };
+		      if (gimple_simplify_585 (res_op, seq, valueize, type, captures, CFN_COND_XOR))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_COPYSIGN:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    {
+		      tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43 };
+		      if (gimple_simplify_585 (res_op, seq, valueize, type, captures, CFN_COND_COPYSIGN))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_FMAX:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    if (tree_swap_operands_p (_q41, _q42))
+		      std::swap (_q41, _q42);
+		    {
+		      tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43 };
+		      if (gimple_simplify_585 (res_op, seq, valueize, type, captures, CFN_COND_FMAX))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_FMIN:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    if (tree_swap_operands_p (_q41, _q42))
+		      std::swap (_q41, _q42);
+		    {
+		      tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43 };
+		      if (gimple_simplify_585 (res_op, seq, valueize, type, captures, CFN_COND_FMIN))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_RDIV:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    {
+		      tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43 };
+		      if (gimple_simplify_585 (res_op, seq, valueize, type, captures, CFN_COND_RDIV))
+		        return true;
+		    }
+	          }
+	        break;
+	      default:;
+	      }
+        }
+      break;
+    default:;
+    }
+  switch (TREE_CODE (_p1))
+    {
+    case SSA_NAME:
+      if (gimple *_d1 = get_def (valueize, _p1))
+        {
+	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
+	    switch (gimple_assign_rhs_code (_a1))
+	      {
+	      case VIEW_CONVERT_EXPR:
+	        {
+		  tree _q30 = TREE_OPERAND (gimple_assign_rhs1 (_a1), 0);
+		  if ((TREE_CODE (_q30) == SSA_NAME
+		       || is_gimple_min_invariant (_q30)))
+		    {
+		      _q30 = do_valueize (valueize, _q30);
+		      switch (TREE_CODE (_q30))
+		        {
+			case SSA_NAME:
+			  if (gimple *_d2 = get_def (valueize, _q30))
+			    {
+			      if (gcall *_c2 = dyn_cast <gcall *> (_d2))
+			        switch (gimple_call_combined_fn (_c2))
+				  {
+				  case CFN_COND_FMA:
+				    if (gimple_call_num_args (_c2) == 5)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					tree _q44 = gimple_call_arg (_c2, 4);
+					_q44 = do_valueize (valueize, _q44);
+					if (tree_swap_operands_p (_q41, _q42))
+					  std::swap (_q41, _q42);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[6] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _q44, _p2 };
+					      if (gimple_simplify_586 (res_op, seq, valueize, type, captures, CFN_COND_FMA))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_FMS:
+				    if (gimple_call_num_args (_c2) == 5)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					tree _q44 = gimple_call_arg (_c2, 4);
+					_q44 = do_valueize (valueize, _q44);
+					if (tree_swap_operands_p (_q41, _q42))
+					  std::swap (_q41, _q42);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[6] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _q44, _p2 };
+					      if (gimple_simplify_586 (res_op, seq, valueize, type, captures, CFN_COND_FMS))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_FNMA:
+				    if (gimple_call_num_args (_c2) == 5)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					tree _q44 = gimple_call_arg (_c2, 4);
+					_q44 = do_valueize (valueize, _q44);
+					if (tree_swap_operands_p (_q41, _q42))
+					  std::swap (_q41, _q42);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[6] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _q44, _p2 };
+					      if (gimple_simplify_586 (res_op, seq, valueize, type, captures, CFN_COND_FNMA))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_FNMS:
+				    if (gimple_call_num_args (_c2) == 5)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					tree _q44 = gimple_call_arg (_c2, 4);
+					_q44 = do_valueize (valueize, _q44);
+					if (tree_swap_operands_p (_q41, _q42))
+					  std::swap (_q41, _q42);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[6] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _q44, _p2 };
+					      if (gimple_simplify_586 (res_op, seq, valueize, type, captures, CFN_COND_FNMS))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  default:;
+				  }
+			    }
+			  break;
+		        default:;
+		        }
+		    }
+	          break;
+	        }
+	      default:;
+	      }
+	  else if (gcall *_c1 = dyn_cast <gcall *> (_d1))
+	    switch (gimple_call_combined_fn (_c1))
+	      {
+	      case CFN_COND_FMA:
+	        if (gimple_call_num_args (_c1) == 5)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    tree _q34 = gimple_call_arg (_c1, 4);
+		    _q34 = do_valueize (valueize, _q34);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _q34, _p2 };
+			  if (gimple_simplify_586 (res_op, seq, valueize, type, captures, CFN_COND_FMA))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_FMS:
+	        if (gimple_call_num_args (_c1) == 5)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    tree _q34 = gimple_call_arg (_c1, 4);
+		    _q34 = do_valueize (valueize, _q34);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _q34, _p2 };
+			  if (gimple_simplify_586 (res_op, seq, valueize, type, captures, CFN_COND_FMS))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_FNMA:
+	        if (gimple_call_num_args (_c1) == 5)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    tree _q34 = gimple_call_arg (_c1, 4);
+		    _q34 = do_valueize (valueize, _q34);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _q34, _p2 };
+			  if (gimple_simplify_586 (res_op, seq, valueize, type, captures, CFN_COND_FNMA))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_FNMS:
+	        if (gimple_call_num_args (_c1) == 5)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    tree _q34 = gimple_call_arg (_c1, 4);
+		    _q34 = do_valueize (valueize, _q34);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _q34, _p2 };
+			  if (gimple_simplify_586 (res_op, seq, valueize, type, captures, CFN_COND_FNMS))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      default:;
+	      }
+        }
+      break;
+    default:;
+    }
+  switch (TREE_CODE (_p2))
+    {
+    case SSA_NAME:
+      if (gimple *_d1 = get_def (valueize, _p2))
+        {
+	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
+	    switch (gimple_assign_rhs_code (_a1))
+	      {
+	      case VIEW_CONVERT_EXPR:
+	        {
+		  tree _q40 = TREE_OPERAND (gimple_assign_rhs1 (_a1), 0);
+		  if ((TREE_CODE (_q40) == SSA_NAME
+		       || is_gimple_min_invariant (_q40)))
+		    {
+		      _q40 = do_valueize (valueize, _q40);
+		      switch (TREE_CODE (_q40))
+		        {
+			case SSA_NAME:
+			  if (gimple *_d2 = get_def (valueize, _q40))
+			    {
+			      if (gcall *_c2 = dyn_cast <gcall *> (_d2))
+			        switch (gimple_call_combined_fn (_c2))
+				  {
+				  case CFN_COND_FMA:
+				    if (gimple_call_num_args (_c2) == 5)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					tree _q54 = gimple_call_arg (_c2, 4);
+					_q54 = do_valueize (valueize, _q54);
+					if (tree_swap_operands_p (_q51, _q52))
+					  std::swap (_q51, _q52);
+					{
+					  tree captures[7] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53, _q54 };
+					  if (gimple_simplify_587 (res_op, seq, valueize, type, captures, CFN_COND_FMA))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_FMS:
+				    if (gimple_call_num_args (_c2) == 5)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					tree _q54 = gimple_call_arg (_c2, 4);
+					_q54 = do_valueize (valueize, _q54);
+					if (tree_swap_operands_p (_q51, _q52))
+					  std::swap (_q51, _q52);
+					{
+					  tree captures[7] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53, _q54 };
+					  if (gimple_simplify_587 (res_op, seq, valueize, type, captures, CFN_COND_FMS))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_FNMA:
+				    if (gimple_call_num_args (_c2) == 5)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					tree _q54 = gimple_call_arg (_c2, 4);
+					_q54 = do_valueize (valueize, _q54);
+					if (tree_swap_operands_p (_q51, _q52))
+					  std::swap (_q51, _q52);
+					{
+					  tree captures[7] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53, _q54 };
+					  if (gimple_simplify_587 (res_op, seq, valueize, type, captures, CFN_COND_FNMA))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_FNMS:
+				    if (gimple_call_num_args (_c2) == 5)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					tree _q54 = gimple_call_arg (_c2, 4);
+					_q54 = do_valueize (valueize, _q54);
+					if (tree_swap_operands_p (_q51, _q52))
+					  std::swap (_q51, _q52);
+					{
+					  tree captures[7] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53, _q54 };
+					  if (gimple_simplify_587 (res_op, seq, valueize, type, captures, CFN_COND_FNMS))
+					    return true;
+					}
+				      }
+				    break;
+				  default:;
+				  }
+			    }
+			  break;
+		        default:;
+		        }
+		    }
+	          break;
+	        }
+	      default:;
+	      }
+	  else if (gcall *_c1 = dyn_cast <gcall *> (_d1))
+	    switch (gimple_call_combined_fn (_c1))
+	      {
+	      case CFN_COND_FMA:
+	        if (gimple_call_num_args (_c1) == 5)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    tree _q44 = gimple_call_arg (_c1, 4);
+		    _q44 = do_valueize (valueize, _q44);
+		    if (tree_swap_operands_p (_q41, _q42))
+		      std::swap (_q41, _q42);
+		    {
+		      tree captures[7] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43, _q44 };
+		      if (gimple_simplify_587 (res_op, seq, valueize, type, captures, CFN_COND_FMA))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_FMS:
+	        if (gimple_call_num_args (_c1) == 5)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    tree _q44 = gimple_call_arg (_c1, 4);
+		    _q44 = do_valueize (valueize, _q44);
+		    if (tree_swap_operands_p (_q41, _q42))
+		      std::swap (_q41, _q42);
+		    {
+		      tree captures[7] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43, _q44 };
+		      if (gimple_simplify_587 (res_op, seq, valueize, type, captures, CFN_COND_FMS))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_FNMA:
+	        if (gimple_call_num_args (_c1) == 5)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    tree _q44 = gimple_call_arg (_c1, 4);
+		    _q44 = do_valueize (valueize, _q44);
+		    if (tree_swap_operands_p (_q41, _q42))
+		      std::swap (_q41, _q42);
+		    {
+		      tree captures[7] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43, _q44 };
+		      if (gimple_simplify_587 (res_op, seq, valueize, type, captures, CFN_COND_FNMA))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_FNMS:
+	        if (gimple_call_num_args (_c1) == 5)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    tree _q44 = gimple_call_arg (_c1, 4);
+		    _q44 = do_valueize (valueize, _q44);
+		    if (tree_swap_operands_p (_q41, _q42))
+		      std::swap (_q41, _q42);
+		    {
+		      tree captures[7] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43, _q44 };
+		      if (gimple_simplify_587 (res_op, seq, valueize, type, captures, CFN_COND_FNMS))
+		        return true;
+		    }
+	          }
+	        break;
+	      default:;
+	      }
+        }
+      break;
+    default:;
+    }
+  switch (TREE_CODE (_p1))
+    {
+    case SSA_NAME:
+      if (gimple *_d1 = get_def (valueize, _p1))
+        {
+	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
+	    switch (gimple_assign_rhs_code (_a1))
+	      {
+	      case VIEW_CONVERT_EXPR:
+	        {
+		  tree _q30 = TREE_OPERAND (gimple_assign_rhs1 (_a1), 0);
+		  if ((TREE_CODE (_q30) == SSA_NAME
+		       || is_gimple_min_invariant (_q30)))
+		    {
+		      _q30 = do_valueize (valueize, _q30);
+		      switch (TREE_CODE (_q30))
+		        {
+			case SSA_NAME:
+			  if (gimple *_d2 = get_def (valueize, _q30))
+			    {
+			      if (gcall *_c2 = dyn_cast <gcall *> (_d2))
+			        switch (gimple_call_combined_fn (_c2))
+				  {
+				  case CFN_COND_LEN_ADD:
+				    if (gimple_call_num_args (_c2) == 6)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					tree _q44 = gimple_call_arg (_c2, 4);
+					_q44 = do_valueize (valueize, _q44);
+					tree _q45 = gimple_call_arg (_c2, 5);
+					_q45 = do_valueize (valueize, _q45);
+					if (tree_swap_operands_p (_q41, _q42))
+					  std::swap (_q41, _q42);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _q44, _q45, _p2 };
+					      if (gimple_simplify_588 (res_op, seq, valueize, type, captures, CFN_COND_LEN_ADD))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_LEN_AND:
+				    if (gimple_call_num_args (_c2) == 6)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					tree _q44 = gimple_call_arg (_c2, 4);
+					_q44 = do_valueize (valueize, _q44);
+					tree _q45 = gimple_call_arg (_c2, 5);
+					_q45 = do_valueize (valueize, _q45);
+					if (tree_swap_operands_p (_q41, _q42))
+					  std::swap (_q41, _q42);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _q44, _q45, _p2 };
+					      if (gimple_simplify_588 (res_op, seq, valueize, type, captures, CFN_COND_LEN_AND))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_LEN_DIV:
+				    if (gimple_call_num_args (_c2) == 6)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					tree _q44 = gimple_call_arg (_c2, 4);
+					_q44 = do_valueize (valueize, _q44);
+					tree _q45 = gimple_call_arg (_c2, 5);
+					_q45 = do_valueize (valueize, _q45);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _q44, _q45, _p2 };
+					      if (gimple_simplify_588 (res_op, seq, valueize, type, captures, CFN_COND_LEN_DIV))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_LEN_IOR:
+				    if (gimple_call_num_args (_c2) == 6)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					tree _q44 = gimple_call_arg (_c2, 4);
+					_q44 = do_valueize (valueize, _q44);
+					tree _q45 = gimple_call_arg (_c2, 5);
+					_q45 = do_valueize (valueize, _q45);
+					if (tree_swap_operands_p (_q41, _q42))
+					  std::swap (_q41, _q42);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _q44, _q45, _p2 };
+					      if (gimple_simplify_588 (res_op, seq, valueize, type, captures, CFN_COND_LEN_IOR))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_LEN_MAX:
+				    if (gimple_call_num_args (_c2) == 6)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					tree _q44 = gimple_call_arg (_c2, 4);
+					_q44 = do_valueize (valueize, _q44);
+					tree _q45 = gimple_call_arg (_c2, 5);
+					_q45 = do_valueize (valueize, _q45);
+					if (tree_swap_operands_p (_q41, _q42))
+					  std::swap (_q41, _q42);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _q44, _q45, _p2 };
+					      if (gimple_simplify_588 (res_op, seq, valueize, type, captures, CFN_COND_LEN_MAX))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_LEN_MIN:
+				    if (gimple_call_num_args (_c2) == 6)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					tree _q44 = gimple_call_arg (_c2, 4);
+					_q44 = do_valueize (valueize, _q44);
+					tree _q45 = gimple_call_arg (_c2, 5);
+					_q45 = do_valueize (valueize, _q45);
+					if (tree_swap_operands_p (_q41, _q42))
+					  std::swap (_q41, _q42);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _q44, _q45, _p2 };
+					      if (gimple_simplify_588 (res_op, seq, valueize, type, captures, CFN_COND_LEN_MIN))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_LEN_MOD:
+				    if (gimple_call_num_args (_c2) == 6)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					tree _q44 = gimple_call_arg (_c2, 4);
+					_q44 = do_valueize (valueize, _q44);
+					tree _q45 = gimple_call_arg (_c2, 5);
+					_q45 = do_valueize (valueize, _q45);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _q44, _q45, _p2 };
+					      if (gimple_simplify_588 (res_op, seq, valueize, type, captures, CFN_COND_LEN_MOD))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_LEN_MUL:
+				    if (gimple_call_num_args (_c2) == 6)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					tree _q44 = gimple_call_arg (_c2, 4);
+					_q44 = do_valueize (valueize, _q44);
+					tree _q45 = gimple_call_arg (_c2, 5);
+					_q45 = do_valueize (valueize, _q45);
+					if (tree_swap_operands_p (_q41, _q42))
+					  std::swap (_q41, _q42);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _q44, _q45, _p2 };
+					      if (gimple_simplify_588 (res_op, seq, valueize, type, captures, CFN_COND_LEN_MUL))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_LEN_SHL:
+				    if (gimple_call_num_args (_c2) == 6)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					tree _q44 = gimple_call_arg (_c2, 4);
+					_q44 = do_valueize (valueize, _q44);
+					tree _q45 = gimple_call_arg (_c2, 5);
+					_q45 = do_valueize (valueize, _q45);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _q44, _q45, _p2 };
+					      if (gimple_simplify_588 (res_op, seq, valueize, type, captures, CFN_COND_LEN_SHL))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_LEN_SHR:
+				    if (gimple_call_num_args (_c2) == 6)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					tree _q44 = gimple_call_arg (_c2, 4);
+					_q44 = do_valueize (valueize, _q44);
+					tree _q45 = gimple_call_arg (_c2, 5);
+					_q45 = do_valueize (valueize, _q45);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _q44, _q45, _p2 };
+					      if (gimple_simplify_588 (res_op, seq, valueize, type, captures, CFN_COND_LEN_SHR))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_LEN_SUB:
+				    if (gimple_call_num_args (_c2) == 6)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					tree _q44 = gimple_call_arg (_c2, 4);
+					_q44 = do_valueize (valueize, _q44);
+					tree _q45 = gimple_call_arg (_c2, 5);
+					_q45 = do_valueize (valueize, _q45);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _q44, _q45, _p2 };
+					      if (gimple_simplify_588 (res_op, seq, valueize, type, captures, CFN_COND_LEN_SUB))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_LEN_XOR:
+				    if (gimple_call_num_args (_c2) == 6)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					tree _q44 = gimple_call_arg (_c2, 4);
+					_q44 = do_valueize (valueize, _q44);
+					tree _q45 = gimple_call_arg (_c2, 5);
+					_q45 = do_valueize (valueize, _q45);
+					if (tree_swap_operands_p (_q41, _q42))
+					  std::swap (_q41, _q42);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _q44, _q45, _p2 };
+					      if (gimple_simplify_588 (res_op, seq, valueize, type, captures, CFN_COND_LEN_XOR))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_LEN_FMAX:
+				    if (gimple_call_num_args (_c2) == 6)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					tree _q44 = gimple_call_arg (_c2, 4);
+					_q44 = do_valueize (valueize, _q44);
+					tree _q45 = gimple_call_arg (_c2, 5);
+					_q45 = do_valueize (valueize, _q45);
+					if (tree_swap_operands_p (_q41, _q42))
+					  std::swap (_q41, _q42);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _q44, _q45, _p2 };
+					      if (gimple_simplify_588 (res_op, seq, valueize, type, captures, CFN_COND_LEN_FMAX))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_LEN_FMIN:
+				    if (gimple_call_num_args (_c2) == 6)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					tree _q44 = gimple_call_arg (_c2, 4);
+					_q44 = do_valueize (valueize, _q44);
+					tree _q45 = gimple_call_arg (_c2, 5);
+					_q45 = do_valueize (valueize, _q45);
+					if (tree_swap_operands_p (_q41, _q42))
+					  std::swap (_q41, _q42);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _q44, _q45, _p2 };
+					      if (gimple_simplify_588 (res_op, seq, valueize, type, captures, CFN_COND_LEN_FMIN))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_LEN_RDIV:
+				    if (gimple_call_num_args (_c2) == 6)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					tree _q44 = gimple_call_arg (_c2, 4);
+					_q44 = do_valueize (valueize, _q44);
+					tree _q45 = gimple_call_arg (_c2, 5);
+					_q45 = do_valueize (valueize, _q45);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _q44, _q45, _p2 };
+					      if (gimple_simplify_588 (res_op, seq, valueize, type, captures, CFN_COND_LEN_RDIV))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_LEN_COPYSIGN:
+				    if (gimple_call_num_args (_c2) == 6)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					tree _q44 = gimple_call_arg (_c2, 4);
+					_q44 = do_valueize (valueize, _q44);
+					tree _q45 = gimple_call_arg (_c2, 5);
+					_q45 = do_valueize (valueize, _q45);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _q44, _q45, _p2 };
+					      if (gimple_simplify_588 (res_op, seq, valueize, type, captures, CFN_COND_LEN_COPYSIGN))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  default:;
+				  }
+			    }
+			  break;
+		        default:;
+		        }
+		    }
+	          break;
+	        }
+	      default:;
+	      }
+	  else if (gcall *_c1 = dyn_cast <gcall *> (_d1))
+	    switch (gimple_call_combined_fn (_c1))
+	      {
+	      case CFN_COND_LEN_ADD:
+	        if (gimple_call_num_args (_c1) == 6)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    tree _q34 = gimple_call_arg (_c1, 4);
+		    _q34 = do_valueize (valueize, _q34);
+		    tree _q35 = gimple_call_arg (_c1, 5);
+		    _q35 = do_valueize (valueize, _q35);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _q34, _q35, _p2 };
+			  if (gimple_simplify_588 (res_op, seq, valueize, type, captures, CFN_COND_LEN_ADD))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_LEN_AND:
+	        if (gimple_call_num_args (_c1) == 6)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    tree _q34 = gimple_call_arg (_c1, 4);
+		    _q34 = do_valueize (valueize, _q34);
+		    tree _q35 = gimple_call_arg (_c1, 5);
+		    _q35 = do_valueize (valueize, _q35);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _q34, _q35, _p2 };
+			  if (gimple_simplify_588 (res_op, seq, valueize, type, captures, CFN_COND_LEN_AND))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_LEN_DIV:
+	        if (gimple_call_num_args (_c1) == 6)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    tree _q34 = gimple_call_arg (_c1, 4);
+		    _q34 = do_valueize (valueize, _q34);
+		    tree _q35 = gimple_call_arg (_c1, 5);
+		    _q35 = do_valueize (valueize, _q35);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _q34, _q35, _p2 };
+			  if (gimple_simplify_588 (res_op, seq, valueize, type, captures, CFN_COND_LEN_DIV))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_LEN_IOR:
+	        if (gimple_call_num_args (_c1) == 6)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    tree _q34 = gimple_call_arg (_c1, 4);
+		    _q34 = do_valueize (valueize, _q34);
+		    tree _q35 = gimple_call_arg (_c1, 5);
+		    _q35 = do_valueize (valueize, _q35);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _q34, _q35, _p2 };
+			  if (gimple_simplify_588 (res_op, seq, valueize, type, captures, CFN_COND_LEN_IOR))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_LEN_MAX:
+	        if (gimple_call_num_args (_c1) == 6)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    tree _q34 = gimple_call_arg (_c1, 4);
+		    _q34 = do_valueize (valueize, _q34);
+		    tree _q35 = gimple_call_arg (_c1, 5);
+		    _q35 = do_valueize (valueize, _q35);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _q34, _q35, _p2 };
+			  if (gimple_simplify_588 (res_op, seq, valueize, type, captures, CFN_COND_LEN_MAX))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_LEN_MIN:
+	        if (gimple_call_num_args (_c1) == 6)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    tree _q34 = gimple_call_arg (_c1, 4);
+		    _q34 = do_valueize (valueize, _q34);
+		    tree _q35 = gimple_call_arg (_c1, 5);
+		    _q35 = do_valueize (valueize, _q35);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _q34, _q35, _p2 };
+			  if (gimple_simplify_588 (res_op, seq, valueize, type, captures, CFN_COND_LEN_MIN))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_LEN_MOD:
+	        if (gimple_call_num_args (_c1) == 6)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    tree _q34 = gimple_call_arg (_c1, 4);
+		    _q34 = do_valueize (valueize, _q34);
+		    tree _q35 = gimple_call_arg (_c1, 5);
+		    _q35 = do_valueize (valueize, _q35);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _q34, _q35, _p2 };
+			  if (gimple_simplify_588 (res_op, seq, valueize, type, captures, CFN_COND_LEN_MOD))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_LEN_MUL:
+	        if (gimple_call_num_args (_c1) == 6)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    tree _q34 = gimple_call_arg (_c1, 4);
+		    _q34 = do_valueize (valueize, _q34);
+		    tree _q35 = gimple_call_arg (_c1, 5);
+		    _q35 = do_valueize (valueize, _q35);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _q34, _q35, _p2 };
+			  if (gimple_simplify_588 (res_op, seq, valueize, type, captures, CFN_COND_LEN_MUL))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_LEN_SHL:
+	        if (gimple_call_num_args (_c1) == 6)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    tree _q34 = gimple_call_arg (_c1, 4);
+		    _q34 = do_valueize (valueize, _q34);
+		    tree _q35 = gimple_call_arg (_c1, 5);
+		    _q35 = do_valueize (valueize, _q35);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _q34, _q35, _p2 };
+			  if (gimple_simplify_588 (res_op, seq, valueize, type, captures, CFN_COND_LEN_SHL))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_LEN_SHR:
+	        if (gimple_call_num_args (_c1) == 6)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    tree _q34 = gimple_call_arg (_c1, 4);
+		    _q34 = do_valueize (valueize, _q34);
+		    tree _q35 = gimple_call_arg (_c1, 5);
+		    _q35 = do_valueize (valueize, _q35);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _q34, _q35, _p2 };
+			  if (gimple_simplify_588 (res_op, seq, valueize, type, captures, CFN_COND_LEN_SHR))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_LEN_SUB:
+	        if (gimple_call_num_args (_c1) == 6)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    tree _q34 = gimple_call_arg (_c1, 4);
+		    _q34 = do_valueize (valueize, _q34);
+		    tree _q35 = gimple_call_arg (_c1, 5);
+		    _q35 = do_valueize (valueize, _q35);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _q34, _q35, _p2 };
+			  if (gimple_simplify_588 (res_op, seq, valueize, type, captures, CFN_COND_LEN_SUB))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_LEN_XOR:
+	        if (gimple_call_num_args (_c1) == 6)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    tree _q34 = gimple_call_arg (_c1, 4);
+		    _q34 = do_valueize (valueize, _q34);
+		    tree _q35 = gimple_call_arg (_c1, 5);
+		    _q35 = do_valueize (valueize, _q35);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _q34, _q35, _p2 };
+			  if (gimple_simplify_588 (res_op, seq, valueize, type, captures, CFN_COND_LEN_XOR))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_LEN_FMAX:
+	        if (gimple_call_num_args (_c1) == 6)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    tree _q34 = gimple_call_arg (_c1, 4);
+		    _q34 = do_valueize (valueize, _q34);
+		    tree _q35 = gimple_call_arg (_c1, 5);
+		    _q35 = do_valueize (valueize, _q35);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _q34, _q35, _p2 };
+			  if (gimple_simplify_588 (res_op, seq, valueize, type, captures, CFN_COND_LEN_FMAX))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_LEN_FMIN:
+	        if (gimple_call_num_args (_c1) == 6)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    tree _q34 = gimple_call_arg (_c1, 4);
+		    _q34 = do_valueize (valueize, _q34);
+		    tree _q35 = gimple_call_arg (_c1, 5);
+		    _q35 = do_valueize (valueize, _q35);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _q34, _q35, _p2 };
+			  if (gimple_simplify_588 (res_op, seq, valueize, type, captures, CFN_COND_LEN_FMIN))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_LEN_RDIV:
+	        if (gimple_call_num_args (_c1) == 6)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    tree _q34 = gimple_call_arg (_c1, 4);
+		    _q34 = do_valueize (valueize, _q34);
+		    tree _q35 = gimple_call_arg (_c1, 5);
+		    _q35 = do_valueize (valueize, _q35);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _q34, _q35, _p2 };
+			  if (gimple_simplify_588 (res_op, seq, valueize, type, captures, CFN_COND_LEN_RDIV))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_LEN_COPYSIGN:
+	        if (gimple_call_num_args (_c1) == 6)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    tree _q34 = gimple_call_arg (_c1, 4);
+		    _q34 = do_valueize (valueize, _q34);
+		    tree _q35 = gimple_call_arg (_c1, 5);
+		    _q35 = do_valueize (valueize, _q35);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[7] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _q34, _q35, _p2 };
+			  if (gimple_simplify_588 (res_op, seq, valueize, type, captures, CFN_COND_LEN_COPYSIGN))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      default:;
+	      }
+        }
+      break;
+    default:;
+    }
+  switch (TREE_CODE (_p2))
+    {
+    case SSA_NAME:
+      if (gimple *_d1 = get_def (valueize, _p2))
+        {
+	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
+	    switch (gimple_assign_rhs_code (_a1))
+	      {
+	      case VIEW_CONVERT_EXPR:
+	        {
+		  tree _q40 = TREE_OPERAND (gimple_assign_rhs1 (_a1), 0);
+		  if ((TREE_CODE (_q40) == SSA_NAME
+		       || is_gimple_min_invariant (_q40)))
+		    {
+		      _q40 = do_valueize (valueize, _q40);
+		      switch (TREE_CODE (_q40))
+		        {
+			case SSA_NAME:
+			  if (gimple *_d2 = get_def (valueize, _q40))
+			    {
+			      if (gcall *_c2 = dyn_cast <gcall *> (_d2))
+			        switch (gimple_call_combined_fn (_c2))
+				  {
+				  case CFN_COND_LEN_ADD:
+				    if (gimple_call_num_args (_c2) == 6)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					tree _q54 = gimple_call_arg (_c2, 4);
+					_q54 = do_valueize (valueize, _q54);
+					tree _q55 = gimple_call_arg (_c2, 5);
+					_q55 = do_valueize (valueize, _q55);
+					if (tree_swap_operands_p (_q51, _q52))
+					  std::swap (_q51, _q52);
+					{
+					  tree captures[8] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53, _q54, _q55 };
+					  if (gimple_simplify_589 (res_op, seq, valueize, type, captures, CFN_COND_LEN_ADD))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_LEN_AND:
+				    if (gimple_call_num_args (_c2) == 6)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					tree _q54 = gimple_call_arg (_c2, 4);
+					_q54 = do_valueize (valueize, _q54);
+					tree _q55 = gimple_call_arg (_c2, 5);
+					_q55 = do_valueize (valueize, _q55);
+					if (tree_swap_operands_p (_q51, _q52))
+					  std::swap (_q51, _q52);
+					{
+					  tree captures[8] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53, _q54, _q55 };
+					  if (gimple_simplify_589 (res_op, seq, valueize, type, captures, CFN_COND_LEN_AND))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_LEN_DIV:
+				    if (gimple_call_num_args (_c2) == 6)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					tree _q54 = gimple_call_arg (_c2, 4);
+					_q54 = do_valueize (valueize, _q54);
+					tree _q55 = gimple_call_arg (_c2, 5);
+					_q55 = do_valueize (valueize, _q55);
+					{
+					  tree captures[8] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53, _q54, _q55 };
+					  if (gimple_simplify_589 (res_op, seq, valueize, type, captures, CFN_COND_LEN_DIV))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_LEN_IOR:
+				    if (gimple_call_num_args (_c2) == 6)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					tree _q54 = gimple_call_arg (_c2, 4);
+					_q54 = do_valueize (valueize, _q54);
+					tree _q55 = gimple_call_arg (_c2, 5);
+					_q55 = do_valueize (valueize, _q55);
+					if (tree_swap_operands_p (_q51, _q52))
+					  std::swap (_q51, _q52);
+					{
+					  tree captures[8] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53, _q54, _q55 };
+					  if (gimple_simplify_589 (res_op, seq, valueize, type, captures, CFN_COND_LEN_IOR))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_LEN_MAX:
+				    if (gimple_call_num_args (_c2) == 6)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					tree _q54 = gimple_call_arg (_c2, 4);
+					_q54 = do_valueize (valueize, _q54);
+					tree _q55 = gimple_call_arg (_c2, 5);
+					_q55 = do_valueize (valueize, _q55);
+					if (tree_swap_operands_p (_q51, _q52))
+					  std::swap (_q51, _q52);
+					{
+					  tree captures[8] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53, _q54, _q55 };
+					  if (gimple_simplify_589 (res_op, seq, valueize, type, captures, CFN_COND_LEN_MAX))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_LEN_MIN:
+				    if (gimple_call_num_args (_c2) == 6)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					tree _q54 = gimple_call_arg (_c2, 4);
+					_q54 = do_valueize (valueize, _q54);
+					tree _q55 = gimple_call_arg (_c2, 5);
+					_q55 = do_valueize (valueize, _q55);
+					if (tree_swap_operands_p (_q51, _q52))
+					  std::swap (_q51, _q52);
+					{
+					  tree captures[8] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53, _q54, _q55 };
+					  if (gimple_simplify_589 (res_op, seq, valueize, type, captures, CFN_COND_LEN_MIN))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_LEN_MOD:
+				    if (gimple_call_num_args (_c2) == 6)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					tree _q54 = gimple_call_arg (_c2, 4);
+					_q54 = do_valueize (valueize, _q54);
+					tree _q55 = gimple_call_arg (_c2, 5);
+					_q55 = do_valueize (valueize, _q55);
+					{
+					  tree captures[8] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53, _q54, _q55 };
+					  if (gimple_simplify_589 (res_op, seq, valueize, type, captures, CFN_COND_LEN_MOD))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_LEN_MUL:
+				    if (gimple_call_num_args (_c2) == 6)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					tree _q54 = gimple_call_arg (_c2, 4);
+					_q54 = do_valueize (valueize, _q54);
+					tree _q55 = gimple_call_arg (_c2, 5);
+					_q55 = do_valueize (valueize, _q55);
+					if (tree_swap_operands_p (_q51, _q52))
+					  std::swap (_q51, _q52);
+					{
+					  tree captures[8] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53, _q54, _q55 };
+					  if (gimple_simplify_589 (res_op, seq, valueize, type, captures, CFN_COND_LEN_MUL))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_LEN_SHL:
+				    if (gimple_call_num_args (_c2) == 6)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					tree _q54 = gimple_call_arg (_c2, 4);
+					_q54 = do_valueize (valueize, _q54);
+					tree _q55 = gimple_call_arg (_c2, 5);
+					_q55 = do_valueize (valueize, _q55);
+					{
+					  tree captures[8] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53, _q54, _q55 };
+					  if (gimple_simplify_589 (res_op, seq, valueize, type, captures, CFN_COND_LEN_SHL))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_LEN_SHR:
+				    if (gimple_call_num_args (_c2) == 6)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					tree _q54 = gimple_call_arg (_c2, 4);
+					_q54 = do_valueize (valueize, _q54);
+					tree _q55 = gimple_call_arg (_c2, 5);
+					_q55 = do_valueize (valueize, _q55);
+					{
+					  tree captures[8] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53, _q54, _q55 };
+					  if (gimple_simplify_589 (res_op, seq, valueize, type, captures, CFN_COND_LEN_SHR))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_LEN_SUB:
+				    if (gimple_call_num_args (_c2) == 6)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					tree _q54 = gimple_call_arg (_c2, 4);
+					_q54 = do_valueize (valueize, _q54);
+					tree _q55 = gimple_call_arg (_c2, 5);
+					_q55 = do_valueize (valueize, _q55);
+					{
+					  tree captures[8] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53, _q54, _q55 };
+					  if (gimple_simplify_589 (res_op, seq, valueize, type, captures, CFN_COND_LEN_SUB))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_LEN_XOR:
+				    if (gimple_call_num_args (_c2) == 6)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					tree _q54 = gimple_call_arg (_c2, 4);
+					_q54 = do_valueize (valueize, _q54);
+					tree _q55 = gimple_call_arg (_c2, 5);
+					_q55 = do_valueize (valueize, _q55);
+					if (tree_swap_operands_p (_q51, _q52))
+					  std::swap (_q51, _q52);
+					{
+					  tree captures[8] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53, _q54, _q55 };
+					  if (gimple_simplify_589 (res_op, seq, valueize, type, captures, CFN_COND_LEN_XOR))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_LEN_FMAX:
+				    if (gimple_call_num_args (_c2) == 6)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					tree _q54 = gimple_call_arg (_c2, 4);
+					_q54 = do_valueize (valueize, _q54);
+					tree _q55 = gimple_call_arg (_c2, 5);
+					_q55 = do_valueize (valueize, _q55);
+					if (tree_swap_operands_p (_q51, _q52))
+					  std::swap (_q51, _q52);
+					{
+					  tree captures[8] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53, _q54, _q55 };
+					  if (gimple_simplify_589 (res_op, seq, valueize, type, captures, CFN_COND_LEN_FMAX))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_LEN_FMIN:
+				    if (gimple_call_num_args (_c2) == 6)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					tree _q54 = gimple_call_arg (_c2, 4);
+					_q54 = do_valueize (valueize, _q54);
+					tree _q55 = gimple_call_arg (_c2, 5);
+					_q55 = do_valueize (valueize, _q55);
+					if (tree_swap_operands_p (_q51, _q52))
+					  std::swap (_q51, _q52);
+					{
+					  tree captures[8] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53, _q54, _q55 };
+					  if (gimple_simplify_589 (res_op, seq, valueize, type, captures, CFN_COND_LEN_FMIN))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_LEN_RDIV:
+				    if (gimple_call_num_args (_c2) == 6)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					tree _q54 = gimple_call_arg (_c2, 4);
+					_q54 = do_valueize (valueize, _q54);
+					tree _q55 = gimple_call_arg (_c2, 5);
+					_q55 = do_valueize (valueize, _q55);
+					{
+					  tree captures[8] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53, _q54, _q55 };
+					  if (gimple_simplify_589 (res_op, seq, valueize, type, captures, CFN_COND_LEN_RDIV))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_LEN_COPYSIGN:
+				    if (gimple_call_num_args (_c2) == 6)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					tree _q54 = gimple_call_arg (_c2, 4);
+					_q54 = do_valueize (valueize, _q54);
+					tree _q55 = gimple_call_arg (_c2, 5);
+					_q55 = do_valueize (valueize, _q55);
+					{
+					  tree captures[8] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53, _q54, _q55 };
+					  if (gimple_simplify_589 (res_op, seq, valueize, type, captures, CFN_COND_LEN_COPYSIGN))
+					    return true;
+					}
+				      }
+				    break;
+				  default:;
+				  }
+			    }
+			  break;
+		        default:;
+		        }
+		    }
+	          break;
+	        }
+	      default:;
+	      }
+	  else if (gcall *_c1 = dyn_cast <gcall *> (_d1))
+	    switch (gimple_call_combined_fn (_c1))
+	      {
+	      case CFN_COND_LEN_ADD:
+	        if (gimple_call_num_args (_c1) == 6)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    tree _q44 = gimple_call_arg (_c1, 4);
+		    _q44 = do_valueize (valueize, _q44);
+		    tree _q45 = gimple_call_arg (_c1, 5);
+		    _q45 = do_valueize (valueize, _q45);
+		    if (tree_swap_operands_p (_q41, _q42))
+		      std::swap (_q41, _q42);
+		    {
+		      tree captures[8] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43, _q44, _q45 };
+		      if (gimple_simplify_589 (res_op, seq, valueize, type, captures, CFN_COND_LEN_ADD))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_LEN_AND:
+	        if (gimple_call_num_args (_c1) == 6)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    tree _q44 = gimple_call_arg (_c1, 4);
+		    _q44 = do_valueize (valueize, _q44);
+		    tree _q45 = gimple_call_arg (_c1, 5);
+		    _q45 = do_valueize (valueize, _q45);
+		    if (tree_swap_operands_p (_q41, _q42))
+		      std::swap (_q41, _q42);
+		    {
+		      tree captures[8] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43, _q44, _q45 };
+		      if (gimple_simplify_589 (res_op, seq, valueize, type, captures, CFN_COND_LEN_AND))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_LEN_DIV:
+	        if (gimple_call_num_args (_c1) == 6)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    tree _q44 = gimple_call_arg (_c1, 4);
+		    _q44 = do_valueize (valueize, _q44);
+		    tree _q45 = gimple_call_arg (_c1, 5);
+		    _q45 = do_valueize (valueize, _q45);
+		    {
+		      tree captures[8] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43, _q44, _q45 };
+		      if (gimple_simplify_589 (res_op, seq, valueize, type, captures, CFN_COND_LEN_DIV))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_LEN_IOR:
+	        if (gimple_call_num_args (_c1) == 6)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    tree _q44 = gimple_call_arg (_c1, 4);
+		    _q44 = do_valueize (valueize, _q44);
+		    tree _q45 = gimple_call_arg (_c1, 5);
+		    _q45 = do_valueize (valueize, _q45);
+		    if (tree_swap_operands_p (_q41, _q42))
+		      std::swap (_q41, _q42);
+		    {
+		      tree captures[8] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43, _q44, _q45 };
+		      if (gimple_simplify_589 (res_op, seq, valueize, type, captures, CFN_COND_LEN_IOR))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_LEN_MAX:
+	        if (gimple_call_num_args (_c1) == 6)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    tree _q44 = gimple_call_arg (_c1, 4);
+		    _q44 = do_valueize (valueize, _q44);
+		    tree _q45 = gimple_call_arg (_c1, 5);
+		    _q45 = do_valueize (valueize, _q45);
+		    if (tree_swap_operands_p (_q41, _q42))
+		      std::swap (_q41, _q42);
+		    {
+		      tree captures[8] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43, _q44, _q45 };
+		      if (gimple_simplify_589 (res_op, seq, valueize, type, captures, CFN_COND_LEN_MAX))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_LEN_MIN:
+	        if (gimple_call_num_args (_c1) == 6)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    tree _q44 = gimple_call_arg (_c1, 4);
+		    _q44 = do_valueize (valueize, _q44);
+		    tree _q45 = gimple_call_arg (_c1, 5);
+		    _q45 = do_valueize (valueize, _q45);
+		    if (tree_swap_operands_p (_q41, _q42))
+		      std::swap (_q41, _q42);
+		    {
+		      tree captures[8] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43, _q44, _q45 };
+		      if (gimple_simplify_589 (res_op, seq, valueize, type, captures, CFN_COND_LEN_MIN))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_LEN_MOD:
+	        if (gimple_call_num_args (_c1) == 6)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    tree _q44 = gimple_call_arg (_c1, 4);
+		    _q44 = do_valueize (valueize, _q44);
+		    tree _q45 = gimple_call_arg (_c1, 5);
+		    _q45 = do_valueize (valueize, _q45);
+		    {
+		      tree captures[8] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43, _q44, _q45 };
+		      if (gimple_simplify_589 (res_op, seq, valueize, type, captures, CFN_COND_LEN_MOD))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_LEN_MUL:
+	        if (gimple_call_num_args (_c1) == 6)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    tree _q44 = gimple_call_arg (_c1, 4);
+		    _q44 = do_valueize (valueize, _q44);
+		    tree _q45 = gimple_call_arg (_c1, 5);
+		    _q45 = do_valueize (valueize, _q45);
+		    if (tree_swap_operands_p (_q41, _q42))
+		      std::swap (_q41, _q42);
+		    {
+		      tree captures[8] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43, _q44, _q45 };
+		      if (gimple_simplify_589 (res_op, seq, valueize, type, captures, CFN_COND_LEN_MUL))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_LEN_SHL:
+	        if (gimple_call_num_args (_c1) == 6)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    tree _q44 = gimple_call_arg (_c1, 4);
+		    _q44 = do_valueize (valueize, _q44);
+		    tree _q45 = gimple_call_arg (_c1, 5);
+		    _q45 = do_valueize (valueize, _q45);
+		    {
+		      tree captures[8] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43, _q44, _q45 };
+		      if (gimple_simplify_589 (res_op, seq, valueize, type, captures, CFN_COND_LEN_SHL))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_LEN_SHR:
+	        if (gimple_call_num_args (_c1) == 6)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    tree _q44 = gimple_call_arg (_c1, 4);
+		    _q44 = do_valueize (valueize, _q44);
+		    tree _q45 = gimple_call_arg (_c1, 5);
+		    _q45 = do_valueize (valueize, _q45);
+		    {
+		      tree captures[8] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43, _q44, _q45 };
+		      if (gimple_simplify_589 (res_op, seq, valueize, type, captures, CFN_COND_LEN_SHR))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_LEN_SUB:
+	        if (gimple_call_num_args (_c1) == 6)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    tree _q44 = gimple_call_arg (_c1, 4);
+		    _q44 = do_valueize (valueize, _q44);
+		    tree _q45 = gimple_call_arg (_c1, 5);
+		    _q45 = do_valueize (valueize, _q45);
+		    {
+		      tree captures[8] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43, _q44, _q45 };
+		      if (gimple_simplify_589 (res_op, seq, valueize, type, captures, CFN_COND_LEN_SUB))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_LEN_XOR:
+	        if (gimple_call_num_args (_c1) == 6)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    tree _q44 = gimple_call_arg (_c1, 4);
+		    _q44 = do_valueize (valueize, _q44);
+		    tree _q45 = gimple_call_arg (_c1, 5);
+		    _q45 = do_valueize (valueize, _q45);
+		    if (tree_swap_operands_p (_q41, _q42))
+		      std::swap (_q41, _q42);
+		    {
+		      tree captures[8] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43, _q44, _q45 };
+		      if (gimple_simplify_589 (res_op, seq, valueize, type, captures, CFN_COND_LEN_XOR))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_LEN_FMAX:
+	        if (gimple_call_num_args (_c1) == 6)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    tree _q44 = gimple_call_arg (_c1, 4);
+		    _q44 = do_valueize (valueize, _q44);
+		    tree _q45 = gimple_call_arg (_c1, 5);
+		    _q45 = do_valueize (valueize, _q45);
+		    if (tree_swap_operands_p (_q41, _q42))
+		      std::swap (_q41, _q42);
+		    {
+		      tree captures[8] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43, _q44, _q45 };
+		      if (gimple_simplify_589 (res_op, seq, valueize, type, captures, CFN_COND_LEN_FMAX))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_LEN_FMIN:
+	        if (gimple_call_num_args (_c1) == 6)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    tree _q44 = gimple_call_arg (_c1, 4);
+		    _q44 = do_valueize (valueize, _q44);
+		    tree _q45 = gimple_call_arg (_c1, 5);
+		    _q45 = do_valueize (valueize, _q45);
+		    if (tree_swap_operands_p (_q41, _q42))
+		      std::swap (_q41, _q42);
+		    {
+		      tree captures[8] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43, _q44, _q45 };
+		      if (gimple_simplify_589 (res_op, seq, valueize, type, captures, CFN_COND_LEN_FMIN))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_LEN_RDIV:
+	        if (gimple_call_num_args (_c1) == 6)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    tree _q44 = gimple_call_arg (_c1, 4);
+		    _q44 = do_valueize (valueize, _q44);
+		    tree _q45 = gimple_call_arg (_c1, 5);
+		    _q45 = do_valueize (valueize, _q45);
+		    {
+		      tree captures[8] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43, _q44, _q45 };
+		      if (gimple_simplify_589 (res_op, seq, valueize, type, captures, CFN_COND_LEN_RDIV))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_LEN_COPYSIGN:
+	        if (gimple_call_num_args (_c1) == 6)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    tree _q44 = gimple_call_arg (_c1, 4);
+		    _q44 = do_valueize (valueize, _q44);
+		    tree _q45 = gimple_call_arg (_c1, 5);
+		    _q45 = do_valueize (valueize, _q45);
+		    {
+		      tree captures[8] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43, _q44, _q45 };
+		      if (gimple_simplify_589 (res_op, seq, valueize, type, captures, CFN_COND_LEN_COPYSIGN))
+		        return true;
+		    }
+	          }
+	        break;
+	      default:;
+	      }
+        }
+      break;
+    default:;
+    }
+  switch (TREE_CODE (_p1))
+    {
+    case SSA_NAME:
+      if (gimple *_d1 = get_def (valueize, _p1))
+        {
+	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
+	    switch (gimple_assign_rhs_code (_a1))
+	      {
+	      case VIEW_CONVERT_EXPR:
+	        {
+		  tree _q30 = TREE_OPERAND (gimple_assign_rhs1 (_a1), 0);
+		  if ((TREE_CODE (_q30) == SSA_NAME
+		       || is_gimple_min_invariant (_q30)))
+		    {
+		      _q30 = do_valueize (valueize, _q30);
+		      switch (TREE_CODE (_q30))
+		        {
+			case SSA_NAME:
+			  if (gimple *_d2 = get_def (valueize, _q30))
+			    {
+			      if (gcall *_c2 = dyn_cast <gcall *> (_d2))
+			        switch (gimple_call_combined_fn (_c2))
+				  {
+				  case CFN_COND_LEN_FMA:
+				    if (gimple_call_num_args (_c2) == 7)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					tree _q44 = gimple_call_arg (_c2, 4);
+					_q44 = do_valueize (valueize, _q44);
+					tree _q45 = gimple_call_arg (_c2, 5);
+					_q45 = do_valueize (valueize, _q45);
+					tree _q46 = gimple_call_arg (_c2, 6);
+					_q46 = do_valueize (valueize, _q46);
+					if (tree_swap_operands_p (_q41, _q42))
+					  std::swap (_q41, _q42);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[8] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _q44, _q45, _q46, _p2 };
+					      if (gimple_simplify_590 (res_op, seq, valueize, type, captures, CFN_COND_LEN_FMA))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_LEN_FMS:
+				    if (gimple_call_num_args (_c2) == 7)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					tree _q44 = gimple_call_arg (_c2, 4);
+					_q44 = do_valueize (valueize, _q44);
+					tree _q45 = gimple_call_arg (_c2, 5);
+					_q45 = do_valueize (valueize, _q45);
+					tree _q46 = gimple_call_arg (_c2, 6);
+					_q46 = do_valueize (valueize, _q46);
+					if (tree_swap_operands_p (_q41, _q42))
+					  std::swap (_q41, _q42);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[8] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _q44, _q45, _q46, _p2 };
+					      if (gimple_simplify_590 (res_op, seq, valueize, type, captures, CFN_COND_LEN_FMS))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_LEN_FNMA:
+				    if (gimple_call_num_args (_c2) == 7)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					tree _q44 = gimple_call_arg (_c2, 4);
+					_q44 = do_valueize (valueize, _q44);
+					tree _q45 = gimple_call_arg (_c2, 5);
+					_q45 = do_valueize (valueize, _q45);
+					tree _q46 = gimple_call_arg (_c2, 6);
+					_q46 = do_valueize (valueize, _q46);
+					if (tree_swap_operands_p (_q41, _q42))
+					  std::swap (_q41, _q42);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[8] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _q44, _q45, _q46, _p2 };
+					      if (gimple_simplify_590 (res_op, seq, valueize, type, captures, CFN_COND_LEN_FNMA))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  case CFN_COND_LEN_FNMS:
+				    if (gimple_call_num_args (_c2) == 7)
+				      {
+					tree _q40 = gimple_call_arg (_c2, 0);
+					_q40 = do_valueize (valueize, _q40);
+					tree _q41 = gimple_call_arg (_c2, 1);
+					_q41 = do_valueize (valueize, _q41);
+					tree _q42 = gimple_call_arg (_c2, 2);
+					_q42 = do_valueize (valueize, _q42);
+					tree _q43 = gimple_call_arg (_c2, 3);
+					_q43 = do_valueize (valueize, _q43);
+					tree _q44 = gimple_call_arg (_c2, 4);
+					_q44 = do_valueize (valueize, _q44);
+					tree _q45 = gimple_call_arg (_c2, 5);
+					_q45 = do_valueize (valueize, _q45);
+					tree _q46 = gimple_call_arg (_c2, 6);
+					_q46 = do_valueize (valueize, _q46);
+					if (tree_swap_operands_p (_q41, _q42))
+					  std::swap (_q41, _q42);
+					if ((_q40 == _p0 && ! TREE_SIDE_EFFECTS (_q40)) || (operand_equal_p (_q40, _p0, 0) && types_match (_q40, _p0)))
+					  {
+					    {
+					      tree captures[8] ATTRIBUTE_UNUSED = { _p0, _q41, _q42, _q43, _q44, _q45, _q46, _p2 };
+					      if (gimple_simplify_590 (res_op, seq, valueize, type, captures, CFN_COND_LEN_FNMS))
+					        return true;
+					    }
+					  }
+				      }
+				    break;
+				  default:;
+				  }
+			    }
+			  break;
+		        default:;
+		        }
+		    }
+	          break;
+	        }
+	      default:;
+	      }
+	  else if (gcall *_c1 = dyn_cast <gcall *> (_d1))
+	    switch (gimple_call_combined_fn (_c1))
+	      {
+	      case CFN_COND_LEN_FMA:
+	        if (gimple_call_num_args (_c1) == 7)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    tree _q34 = gimple_call_arg (_c1, 4);
+		    _q34 = do_valueize (valueize, _q34);
+		    tree _q35 = gimple_call_arg (_c1, 5);
+		    _q35 = do_valueize (valueize, _q35);
+		    tree _q36 = gimple_call_arg (_c1, 6);
+		    _q36 = do_valueize (valueize, _q36);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[8] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _q34, _q35, _q36, _p2 };
+			  if (gimple_simplify_590 (res_op, seq, valueize, type, captures, CFN_COND_LEN_FMA))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_LEN_FMS:
+	        if (gimple_call_num_args (_c1) == 7)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    tree _q34 = gimple_call_arg (_c1, 4);
+		    _q34 = do_valueize (valueize, _q34);
+		    tree _q35 = gimple_call_arg (_c1, 5);
+		    _q35 = do_valueize (valueize, _q35);
+		    tree _q36 = gimple_call_arg (_c1, 6);
+		    _q36 = do_valueize (valueize, _q36);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[8] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _q34, _q35, _q36, _p2 };
+			  if (gimple_simplify_590 (res_op, seq, valueize, type, captures, CFN_COND_LEN_FMS))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_LEN_FNMA:
+	        if (gimple_call_num_args (_c1) == 7)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    tree _q34 = gimple_call_arg (_c1, 4);
+		    _q34 = do_valueize (valueize, _q34);
+		    tree _q35 = gimple_call_arg (_c1, 5);
+		    _q35 = do_valueize (valueize, _q35);
+		    tree _q36 = gimple_call_arg (_c1, 6);
+		    _q36 = do_valueize (valueize, _q36);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[8] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _q34, _q35, _q36, _p2 };
+			  if (gimple_simplify_590 (res_op, seq, valueize, type, captures, CFN_COND_LEN_FNMA))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_LEN_FNMS:
+	        if (gimple_call_num_args (_c1) == 7)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    tree _q34 = gimple_call_arg (_c1, 4);
+		    _q34 = do_valueize (valueize, _q34);
+		    tree _q35 = gimple_call_arg (_c1, 5);
+		    _q35 = do_valueize (valueize, _q35);
+		    tree _q36 = gimple_call_arg (_c1, 6);
+		    _q36 = do_valueize (valueize, _q36);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_q30 == _p0 && ! TREE_SIDE_EFFECTS (_q30)) || (operand_equal_p (_q30, _p0, 0) && types_match (_q30, _p0)))
+		      {
+			{
+			  tree captures[8] ATTRIBUTE_UNUSED = { _p0, _q31, _q32, _q33, _q34, _q35, _q36, _p2 };
+			  if (gimple_simplify_590 (res_op, seq, valueize, type, captures, CFN_COND_LEN_FNMS))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      default:;
+	      }
+        }
+      break;
+    default:;
+    }
+  switch (TREE_CODE (_p2))
+    {
+    case SSA_NAME:
+      if (gimple *_d1 = get_def (valueize, _p2))
+        {
+	  if (gassign *_a1 = dyn_cast <gassign *> (_d1))
+	    switch (gimple_assign_rhs_code (_a1))
+	      {
+	      case VIEW_CONVERT_EXPR:
+	        {
+		  tree _q40 = TREE_OPERAND (gimple_assign_rhs1 (_a1), 0);
+		  if ((TREE_CODE (_q40) == SSA_NAME
+		       || is_gimple_min_invariant (_q40)))
+		    {
+		      _q40 = do_valueize (valueize, _q40);
+		      switch (TREE_CODE (_q40))
+		        {
+			case SSA_NAME:
+			  if (gimple *_d2 = get_def (valueize, _q40))
+			    {
+			      if (gcall *_c2 = dyn_cast <gcall *> (_d2))
+			        switch (gimple_call_combined_fn (_c2))
+				  {
+				  case CFN_COND_LEN_FMA:
+				    if (gimple_call_num_args (_c2) == 7)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					tree _q54 = gimple_call_arg (_c2, 4);
+					_q54 = do_valueize (valueize, _q54);
+					tree _q55 = gimple_call_arg (_c2, 5);
+					_q55 = do_valueize (valueize, _q55);
+					tree _q56 = gimple_call_arg (_c2, 6);
+					_q56 = do_valueize (valueize, _q56);
+					if (tree_swap_operands_p (_q51, _q52))
+					  std::swap (_q51, _q52);
+					{
+					  tree captures[9] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53, _q54, _q55, _q56 };
+					  if (gimple_simplify_591 (res_op, seq, valueize, type, captures, CFN_COND_LEN_FMA))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_LEN_FMS:
+				    if (gimple_call_num_args (_c2) == 7)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					tree _q54 = gimple_call_arg (_c2, 4);
+					_q54 = do_valueize (valueize, _q54);
+					tree _q55 = gimple_call_arg (_c2, 5);
+					_q55 = do_valueize (valueize, _q55);
+					tree _q56 = gimple_call_arg (_c2, 6);
+					_q56 = do_valueize (valueize, _q56);
+					if (tree_swap_operands_p (_q51, _q52))
+					  std::swap (_q51, _q52);
+					{
+					  tree captures[9] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53, _q54, _q55, _q56 };
+					  if (gimple_simplify_591 (res_op, seq, valueize, type, captures, CFN_COND_LEN_FMS))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_LEN_FNMA:
+				    if (gimple_call_num_args (_c2) == 7)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					tree _q54 = gimple_call_arg (_c2, 4);
+					_q54 = do_valueize (valueize, _q54);
+					tree _q55 = gimple_call_arg (_c2, 5);
+					_q55 = do_valueize (valueize, _q55);
+					tree _q56 = gimple_call_arg (_c2, 6);
+					_q56 = do_valueize (valueize, _q56);
+					if (tree_swap_operands_p (_q51, _q52))
+					  std::swap (_q51, _q52);
+					{
+					  tree captures[9] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53, _q54, _q55, _q56 };
+					  if (gimple_simplify_591 (res_op, seq, valueize, type, captures, CFN_COND_LEN_FNMA))
+					    return true;
+					}
+				      }
+				    break;
+				  case CFN_COND_LEN_FNMS:
+				    if (gimple_call_num_args (_c2) == 7)
+				      {
+					tree _q50 = gimple_call_arg (_c2, 0);
+					_q50 = do_valueize (valueize, _q50);
+					tree _q51 = gimple_call_arg (_c2, 1);
+					_q51 = do_valueize (valueize, _q51);
+					tree _q52 = gimple_call_arg (_c2, 2);
+					_q52 = do_valueize (valueize, _q52);
+					tree _q53 = gimple_call_arg (_c2, 3);
+					_q53 = do_valueize (valueize, _q53);
+					tree _q54 = gimple_call_arg (_c2, 4);
+					_q54 = do_valueize (valueize, _q54);
+					tree _q55 = gimple_call_arg (_c2, 5);
+					_q55 = do_valueize (valueize, _q55);
+					tree _q56 = gimple_call_arg (_c2, 6);
+					_q56 = do_valueize (valueize, _q56);
+					if (tree_swap_operands_p (_q51, _q52))
+					  std::swap (_q51, _q52);
+					{
+					  tree captures[9] ATTRIBUTE_UNUSED = { _p0, _p1, _q50, _q51, _q52, _q53, _q54, _q55, _q56 };
+					  if (gimple_simplify_591 (res_op, seq, valueize, type, captures, CFN_COND_LEN_FNMS))
+					    return true;
+					}
+				      }
+				    break;
+				  default:;
+				  }
+			    }
+			  break;
+		        default:;
+		        }
+		    }
+	          break;
+	        }
+	      default:;
+	      }
+	  else if (gcall *_c1 = dyn_cast <gcall *> (_d1))
+	    switch (gimple_call_combined_fn (_c1))
+	      {
+	      case CFN_COND_LEN_FMA:
+	        if (gimple_call_num_args (_c1) == 7)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    tree _q44 = gimple_call_arg (_c1, 4);
+		    _q44 = do_valueize (valueize, _q44);
+		    tree _q45 = gimple_call_arg (_c1, 5);
+		    _q45 = do_valueize (valueize, _q45);
+		    tree _q46 = gimple_call_arg (_c1, 6);
+		    _q46 = do_valueize (valueize, _q46);
+		    if (tree_swap_operands_p (_q41, _q42))
+		      std::swap (_q41, _q42);
+		    {
+		      tree captures[9] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43, _q44, _q45, _q46 };
+		      if (gimple_simplify_591 (res_op, seq, valueize, type, captures, CFN_COND_LEN_FMA))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_LEN_FMS:
+	        if (gimple_call_num_args (_c1) == 7)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    tree _q44 = gimple_call_arg (_c1, 4);
+		    _q44 = do_valueize (valueize, _q44);
+		    tree _q45 = gimple_call_arg (_c1, 5);
+		    _q45 = do_valueize (valueize, _q45);
+		    tree _q46 = gimple_call_arg (_c1, 6);
+		    _q46 = do_valueize (valueize, _q46);
+		    if (tree_swap_operands_p (_q41, _q42))
+		      std::swap (_q41, _q42);
+		    {
+		      tree captures[9] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43, _q44, _q45, _q46 };
+		      if (gimple_simplify_591 (res_op, seq, valueize, type, captures, CFN_COND_LEN_FMS))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_LEN_FNMA:
+	        if (gimple_call_num_args (_c1) == 7)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    tree _q44 = gimple_call_arg (_c1, 4);
+		    _q44 = do_valueize (valueize, _q44);
+		    tree _q45 = gimple_call_arg (_c1, 5);
+		    _q45 = do_valueize (valueize, _q45);
+		    tree _q46 = gimple_call_arg (_c1, 6);
+		    _q46 = do_valueize (valueize, _q46);
+		    if (tree_swap_operands_p (_q41, _q42))
+		      std::swap (_q41, _q42);
+		    {
+		      tree captures[9] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43, _q44, _q45, _q46 };
+		      if (gimple_simplify_591 (res_op, seq, valueize, type, captures, CFN_COND_LEN_FNMA))
+		        return true;
+		    }
+	          }
+	        break;
+	      case CFN_COND_LEN_FNMS:
+	        if (gimple_call_num_args (_c1) == 7)
+	          {
+		    tree _q40 = gimple_call_arg (_c1, 0);
+		    _q40 = do_valueize (valueize, _q40);
+		    tree _q41 = gimple_call_arg (_c1, 1);
+		    _q41 = do_valueize (valueize, _q41);
+		    tree _q42 = gimple_call_arg (_c1, 2);
+		    _q42 = do_valueize (valueize, _q42);
+		    tree _q43 = gimple_call_arg (_c1, 3);
+		    _q43 = do_valueize (valueize, _q43);
+		    tree _q44 = gimple_call_arg (_c1, 4);
+		    _q44 = do_valueize (valueize, _q44);
+		    tree _q45 = gimple_call_arg (_c1, 5);
+		    _q45 = do_valueize (valueize, _q45);
+		    tree _q46 = gimple_call_arg (_c1, 6);
+		    _q46 = do_valueize (valueize, _q46);
+		    if (tree_swap_operands_p (_q41, _q42))
+		      std::swap (_q41, _q42);
+		    {
+		      tree captures[9] ATTRIBUTE_UNUSED = { _p0, _p1, _q40, _q41, _q42, _q43, _q44, _q45, _q46 };
+		      if (gimple_simplify_591 (res_op, seq, valueize, type, captures, CFN_COND_LEN_FNMS))
+		        return true;
+		    }
+	          }
+	        break;
+	      default:;
+	      }
+        }
+      break;
+    default:;
+    }
+  switch (TREE_CODE (_p1))
+    {
+    case SSA_NAME:
+      if (gimple *_d1 = get_def (valueize, _p1))
+        {
+	  if (gcall *_c1 = dyn_cast <gcall *> (_d1))
+	    switch (gimple_call_combined_fn (_c1))
+	      {
+	      case CFN_COND_ADD:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_p2 == _q33 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q33, 0) && types_match (_p2, _q33)))
+		      {
+			{
+			  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _q32, _q33 };
+			  if (gimple_simplify_592 (res_op, seq, valueize, type, captures, CFN_COND_ADD))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_AND:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_p2 == _q33 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q33, 0) && types_match (_p2, _q33)))
+		      {
+			{
+			  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _q32, _q33 };
+			  if (gimple_simplify_592 (res_op, seq, valueize, type, captures, CFN_COND_AND))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_DIV:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    if ((_p2 == _q33 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q33, 0) && types_match (_p2, _q33)))
+		      {
+			{
+			  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _q32, _q33 };
+			  if (gimple_simplify_592 (res_op, seq, valueize, type, captures, CFN_COND_DIV))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_FMA:
+	        if (gimple_call_num_args (_c1) == 5)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    tree _q34 = gimple_call_arg (_c1, 4);
+		    _q34 = do_valueize (valueize, _q34);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_p2 == _q34 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q34, 0) && types_match (_p2, _q34)))
+		      {
+			{
+			  tree captures[7] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _q32, _q33, _q34 };
+			  if (gimple_simplify_593 (res_op, seq, valueize, type, captures, CFN_COND_FMA))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_FMS:
+	        if (gimple_call_num_args (_c1) == 5)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    tree _q34 = gimple_call_arg (_c1, 4);
+		    _q34 = do_valueize (valueize, _q34);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_p2 == _q34 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q34, 0) && types_match (_p2, _q34)))
+		      {
+			{
+			  tree captures[7] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _q32, _q33, _q34 };
+			  if (gimple_simplify_593 (res_op, seq, valueize, type, captures, CFN_COND_FMS))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_IOR:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_p2 == _q33 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q33, 0) && types_match (_p2, _q33)))
+		      {
+			{
+			  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _q32, _q33 };
+			  if (gimple_simplify_592 (res_op, seq, valueize, type, captures, CFN_COND_IOR))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_MAX:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_p2 == _q33 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q33, 0) && types_match (_p2, _q33)))
+		      {
+			{
+			  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _q32, _q33 };
+			  if (gimple_simplify_592 (res_op, seq, valueize, type, captures, CFN_COND_MAX))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_MIN:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_p2 == _q33 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q33, 0) && types_match (_p2, _q33)))
+		      {
+			{
+			  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _q32, _q33 };
+			  if (gimple_simplify_592 (res_op, seq, valueize, type, captures, CFN_COND_MIN))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_MOD:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    if ((_p2 == _q33 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q33, 0) && types_match (_p2, _q33)))
+		      {
+			{
+			  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _q32, _q33 };
+			  if (gimple_simplify_592 (res_op, seq, valueize, type, captures, CFN_COND_MOD))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_MUL:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_p2 == _q33 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q33, 0) && types_match (_p2, _q33)))
+		      {
+			{
+			  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _q32, _q33 };
+			  if (gimple_simplify_592 (res_op, seq, valueize, type, captures, CFN_COND_MUL))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_SHL:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    if ((_p2 == _q33 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q33, 0) && types_match (_p2, _q33)))
+		      {
+			{
+			  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _q32, _q33 };
+			  if (gimple_simplify_592 (res_op, seq, valueize, type, captures, CFN_COND_SHL))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_SHR:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    if ((_p2 == _q33 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q33, 0) && types_match (_p2, _q33)))
+		      {
+			{
+			  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _q32, _q33 };
+			  if (gimple_simplify_592 (res_op, seq, valueize, type, captures, CFN_COND_SHR))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_SUB:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    if ((_p2 == _q33 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q33, 0) && types_match (_p2, _q33)))
+		      {
+			{
+			  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _q32, _q33 };
+			  if (gimple_simplify_592 (res_op, seq, valueize, type, captures, CFN_COND_SUB))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_XOR:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_p2 == _q33 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q33, 0) && types_match (_p2, _q33)))
+		      {
+			{
+			  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _q32, _q33 };
+			  if (gimple_simplify_592 (res_op, seq, valueize, type, captures, CFN_COND_XOR))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_COPYSIGN:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    if ((_p2 == _q33 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q33, 0) && types_match (_p2, _q33)))
+		      {
+			{
+			  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _q32, _q33 };
+			  if (gimple_simplify_592 (res_op, seq, valueize, type, captures, CFN_COND_COPYSIGN))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_FMAX:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_p2 == _q33 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q33, 0) && types_match (_p2, _q33)))
+		      {
+			{
+			  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _q32, _q33 };
+			  if (gimple_simplify_592 (res_op, seq, valueize, type, captures, CFN_COND_FMAX))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_FMIN:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_p2 == _q33 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q33, 0) && types_match (_p2, _q33)))
+		      {
+			{
+			  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _q32, _q33 };
+			  if (gimple_simplify_592 (res_op, seq, valueize, type, captures, CFN_COND_FMIN))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_FNMA:
+	        if (gimple_call_num_args (_c1) == 5)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    tree _q34 = gimple_call_arg (_c1, 4);
+		    _q34 = do_valueize (valueize, _q34);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_p2 == _q34 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q34, 0) && types_match (_p2, _q34)))
+		      {
+			{
+			  tree captures[7] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _q32, _q33, _q34 };
+			  if (gimple_simplify_593 (res_op, seq, valueize, type, captures, CFN_COND_FNMA))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_FNMS:
+	        if (gimple_call_num_args (_c1) == 5)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    tree _q34 = gimple_call_arg (_c1, 4);
+		    _q34 = do_valueize (valueize, _q34);
+		    if (tree_swap_operands_p (_q31, _q32))
+		      std::swap (_q31, _q32);
+		    if ((_p2 == _q34 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q34, 0) && types_match (_p2, _q34)))
+		      {
+			{
+			  tree captures[7] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _q32, _q33, _q34 };
+			  if (gimple_simplify_593 (res_op, seq, valueize, type, captures, CFN_COND_FNMS))
+			    return true;
+			}
+		      }
+	          }
+	        break;
+	      case CFN_COND_RDIV:
+	        if (gimple_call_num_args (_c1) == 4)
+	          {
+		    tree _q30 = gimple_call_arg (_c1, 0);
+		    _q30 = do_valueize (valueize, _q30);
+		    tree _q31 = gimple_call_arg (_c1, 1);
+		    _q31 = do_valueize (valueize, _q31);
+		    tree _q32 = gimple_call_arg (_c1, 2);
+		    _q32 = do_valueize (valueize, _q32);
+		    tree _q33 = gimple_call_arg (_c1, 3);
+		    _q33 = do_valueize (valueize, _q33);
+		    if ((_p2 == _q33 && ! TREE_SIDE_EFFECTS (_p2)) || (operand_equal_p (_p2, _q33, 0) && types_match (_p2, _q33)))
+		      {
+			{
+			  tree captures[6] ATTRIBUTE_UNUSED = { _p0, _p1, _q30, _q31, _q32, _q33 };
+			  if (gimple_simplify_592 (res_op, seq, valueize, type, captures, CFN_COND_RDIV))
+			    return true;
+			}
+		      }
+	          }
+	        break;
 	      default:;
 	      }
         }
