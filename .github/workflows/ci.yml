@@ -53,8 +53,11 @@ jobs:
           V=zig-out/lib/gcc/rx-unknown-elf/14.2.0
           test -f "$V/crtbegin.o" && test -f "$V/crtend.o"
           zig-out/bin/rx-elf-readelf -h "$V/crtbegin.o" | grep "Renesas RX"
-          # the gcc driver must resolve crtbegin.o through its spec
-          test "$(zig-out/bin/rx-elf-gcc -print-file-name=crtbegin.o)" = "$V/crtbegin.o"
+          # the gcc driver must resolve crtbegin.o through its spec: when found
+          # it prints an absolute path to a real file; when not, it echoes the
+          # bare input name. Assert the former.
+          CRTB=$(zig-out/bin/rx-elf-gcc -print-file-name=crtbegin.o)
+          test "$CRTB" != "crtbegin.o" && test -f "$CRTB"
       - name: Test - gcc driver
         run: |
           zig-out/bin/rx-elf-gcc --version
