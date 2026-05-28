@@ -12,11 +12,10 @@ Produces `rx-elf-gcc`, `cc1`, `rx-elf-as`, `rx-elf-ld`, `rx-elf-objcopy`, `rx-el
 No patched source trees are vendored: the Renesas RX patches are applied to the
 pristine upstream tarballs from `vendor/patches/` with `patch -p1` at build
 time. The full GCC compiler-generation pipeline (the `gen*` tools, option
-tables, gengtype, ...) is likewise run from source at build time, not vendored —
-`zig build gen-verify` checks it byte-for-byte against an oracle. A few build
-inputs are still checked in under `config/` and `include/`: autoconf
-`config.h`-style headers and a handful of Binutils target tables
-(`vendor/ld/eelf32rx.c`, `include/targmatch.h`, `include/ldemul-list.h`).
+tables, gengtype, ...) is likewise run from source at build time rather than
+vendored. A few build inputs are still checked in under `config/` and
+`include/`: autoconf `config.h`-style headers and a handful of Binutils target
+tables (`vendor/ld/eelf32rx.c`, `include/targmatch.h`, `include/ldemul-list.h`).
 
 ## libgcc
 
