@@ -14,63 +14,29 @@ pub fn build(b: *std.Build) void {
     const binutils_src = b.dependency("binutils_src", .{});
     const gcc_src = b.dependency("gcc_src", .{});
 
-    // Create patched GCC source tree via system commands.
-    // We copy the upstream source to a writable location, then overlay
-    // our Renesas patches on top. This ensures ALL compilation units see
-    // the same patched headers (tree-core.h enum changes shift global_trees indices).
+    // Patch source trees synchronously during build() so that cwd_relative
+    // LazyPaths are valid when the build graph references config.in templates
+    // and source files. Using addSystemCommand would be too late -- Zig resolves
+    // autoconf_undef template paths during graph construction.
+    const gcc_src_path = gcc_src.path(".").getPath(b);
+    const bu_src_path = binutils_src.path(".").getPath(b);
+    const patches_path = b.path("patched").getPath(b);
+
     const patch_dir = b.cache_root.join(b.allocator, &.{"patched-gcc-rx"}) catch @panic("OOM");
-    const patch_step = b.addSystemCommand(&.{
-        "sh", "-c", b.fmt(
-            \\set -e
-            \\DEST="{0s}"
-            \\SRC="$1"
-            \\PATCHES="$2"
-            \\if [ ! -f "$DEST/.patched" ]; then
-            \\  rm -rf "$DEST"
-            \\  cp -a "$SRC" "$DEST"
-            \\  cp -a "$PATCHES/gcc/"* "$DEST/gcc/"
-            \\  touch "$DEST/.patched"
-            \\fi
-        , .{patch_dir}),
-        "_",
-    });
-    patch_step.addDirectoryArg(gcc_src.path("."));
-    patch_step.addDirectoryArg(b.path("patched"));
-    patch_step.setCwd(b.path("."));
-
-    // Use the patched directory as gcc source root
-    const patched_gcc_root: std.Build.LazyPath = .{ .cwd_relative = patch_dir };
-
-    // Also create patched binutils source tree for DPFPU assembler support
     const bu_patch_dir = b.cache_root.join(b.allocator, &.{"patched-binutils-rx"}) catch @panic("OOM");
-    const bu_patch_step = b.addSystemCommand(&.{
-        "sh", "-c", b.fmt(
-            \\set -e
-            \\DEST="{0s}"
-            \\SRC="$1"
-            \\PATCHES="$2"
-            \\if [ ! -f "$DEST/.patched" ]; then
-            \\  rm -rf "$DEST"
-            \\  cp -a "$SRC" "$DEST"
-            \\  cp -a "$PATCHES/bfd/"* "$DEST/bfd/" 2>/dev/null || true
-            \\  cp -a "$PATCHES/gas/config/"* "$DEST/gas/config/" 2>/dev/null || true
-            \\  cp -a "$PATCHES/opcodes/"* "$DEST/opcodes/" 2>/dev/null || true
-            \\  cp -a "$PATCHES/include/"* "$DEST/include/" 2>/dev/null || true
-            \\  bison -o "$DEST/gas/config/rx-parse.c" -d "$DEST/gas/config/rx-parse.y"
-            \\  touch "$DEST/.patched"
-            \\fi
-        , .{bu_patch_dir}),
-        "_",
-    });
-    bu_patch_step.addDirectoryArg(binutils_src.path("."));
-    bu_patch_step.addDirectoryArg(b.path("patched"));
-    bu_patch_step.setCwd(b.path("."));
 
+    patchSourceTree(b.allocator, patch_dir, gcc_src_path, patches_path, &.{
+        "gcc",
+    }, null);
+    patchSourceTree(b.allocator, bu_patch_dir, bu_src_path, patches_path, &.{
+        "bfd",
+        "gas/config",
+        "opcodes",
+        "include",
+    }, "bison -o \"{0s}/gas/config/rx-parse.c\" -d \"{0s}/gas/config/rx-parse.y\"");
+
+    const patched_gcc_root: std.Build.LazyPath = .{ .cwd_relative = patch_dir };
     const patched_bu_root: std.Build.LazyPath = .{ .cwd_relative = bu_patch_dir };
-
-    // Ensure patching happens before compilation
-    b.getInstallStep().dependOn(&patch_step.step);
-    b.getInstallStep().dependOn(&bu_patch_step.step);
 
     gcc_cross.buildToolchain(b, binutils_src, gcc_src, target, optimize, .{
         .target_triple = "rx-elf",
@@ -141,7 +107,38 @@ pub fn build(b: *std.Build) void {
         , .{ b.install_path, specs_dir }),
     });
     gen_specs.step.dependOn(b.getInstallStep());
-    // Make specs generation a named step users can run
     const specs_step = b.step("specs", "Generate specs file with Renesas DPFPU support");
     specs_step.dependOn(&gen_specs.step);
+}
+
+/// Copy upstream source tree and overlay patches. Skips if .patched sentinel exists.
+fn patchSourceTree(
+    allocator: std.mem.Allocator,
+    dest: []const u8,
+    upstream: []const u8,
+    patches: []const u8,
+    subdirs: []const []const u8,
+    post_cmd: ?[]const u8,
+) void {
+    const sentinel = std.fmt.allocPrint(allocator, "{s}/.patched", .{dest}) catch @panic("OOM");
+    if (std.fs.cwd().access(sentinel, .{})) |_| return else |_| {}
+
+    var script = std.ArrayList(u8).init(allocator);
+    const w = script.writer();
+    w.print("set -e; rm -rf '{s}'; cp -a '{s}' '{s}'", .{ dest, upstream, dest }) catch @panic("OOM");
+    for (subdirs) |sub| {
+        w.print("; cp -a '{s}/{s}/'* '{s}/{s}/' 2>/dev/null || true", .{ patches, sub, dest, sub }) catch @panic("OOM");
+    }
+    if (post_cmd) |cmd| {
+        w.print("; ", .{}) catch @panic("OOM");
+        w.print(cmd, .{dest}) catch @panic("OOM");
+    }
+    w.print("; touch '{s}/.patched'", .{dest}) catch @panic("OOM");
+
+    var child = std.process.Child.init(.{
+        .allocator = allocator,
+        .argv = &.{ "sh", "-c", script.items },
+    });
+    const term = child.spawnAndWait() catch @panic("failed to patch source tree");
+    if (term != .{ .exited = 0 }) @panic("patch script failed");
 }
