@@ -86,6 +86,9 @@ pub fn build(b: *std.Build) void {
         // libgcc: RX ABI helpers (LIB2ADD) + the rx libgcc_tm_file additions.
         .libgcc_lib2add = &.{"config/rx/rx-abi-functions.c"},
         .libgcc_tm_includes = &.{ "config/rx/rx-abi.h", "config/rx/rx-lib.h" },
+        // Common RX MCU variants beyond the default: RXv2 (RX64M/65N), RXv3
+        // (RX72x), 64-bit doubles, and no-FPU. Use &.{"@all"} for every variant.
+        .libgcc_multilib_dirs = &.{ "rxv2", "rxv3", "64-bit-double", "no-fpu-libs" },
         // genmultilib args from config/rx/t-rx (MULTILIB_OPTIONS, _DIRNAMES,
         // _MATCHES, _EXCEPTIONS, 3 empty, _REQUIRED, 2 empty, "yes").
         .multilib_genargs = &.{
@@ -144,9 +147,13 @@ pub fn build(b: *std.Build) void {
 }
 
 /// Copy the pristine upstream tree to `dest` and apply the Renesas patch file
-/// with `patch -p1`. Skips if the .patched sentinel exists. Runs synchronously
-/// during build() so the cwd_relative source-root LazyPath is valid when the
-/// build graph references config.in templates and source files.
+/// with `patch -p1`. Runs synchronously during build() so the cwd_relative
+/// source-root LazyPath is valid when the build graph references config.in
+/// templates and source files.
+///
+/// The .patched sentinel stores a stamp of (patch file hash + upstream path),
+/// so the tree is rebuilt from scratch whenever the patch content or the
+/// upstream source changes -- avoiding a stale, mis-patched cache.
 fn patchSourceTree(
     b: *std.Build,
     dest: []const u8,
@@ -156,12 +163,13 @@ fn patchSourceTree(
 ) void {
     const script = std.fmt.allocPrint(b.allocator,
         \\set -e
-        \\test -f '{0s}/.patched' && exit 0
+        \\STAMP="$(sha256sum '{2s}' | cut -d' ' -f1) {1s}"
+        \\if [ -f '{0s}/.patched' ] && [ "$(cat '{0s}/.patched')" = "$STAMP" ]; then exit 0; fi
         \\rm -rf '{0s}'
         \\cp -a '{1s}' '{0s}'
         \\patch -p1 -d '{0s}' < '{2s}'
         \\{3s}
-        \\touch '{0s}/.patched'
+        \\printf '%s' "$STAMP" > '{0s}/.patched'
     , .{ dest, upstream, patch_file, extra_cmd orelse "" }) catch @panic("OOM");
 
     _ = b.run(&.{ "sh", "-c", script });

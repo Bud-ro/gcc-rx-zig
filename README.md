@@ -20,13 +20,18 @@ zig build libgcc         # build + install libgcc.a (default multilib) and crt*.
 ```
 
 Compiles GCC's runtime library (soft-float, 64-bit integer helpers, `__builtin_*`
-lowering) from source with the freshly built `rx-elf-gcc` and installs
-`libgcc.a` to `zig-out/lib/gcc/rx-unknown-elf/14.2.0/`. Link it for any firmware
-that uses floating point, 64-bit math, or compiler builtins. `libgcc.a` carries
-the **GCC Runtime Library Exception** (see `NOTICE.md`), so it can be linked
-into proprietary firmware. Note: only the default (32-bit-`double`, no-FPU)
-multilib is built so far; `-m64bit-doubles`/DPFPU variants and C++ static-ctor
-`crtbegin`/`crtend` are not yet produced.
+lowering) from source with the freshly built `rx-elf-gcc` and installs a
+`libgcc.a` per multilib variant under `zig-out/lib/gcc/rx-unknown-elf/14.2.0/`.
+Link it for any firmware that uses floating point, 64-bit math, or compiler
+builtins; the driver's `-print-libgcc-file-name` selects the variant matching
+your `-mcpu`/`-m64bit-doubles`/`-nofpu` flags. `libgcc.a` carries the **GCC
+Runtime Library Exception** (see `NOTICE.md`), so it can be linked into
+proprietary firmware.
+
+Variants built by default: the base (RXv1, hardware FPU, 32-bit `double`) plus
+RXv2 (`-mcpu=rx64m`), RXv3 (`-misa=v3`), 64-bit `double`, and no-FPU. Set
+`libgcc_multilib_dirs` to `&.{"@all"}` in `build.zig` to build all ~104 variants.
+Not yet produced: C++ static-ctor `crtbegin`/`crtend` (an RX assembler quirk).
 
 ## Codegen regression suite
 
