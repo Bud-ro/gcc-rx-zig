@@ -1,6 +1,6 @@
 # gcc-rx-zig
 
-Renesas RX bare-metal cross-compiler (GCC 14.2.0 + Binutils 2.42), built from source with [Zig](https://ziglang.org/). Shared build logic lives in [gcc-cross-zig](https://github.com/Bud-ro/gcc-cross-zig).
+Renesas RX bare-metal cross-compiler (GCC 14.2.0 + Binutils 2.44), built from source with [Zig](https://ziglang.org/). Shared build logic lives in [gcc-cross-zig](https://github.com/Bud-ro/gcc-cross-zig).
 
 ```bash
 sudo apt install libgmp-dev libmpfr-dev libmpc-dev   # or: brew install gmp mpfr libmpc

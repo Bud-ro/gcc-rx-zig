@@ -1,4 +1,4 @@
-//! Build rx-elf cross-compiler toolchain (binutils 2.42 + GCC 14.2.0).
+//! Build rx-elf cross-compiler toolchain (binutils 2.44 + GCC 14.2.0).
 //! Includes Renesas RX-specific patches (from 14.2.0.202511 release).
 //! Uses shared build logic from gcc-cross-zig.
 //! SPDX-License-Identifier: GPL-2.0-or-later
@@ -57,7 +57,7 @@ pub fn build(b: *std.Build) void {
             \\  cp -a "$PATCHES/opcodes/"* "$DEST/opcodes/" 2>/dev/null || true
             \\  cp -a "$PATCHES/include/"* "$DEST/include/" 2>/dev/null || true
             \\  echo '/* merged into bfdio.c in 2.44 */' > "$DEST/bfd/bfdwin.c"
-            \\  bison -o "$DEST/gas/config/rx-parse.c" -d "$DEST/gas/config/rx-parse.y" 2>/dev/null || true
+            \\  bison -o "$DEST/gas/config/rx-parse.c" -d "$DEST/gas/config/rx-parse.y"
             \\  touch "$DEST/.patched"
             \\fi
         , .{bu_patch_dir}),
@@ -127,10 +127,6 @@ pub fn build(b: *std.Build) void {
         // Tool
         .find_replace_zig = cross_dep.path("find_replace.zig"),
     });
-
-    // Ensure patching happens before any compilation
-    b.getInstallStep().dependOn(&patch_step.step);
-    b.getInstallStep().dependOn(&bu_patch_step.step);
 
     // Generate specs file with Renesas ASM_SPEC additions (-misa, -mdfpu pass-through).
     // The driver uses upstream rx.h specs which lack DPFPU flags.
