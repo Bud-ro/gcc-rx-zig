@@ -1,16 +1,19 @@
 /* { dg-do compile }  */
 /* { dg-options "-O1" }  */
 
-/* KNOWN DIVERGENCE: upstream GCC expects "bclr" x6 here. Our from-source,
-   Clang-built cc1 emits x5 -- the variable-position bclr peephole for
-   `x & ~(1 << y)` (test_1 below) does not fire, while the analogous bset
-   (test_4) and bnot (test_7) variable-position forms do. The bclr insn that
-   accepts a register bit position exists in rx.md, so this is a cc1
-   optimizer-behavior difference, not a missing pattern -- same family as the
-   other Clang-vs-GCC cc1 codegen differences. Correctness is unaffected
-   (the rotl+and sequence computes the same result). If this assertion ever
-   reports x6, the divergence is fixed: restore the expected count to 6 and
-   delete this note. */
+/* KNOWN DIVERGENCE (from the Renesas patches, NOT our build): mainline GCC's
+   own testsuite expects "bclr" x6 here. The Renesas-patched RX backend emits
+   x5 -- for `x & ~(1 << y)` (test_1) it produces a rotl+and sequence instead
+   of a single bclr, while the analogous bset (test_4) and bnot (test_7)
+   variable-position forms still fire.
+
+   Verified: a reference cc1 built from the identical patched source via the
+   normal configure/make path (GCC-compiled) produces byte-for-byte identical
+   assembly to our zig/Clang-built cc1 -- both emit x5. So this is a property
+   of the Renesas backend patches relative to mainline, not an artifact of how
+   cc1 is compiled. Correctness is unaffected (rotl+and computes the same
+   result). If this ever reports x6, the Renesas backend changed: restore the
+   expected count to 6 and delete this note. */
 /* { dg-final { scan-assembler-times "bclr" 5 } }  */
 /* { dg-final { scan-assembler-times "bset" 7 } }  */
 /* { dg-final { scan-assembler-times "bnot" 7 } }  */

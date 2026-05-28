@@ -25,9 +25,13 @@ snapshot in `tests/snapshots/` for drift detection.
 ### Known divergence
 
 `pr83831` documents one tracked difference: for `x & ~(1 << y)` (variable bit
-position) this from-source, Clang-built `cc1` emits a `rotl`+`and` sequence
-instead of a single `bclr`, so it produces 5 `bclr` where upstream GCC emits 6.
-The analogous `bset`/`bnot` variable-position forms match, and the `bclr`
-register-bit insn exists in `rx.md`, so this is a `cc1` optimizer-behavior
-difference (same family as other Clang-vs-GCC codegen differences), not a
-correctness bug. See the comment in `tests/cases/pr83831.c`.
+position) the Renesas-patched RX backend emits a `rotl`+`and` sequence instead
+of a single `bclr`, so it produces 5 `bclr` where mainline GCC's testsuite
+expects 6 (the analogous `bset`/`bnot` variable-position forms still match).
+
+This is a property of the **Renesas backend patches**, not our build. Verified
+two ways: (1) a reference `cc1` built from the identical patched source via the
+normal `configure`/`make` path produces byte-for-byte identical assembly to our
+zig/Clang-built `cc1`; (2) Renesas's own complete source distribution, built
+their normal way, emits the same 5. Correctness is unaffected. See the comment
+in `tests/cases/pr83831.c`.
