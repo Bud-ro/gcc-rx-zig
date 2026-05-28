@@ -83,6 +83,9 @@ pub fn build(b: *std.Build) void {
         .gcc_target_opt_files = &.{ "config/rx/rx.opt", "config/rx/elf.opt" },
         .gtyp_input_list = b.path("config/rx/gtyp-input.list.in"),
         .gcc_generated_extra_headers = &.{"config/rx/rx-opts.h"},
+        // libgcc: RX ABI helpers (LIB2ADD) + the rx libgcc_tm_file additions.
+        .libgcc_lib2add = &.{"config/rx/rx-abi-functions.c"},
+        .libgcc_tm_includes = &.{ "config/rx/rx-abi.h", "config/rx/rx-lib.h" },
         // genmultilib args from config/rx/t-rx (MULTILIB_OPTIONS, _DIRNAMES,
         // _MATCHES, _EXCEPTIONS, 3 empty, _REQUIRED, 2 empty, "yes").
         .multilib_genargs = &.{
