@@ -22,7 +22,6 @@
         "build.zig.zon",
         "config",
         "include",
-        "patched",
         "tests",
         "vendor",
     },

@@ -20,13 +20,14 @@ pub fn build(b: *std.Build) void {
     // autoconf_undef template paths during graph construction.
     const gcc_src_path = gcc_src.path(".").getPath(b);
     const bu_src_path = binutils_src.path(".").getPath(b);
-    const patches_path = b.path("patched").getPath(b);
+    const gcc_patch = b.path("vendor/patches/gcc-rx.patch").getPath(b);
+    const bu_patch = b.path("vendor/patches/binutils-rx.patch").getPath(b);
 
     const patch_dir = b.cache_root.join(b.allocator, &.{"patched-gcc-rx"}) catch @panic("OOM");
     const bu_patch_dir = b.cache_root.join(b.allocator, &.{"patched-binutils-rx"}) catch @panic("OOM");
 
-    patchSourceTree(b, patch_dir, gcc_src_path, patches_path, null);
-    patchSourceTree(b, bu_patch_dir, bu_src_path, patches_path,
+    patchSourceTree(b, patch_dir, gcc_src_path, gcc_patch, null);
+    patchSourceTree(b, bu_patch_dir, bu_src_path, bu_patch,
         std.fmt.allocPrint(b.allocator,
             "bison -o '{s}/gas/config/rx-parse.c' -d '{s}/gas/config/rx-parse.y'",
             .{ bu_patch_dir, bu_patch_dir },
@@ -139,12 +140,15 @@ pub fn build(b: *std.Build) void {
     update_step.dependOn(&update_tests.step);
 }
 
-/// Copy upstream source tree and overlay patches. Skips if .patched sentinel exists.
+/// Copy the pristine upstream tree to `dest` and apply the Renesas patch file
+/// with `patch -p1`. Skips if the .patched sentinel exists. Runs synchronously
+/// during build() so the cwd_relative source-root LazyPath is valid when the
+/// build graph references config.in templates and source files.
 fn patchSourceTree(
     b: *std.Build,
     dest: []const u8,
     upstream: []const u8,
-    patches: []const u8,
+    patch_file: []const u8,
     extra_cmd: ?[]const u8,
 ) void {
     const script = std.fmt.allocPrint(b.allocator,
@@ -152,14 +156,10 @@ fn patchSourceTree(
         \\test -f '{0s}/.patched' && exit 0
         \\rm -rf '{0s}'
         \\cp -a '{1s}' '{0s}'
-        \\for d in bfd gas/config opcodes include gcc; do
-        \\  if [ -d '{2s}/'$d ]; then
-        \\    cp -a '{2s}/'$d/* '{0s}/'$d/ 2>/dev/null || true
-        \\  fi
-        \\done
+        \\patch -p1 -d '{0s}' < '{2s}'
         \\{3s}
         \\touch '{0s}/.patched'
-    , .{ dest, upstream, patches, extra_cmd orelse "" }) catch @panic("OOM");
+    , .{ dest, upstream, patch_file, extra_cmd orelse "" }) catch @panic("OOM");
 
     _ = b.run(&.{ "sh", "-c", script });
 }
