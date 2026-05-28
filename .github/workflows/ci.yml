@@ -76,7 +76,7 @@ jobs:
           mkdir -p stage/bin stage/lib stage/share/doc
           cp -a zig-out/bin/. stage/bin/
           cp -a zig-out/lib/. stage/lib/ 2>/dev/null || true
-          cp NOTICE.md COPYING COPYING.LIB COPYING3 COPYING3.LIB stage/share/doc/
+          cp NOTICE.md COPYING COPYING.LIB COPYING3 COPYING3.LIB COPYING.RUNTIME stage/share/doc/
           cp -a vendor/patches stage/share/doc/patches
           tar czf rx-elf-toolchain-linux-x86_64.tar.gz -C stage .
       - name: Upload release

@@ -9,9 +9,14 @@ zig build -Doptimize=ReleaseFast
 
 Produces `rx-elf-gcc`, `cc1`, `rx-elf-as`, `rx-elf-ld`, `rx-elf-objcopy`, `rx-elf-objdump`, `rx-elf-readelf`, `rx-elf-ar`, `rx-elf-nm`, `rx-elf-strip`, `rx-elf-size`, `rx-elf-ranlib`, `rx-elf-strings`, `rx-elf-addr2line`, `rx-elf-c++filt`, `rx-elf-elfedit` in `zig-out/bin/`.
 
-The toolchain vendors no GCC- or Binutils-generated files and no patched
-source trees — every generated file is produced from source at build time, and
-the Renesas RX patches are applied from `vendor/patches/` with `patch -p1`.
+No patched source trees are vendored: the Renesas RX patches are applied to the
+pristine upstream tarballs from `vendor/patches/` with `patch -p1` at build
+time. The full GCC compiler-generation pipeline (the `gen*` tools, option
+tables, gengtype, ...) is likewise run from source at build time, not vendored —
+`zig build gen-verify` checks it byte-for-byte against an oracle. A few build
+inputs are still checked in under `config/` and `include/`: autoconf
+`config.h`-style headers and a handful of Binutils target tables
+(`vendor/ld/eelf32rx.c`, `include/targmatch.h`, `include/ldemul-list.h`).
 
 ## libgcc
 
@@ -31,7 +36,18 @@ proprietary firmware.
 Variants built by default: the base (RXv1, hardware FPU, 32-bit `double`) plus
 RXv2 (`-mcpu=rx64m`), RXv3 (`-misa=v3`), 64-bit `double`, and no-FPU. Set
 `libgcc_multilib_dirs` to `&.{"@all"}` in `build.zig` to build all ~104 variants.
-Not yet produced: C++ static-ctor `crtbegin`/`crtend` (an RX assembler quirk).
+
+### Startup objects (crt)
+
+`crtend.o` builds, but `crtbegin.o` does **not**: on RX, `crtstuff.c`'s static
+init/fini wrappers (`_call___do_global_dtors_aux`, `_call_frame_dummy`) switch
+sections mid-function, and GAS rejects the resulting `.size sym, .-sym` as "not
+a constant" (it spans `.fini`/`.init`). A proper fix needs an RX backend or GAS
+change. Because the driver's default link spec references `crtbegin.o`/`crtend.o`,
+a *default* link will fail to find `crtbegin.o`. This does not affect bare-metal
+firmware, which links with `-nostartfiles` and supplies its own startup and
+linker script (see the rx130 example) — that path uses `libgcc.a` directly and
+never pulls in the crt objects.
 
 ## Codegen regression suite
 
@@ -64,4 +80,5 @@ in `tests/cases/pr83831.c`.
 
 GPL — this builds GCC and Binutils. See `NOTICE.md` for the full component
 breakdown, the GCC Runtime Library Exception that applies to `libgcc.a`, and
-the source-availability statement. License texts are in `COPYING*`.
+the source-availability statement. License texts are in `COPYING*`, including
+`COPYING.RUNTIME` (the Runtime Library Exception).

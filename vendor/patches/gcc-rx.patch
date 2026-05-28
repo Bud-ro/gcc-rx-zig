@@ -1,3 +1,14 @@
+# Renesas RX backend patches for GCC 14.2.0.
+#
+# These are the diff between the unmodified upstream GCC 14.2.0 source and the
+# Renesas GNU RX toolchain source distribution (the "GCC for Renesas RX"
+# release, version 14.2.0.202511). The RX backend and its DPFPU/TFU/ISA-v3
+# extensions are the work of Red Hat and Renesas Electronics, contributed to
+# the GNU project under GPLv3-or-later.
+#
+# Applied with `patch -p1`. This header is provenance/attribution only; the
+# patch tooling skips it and starts at the first "diff" line below.
+#
 diff --git a/gcc/attribs.cc b/gcc/attribs.cc
 index 3ab0b0f..40f2857 100644
 --- a/gcc/attribs.cc

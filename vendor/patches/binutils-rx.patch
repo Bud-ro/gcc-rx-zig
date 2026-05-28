@@ -1,3 +1,14 @@
+# Renesas RX backend patches for Binutils 2.44.
+#
+# These are the diff between the unmodified upstream Binutils 2.44 source and the
+# Renesas GNU RX toolchain source distribution (the "GCC for Renesas RX"
+# release, version 14.2.0.202511). The RX backend and its DPFPU/TFU/ISA-v3
+# extensions are the work of Red Hat and Renesas Electronics, contributed to
+# the GNU project under GPLv3-or-later.
+#
+# Applied with `patch -p1`. This header is provenance/attribution only; the
+# patch tooling skips it and starts at the first "diff" line below.
+#
 diff --git a/bfd/archures.c b/bfd/archures.c
 index fd22c94..e806462 100644
 --- a/bfd/archures.c
