@@ -46,6 +46,15 @@ jobs:
           zig-out/bin/rx-elf-gcc -nostdlib -o rt.elf rt.o "$LIBGCC"
           # confirm the 64-bit/builtin libgcc routines were pulled in
           zig-out/bin/rx-elf-nm rt.elf | grep -E '___(divdi3|moddi3|popcountsi2)'
+      - name: Test - crt objects
+        run: |
+          # crtbegin.o/crtend.o must build and install for the base variant
+          # (regression guard: they need -finhibit-size-directive on RX).
+          V=zig-out/lib/gcc/rx-unknown-elf/14.2.0
+          test -f "$V/crtbegin.o" && test -f "$V/crtend.o"
+          zig-out/bin/rx-elf-readelf -h "$V/crtbegin.o" | grep "Renesas RX"
+          # the gcc driver must resolve crtbegin.o through its spec
+          test "$(zig-out/bin/rx-elf-gcc -print-file-name=crtbegin.o)" = "$V/crtbegin.o"
       - name: Test - gcc driver
         run: |
           zig-out/bin/rx-elf-gcc --version

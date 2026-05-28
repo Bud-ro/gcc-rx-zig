@@ -35,18 +35,22 @@ proprietary firmware.
 Variants built by default: the base (RXv1, hardware FPU, 32-bit `double`) plus
 RXv2 (`-mcpu=rx64m`), RXv3 (`-misa=v3`), 64-bit `double`, and no-FPU. Set
 `libgcc_multilib_dirs` to `&.{"@all"}` in `build.zig` to build all ~104 variants.
+Only the built variants are installed; selecting a flag combination that maps to
+an unbuilt multilib directory (e.g. `-mbig-endian-data`, `-mjsr`) silently falls
+back to the base `libgcc.a`, so add any such variant to `libgcc_multilib_dirs`
+before relying on it.
 
 ### Startup objects (crt)
 
-`crtend.o` builds, but `crtbegin.o` does **not**: on RX, `crtstuff.c`'s static
-init/fini wrappers (`_call___do_global_dtors_aux`, `_call_frame_dummy`) switch
-sections mid-function, and GAS rejects the resulting `.size sym, .-sym` as "not
-a constant" (it spans `.fini`/`.init`). A proper fix needs an RX backend or GAS
-change. Because the driver's default link spec references `crtbegin.o`/`crtend.o`,
-a *default* link will fail to find `crtbegin.o`. This does not affect bare-metal
-firmware, which links with `-nostartfiles` and supplies its own startup and
-linker script (see the rx130 example) — that path uses `libgcc.a` directly and
-never pulls in the crt objects.
+`crtbegin.o` and `crtend.o` are built for every installed multilib variant. They
+are compiled with GCC's `CRTSTUFF_CFLAGS` (notably `-finhibit-size-directive`),
+which is required on RX: `crtstuff.c`'s static init/fini wrappers switch sections
+mid-function, and without that flag GAS rejects the resulting `.size sym, .-sym`
+as "not a constant" (it spans `.fini`/`.init`). With the correct flags the
+objects assemble cleanly and `crtbegin.o` is symbol-identical to one from a
+normal `configure`/`make` build. Bare-metal firmware that links with
+`-nostartfiles` (see the rx130 example) uses `libgcc.a` directly and does not
+need them.
 
 ## Codegen regression suite
 
