@@ -106,6 +106,20 @@ pub fn build(b: *std.Build) void {
     gen_specs.step.dependOn(b.getInstallStep());
     const specs_step = b.step("specs", "Generate specs file with Renesas DPFPU support");
     specs_step.dependOn(&gen_specs.step);
+
+    // Codegen regression suite: compile tests/cases/*.c with the freshly built
+    // rx-elf-gcc and check the embedded scan-assembler assertions and snapshots.
+    const gcc_path = b.fmt("{s}/bin/rx-elf-gcc", .{b.install_path});
+
+    const run_tests = b.addSystemCommand(&.{ "sh", b.pathFromRoot("tests/run.sh"), gcc_path });
+    run_tests.step.dependOn(b.getInstallStep());
+    const test_step = b.step("test", "Run the RX codegen regression suite");
+    test_step.dependOn(&run_tests.step);
+
+    const update_tests = b.addSystemCommand(&.{ "sh", b.pathFromRoot("tests/run.sh"), gcc_path, "--update" });
+    update_tests.step.dependOn(b.getInstallStep());
+    const update_step = b.step("test-update", "Regenerate RX codegen snapshots");
+    update_step.dependOn(&update_tests.step);
 }
 
 /// Copy upstream source tree and overlay patches. Skips if .patched sentinel exists.
