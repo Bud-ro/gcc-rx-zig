@@ -5,8 +5,8 @@
     .minimum_zig_version = "0.16.0",
     .dependencies = .{
         .gcc_cross = .{
-            .url = "git+https://github.com/Bud-ro/gcc-cross-zig#cdc2c2e2feb1f1721bb8d874b9d4b5022f9857c4",
-            .hash = "gcc_cross-0.1.0-4eFHFRk2AgAQOiK91nd3ncSfudoJATB_i42l7QzQQscT",
+            .url = "git+https://github.com/Bud-ro/gcc-cross-zig#d9ca0cdb59b4521c87758a32671df7a6e25a8859",
+            .hash = "gcc_cross-0.1.0-4eFHFe03AgCjxSznD6AxPnmcbi3KcC6JMHsH4z_80Okb",
         },
         .binutils_src = .{
             .url = "https://ftpmirror.gnu.org/binutils/binutils-2.44.tar.xz",
