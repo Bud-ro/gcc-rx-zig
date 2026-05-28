@@ -2,7 +2,7 @@
 
 #ifndef OPTIONS_H
 #define OPTIONS_H
-#include "config/rx/rx-opts.h"
+#include "rx-opts.h"
 
 #include "flag-types.h"
 
