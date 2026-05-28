@@ -69,7 +69,6 @@ pub fn build(b: *std.Build) void {
         // Use patched source roots for both GCC and binutils
         .gcc_source_root_override = patched_gcc_root,
         .binutils_source_root_override = patched_bu_root,
-        .generated_dir = b.path("generated/rx"),
         .config_dir = b.path("config/rx"),
         .libcpp_config_dir = b.path("config/libcpp"),
         .libdecnumber_config_dir = b.path("config/libdecnumber"),
@@ -79,6 +78,24 @@ pub fn build(b: *std.Build) void {
             "config/rx/rx.cc",
             "config/rx/rx-pragma.cc",
             "config/default-c.cc",
+        },
+        .gcc_target_opt_files = &.{ "config/rx/rx.opt", "config/rx/elf.opt" },
+        .gtyp_input_list = b.path("config/rx/gtyp-input.list.in"),
+        .gcc_generated_extra_headers = &.{"config/rx/rx-opts.h"},
+        // genmultilib args from config/rx/t-rx (MULTILIB_OPTIONS, _DIRNAMES,
+        // _MATCHES, _EXCEPTIONS, 3 empty, _REQUIRED, 2 empty, "yes").
+        .multilib_genargs = &.{
+            "m64bit-doubles  nofpu        mbig-endian-data  mjsr mdfpu mno-allow-string-insns mcpu=rx64m misa=v3",
+            "64-bit-double  no-fpu-libs   big-endian-data  jsr dfpu no-strings rxv2 rxv3",
+            "nofpu=mnofpu  nofpu=mcpu?rx200  nofpu=mcpu?rx100",
+            "*mcpu=*/*misa=v3*",
+            "",
+            "",
+            "",
+            "m64bit-doubles nofpu mbig-endian-data mjsr mno-allow-string-insns m64bit-doubles/nofpu m64bit-doubles/mbig-endian-data m64bit-doubles/mjsr m64bit-doubles/mno-allow-string-insns nofpu/mbig-endian-data nofpu/mjsr nofpu/mno-allow-string-insns mbig-endian-data/mjsr mbig-endian-data/mno-allow-string-insns mjsr/mno-allow-string-insns m64bit-doubles/nofpu/mbig-endian-data m64bit-doubles/nofpu/mjsr m64bit-doubles/nofpu/mno-allow-string-insns m64bit-doubles/mbig-endian-data/mjsr m64bit-doubles/mbig-endian-data/mno-allow-string-insns m64bit-doubles/mjsr/mno-allow-string-insns nofpu/mbig-endian-data/mjsr nofpu/mbig-endian-data/mno-allow-string-insns nofpu/mjsr/mno-allow-string-insns mbig-endian-data/mjsr/mno-allow-string-insns m64bit-doubles/nofpu/mbig-endian-data/mjsr m64bit-doubles/nofpu/mbig-endian-data/mno-allow-string-insns m64bit-doubles/nofpu/mjsr/mno-allow-string-insns m64bit-doubles/mbig-endian-data/mjsr/mno-allow-string-insns nofpu/mbig-endian-data/mjsr/mno-allow-string-insns m64bit-doubles/nofpu/mbig-endian-data/mjsr/mno-allow-string-insns mcpu=rx64m m64bit-doubles/mcpu=rx64m nofpu/mcpu=rx64m mbig-endian-data/mcpu=rx64m mjsr/mcpu=rx64m mno-allow-string-insns/mcpu=rx64m m64bit-doubles/nofpu/mcpu=rx64m m64bit-doubles/mbig-endian-data/mcpu=rx64m m64bit-doubles/mjsr/mcpu=rx64m m64bit-doubles/mno-allow-string-insns/mcpu=rx64m nofpu/mbig-endian-data/mcpu=rx64m nofpu/mjsr/mcpu=rx64m nofpu/mno-allow-string-insns/mcpu=rx64m mbig-endian-data/mjsr/mcpu=rx64m mbig-endian-data/mno-allow-string-insns/mcpu=rx64m mjsr/mno-allow-string-insns/mcpu=rx64m m64bit-doubles/nofpu/mbig-endian-data/mcpu=rx64m m64bit-doubles/nofpu/mjsr/mcpu=rx64m m64bit-doubles/nofpu/mno-allow-string-insns/mcpu=rx64m m64bit-doubles/mbig-endian-data/mjsr/mcpu=rx64m m64bit-doubles/mbig-endian-data/mno-allow-string-insns/mcpu=rx64m m64bit-doubles/mjsr/mno-allow-string-insns/mcpu=rx64m nofpu/mbig-endian-data/mjsr/mcpu=rx64m nofpu/mbig-endian-data/mno-allow-string-insns/mcpu=rx64m nofpu/mjsr/mno-allow-string-insns/mcpu=rx64m mbig-endian-data/mjsr/mno-allow-string-insns/mcpu=rx64m m64bit-doubles/nofpu/mbig-endian-data/mjsr/mcpu=rx64m m64bit-doubles/nofpu/mbig-endian-data/mno-allow-string-insns/mcpu=rx64m m64bit-doubles/nofpu/mjsr/mno-allow-string-insns/mcpu=rx64m m64bit-doubles/mbig-endian-data/mjsr/mno-allow-string-insns/mcpu=rx64m nofpu/mbig-endian-data/mjsr/mno-allow-string-insns/mcpu=rx64m m64bit-doubles/nofpu/mbig-endian-data/mjsr/mno-allow-string-insns/mcpu=rx64m misa=v3 m64bit-doubles/misa=v3 nofpu/misa=v3 mbig-endian-data/misa=v3 mjsr/misa=v3 mno-allow-string-insns/misa=v3 m64bit-doubles/nofpu/misa=v3 m64bit-doubles/mbig-endian-data/misa=v3 m64bit-doubles/mjsr/misa=v3 m64bit-doubles/mdfpu/misa=v3 m64bit-doubles/mno-allow-string-insns/misa=v3 nofpu/mbig-endian-data/misa=v3 nofpu/mjsr/misa=v3 nofpu/mno-allow-string-insns/misa=v3 mbig-endian-data/mjsr/misa=v3 mbig-endian-data/mno-allow-string-insns/misa=v3 mjsr/mno-allow-string-insns/misa=v3 m64bit-doubles/nofpu/mbig-endian-data/misa=v3 m64bit-doubles/nofpu/mjsr/misa=v3 m64bit-doubles/nofpu/mno-allow-string-insns/misa=v3 m64bit-doubles/mbig-endian-data/mjsr/misa=v3 m64bit-doubles/mbig-endian-data/mdfpu/misa=v3 m64bit-doubles/mbig-endian-data/mno-allow-string-insns/misa=v3 m64bit-doubles/mjsr/mdfpu/misa=v3 m64bit-doubles/mjsr/mno-allow-string-insns/misa=v3 m64bit-doubles/mdfpu/mno-allow-string-insns/misa=v3 nofpu/mbig-endian-data/mjsr/misa=v3 nofpu/mbig-endian-data/mno-allow-string-insns/misa=v3 nofpu/mjsr/mno-allow-string-insns/misa=v3 mbig-endian-data/mjsr/mno-allow-string-insns/misa=v3 m64bit-doubles/nofpu/mbig-endian-data/mjsr/misa=v3 m64bit-doubles/nofpu/mbig-endian-data/mno-allow-string-insns/misa=v3 m64bit-doubles/nofpu/mjsr/mno-allow-string-insns/misa=v3 m64bit-doubles/mbig-endian-data/mjsr/mdfpu/misa=v3 m64bit-doubles/mbig-endian-data/mjsr/mno-allow-string-insns/misa=v3 m64bit-doubles/mbig-endian-data/mdfpu/mno-allow-string-insns/misa=v3 m64bit-doubles/mjsr/mdfpu/mno-allow-string-insns/misa=v3 nofpu/mbig-endian-data/mjsr/mno-allow-string-insns/misa=v3 m64bit-doubles/nofpu/mbig-endian-data/mjsr/mno-allow-string-insns/misa=v3 m64bit-doubles/mbig-endian-data/mjsr/mdfpu/mno-allow-string-insns/misa=v3",
+            "",
+            "",
+            "yes",
         },
         .gcc_common_out_file = "common/config/rx/rx-common.cc",
 
