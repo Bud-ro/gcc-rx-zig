@@ -2802,3 +2802,120 @@
 /* #undef vfork */
 #endif
 
+/* ------------------------------------------------------------------------
+   Cross-host overrides.
+
+   This auto-host.h is generated for a glibc Linux host. When the toolchain
+   itself is cross-compiled to run on another host (host != build), the host's
+   compiler defines its own target macros (_WIN32 for mingw, __APPLE__ for
+   Darwin). Each gcc source compilation sees its own host's predefined macros,
+   so a single header can serve every host by undefining the features the host
+   lacks. Guarded by !USED_FOR_TARGET so target-side builds are unaffected.
+   ------------------------------------------------------------------------ */
+/* HOST_WIDE_INT must be a 64-bit type. gcc picks `long` when INT64_T_IS_LONG,
+   else `long long`. That holds only on LP64 glibc where int64_t == long. On
+   mingw (LLP64: long is 32-bit) and Darwin (int64_t is long long) int64_t is
+   NOT long, so leaving INT64_T_IS_LONG defined makes HOST_WIDE_INT a 32-bit
+   long and every 64-bit shift in hwint.h/wide-int.h overflows. */
+#if !defined(__linux__) && !defined(USED_FOR_TARGET)
+#undef INT64_T_IS_LONG
+/* mallinfo/mallinfo2 and strverscmp are glibc extensions absent on both mingw
+   and Darwin; libiberty supplies strverscmp where the host lacks it. */
+#undef HAVE_MALLINFO
+#undef HAVE_MALLINFO2
+#undef HAVE_DECL_MALLINFO
+#undef HAVE_DECL_MALLINFO2
+#undef HAVE_STRVERSCMP
+/* HAVE_DECL_* must be defined to 0 (not undefined) so libiberty.h/system.h
+   emit their own extern prototype via `#if defined(X) && !X`. */
+#undef HAVE_DECL_STRVERSCMP
+#define HAVE_DECL_STRVERSCMP 0
+/* These *_unlocked stdio functions are glibc-only extensions; neither mingw nor
+   Darwin provides them. gcc's system.h remaps e.g. fputc -> fputc_unlocked under
+   HAVE_FPUTC_UNLOCKED; undefine so the plain stdio names are used. (The POSIX
+   getc/putc/getchar/putchar_unlocked do exist on Darwin and stay defined; they
+   are undefined only for Windows below.) */
+#undef HAVE_CLEARERR_UNLOCKED
+#undef HAVE_FEOF_UNLOCKED
+#undef HAVE_FERROR_UNLOCKED
+#undef HAVE_FFLUSH_UNLOCKED
+#undef HAVE_FGETC_UNLOCKED
+#undef HAVE_FGETS_UNLOCKED
+#undef HAVE_FILENO_UNLOCKED
+#undef HAVE_FPUTC_UNLOCKED
+#undef HAVE_FPUTS_UNLOCKED
+#undef HAVE_FREAD_UNLOCKED
+#undef HAVE_FWRITE_UNLOCKED
+#undef HAVE_DECL_CLEARERR_UNLOCKED
+#undef HAVE_DECL_FEOF_UNLOCKED
+#undef HAVE_DECL_FERROR_UNLOCKED
+#undef HAVE_DECL_FFLUSH_UNLOCKED
+#undef HAVE_DECL_FGETC_UNLOCKED
+#undef HAVE_DECL_FGETS_UNLOCKED
+#undef HAVE_DECL_FILENO_UNLOCKED
+#undef HAVE_DECL_FPUTC_UNLOCKED
+#undef HAVE_DECL_FPUTS_UNLOCKED
+#undef HAVE_DECL_FREAD_UNLOCKED
+#undef HAVE_DECL_FWRITE_UNLOCKED
+#endif
+
+#if defined(_WIN32) && !defined(USED_FOR_TARGET)
+/* mingw (Windows) lacks these POSIX/BSD headers and the functions that live
+   in them. gcc's system.h includes the headers under these macros. */
+#undef HAVE_SYS_WAIT_H
+#undef HAVE_SYS_MMAN_H
+#undef HAVE_SYS_RESOURCE_H
+#undef HAVE_SYS_TIMES_H
+#undef HAVE_DLFCN_H
+#undef HAVE_FORK
+#undef HAVE_VFORK
+#undef HAVE_KILL
+#undef HAVE_GETRUSAGE
+#undef HAVE_GETRLIMIT
+#undef HAVE_SETRLIMIT
+#undef HAVE_TIMES
+#undef HAVE_MMAP
+#undef HAVE_MADVISE
+#undef HAVE_SYSCONF
+#undef HAVE_SBRK
+/* LLP64: long is 32-bit on Windows (glibc Linux had it as 8). */
+#undef SIZEOF_LONG
+#define SIZEOF_LONG 4
+/* The POSIX *_unlocked stdio functions (present on Darwin) are still absent on
+   mingw; undefine these four here. The glibc-only ones are handled above. */
+#undef HAVE_GETCHAR_UNLOCKED
+#undef HAVE_GETC_UNLOCKED
+#undef HAVE_PUTCHAR_UNLOCKED
+#undef HAVE_PUTC_UNLOCKED
+#undef HAVE_DECL_GETCHAR_UNLOCKED
+#undef HAVE_DECL_GETC_UNLOCKED
+#undef HAVE_DECL_PUTCHAR_UNLOCKED
+#undef HAVE_DECL_PUTC_UNLOCKED
+/* More mingw gaps: no iconv/langinfo/sys-ioctl headers, no anon-mmap, and no
+   setenv/unsetenv/strsignal (libiberty supplies the latter three). */
+#undef HAVE_ICONV
+#undef HAVE_ICONV_H
+#undef HAVE_LANGINFO_CODESET
+#undef GWINSZ_IN_SYS_IOCTL
+#undef HAVE_MMAP_ANON
+#undef HAVE_MMAP_DEV_ZERO
+#undef HAVE_MMAP_FILE
+#undef HAVE_SETENV
+#undef HAVE_UNSETENV
+#undef HAVE_STRSIGNAL
+/* HAVE_DECL_* must be defined to 0 (not undefined) so system.h emits its own
+   extern prototype via `#if defined(X) && !X`. libiberty supplies the symbols
+   (setenv.c, strsignal.c); getpagesize is declared+supplied the same way. */
+#undef HAVE_DECL_SETENV
+#define HAVE_DECL_SETENV 0
+#undef HAVE_DECL_UNSETENV
+#define HAVE_DECL_UNSETENV 0
+#undef HAVE_DECL_STRSIGNAL
+#define HAVE_DECL_STRSIGNAL 0
+#undef HAVE_DECL_GETPAGESIZE
+#define HAVE_DECL_GETPAGESIZE 0
+/* mingw has no fcntl record locking (F_SETLKW) nor O_NONBLOCK. */
+#undef HOST_HAS_F_SETLKW
+#undef HOST_HAS_O_NONBLOCK
+#endif
+

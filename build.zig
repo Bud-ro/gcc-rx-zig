@@ -13,6 +13,10 @@ pub fn build(b: *std.Build) void {
     const cross_dep = b.dependency("gcc_cross", .{});
     const binutils_src = b.dependency("binutils_src", .{});
     const gcc_src = b.dependency("gcc_src", .{});
+    const zlib_src = b.dependency("zlib_src", .{});
+    const gmp_src = b.dependency("gmp_src", .{});
+    const mpfr_src = b.dependency("mpfr_src", .{});
+    const mpc_src = b.dependency("mpc_src", .{});
 
     // Patch source trees synchronously during build() so that cwd_relative
     // LazyPaths are valid when the build graph references config.in templates
@@ -27,11 +31,11 @@ pub fn build(b: *std.Build) void {
     const bu_patch_dir = b.cache_root.join(b.allocator, &.{"patched-binutils-rx"}) catch @panic("OOM");
 
     patchSourceTree(b, patch_dir, gcc_src_path, gcc_patch, null);
-    patchSourceTree(b, bu_patch_dir, bu_src_path, bu_patch,
-        std.fmt.allocPrint(b.allocator,
-            "bison -o '{s}/gas/config/rx-parse.c' -d '{s}/gas/config/rx-parse.y'",
-            .{ bu_patch_dir, bu_patch_dir },
-        ) catch @panic("OOM"));
+    patchSourceTree(b, bu_patch_dir, bu_src_path, bu_patch, std.fmt.allocPrint(
+        b.allocator,
+        "bison -o '{s}/gas/config/rx-parse.c' -d '{s}/gas/config/rx-parse.y'",
+        .{ bu_patch_dir, bu_patch_dir },
+    ) catch @panic("OOM"));
 
     const patched_gcc_root: std.Build.LazyPath = .{ .cwd_relative = patch_dir };
     const patched_bu_root: std.Build.LazyPath = .{ .cwd_relative = bu_patch_dir };
@@ -112,13 +116,21 @@ pub fn build(b: *std.Build) void {
 
         // Tool
         .find_replace_zig = cross_dep.path("find_replace.zig"),
+
+        // From-source support libraries (so Windows/macOS cross-builds need no
+        // system libz/gmp/mpfr/mpc on the target host).
+        .zlib_src = zlib_src,
+        .gmp_src = gmp_src,
+        .mpfr_src = mpfr_src,
+        .mpc_src = mpc_src,
     });
 
     // Generate specs file with Renesas ASM_SPEC additions (-misa, -mdfpu pass-through).
     // The driver uses upstream rx.h specs which lack DPFPU flags.
     const specs_dir = b.fmt("lib/gcc/rx-unknown-elf/14.2.0", .{});
     const gen_specs = b.addSystemCommand(&.{
-        "sh", "-c", b.fmt(
+        "sh", "-c",
+        b.fmt(
             \\set -e
             \\SPECS_DIR="{0s}/{1s}"
             \\mkdir -p "$SPECS_DIR"

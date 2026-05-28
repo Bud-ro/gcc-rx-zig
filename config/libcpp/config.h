@@ -391,3 +391,55 @@
 /* Define to the type of an unsigned integer type wide enough to hold a
    pointer, if such a type exists, and if the system does not define it. */
 /* #undef uintptr_t */
+
+/* --- Host portability overrides (gcc-cross-zig) ---------------------------
+   This config.h is shared by the native build-machine compilation and the
+   Canadian-cross host compilation (Windows/macOS). The defaults above assume a
+   glibc/Linux host; undo the host-specific bits when the compiler's own
+   predefined target macros say the host is something else. Each compilation
+   sees its own target's predefined macros, so one header serves every host. */
+#if !defined(__linux__)
+/* The stdio *_unlocked variants are a glibc extension; without these defines
+   GCC's system.h transparently falls back to the locked forms. */
+#undef HAVE_CLEARERR_UNLOCKED
+#undef HAVE_FEOF_UNLOCKED
+#undef HAVE_FERROR_UNLOCKED
+#undef HAVE_FFLUSH_UNLOCKED
+#undef HAVE_FGETC_UNLOCKED
+#undef HAVE_FGETS_UNLOCKED
+#undef HAVE_FILENO_UNLOCKED
+#undef HAVE_FPUTC_UNLOCKED
+#undef HAVE_FPUTS_UNLOCKED
+#undef HAVE_FREAD_UNLOCKED
+#undef HAVE_FWRITE_UNLOCKED
+#undef HAVE_GETCHAR_UNLOCKED
+#undef HAVE_GETC_UNLOCKED
+#undef HAVE_PUTCHAR_UNLOCKED
+#undef HAVE_PUTC_UNLOCKED
+#undef HAVE_DECL_CLEARERR_UNLOCKED
+#undef HAVE_DECL_FEOF_UNLOCKED
+#undef HAVE_DECL_FERROR_UNLOCKED
+#undef HAVE_DECL_FFLUSH_UNLOCKED
+#undef HAVE_DECL_FGETC_UNLOCKED
+#undef HAVE_DECL_FGETS_UNLOCKED
+#undef HAVE_DECL_FILENO_UNLOCKED
+#undef HAVE_DECL_FPUTC_UNLOCKED
+#undef HAVE_DECL_FPUTS_UNLOCKED
+#undef HAVE_DECL_FREAD_UNLOCKED
+#undef HAVE_DECL_FWRITE_UNLOCKED
+#undef HAVE_DECL_GETCHAR_UNLOCKED
+#undef HAVE_DECL_GETC_UNLOCKED
+#undef HAVE_DECL_PUTCHAR_UNLOCKED
+#undef HAVE_DECL_PUTC_UNLOCKED
+/* iconv: avoid pulling a host-specific iconv library/header into the cross
+   link. cc1 works without it (only -finput-charset conversions are lost). */
+#undef HAVE_ICONV
+#undef ICONV_CONST
+#endif
+
+#if defined(_WIN32)
+/* mingw-w64 lacks these POSIX headers. */
+#undef HAVE_LANGINFO_CODESET
+#undef HAVE_SYS_FILE_H
+#undef HAVE_ALLOCA_H
+#endif

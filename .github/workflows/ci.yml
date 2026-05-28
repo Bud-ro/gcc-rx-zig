@@ -2,7 +2,7 @@ name: CI
 on:
   push:
     branches: [master]
-    tags: ['v*']
+    tags: ['v*', '*-full']
   pull_request:
     branches: [master]
 
@@ -83,11 +83,14 @@ jobs:
       - name: Package
         if: startsWith(github.ref, 'refs/tags/')
         run: |
-          # Build libgcc and bundle binaries, libgcc, and the GPL license/NOTICE.
+          # Build libgcc and bundle binaries, cc1/libexec, libgcc, and the GPL
+          # license/NOTICE. libexec holds cc1 (the compiler proper) which the
+          # gcc driver execs, so it must ship in the tarball.
           zig build libgcc -Doptimize=ReleaseFast
-          mkdir -p stage/bin stage/lib stage/share/doc
+          mkdir -p stage/bin stage/lib stage/libexec stage/share/doc
           cp -a zig-out/bin/. stage/bin/
           cp -a zig-out/lib/. stage/lib/ 2>/dev/null || true
+          cp -a zig-out/libexec/. stage/libexec/ 2>/dev/null || true
           cp NOTICE.md COPYING COPYING.LIB COPYING3 COPYING3.LIB COPYING.RUNTIME stage/share/doc/
           cp -a vendor/patches stage/share/doc/patches
           tar czf rx-elf-toolchain-linux-x86_64.tar.gz -C stage .
@@ -96,3 +99,71 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: rx-elf-toolchain-linux-x86_64.tar.gz
+      - name: Stage libgcc artifact
+        # The RX libgcc.a / crt objects / target headers are host-independent
+        # target object code. A cross-hosted gcc (Windows/macOS) cannot run on
+        # this Linux runner to build them, so the cross job reuses these.
+        # Exclude the lto_plugin shared object: it is host-specific and the
+        # cross build produces its own .dll/.dylib.
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          V=gcc/rx-unknown-elf/14.2.0
+          mkdir -p "libgcc-artifact/$V"
+          cp -a zig-out/lib/$V/*.a zig-out/lib/$V/*.o "libgcc-artifact/$V/"
+          if [ -d "zig-out/lib/$V/include" ]; then
+            cp -a "zig-out/lib/$V/include" "libgcc-artifact/$V/"
+          fi
+      - name: Upload libgcc artifact
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: actions/upload-artifact@v4
+        with:
+          name: rx-libgcc
+          path: libgcc-artifact
+
+  cross:
+    needs: build
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - target: x86_64-windows-gnu
+            name: windows-x86_64
+          - target: aarch64-macos
+            name: macos-aarch64
+          - target: x86_64-macos
+            name: macos-x86_64
+    steps:
+      - uses: actions/checkout@v4
+      - uses: mlugg/setup-zig@v2
+        with:
+          version: 0.16.0
+      - name: Install dependencies
+        # gmp/mpfr/mpc are built from source for cross hosts; only the
+        # build-time generator tools (gawk/bison) come from apt.
+        run: sudo apt-get update && sudo apt-get install -y gawk bison
+      - name: Build (cross)
+        run: zig build -Dtarget=${{ matrix.target }} -Doptimize=ReleaseFast
+        timeout-minutes: 45
+      - name: Download libgcc artifact
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: actions/download-artifact@v4
+        with:
+          name: rx-libgcc
+          path: zig-out/lib
+      - name: Package
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          # Cross-hosted toolchain binaries + the Linux-built RX libgcc overlay.
+          mkdir -p stage/bin stage/lib stage/libexec stage/share/doc
+          cp -a zig-out/bin/. stage/bin/
+          cp -a zig-out/lib/. stage/lib/ 2>/dev/null || true
+          cp -a zig-out/libexec/. stage/libexec/ 2>/dev/null || true
+          cp NOTICE.md COPYING COPYING.LIB COPYING3 COPYING3.LIB COPYING.RUNTIME stage/share/doc/
+          cp -a vendor/patches stage/share/doc/patches
+          tar czf rx-elf-toolchain-${{ matrix.name }}.tar.gz -C stage .
+      - name: Upload release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: rx-elf-toolchain-${{ matrix.name }}.tar.gz
