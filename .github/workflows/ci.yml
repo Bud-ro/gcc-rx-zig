@@ -24,6 +24,24 @@ jobs:
         timeout-minutes: 30
       - name: Test - codegen regression suite
         run: zig build test -Doptimize=ReleaseFast
+      - name: Build - libgcc
+        run: zig build libgcc -Doptimize=ReleaseFast
+      - name: Test - libgcc runtime (soft-float, 64-bit, builtins)
+        run: |
+          LIBGCC=zig-out/lib/gcc/rx-unknown-elf/14.2.0/libgcc.a
+          test -f "$LIBGCC"
+          GINC=$(zig-out/bin/rx-elf-gcc -print-file-name=include)
+          cat > rt.c <<'EOF'
+          volatile float fa=3.5f, fb=1.25f, fr;
+          volatile long long ia=1000003LL, ib=997LL, ir;
+          volatile unsigned uc=0xF0F0F0F0u; volatile int pc;
+          void _start(void){ fr=fa/fb; fr=fr*fa+fb; ir=ia/ib; ir+=ia%ib;
+            pc=__builtin_popcount(uc)+__builtin_clz(uc); for(;;){} }
+          EOF
+          zig-out/bin/rx-elf-gcc -Os -ffreestanding -nostdinc -isystem "$GINC" -c rt.c -o rt.o
+          zig-out/bin/rx-elf-gcc -nostdlib -Wl,--gc-sections -e _start -o rt.elf rt.o "$LIBGCC"
+          # confirm libgcc routines were pulled in
+          zig-out/bin/rx-elf-nm rt.elf | grep -E '___(divsf3|divdi3|moddi3|popcountsi2)'
       - name: Test - gcc driver
         run: |
           zig-out/bin/rx-elf-gcc --version
@@ -48,7 +66,15 @@ jobs:
           zig-out/bin/rx-elf-size test.o
       - name: Package
         if: startsWith(github.ref, 'refs/tags/')
-        run: tar czf rx-elf-toolchain-linux-x86_64.tar.gz -C zig-out/bin .
+        run: |
+          # Build libgcc and bundle binaries, libgcc, and the GPL license/NOTICE.
+          zig build libgcc -Doptimize=ReleaseFast
+          mkdir -p stage/bin stage/lib stage/share/doc
+          cp -a zig-out/bin/. stage/bin/
+          cp -a zig-out/lib/. stage/lib/ 2>/dev/null || true
+          cp NOTICE.md COPYING COPYING.LIB COPYING3 COPYING3.LIB stage/share/doc/
+          cp -a vendor/patches stage/share/doc/patches
+          tar czf rx-elf-toolchain-linux-x86_64.tar.gz -C stage .
       - name: Upload release
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2

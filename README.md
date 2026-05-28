@@ -9,6 +9,25 @@ zig build -Doptimize=ReleaseFast
 
 Produces `rx-elf-gcc`, `cc1`, `rx-elf-as`, `rx-elf-ld`, `rx-elf-objcopy`, `rx-elf-objdump`, `rx-elf-readelf`, `rx-elf-ar`, `rx-elf-nm`, `rx-elf-strip`, `rx-elf-size`, `rx-elf-ranlib`, `rx-elf-strings`, `rx-elf-addr2line`, `rx-elf-c++filt`, `rx-elf-elfedit` in `zig-out/bin/`.
 
+The toolchain vendors no GCC- or Binutils-generated files and no patched
+source trees — every generated file is produced from source at build time, and
+the Renesas RX patches are applied from `vendor/patches/` with `patch -p1`.
+
+## libgcc
+
+```bash
+zig build libgcc         # build + install libgcc.a (default multilib) and crt*.o
+```
+
+Compiles GCC's runtime library (soft-float, 64-bit integer helpers, `__builtin_*`
+lowering) from source with the freshly built `rx-elf-gcc` and installs
+`libgcc.a` to `zig-out/lib/gcc/rx-unknown-elf/14.2.0/`. Link it for any firmware
+that uses floating point, 64-bit math, or compiler builtins. `libgcc.a` carries
+the **GCC Runtime Library Exception** (see `NOTICE.md`), so it can be linked
+into proprietary firmware. Note: only the default (32-bit-`double`, no-FPU)
+multilib is built so far; `-m64bit-doubles`/DPFPU variants and C++ static-ctor
+`crtbegin`/`crtend` are not yet produced.
+
 ## Codegen regression suite
 
 ```bash
@@ -35,3 +54,9 @@ normal `configure`/`make` path produces byte-for-byte identical assembly to our
 zig/Clang-built `cc1`; (2) Renesas's own complete source distribution, built
 their normal way, emits the same 5. Correctness is unaffected. See the comment
 in `tests/cases/pr83831.c`.
+
+## License
+
+GPL — this builds GCC and Binutils. See `NOTICE.md` for the full component
+breakdown, the GCC Runtime Library Exception that applies to `libgcc.a`, and
+the source-availability statement. License texts are in `COPYING*`.
