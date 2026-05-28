@@ -56,7 +56,6 @@ pub fn build(b: *std.Build) void {
             \\  cp -a "$PATCHES/gas/config/"* "$DEST/gas/config/" 2>/dev/null || true
             \\  cp -a "$PATCHES/opcodes/"* "$DEST/opcodes/" 2>/dev/null || true
             \\  cp -a "$PATCHES/include/"* "$DEST/include/" 2>/dev/null || true
-            \\  echo '/* merged into bfdio.c in 2.44 */' > "$DEST/bfd/bfdwin.c"
             \\  bison -o "$DEST/gas/config/rx-parse.c" -d "$DEST/gas/config/rx-parse.y"
             \\  touch "$DEST/.patched"
             \\fi

@@ -6,7 +6,7 @@
     .dependencies = .{
         .gcc_cross = .{
             .url = "git+https://github.com/Bud-ro/gcc-cross-zig#master",
-            .hash = "gcc_cross-0.1.0-4eFHFUqUAQDRgv5OmmoF3MOo_vnerlgzgjN33v9YmreT",
+            .hash = "gcc_cross-0.1.0-4eFHFbWTAQBzy68o5_18-HJ01dwqGJfgogNAEjH5JhTk",
         },
         .binutils_src = .{
             .url = "https://ftpmirror.gnu.org/binutils/binutils-2.44.tar.xz",
