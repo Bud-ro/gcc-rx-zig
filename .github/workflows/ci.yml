@@ -110,6 +110,11 @@ jobs:
           cp -a zig-out/bin/. stage/bin/
           cp -a zig-out/lib/. stage/lib/ 2>/dev/null || true
           cp -a zig-out/libexec/. stage/libexec/ 2>/dev/null || true
+          # Ship the GCC tooldir (rx-unknown-elf/bin/{as,ld,ar}). The driver
+          # resolves the bundled assembler/linker via <prefix>/rx-unknown-elf/bin;
+          # without it the toolchain falls back to the system 'as' and cannot
+          # compile RX code out of the box.
+          cp -a zig-out/rx-unknown-elf stage/ 2>/dev/null || true
           cp NOTICE.md COPYING COPYING.LIB COPYING3 COPYING3.LIB COPYING.RUNTIME stage/share/doc/
           cp -a vendor/patches stage/share/doc/patches
           tar czf rx-elf-toolchain-linux-x86_64.tar.gz -C stage .
@@ -189,6 +194,11 @@ jobs:
           cp -a zig-out/bin/. stage/bin/
           cp -a zig-out/lib/. stage/lib/ 2>/dev/null || true
           cp -a zig-out/libexec/. stage/libexec/ 2>/dev/null || true
+          # Ship the GCC tooldir (rx-unknown-elf/bin/{as,ld,ar}). The driver
+          # resolves the bundled assembler/linker via <prefix>/rx-unknown-elf/bin;
+          # without it the toolchain falls back to the system 'as' and cannot
+          # compile RX code out of the box.
+          cp -a zig-out/rx-unknown-elf stage/ 2>/dev/null || true
           cp NOTICE.md COPYING COPYING.LIB COPYING3 COPYING3.LIB COPYING.RUNTIME stage/share/doc/
           cp -a vendor/patches stage/share/doc/patches
           tar czf rx-elf-toolchain-${{ matrix.name }}.tar.gz -C stage .
