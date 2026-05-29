@@ -91,8 +91,17 @@ pub fn build(b: *std.Build) void {
         .libgcc_lib2add = &.{"config/rx/rx-abi-functions.c"},
         .libgcc_tm_includes = &.{ "config/rx/rx-abi.h", "config/rx/rx-lib.h" },
         // Common RX MCU variants beyond the default: RXv2 (RX64M/65N), RXv3
-        // (RX72x), 64-bit doubles, and no-FPU. Use &.{"@all"} for every variant.
-        .libgcc_multilib_dirs = &.{ "rxv2", "rxv3", "64-bit-double", "no-fpu-libs" },
+        // (RX72x), 64-bit doubles, no-FPU, and the RXv3 double-precision FPU
+        // (DPFPU) variants. The dfpu dirs are the nested paths -print-multi-lib
+        // reports for -mdfpu -misa=v3 (the specs file canonicalizes -mdfpu to add
+        // -m64bit-doubles), with and without -mno-allow-string-insns; without
+        // them a -mdfpu link cannot find libgcc.a. Use &.{"@all"} for every
+        // variant.
+        .libgcc_multilib_dirs = &.{
+            "rxv2",                    "rxv3",
+            "64-bit-double",           "no-fpu-libs",
+            "64-bit-double/dfpu/rxv3", "64-bit-double/dfpu/no-strings/rxv3",
+        },
         // genmultilib args from config/rx/t-rx (MULTILIB_OPTIONS, _DIRNAMES,
         // _MATCHES, _EXCEPTIONS, 3 empty, _REQUIRED, 2 empty, "yes").
         .multilib_genargs = &.{
@@ -125,8 +134,20 @@ pub fn build(b: *std.Build) void {
         .mpc_src = mpc_src,
     });
 
-    // Generate specs file with Renesas ASM_SPEC additions (-misa, -mdfpu pass-through).
-    // The driver uses upstream rx.h specs which lack DPFPU flags.
+    // Generate specs file with Renesas ASM_SPEC additions for DPFPU/ISA.
+    // The shipped driver uses upstream RX specs, which (a) never forward -misa
+    // or -mdfpu to the assembler and (b) emit -m32bit-doubles unless an explicit
+    // -m64bit-doubles is given. -mdfpu implies 64-bit doubles, so without this
+    // patch a -mdfpu object is tagged 32-bit-doubles (ELF flag 0x308 vs 0x309)
+    // and the linker rejects it against the 64-bit DPFPU libgcc multilib. Two
+    // edits to the dumped specs:
+    //   1. *asm: map -mdfpu -> -m64bit-doubles and forward -misa=* / -dfpu,
+    //      matching config/rx/rx.h's ASM_SPEC.
+    //   2. *self_spec: add -m64bit-doubles whenever -mdfpu is given without it.
+    //      self_spec is applied before multilib selection, so this is what makes
+    //      -mdfpu alone resolve to the 64-bit-double/dfpu/rxv3 libgcc multilib
+    //      instead of the 32-bit-double base (the asm rewrite alone does not
+    //      affect multilib matching, which reads the raw command-line options).
     const specs_dir = b.fmt("lib/gcc/rx-unknown-elf/14.2.0", .{});
     const gen_specs = b.addSystemCommand(&.{
         "sh", "-c",
@@ -136,7 +157,8 @@ pub fn build(b: *std.Build) void {
             \\mkdir -p "$SPECS_DIR"
             \\GCC="{0s}/bin/rx-elf-gcc"
             \\"$GCC" -dumpspecs > "$SPECS_DIR/specs" 2>/dev/null
-            \\sed -i '/^\*asm:/{{n;s/$/ %{{misa=*}} %{{mdfpu:-dfpu}}/}}' "$SPECS_DIR/specs"
+            \\sed -i '/^\*asm:/{{n;s/%{{!m64bit-doubles:-m32bit-doubles}}/%{{mdfpu:-m64bit-doubles}} %{{!m64bit-doubles:%{{!mdfpu:-m32bit-doubles}}}}/;s/$/ %{{misa=*}} %{{mdfpu:-dfpu}}/}}' "$SPECS_DIR/specs"
+            \\sed -i '/^\*self_spec:/{{n;s|^$|%{{mdfpu:%{{!m64bit-doubles:-m64bit-doubles}}}}|}}' "$SPECS_DIR/specs"
         , .{ b.install_path, specs_dir }),
     });
     gen_specs.step.dependOn(b.getInstallStep());

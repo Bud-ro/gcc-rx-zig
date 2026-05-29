@@ -106,6 +106,10 @@ jobs:
           # license/NOTICE. libexec holds cc1 (the compiler proper) which the
           # gcc driver execs, so it must ship in the tarball.
           zig build libgcc -Doptimize=ReleaseFast
+          # Generate the DPFPU/ISA specs file (host-independent text) so -mdfpu
+          # and -misa=* reach the assembler out of the box. Must run on the
+          # native host since it execs the just-built rx-elf-gcc.
+          zig build specs -Doptimize=ReleaseFast
           mkdir -p stage/bin stage/lib stage/libexec stage/share/doc
           cp -a zig-out/bin/. stage/bin/
           cp -a zig-out/lib/. stage/lib/ 2>/dev/null || true
@@ -134,6 +138,9 @@ jobs:
           V=gcc/rx-unknown-elf/14.2.0
           mkdir -p "libgcc-artifact/$V"
           cp -a zig-out/lib/$V/*.a zig-out/lib/$V/*.o "libgcc-artifact/$V/"
+          # The specs file is host-independent text; the cross hosts cannot run
+          # rx-elf-gcc to generate it, so overlay this one like the libgcc files.
+          cp -a "zig-out/lib/$V/specs" "libgcc-artifact/$V/"
           if [ -d "zig-out/lib/$V/include" ]; then
             cp -a "zig-out/lib/$V/include" "libgcc-artifact/$V/"
           fi
