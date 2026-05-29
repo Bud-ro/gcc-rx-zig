@@ -9,6 +9,11 @@ on:
 permissions:
   contents: write
 
+env:
+  # Use a dedicated global cache dir so the fetched-package dir (p/) can be
+  # cached independently of build artifacts (which we never cache).
+  ZIG_GLOBAL_CACHE_DIR: ${{ github.workspace }}/.zig-global
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,19 +22,22 @@ jobs:
       - uses: mlugg/setup-zig@v2
         with:
           version: 0.16.0
+          # We manage the dependency cache explicitly below; disable setup-zig's
+          # own cache so it does not also persist build artifacts.
+          use-cache: false
+      - name: Cache fetched dependencies
+        # Persist only the unpacked package dir, keyed by the content-addressed
+        # manifest. One lean entry (~205 MB) per dependency set, far under the
+        # 10 GB per-repo limit that free accounts share; build artifacts are
+        # never cached. On a hit the GNU mirrors are not contacted at all.
+        uses: actions/cache@v4
+        with:
+          path: .zig-global/p
+          key: zig-deps-${{ runner.os }}-${{ hashFiles('build.zig.zon') }}
       - name: Install dependencies
         run: sudo apt-get update && sudo apt-get install -y libgmp-dev libmpfr-dev libmpc-dev gawk bison
       - name: Fetch dependencies
-        # Upstream GNU mirrors intermittently drop connections / 502; retry the
-        # network-bound fetch in isolation so a transient blip doesn't fail the
-        # build. Once fetched, deps are cached and the build runs offline.
-        run: |
-          for attempt in 1 2 3 4 5; do
-            if zig build --fetch; then exit 0; fi
-            echo "::warning::fetch attempt $attempt failed; retrying"
-            sleep $((attempt * 15))
-          done
-          echo "::error::dependency fetch failed after 5 attempts"; exit 1
+        run: bash .github/fetch-deps.sh
       - name: Build
         run: zig build -Doptimize=ReleaseFast
         timeout-minutes: 30
@@ -149,21 +157,21 @@ jobs:
       - uses: mlugg/setup-zig@v2
         with:
           version: 0.16.0
+          use-cache: false
+      - name: Cache fetched dependencies
+        # Shares the build job's key, so the matrix legs restore the same
+        # package set (populated by whichever job runs first) instead of each
+        # re-downloading from the GNU mirrors in parallel.
+        uses: actions/cache@v4
+        with:
+          path: .zig-global/p
+          key: zig-deps-${{ runner.os }}-${{ hashFiles('build.zig.zon') }}
       - name: Install dependencies
         # gmp/mpfr/mpc are built from source for cross hosts; only the
         # build-time generator tools (gawk/bison) come from apt.
         run: sudo apt-get update && sudo apt-get install -y gawk bison
       - name: Fetch dependencies
-        # Upstream GNU mirrors intermittently drop connections / 502, and the
-        # parallel matrix legs hit them at once; retry the network-bound fetch
-        # in isolation so a transient blip doesn't fail the build.
-        run: |
-          for attempt in 1 2 3 4 5; do
-            if zig build --fetch; then exit 0; fi
-            echo "::warning::fetch attempt $attempt failed; retrying"
-            sleep $((attempt * 15))
-          done
-          echo "::error::dependency fetch failed after 5 attempts"; exit 1
+        run: bash .github/fetch-deps.sh
       - name: Build (cross)
         run: zig build -Dtarget=${{ matrix.target }} -Doptimize=ReleaseFast
         timeout-minutes: 45
