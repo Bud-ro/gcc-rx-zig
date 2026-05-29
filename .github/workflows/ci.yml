@@ -128,22 +128,24 @@ jobs:
         with:
           files: rx-elf-toolchain-linux-x86_64.tar.gz
       - name: Stage libgcc artifact
-        # The RX libgcc.a / crt objects / target headers are host-independent
-        # target object code. A cross-hosted gcc (Windows/macOS) cannot run on
-        # this Linux runner to build them, so the cross job reuses these.
-        # Exclude the lto_plugin shared object: it is host-specific and the
-        # cross build produces its own .dll/.dylib.
+        # The RX libgcc.a / crt objects / target headers / specs are all
+        # host-independent target object code and text. A cross-hosted gcc
+        # (Windows/macOS) cannot run on this Linux runner to build them, so the
+        # cross job reuses these.
         if: startsWith(github.ref, 'refs/tags/')
         run: |
           V=gcc/rx-unknown-elf/14.2.0
           mkdir -p "libgcc-artifact/$V"
-          cp -a zig-out/lib/$V/*.a zig-out/lib/$V/*.o "libgcc-artifact/$V/"
-          # The specs file is host-independent text; the cross hosts cannot run
-          # rx-elf-gcc to generate it, so overlay this one like the libgcc files.
-          cp -a "zig-out/lib/$V/specs" "libgcc-artifact/$V/"
-          if [ -d "zig-out/lib/$V/include" ]; then
-            cp -a "zig-out/lib/$V/include" "libgcc-artifact/$V/"
-          fi
+          # Copy the whole versioned tree: the base libgcc.a/crt*.o AND every
+          # multilib subdir (rxv2, rxv3, 64-bit-double, no-fpu-libs, the dfpu
+          # variants), each with its own libgcc.a + crt objects, plus include/
+          # and the specs file. A top-level *.a/*.o glob misses the nested
+          # multilib dirs, which left the cross tarballs with only the base
+          # variant and no way to link -mcpu=rx64m / -misa=v3 / -mdfpu etc.
+          cp -a zig-out/lib/$V/. "libgcc-artifact/$V/"
+          # Drop the host-specific LTO plugin: each cross build ships its own
+          # .dll/.dylib, so the Linux .so must not leak into the artifact.
+          rm -f "libgcc-artifact/$V/liblto_plugin.so"
       - name: Upload libgcc artifact
         if: startsWith(github.ref, 'refs/tags/')
         uses: actions/upload-artifact@v4
